@@ -1,0 +1,11 @@
+services:
+  g4:
+    image: physino/geant4:11.2.1
+    profiles: [ "g4" ] # avoid running it by `compose up`
+    command: /usr/bin/bash
+    volumes: [ .:/root/geant4 ]
+    # https://unix.stackexchange.com/a/698068/26929
+    # https://stackoverflow.com/a/63291253/1801749
+    environment: [ TZ=US/Central ]
+    hostname: AlmaLinux # https://stackoverflow.com/a/63291253/1801749
+    build: 11.2.1
