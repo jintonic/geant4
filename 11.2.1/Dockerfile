@@ -4,19 +4,11 @@ from --platform=linux/amd64 almalinux
 
 # install pre-compiled Geant4 in /usr to avoid setting LD_LIBRARY_PATH
 # modify default datasets location in /usr/bin/geant4-config
-# https://www.tecmint.com/customize-bash-colors-terminal-prompt-linux/
 run <<EOT
 rm -fr afs media mnt srv /root/.*cshrc && cd /usr
 curl -LO https://cern.ch/geant4-data/releases/lib4.11.2.p01/Linux-g++11.4.1-Alma9.tar.gz
 tar xf *.gz && rm -f *.gz README bin/geant4.*
 sed -i -E 's|/build.{,74}Geant4/||g' bin/geant4-config
-echo 'GEANT4_DATA_DIR=~/geant4/data' >> /etc/bashrc
-echo 'PS1="\[\e[32m\]\u@AlmaLinux:\[\e[34m\]\w \[\e[31m\]\$\[\e[m\] "' >> /etc/bashrc
-echo 'export PS1 GEANT4_DATA_DIR' >> /etc/bashrc
-echo 'alias ls="ls --color"' >> /etc/bashrc
-echo 'alias la="ls -AF"' >> /etc/bashrc
-echo 'alias ll="ls -lh"' >> /etc/bashrc
-echo 'alias l="ls -Alh"' >> /etc/bashrc
 EOT
 
 # compile and install MinGLE as a test of the Geant4 installation
@@ -29,6 +21,17 @@ dnf clean all && rm -fr /var/cache/*
 curl -LO https://github.com/jintonic/mingle/raw/main/CMakeLists.txt
 curl -LO https://github.com/jintonic/mingle/raw/main/mingle.cc
 cmake . && make install && rm -fr mingle* *ake* *.txt
+EOT
+
+# https://stackoverflow.com/a/77683802/1801749
+run cat <<EOT >> /etc/bashrc
+GEANT4_DATA_DIR=~/geant4/data
+# https://www.tecmint.com/customize-bash-colors-terminal-prompt-linux/
+PS1="\[\e[32m\]\u@AlmaLinux:\[\e[34m\]\w \[\e[31m\]\$\[\e[m\] "
+export PS1 GEANT4_DATA_DIR
+alias ls="ls --color"
+alias la="ls -AF"
+alias ll="ls -lh"
 EOT
 
 # provide some easily accessible example commands
