@@ -1,6 +1,7 @@
 services:
   g4:
     image: physino/geant4:11.2.1
+    platform: linux/amd64 # pre-compiled geant4 is not available for arm64
     profiles: [ "g4" ] # avoid running it by `compose up`
     command: /usr/bin/bash
     volumes: [ .:/root/geant4 ]
