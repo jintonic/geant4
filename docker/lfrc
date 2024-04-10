@@ -6,7 +6,7 @@ map <enter> open
 cmd open ${{
   case ${f##*.} in
     csv) vd "$f";;
-    tab) cat "$f" | asciigraph -h 15 -w 60 && read -n 1;;
+    md) mdv "$f" | less -r;;
     *) micro $fx;;
   esac
 }}
