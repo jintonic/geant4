@@ -1,5 +1,5 @@
 # https://hub.docker.com/r/physino/geant4
-from physino/geant4:minimal
+from physino/geant4:11.2.1
 
 # install git, tmux, micro, lf, gears, uproot, visidata, mpld3, seaborn, pandas
 run <<APPS
@@ -15,29 +15,32 @@ APPS
 
 # set up environment
 copy tmux.conf /etc/
-copy lfrc /etc/lf
+copy lfrc /etc/lf/
 
-run cat <<BASHRC >> /etc/bashrc
+# https://stackoverflow.com/a/27921346/1801749
+run cat <<'BASHRC' >> /etc/bashrc
 alias t='tmux -u'
 alias ta='t attach'
 alias tl='t new lf'
 # https://github.com/gokcehan/lf/blob/master/etc/lfcd.sh
 l() {
-  lf -last-dir-path=~/.local/share/lf/tmp "$@"
-  cd "$(cat ~/.local/share/lf/tmp)"
+  lf -last-dir-path=/tmp/lfdir "$@"
+  cd "$(cat /tmp/lfdir)"
 }
 # a simple command-line calculator
-c() { awk "BEGIN { pi=4.0*atan2(1.0,1.0); o=pi/180.0; print $* }" }
+c() {
+  awk "BEGIN { pi=4.0*atan2(1.0,1.0); o=pi/180.0; print $*; }"
+}
 BASHRC
 
-copy <<EOF /root/.bash_history
+run cat <<EOF >> /root/.bash_history
 git clone https://github.com/jintonic/geant4.git .
 git clone https://github.com/jintonic/mingle.git
 git clone https://github.com/jintonic/gears.git
-mingle
 gears
-alias
-declare -f
+l
+c 'sin(pi/2)'
+c 'cos(90*o)'
 EOF
 
 run echo 'options.disp_canvas_charset = " +"' >> /root/.visidatarc \
