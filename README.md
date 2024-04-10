@@ -12,7 +12,7 @@ Without the `--login` option, an interactive, non-login shell will be created fo
 
 If `GEANT4_DATA_DIR` is declared in the host already, it will be inherited by the container. There is no need to declare it again in the container. In this case, `--login` is not needed. For example, the following combination works just fine.
 
-~~~sh
+```sh
 export GEANT4_DATA_DIR=~/path/to/geant4/data/in/the/host/
 apptainer exec docker://physino/geant4 bash
-~~~
+```
