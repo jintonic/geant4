@@ -3,7 +3,7 @@
 from --platform=linux/amd64 almalinux
 
 # install pre-compiled Geant4 in /usr to avoid setting LD_LIBRARY_PATH
-# modify default datasets location in /usr/bin/geant4-config
+# change datasets location in /usr/bin/geant4-config to be ./data/
 run <<EOT
 rm -fr afs media mnt srv /root/.*cshrc && cd /usr
 curl -LO https://cern.ch/geant4-data/releases/lib4.11.2.p01/Linux-g++11.4.1-Alma9.tar.gz
@@ -35,16 +35,21 @@ alias ll="ls -lh"
 EOT
 
 # provide some easily accessible example commands
-# https://docs.docker.com/reference/dockerfile/#here-documents
+# --install-datasets needs to be run in ~/geant4 folder!
 copy <<EOF /root/.bash_history
-cat /etc/redhat-release
+alias
+mingle
 geant4-config --help
 geant4-config --version
 geant4-config --features
-cd ~/geant4 && geant4-config --check-datasets
-cd ~/geant4 && geant4-config --install-datasets
-mingle
+geant4-config --check-datasets
+geant4-config --install-datasets
+history
 EOF
+# save data to a host folder
+volume /root/geant4
+# overwrite the default workdir /
+workdir /root/geant4
 
 # leave a message for Docker Desktop Exec tab
 # https://stackoverflow.com/a/39622593/1801749
@@ -59,12 +64,6 @@ env ENV=/root/.profile
 env G4RUN_MANAGER_TYPE=Serial
 # avoid using OpenGL related visualization drivers in a container
 env G4VIS_DEFAULT_DRIVER=VRML2FILE
-
-# save data to a host folder
-volume /root/geant4
-
-# overwrite the default workdir /
-workdir /root
 
 # display some information on Docker Desktop Logs
 # https://kodekloud.com/blog/keep-docker-container-running
