@@ -32,11 +32,18 @@ export PS1 GEANT4_DATA_DIR
 alias ls="ls --color"
 alias la="ls -AF"
 alias ll="ls -lh"
+# a simple command-line calculator
+c() {
+  awk "BEGIN { pi=4.0*atan2(1.0,1.0); o=pi/180.0; print $*; }"
+}
 EOT
 
 # provide some easily accessible example commands
 # --install-datasets needs to be run in ~/geant4 folder!
 copy <<EOF /root/.bash_history
+c 'sin(pi/2)'
+c 'cos(90*o)'
+echo $RANDOM
 alias
 mingle
 geant4-config --help
