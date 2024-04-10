@@ -8,7 +8,7 @@ services:
     # https://stackoverflow.com/a/63291253/1801749
     environment: [ TZ=US/Central ]
     hostname: AlmaLinux # https://stackoverflow.com/a/63291253/1801749
-    build: .
+    build: docker
   g4:
     image: physino/geant4:11.2.1
     platform: linux/amd64
