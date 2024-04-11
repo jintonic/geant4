@@ -1,0 +1,8 @@
+backend: WebAgg
+webagg.open_in_browser: False
+# needed to allow connection from any host
+# working address: http://localhost:8888, not http://0.0.0.0:8888
+# Docker Desktop provides a clickable link to http://localhost:8888
+webagg.address: 0.0.0.0
+webagg.port: 8888
+interactive: True
