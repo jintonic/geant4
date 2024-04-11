@@ -1,5 +1,6 @@
 # use :maps to check current hotkey list
 map x delete
+map a :push %mkdir<space>-p<space>
 
 # https://github.com/gokcehan/lf/blob/master/etc/lfrc.example
 map <enter> open
@@ -26,6 +27,8 @@ set ratios 1
 set info size:time
 # show a typical shell prompt
 set promptfmt "\033[32;1m%u@AlmaLinux\033[0m:\033[34;1m%d\033[0m"
+# don't highlight the selection in preview column
+set cursorpreviewfmt "\033[1;1m"
 
 # https://github.com/gokcehan/lf/wiki/Tips
 cmd toggle_preview %{{
