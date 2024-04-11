@@ -15,8 +15,8 @@ cmd open ${{
 # https://github.com/gokcehan/lf/blob/master/etc/lfrc.example
 cmd window ${{ [[ -z "$TMUX" ]] && $SHELL || tmux neww }}
 map w window
-cmd browser ${{ [[ -z "$TMUX" ]] && $SHELL || tmux neww lf }}
-map b browser
+cmd vsplit ${{ [[ -z "$TMUX" ]] && $SHELL || tmux split-window -h }}
+map \\ vsplit
 
 # draw only one column
 # https://github.com/gokcehan/lf/wiki/Tips
