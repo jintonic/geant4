@@ -2,8 +2,9 @@
 from physino/geant4:11.2.1
 
 # install git, tmux, micro, lf, gears, uproot, visidata, seaborn, pandas, mdv
+# tornado is used by matplotlib's WebAgg, psutil is used by visidata
 run <<APPS
-dnf install -y git tmux python3-pip python3-tornado
+dnf install -y git tmux python3-pip python3-tornado python3-psutil
 cd /usr/local/bin && curl https://getmic.ro/r | bash
 curl -LO https://github.com/jintonic/gears/raw/master/gears.cc
 curl -LO https://github.com/jintonic/gears/raw/master/Makefile
@@ -45,4 +46,5 @@ run echo 'options.disp_canvas_charset = " +"' >> /root/.visidatarc \
 # lf started by tmux uses vi without the following line
 env EDITOR=micro
 
-expose 8888
+# for WebAgg backend for Matplotlib, up to two plots
+expose 8888 8889
