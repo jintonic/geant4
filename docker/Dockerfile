@@ -1,22 +1,23 @@
 # https://hub.docker.com/r/physino/geant4
 from physino/geant4:11.2.1
 
-# install git, tmux, micro, lf, gears, uproot, visidata, mpld3, seaborn, pandas, mdv
+# install git, tmux, micro, lf, gears, uproot, visidata, seaborn, pandas, mdv
 run <<APPS
-dnf install -y git tmux python3-pip
+dnf install -y git tmux python3-pip python3-tornado
 cd /usr/local/bin && curl https://getmic.ro/r | bash
 curl -LO https://github.com/jintonic/gears/raw/master/gears.cc
 curl -LO https://github.com/jintonic/gears/raw/master/Makefile
 make && rm -f gears.cc Makefile && mkdir -p /etc/lf
 curl -LO https://github.com/gokcehan/lf/releases/download/r31/lf-linux-amd64.tar.gz
 tar xf *.gz && rm -f *.gz && dnf clean all && rm -fr /var/cache/*
-pip install uproot visidata mpld3 seaborn pandas mdv && rm -fr /root/.cache
+pip install uproot visidata seaborn pandas mdv && rm -fr /root/.cache
 APPS
 
 # set up environment
 copy tmux.conf /etc/
 copy lfrc /etc/lf/
 copy micro /root/.config/micro
+copy matplotlibrc /root/.config/matplotlib/
 
 # https://stackoverflow.com/a/27921346/1801749
 run cat <<'BASHRC' >> /etc/bashrc
@@ -44,3 +45,4 @@ run echo 'options.disp_canvas_charset = " +"' >> /root/.visidatarc \
 # lf started by tmux uses vi without the following line
 env EDITOR=micro
 
+expose 8888
