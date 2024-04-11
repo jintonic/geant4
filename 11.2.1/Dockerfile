@@ -46,6 +46,7 @@ c 'cos(90*o)'
 echo $RANDOM
 alias
 mingle
+curl -LO https://github.com/jintonic/geant4/raw/main/compose.yml
 geant4-config --help
 geant4-config --version
 geant4-config --features
