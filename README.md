@@ -1,6 +1,31 @@
 Geant4 container configurations
 
-### Apptainer
+### For Power Users
+
+[compose.yml](compose.yml) in this folder provides the following command to quickly start your container with automatic volume and port mapping to the host:
+
+```sh
+docker compose run geant4
+```
+
+There are two ways to download the [compose.yml](compose.yml) file:
+
+```sh
+# direct downloading using curl:
+curl -LO https://github.com/jintonic/geant4/raw/main/compose.yml
+# or using git:
+git clone https://github.com/jintonic/geant4 .
+```
+
+The [git][] command may fail if your `~/geant4` folder is not empty. In that case, you can use the following commands as a workaround:
+
+```sh
+git init
+git remote add origin https://github.com/jintonic/geant4
+git pull origin main
+```
+
+### For Apptainer Users
 
 Use the following command to get into the container in a Linux host that has [Apptainer][] installed.
 
@@ -17,9 +42,10 @@ export GEANT4_DATA_DIR=~/path/to/geant4/data/in/the/host/
 apptainer exec docker://physino/geant4 bash
 ```
 
-## For developer
+## For Developers
 This repository is created to avoid [Geant4][] related stuff (e.g. datasets, examples, etc.) being duplicated in specific [Geant4][] applications, such as [GEARS][] and [MinGLE][].
 
+[git]: https://git-scm.com
 [Apptainer]: https://apptainer.org
 [Geant4]: https://geant4.org
 [GEARS]: https://github.com/jintonic/gears
