@@ -43,7 +43,6 @@ EOT
 copy <<EOF /root/.bash_history
 c 'sin(pi/2)'
 c 'cos(90*o)'
-echo $RANDOM
 alias
 mingle
 curl -LO https://github.com/jintonic/geant4/raw/main/compose.yml
