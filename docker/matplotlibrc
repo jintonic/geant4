@@ -1,3 +1,5 @@
+# https://matplotlib.org/stable/users/explain/customizing.html#the-matplotlibrc-file
+# https://matplotlib.org/stable/users/explain/figure/backends.html
 backend: WebAgg
 webagg.open_in_browser: False
 # needed to allow connection from any host
