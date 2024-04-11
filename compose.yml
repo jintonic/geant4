@@ -1,20 +1,33 @@
 services:
   geant4:
     image: physino/geant4
+    platform: linux/amd64
+    command: /usr/bin/bash
+    # ports are only exposed by compose up, not compose run
+    # --service-ports is needed for compose run to expose ports
+    ports: [ "8888:8888" ]
+    environment: # https://docs.docker.com/desktop/networking
+      - TZ=US/Central
+      - LIBGL_ALWAYS_INDIRECT=1 # https://unix.stackexchange.com/a/642418/26929
+      - DISPLAY=host.docker.internal:0.0
+    # host.docker.internal doesn't exist in a Linux host
+    # https://stackoverflow.com/a/24326540
+    # https://stackoverflow.com/questions/70725881
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - .:/root/geant4
+    hostname: AlmaLinux
+    build: docker
+  g4:
+    image: physino/geant4:11.2.1
     platform: linux/amd64 # pre-compiled geant4 is not available for arm64
+    profiles: [ "g4" ] # avoid running it by `compose up`
     command: /usr/bin/bash
     volumes: [ .:/root/geant4 ]
     # https://unix.stackexchange.com/a/698068/26929
     # https://stackoverflow.com/a/63291253/1801749
     environment: [ TZ=US/Central ]
     hostname: AlmaLinux # https://stackoverflow.com/a/63291253/1801749
-    build: docker
-  g4:
-    image: physino/geant4:11.2.1
-    platform: linux/amd64
-    profiles: [ "g4" ] # avoid running it by `compose up`
-    command: /usr/bin/bash
-    volumes: [ .:/root/geant4 ]
-    environment: [ TZ=US/Central ]
-    hostname: AlmaLinux
     build: 11.2.1
