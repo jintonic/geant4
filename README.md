@@ -2,7 +2,7 @@ Geant4 container configurations
 
 ### Apptainer
 
-Use the following command to get into the container in a Linux host that has `apptainer` installed.
+Use the following command to get into the container in a Linux host that has [Apptainer][] installed.
 
 ```sh
 apptainer exec docker://physino/geant4 bash --login
@@ -16,3 +16,12 @@ If `GEANT4_DATA_DIR` is declared in the host already, it will be inherited by th
 export GEANT4_DATA_DIR=~/path/to/geant4/data/in/the/host/
 apptainer exec docker://physino/geant4 bash
 ```
+
+## For developer
+This repository is created to avoid [Geant4][] related stuff (e.g. datasets, examples, etc.) being duplicated in specific [Geant4][] applications, such as [GEARS][] and [MinGLE][].
+
+[Apptainer]: https://apptainer.org
+[Geant4]: https://geant4.org
+[GEARS]: https://github.com/jintonic/gears
+[MinGLE]: https://github.com/jintonic/mingle
+
