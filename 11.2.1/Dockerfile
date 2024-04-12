@@ -7,7 +7,7 @@ from --platform=linux/amd64 almalinux
 run <<EOT
 rm -fr afs media mnt srv /root/.*cshrc && cd /usr
 curl -LO https://cern.ch/geant4-data/releases/lib4.11.2.p01/Linux-g++11.4.1-Alma9.tar.gz
-tar xf *.gz && rm -f *.gz README bin/geant4.*
+tar --no-same-owner -xf *.gz && rm -f *.gz README bin/geant4.*
 sed -i -E 's|/build.{,74}Geant4/||g' bin/geant4-config
 EOT
 
@@ -17,7 +17,7 @@ EOT
 # their -devel packages are needed to provide unversioned .so files
 run <<EOT
 dnf install -y gcc-c++ cmake which mesa-libGL-devel libXmu-devel expat-devel
-dnf clean all && rm -fr /var/cache/* 
+dnf clean all && rm -fr /var/cache/*
 curl -LO https://github.com/jintonic/mingle/raw/main/CMakeLists.txt
 curl -LO https://github.com/jintonic/mingle/raw/main/mingle.cc
 cmake . && make install && rm -fr mingle* *ake* *.txt
