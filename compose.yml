@@ -10,7 +10,7 @@ services:
     ports: [ 8888:8888, 8889:8889 ]
     environment: [ TZ=US/Central ]
     hostname: AlmaLinux
-    build: docker
+    build: container
   g4:
     image: physino/geant4:11.2.1
     platform: linux/amd64 # pre-compiled geant4 is not available for arm64
