@@ -6,7 +6,7 @@ map a :push %mkdir<space>-p<space>
 map <enter> open
 cmd open ${{
   case ${f##*.} in
-    csv) vd "$f";;
+    csv) TERM=xterm-256color vd "$f";;
     md) mdv "$f" | less -r;;
     *) micro $fx;;
   esac
