@@ -22,7 +22,8 @@ The [git][] command may fail if your `~/geant4` folder is not empty. In that cas
 ```sh
 git init
 git remote add origin https://github.com/jintonic/geant4
-git pull origin main
+git branch --set-upstream-to=origin/main main
+git pull
 ```
 
 ### For Apptainer Users
