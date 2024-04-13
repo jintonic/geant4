@@ -1,20 +1,21 @@
-BootStrap: docker
-From: physino/geant4
+bootstrap: docker
+from: physino/geant4
 
 %post
 # prepare X11 based backend for matplotlib in Linux
 dnf install -y python3-tkinter && dnf clean all && rm -fr /var/cache/*
-cat<<'EOF'>>/.singularity.d/env/99-g4.sh
-#!/bin/sh
-export GEANT4_DATA_DIR=~/geant4/data
-# customize container PS1 (https://stackoverflow.com/a/61251143)
-PS1="\[\e[32m\]\u@AlmaLinux:\[\e[34m\]\w \[\e[31m\]\$\[\e[m\] "
-EOF
 
-%environment
-# https://github.com/apptainer/singularity/issues/643
-# settings in ~/.bashrc will be loaded last
-export SINGULARITY_SHELL=/usr/bin/bash
+# set GEANT4_DATA_DIR for non-login sh, such as the one
+# created by apptainer shell library://..
+# GEANT4_DATA_DIR is set in /etc/bashrc in physino/geant4
+# that file will not be loaded by a non-login sh
+# but files in /.singularity.d/env will be sourced
+# accroding to https://stackoverflow.com/a/61251143
+tail -20 /etc/bashrc >> /.singularity.d/env/99-base.sh
 
 %runscript
-gears "$@"
+# apptainer run and shell will not source host ~/.bashrc
+# apptainer exec library://.. bash will
+# apptainer exec library://.. bash --login will also source container
+# /etc/bashrc, where alias and functions are defined
+bash --login "$@"
