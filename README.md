@@ -20,10 +20,14 @@ git clone https://github.com/jintonic/geant4 .
 The [git][] command may fail if your `~/geant4` folder is not empty. In that case, you can use the following commands as a workaround:
 
 ```sh
+# create local git repository in the current folder
 git init
+# connect local git repository with the remote one
 git remote add origin https://github.com/jintonic/geant4
+# pull remote contents to the local repository
+git pull origin main
+# map remote and local branches so that `git pull` works in the future
 git branch --set-upstream-to=origin/main main
-git pull
 ```
 
 ### For Apptainer Users
