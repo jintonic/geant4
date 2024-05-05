@@ -1,5 +1,8 @@
 Geant4 container configurations
 
+### Download Geant4 Examples
+The latest [Geant4][] examples can be found in <https://github.com/Geant4/geant4/tree/master/examples>. The best way to download a single example from there is described in a [StackOverflow][] post: <https://stackoverflow.com/a/70729494/1801749>.
+
 ### For Power Users
 
 [compose.yml](compose.yml) in this folder provides the following command to quickly start your container with automatic volume and port mapping to the host:
@@ -50,6 +53,7 @@ apptainer exec docker://physino/geant4 bash
 ## For Developers
 This repository is created to avoid [Geant4][] related stuff (e.g. datasets, examples, etc.) being duplicated in specific [Geant4][] applications, such as [GEARS][] and [MinGLE][].
 
+[StackOverflow]: https://stackoverflow.com
 [git]: https://git-scm.com
 [Apptainer]: https://apptainer.org
 [Geant4]: https://geant4.org
