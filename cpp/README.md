@@ -1,4 +1,4 @@
-Geant4 is written in C++. The following knowledge of C++ can be helpful to understand the usage of Geant4.
+[Geant4][] is written in C++. The following knowledge of C++ can be helpful to understand the usage of [Geant4][].
 
 ## Compile a Simple C++ Program
 
@@ -8,16 +8,23 @@ Geant4 is written in C++. The following knowledge of C++ can be helpful to under
 # compile hello.cc using GNU C++ compiler, g++
 # an executable, a.out, will be generated from hello.cc
 g++ hello.cc
-# run a.out in the current folder (./)
+# run a.out in current folder (./)
 ./a.out
 # compile hello.cc to hello instead of a.out
 g++ hellow.cc -o hello
+# run hello in current folder (./)
+./hello
+# check which libraries are linked in hello
+# https://unix.stackexchange.com/questions/120015
+ldd hello
 ```
 
 `g++ hello.cc` does not show any output. One can request `g++` to show the compilation process in detail with the verbose option -v:
+
 ```sh
 g++ -v hello.cc
 ```
+
 For people who want to learn more, the verbose output of g++ is explained in detail here: <https://stackoverflow.com/a/13456065/1801749>
 
 ## Use Makefile to Simplify Compilation Commands
@@ -32,6 +39,8 @@ make
 make clean
 # install hello to /usr/local/bin/ folder
 make install
+# run hello in any folder without ./
+hello
 # remove /usr/local/bin/hello
 make uninstall
 ```
@@ -52,6 +61,9 @@ make install
 
 Note that [CMake][] doesn't provide `uninstall` option by default: <https://stackoverflow.com/questions/41471620/>.
 
+Now you are ready to proceed to <https://github.com/jintonic/mingle> to learn how to write and compile (or *build* if we use the [CMake][] terminology) a C++ program that uses [Geant4][] libraries.
+
+[Geant4]: https://geant4.org
 [recipe]: https://www.gnu.org/software/make/manual/html_node/Recipes.html
 [compiler]: https://en.wikipedia.org/wiki/Compiler
 [GCC]: https://gcc.gnu.org
