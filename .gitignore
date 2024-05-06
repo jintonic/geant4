@@ -9,3 +9,6 @@ shine/
 *.sif
 B?
 Mordred*
+build/
+a.out
+hello
