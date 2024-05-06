@@ -50,6 +50,8 @@ make
 make install
 ```
 
+Note that [CMake][] doesn't provide `uninstall` option by default: <https://stackoverflow.com/questions/41471620/>.
+
 [recipe]: https://www.gnu.org/software/make/manual/html_node/Recipes.html
 [compiler]: https://en.wikipedia.org/wiki/Compiler
 [GCC]: https://gcc.gnu.org
