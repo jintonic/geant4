@@ -1,5 +1,3 @@
-Geant4 from Zero to Hero
-
 ## What is Geant4
 
 [![Presentation slides](https://img.shields.io/badge/Presentation-Slides-orange?style=flat)](https://coyotesusd-my.sharepoint.com/:p:/g/personal/jing_liu_usd_edu/EbT7XcboP-ZIqc2d5Rf6pUYBAFLGL7NVs_Ubf-SCWhePrA?e=0Eb6ZO)
