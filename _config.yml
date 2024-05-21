@@ -1,3 +1,4 @@
 theme: jekyll-theme-leap-day
 title: Geant4 from Zero to Hero
 description: Geant4 tutorials for everybody
+show_downloads: ["false" ]
