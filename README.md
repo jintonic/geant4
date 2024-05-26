@@ -2,11 +2,12 @@
 
 According to <https://geant4.org>, Geant4 is a
 > **Toolkit** for the simulation of the passage of particles through matter.
+
 which means that it is **NOT** a program that can be installed, double-clicked, and run.
 
-Instead, Geant4 is provided as a set of C++ libraries that need to be compiled.[^1] One must write a C++ program (Geant4 application) that calls functions provided in the compiled Geant4 libraries. The application itself also needs to be compiled, before it can be double-clicked and run.
+Instead, Geant4 is provided as a set of C++ libraries that need to be compiled[^1]. One must write a C++ program (Geant4 application) that calls functions provided in the compiled Geant4 libraries. The application itself also needs to be compiled, before it can be double-clicked and run.
 
-[1]: The compiled ones only work in very specific operating systems.
+[^1]: The compiled ones only work in very specific operating systems.
 
 Think Geant4 as a set of disassembled Lego pieces (libraries). One needs to put them together into a car, a plane, or something else (applications).
 
@@ -27,7 +28,7 @@ Most of us are Geant4 end users. All we need is a Geant4 application that has al
 [B1]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Examples/BasicCodes.html#exmpbasic-b1
 
 According to <https://geant4.org/docs/#user-guides>, 
-> If you are new to Geant4, we recommend that you read this document (Geant4 users guide for application developers) first. The first part of the document provides a step-by-step tutorial in the use of Geant4; this is for a novice user. The second part describes the usage of the toolkit for practical applications, with a lot of example codes. After reading this part, you will be able to start to write a detector simulation program for most applications/experiments.
+> If you are new to Geant4, we recommend that you read this document (Geant4 users guide for application developers) first. The first part of the document provides a step-by-step tutorial in the use of Geant4; this is for a **novice** user. The second part describes the usage of the toolkit for practical applications, with a lot of example codes. After reading this part, you will be able to start to *write a detector simulation program* for most applications/experiments.
 
 The shocking fact for many of us is that there is **NO** guide for end users! This is understandable, because Geant4 is provided as a **toolkit**, way more powerful than a specific **application**. Nevertheless, this is bad news for a beginning end user.
 
