@@ -1,20 +1,22 @@
-[![Presentation slides](https://img.shields.io/badge/Presentation-Slides-orange?style=flat)](https://coyotesusd-my.sharepoint.com/:p:/g/personal/jing_liu_usd_edu/EbT7XcboP-ZIqc2d5Rf6pUYBAFLGL7NVs_Ubf-SCWhePrA?e=0Eb6ZO)
+[![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://www.youtube.com/@physino)
+[![Web UI](https://img.shields.io/badge/Web-UI-blue?style=flat)](shine:-web-ui-for-geant4)
+[![Geant4 Container](https://img.shields.io/badge/Geant4-Container-yellow?style=flat)](geant4-container)
 
 According to <https://geant4.org>, Geant4 is a
 > **Toolkit** for the simulation of the passage of particles through matter.
 
 which means that it is **NOT** a program that can be installed, double-clicked, and run.
 
-Instead, Geant4 is provided as a set of C++ libraries that need to be compiled[^1]. One must write a C++ program (Geant4 application) that calls functions provided in the compiled Geant4 libraries. The application itself also needs to be compiled, before it can be double-clicked and run.
+Instead, Geant4 is provided as a set of C++ libraries that need to be compiled [^1]. One must write a C++ program (Geant4 application) that calls functions provided in the compiled Geant4 libraries. The application itself also needs to be compiled, before it can be double-clicked and run.
 
 [^1]: The compiled ones only work in very specific operating systems.
 
-Think Geant4 as a set of disassembled Lego pieces (libraries). One needs to put them together into a car, a plane, or something else (applications).
+Think Geant4 as a set of disassembled Lego pieces (libraries). One needs to put them together into a Lego model, such as a car, a plane, or a house, etc. (applications).
 
 The Geant4 [Q&A] hence defines three types of users:
 
 - the **end user**, who uses a Geant4 application written by someone else,
-- the **application programmer**, who writes a Geant4 application, and
+- the **application developer**, who writes a Geant4 application, and
 - the **framework provider**, who updates or extends Geant4 libraries.
 
 This tutorial is provided to flatten the steep learning curve of Geant4 for the first two types of users with some thoughts on how a framework provider can serve the first two better.
@@ -23,14 +25,17 @@ This tutorial is provided to flatten the steep learning curve of Geant4 for the 
 
 ## For End Users
 
-Most of us are Geant4 end users. All we need is a Geant4 application that has already been compiled for our operating system so that we can double click and run it. Geant4 does provide many example applications to show its muscle. However, too many choices actually paralyze our poor end users. Which one shall we choose?! A reasonable choice would be the simplest one. However, the simplest Geant4 application example, [B1][], has very limited functionality. To adopt it for our specific applications, we, as end users, are forced to learn how to modify and compile a Geant4 example application, and become an application programmer. No wonder the first Geant4 User guide is for application developers instead of end users.
+Most of us are end users. All we need is a Geant4 application that has already been compiled for our operating system so that we can double click and run it. Geant4 does provide many [example applications] to show its muscles. However, too many choices actually paralyze a poor end user. Which one shall we choose?! A reasonable choice would be the simplest one. However, the simplest Geant4 application example, [B1][], has very limited functionality. To adopt it for our specific applications, we, as end users, are forced to learn how to modify and compile a Geant4 example application, and become an application developer. No wonder the first Geant4 User guide is for application developers instead of end users.
 
+[example applications]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Examples/examples.html
 [B1]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Examples/BasicCodes.html#exmpbasic-b1
 
 According to <https://geant4.org/docs/#user-guides>, 
-> If you are new to Geant4, we recommend that you read this document (Geant4 users guide for application developers) first. The first part of the document provides a step-by-step tutorial in the use of Geant4; this is for a **novice** user. The second part describes the usage of the toolkit for practical applications, with a lot of example codes. After reading this part, you will be able to start to *write a detector simulation program* for most applications/experiments.
+> If you are new to Geant4, we recommend that you read this document ([Geant4 User Guide for Application Developers]) first. The first part of the document provides a step-by-step tutorial in the use of Geant4; this is for a **novice** user. The second part describes the usage of the toolkit for practical applications, with a lot of example codes. After reading this part, you will be able to start to *write a detector simulation program* for most applications/experiments.
 
-The shocking fact for many of us is that there is **NO** guide for end users! This is understandable, because Geant4 is provided as a **toolkit**, way more powerful than a specific **application**. Nevertheless, this is bad news for a beginning end user.
+[Geant4 User Guide for Application Developers]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/index.html
+
+The shocking fact is that there is **NO** guide for end users! This is understandable, because Geant4 is provided as a **toolkit** (individual Lego pieces), way more flexible than a specific **application** (a finished Lego model). Nevertheless, this is bad news for absolute beginners who need an executable application instead of a comprehensive but complicated toolkit.
 
 Is it possible to provide a compiled Geant4 application that can be double clicked and run for different simulations on different operating systems? This is a mission impossible because
 
@@ -38,6 +43,8 @@ Is it possible to provide a compiled Geant4 application that can be double click
 - A C++ program must be compiled on a specific operating system to run on that system. A C++ program that is compiled on a Mac cannot be used on a Windows or a Linux computer.
 
 However, there are ways to get closer to this goal. To solve the first problem, a web-based user interface <https://physino.xyz/shine> can be used by the end user to construct a specific detector or shielding structure without C++ programming. To solve the second problem, a docker image <https://hub.docker.com/r/physino/geant4> can be used to include Geant4 libraries and a Geant4 application that can read the output of <https://physino.xyz/shine>, which can be downloaded and run on all major operating systems.
+
+### Shine: a web user interface for Geant4
 
 ### For Docker Users
 
