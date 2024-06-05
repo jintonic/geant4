@@ -1,6 +1,6 @@
 [![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://www.youtube.com/@physino)
-[![Web UI](https://img.shields.io/badge/Web-UI-blue?style=flat)](shine:-web-ui-for-geant4)
-[![Geant4 Container](https://img.shields.io/badge/Geant4-Container-yellow?style=flat)](geant4-container)
+[![Web UI](https://img.shields.io/badge/Web-UI-blue?style=flat)](shine-a-web-ui-for-geant4)
+[![Geant4 Container](https://img.shields.io/badge/Geant4-Container-green?style=flat)](geant4-container)
 
 According to <https://geant4.org>, Geant4 is a
 > **Toolkit** for the simulation of the passage of particles through matter.
@@ -15,15 +15,18 @@ Think Geant4 as a set of disassembled Lego pieces (libraries). One needs to put 
 
 The Geant4 [Q&A] hence defines three types of users:
 
-- the **end user**, who uses a Geant4 application written by someone else,
-- the **application developer**, who writes a Geant4 application, and
-- the **framework provider**, who updates or extends Geant4 libraries.
+- the [end user], who uses a Geant4 application written by someone else,
+- the [application developer], who writes a Geant4 application, and
+- the [framework provider], who updates or extends Geant4 libraries.
 
 This tutorial is provided to flatten the steep learning curve of Geant4 for the first two types of users with some thoughts on how a framework provider can serve the first two better.
 
 [Q&A]: https://geant4-userdoc.web.cern.ch/UsersGuides/IntroductionToGeant4/html/IntroductionToG4.html#software-knowledge-required-to-use-the-geant4-toolkit
+[end user]: #for-end-user
+[application developer]: #for-application-developer
+[framework provider]: #for-framework-provider
 
-## For End Users
+## For End User
 
 Most of us are end users. All we need is a Geant4 application that has already been compiled for our operating system so that we can double click and run it. Geant4 does provide many [example applications] to show its muscles. However, too many choices actually paralyze a poor end user. Which one shall we choose?! A reasonable choice would be the simplest one. However, the simplest Geant4 application example, [B1][], has very limited functionality. To adopt it for our specific applications, we, as end users, are forced to learn how to modify and compile a Geant4 example application, and become an application developer. No wonder the first Geant4 User guide is for application developers instead of end users.
 
@@ -42,11 +45,21 @@ Is it possible to provide a compiled Geant4 application that can be double click
 - There is no way to include all existing, or to-be-constructed radiation detectors or shielding geometries into one program. Even end users must be responsible for constructing their specific geometries.
 - A C++ program must be compiled on a specific operating system to run on that system. A C++ program that is compiled on a Mac cannot be used on a Windows or a Linux computer.
 
-However, there are ways to get closer to this goal. To solve the first problem, a web-based user interface <https://physino.xyz/shine> can be used by the end user to construct a specific detector or shielding structure without C++ programming. To solve the second problem, a docker image <https://hub.docker.com/r/physino/geant4> can be used to include Geant4 libraries and a Geant4 application that can read the output of <https://physino.xyz/shine>, which can be downloaded and run on all major operating systems.
+However, there are ways to get closer to this goal. To solve the first problem, a [web-based user interface] can be used by the [end user] to construct a specific detector or shielding structure without C++ programming. To solve the second problem, a [docker image] can be used to include Geant4 libraries and a Geant4 application that can read the output of <https://physino.xyz/shine>, which can be downloaded and run on all major operating systems.
 
-### Shine: a web user interface for Geant4
+[web-based user interface]: #shine-a-web-ui-for-geant4
 
-### For Docker Users
+### Shine: a Web UI for Geant4
+
+[![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://www.youtube.com/@physino)
+[![Shine](https://img.shields.io/badge/Shine-blue?style=flat)](https://physino.xyz/shine)
+
+![Shine: a Web UI for Geant4](https://drive.google.com/uc?id=1IYnxORUysfgw7ymhGuH_jlVCUpe2lsd-)
+
+### Geant4 Container
+[![physino/geant4](https://img.shields.io/badge/physino-geant4-blue?style=flat)](https://hub.docker.com/r/physino/geant4)
+
+#### For Docker Users
 
 [compose.yml](compose.yml) in this folder provides the following command to quickly start your container with automatic volume and port mapping to the host:
 
@@ -76,7 +89,7 @@ git pull origin main
 git branch --set-upstream-to=origin/main main
 ```
 
-### For Apptainer Users
+#### For Apptainer Users
 
 Use the following command to get into the container in a Linux host that has [Apptainer][] installed.
 
@@ -93,12 +106,22 @@ export GEANT4_DATA_DIR=~/path/to/geant4/data/in/the/host/
 apptainer exec docker://physino/geant4 bash
 ```
 
-### Download Geant4 Examples
-The latest [Geant4][] examples can be found in <https://github.com/Geant4/geant4/tree/master/examples>. The best way to download a single example from there is described in a [StackOverflow][] post: <https://stackoverflow.com/a/70729494/1801749>.
+#### Download Official Geant4 Examples
 
-## For Developers
+[![GEARS](https://img.shields.io/badge/GEARS-red?style=flat)](https://www.github.com/jintonic/gears)
+[![MinGLE](https://img.shields.io/badge/MinGLE-blue?style=flat)](https://www.github.com/jintonic/mingle)
+[![Official Examples](https://img.shields.io/badge/Official-Examples-green?style=flat)](https://github.com/Geant4/geant4/tree/master/examples)
 
-This repository is created to avoid [Geant4][] related stuff (e.g. datasets, examples, etc.) being duplicated in specific [Geant4][] applications, such as [GEARS][] and [MinGLE][].
+[GEARS][] and [MinGLE][] are more [end user] friendly than most [official geant4 examples]. However, if  The latest [Geant4][] examples can be found in <https://github.com/Geant4/geant4/tree/master/examples>. The best way to download a single example from there is described in a [StackOverflow][] post: <https://stackoverflow.com/a/70729494/1801749>.
+
+[official geant4 examples]: https://github.com/Geant4/geant4/tree/master/examples
+
+## For Application Developer
+[![GEARS](https://img.shields.io/badge/GEARS-red?style=flat)](https://www.github.com/jintonic/gears)
+[![MinGLE](https://img.shields.io/badge/MinGLE-blue?style=flat)](https://www.github.com/jintonic/mingle)
+[![Shine](https://img.shields.io/badge/Shine-yellow?style=flat)](https://www.github.com/jintonic/shine)
+
+This GitHub [repository] was originally created to avoid duplicating common [Geant4][] related stuff (e.g. datasets, containers, documentation, etc.) in individual [Geant4][] applications, such as [GEARS][] and [MinGLE][]. It has evolved into a central hub to collect and disseminate my ideas and effort toward a more [end user] friendly Geant4 ecosystem. Welcome to join me if you are interested in the development of [Shine][], [GEARS][], [MinGLE][], or YouTube [tutorials][]. - [Physino][]
 
 [StackOverflow]: https://stackoverflow.com
 [git]: https://git-scm.com
@@ -106,4 +129,8 @@ This repository is created to avoid [Geant4][] related stuff (e.g. datasets, exa
 [Geant4]: https://geant4.org
 [GEARS]: https://github.com/jintonic/gears
 [MinGLE]: https://github.com/jintonic/mingle
-
+[repository]: https://github.com/jintonic/geant4
+[physino]: https://physino.xyz
+[shine]: https://physino.xyz/shine
+[image]: https://hub.docker.com/r/physino/geant4
+[tutorials]: https://www.youtube.com/@physino
