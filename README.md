@@ -54,7 +54,7 @@ However, there are ways to get closer to this goal. To solve the first problem, 
 [![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://www.youtube.com/@physino)
 [![Shine](https://img.shields.io/badge/Shine-blue?style=flat)](https://physino.xyz/shine)
 
-![Shine: a Web UI for Geant4](https://drive.google.com/uc?id=1IYnxORUysfgw7ymhGuH_jlVCUpe2lsd-)
+![Shine: a Web UI for Geant4](https://drive.usercontent.google.com/download?id=1IYnxORUysfgw7ymhGuH_jlVCUpe2lsd-)
 
 ### Geant4 Container
 [![physino/geant4](https://img.shields.io/badge/physino-geant4-blue?style=flat)](https://hub.docker.com/r/physino/geant4)
