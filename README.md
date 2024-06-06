@@ -58,19 +58,32 @@ It is the user's responsibility to provide a detector model for a Geant4 simulat
 
 [program detector definition and response in C++]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Detector/detector.html
 
-Fortunately, Geant4 also allows [end users] to write their detector definition in two simpler ways:
+Fortunately, Geant4 also allows end users to write their detector definition in
 
-- [Text geometry description][tg] (manual: [pdf](https://cern.ch/geant4/collaboration/working_groups/persistency/docs/textgeom.pdf), [html](http://fismed.ciemat.es/GAMOS/GAMOS_doc/GAMOS.6.0.0/Geometry/Geometry.html))
+- [plain text format][tg] (manual: [pdf](https://cern.ch/geant4/collaboration/working_groups/persistency/docs/textgeom.pdf), [html](http://fismed.ciemat.es/GAMOS/GAMOS_doc/GAMOS.6.0.0/Geometry/Geometry.html))
 - [GDML][]
 
-Their difference is similar to that between [markdown][md] and [HTML][]. The simpler [text geometry description][tg] is the easiest to learn.
+Their difference is similar to that between [markdown][md] and [HTML][]. The detector definition in [plain text][tg] is the easiest to learn.
 
-However, writing in a text file is not the most intuitive way to construct and debug 3D geometries. A graphic user interface (UI) is better suited for this task. [Shine][] is such a UI on the web. One can use the mouse to select, place, rotate basic shapes on a canvas, and export the constructed detector model to a [text geometry][tg] file, which can be read by Geant4.
+However, writing in a text file is not the most intuitive way to construct and debug 3D geometries. A graphic user interface (UI) is better suited for this task. [Shine][] is such a UI on the web. One can use the mouse to select, place, rotate basic shapes on a canvas, and export the constructed detector model to a [plain text file][tg] called `detector.tg`, which can be read by a Geant4 application.
 
 ![Shine: a Web UI for Geant4](https://lh3.googleusercontent.com/d/1IYnxORUysfgw7ymhGuH_jlVCUpe2lsd-)
 
 ### Geant4 Container
+
 [![physino/geant4](https://img.shields.io/badge/physino-geant4-blue?style=flat)](https://hub.docker.com/r/physino/geant4)
+
+The compilation of Geant4 C++ libraries and applications is a very challenging process for most end users who have limited experience on command-line user interface and C++ programming. The easiest way to bypass this challenge is to package both Geant4 libraries and some versatile applications into a single [container][] image that can be used in all operating systems without any modification.
+
+[container]: https://www.docker.com/resources/what-container
+
+<https://hub.docker.com/r/physino/geant4> is such an image. It includes the [official Geant4 libraries pre-compiled on AlmaLinux 9](https://geant4.org/download) and two tiny [universial Geant4 applications], [GEARS][] and [MinGLE][], that accept the `detector.tg` file exported from [Shine][].
+
+[universial Geant4 applications]: https://www.youtube.com/watch?v=3g9CkyBS31o
+
+To use this image, we need to install [Docker Desktop][], a program that manages container images and containers. Please follow <https://youtu.be/RIBJ-2LsqsA> to get familiar with the program and the concept behind it.
+
+[Docker Desktop]: https://www.docker.com/products/docker-desktop
 
 #### For Docker Users
 
