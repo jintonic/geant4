@@ -7,7 +7,7 @@ According to <https://geant4.org>, Geant4 is a
 
 which means that it is **NOT** a program that can be double-clicked and run after installation.
 
-Instead, Geant4 is provided as a set of C++ libraries that need to be compiled [^1]. One must write a C++ program (Geant4 [application]) that calls functions provided in the compiled Geant4 libraries. The [application] itself also needs to be compiled, before it can be double-clicked and run.
+Instead, Geant4 is provided as a set of C++ libraries that need to be compiled [^1]. One must write a C++ program (Geant4 application) that calls functions provided in the compiled Geant4 libraries. The application itself also needs to be compiled, before it can be double-clicked and run.
 
 [^1]: The compiled ones only work on very specific operating systems. This approach works best for Windows users. Please watch the first 5 videos in [this] YouTube playlist.
 
@@ -17,8 +17,8 @@ Think Geant4 as a set of disassembled Lego pieces (libraries). One needs to put 
 
 The Geant4 [Q&A] hence defines three types of users:
 
-- the [end user], who uses a Geant4 [application] written by someone else,
-- the [application developer], who writes a Geant4 [application], and
+- the [end user], who uses a Geant4 application written by someone else,
+- the [application developer], who writes a Geant4 application, and
 - the *framework provider*, who updates or extends Geant4 libraries.
 
 This website is provided to flatten the steep learning curve of Geant4 for the first two types of users with some thoughts on how a framework provider can serve the first two better.
@@ -29,9 +29,9 @@ This website is provided to flatten the steep learning curve of Geant4 for the f
 
 ## For End User
 
-Most of us are end users. All we need is a Geant4 [application] that has already been compiled for our operating system so that we can double click and run it. Geant4 does provide many [example applications] to show its muscles. However, too many choices actually paralyze a poor end user. Which one shall we choose?! A reasonable choice would be the simplest one. However, the simplest Geant4 application example, [B1][], has very limited functionality. To adopt it for our specific applications, we, as end users, are forced to learn how to modify and compile a Geant4 example [application], and become an [application developer]. No wonder the first Geant4 User guide is for application developers instead of end users.
+Most of us are end users. All we need is a Geant4 application that has already been compiled for our operating system so that we can double click and run it. Geant4 does provide many [example application]s to show its muscles. However, too many choices actually paralyze a poor end user. Which one shall we choose?! A reasonable choice would be the simplest one. However, the simplest Geant4 application example, [B1][], has very limited functionality. To adopt it for our specific applications, we, as end users, are forced to learn how to modify and compile a Geant4 [example application], and become an [application developer]. No wonder the first Geant4 User guide is for [application developer]s instead of end users.
 
-[example applications]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Examples/examples.html
+[example application]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Examples/examples.html
 [B1]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Examples/BasicCodes.html#exmpbasic-b1
 
 According to <https://geant4.org/docs/#user-guides>, 
@@ -46,17 +46,16 @@ Is it possible to provide a compiled Geant4 application that can be double click
 - There is no way to include all existing, or to-be-constructed radiation detectors or shielding geometries into one program. Even end users must be responsible for constructing their specific detectors.
 - A C++ program must be compiled on a specific operating system to run on that system. A C++ program that is compiled on a Mac cannot be used on a Windows or a Linux computer.
 
-However, there are ways to get closer to this goal. To solve the first problem, a [web-based user interface] can be used by the [end user] to construct a specific detector or shielding structure without C++ programming. To solve the second problem, a [container] image can be used to include compiled Geant4 libraries and ready-to-run applications that can read the output of the web UI. Both can run on all major operating systems and require no C++ programming experience to begin with.
+However, there are ways to get closer to this goal. To solve the first problem, a [web-based user interface] can be used by an end user to construct a specific detector or shielding structure without C++ programming. To solve the second problem, a [container] image can be used to include compiled Geant4 libraries and ready-to-run [application]s that can read the output of the web UI. Both can run on all major operating systems and require no C++ programming experience to begin with.
 
 [web-based user interface]: #shine-a-web-ui-for-geant4
 [container]: #geant4-container
 
 ### Shine: a Web UI for Geant4
 
-[![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://www.youtube.com/@physino)
 [![Shine](https://img.shields.io/badge/Shine-orange?style=flat)](https://physino.xyz/shine)
 
-It is the user's responsibility to provide a detector model for a Geant4 simulation. The [Geant4 User Guide for Application Developers] provides detailed instruction on how to [program detector definition and response in C++]. Again, an [end user] is forced to become an [application developer] if he or she chooses to go that route.
+It is the user's responsibility to provide a detector model for a Geant4 simulation. The [Geant4 User Guide for Application Developers] provides detailed instruction on how to [program detector definition and response in C++]. Again, end users are forced to become application developers if they choose to go that route.
 
 [program detector definition and response in C++]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Detector/detector.html
 
@@ -67,7 +66,7 @@ Fortunately, Geant4 also allows end users to write their detector definition in
 
 Their difference is similar to that between [markdown][md] and [HTML][]. The detector definition in [plain text][tg] is the easiest to learn.
 
-However, writing in a text file is not the most intuitive way to construct and debug 3D geometries. A graphic user interface (UI) is better suited for this task. [Shine][] is such a UI on the web. One can use the mouse to select, place, rotate basic shapes on a canvas, and export the constructed detector model to a [plain text file][tg] called `detector.tg`, which can be read by a Geant4 application that is configured to accept [detector definition in plain text format][tg].
+However, writing in a text file is not the most intuitive way to construct and debug 3D geometries. A graphic user interface (UI) is better suited for this task. [Shine][] is such a UI on the web. One can use the mouse to select, place, rotate basic shapes on a canvas, and export the constructed detector model to a [plain text file][tg] called `detector.tg`, which can be read by a Geant4 application that is configured to accept detector definition in plain text format.
 
 ![Shine: a Web UI for Geant4](https://lh3.googleusercontent.com/d/1IYnxORUysfgw7ymhGuH_jlVCUpe2lsd-)
 
@@ -75,20 +74,24 @@ However, writing in a text file is not the most intuitive way to construct and d
 
 [![physino/geant4](https://img.shields.io/badge/physino-geant4-blue?style=flat)](https://hub.docker.com/r/physino/geant4)
 
-The [compilation][] of Geant4 C++ libraries and [application]s is a very challenging process for most end users who have limited experience on command-line user interface and C++ programming. The easiest way to bypass this challenge is to package both Geant4 libraries and some versatile [application]s into a single [container][] image that can be used in all operating systems without any modification.
+The [compilation][] of Geant4 C++ libraries and applications is a very challenging process for most end users who have limited experience on command-line user interface and C++ programming. The easiest way to bypass this challenge is to package both Geant4 libraries and some versatile [application]s into a single [container][] image that can be used in all operating systems without any modification.
 
 [compilation]: https://www.youtube.com/playlist?list=PLw3G-vTgPrdB9Nt2ekl2oL1yoqEC294Uf
 [container]: https://www.docker.com/resources/what-container
 
-<https://hub.docker.com/r/physino/geant4> is such an image. It includes the [official Geant4 libraries pre-compiled on AlmaLinux 9](https://geant4.org/download) and two tiny universal Geant4 [application]s, [GEARS][] and [MinGLE][], that accept the `detector.tg` file exported from [Shine][].
+<https://hub.docker.com/r/physino/geant4> is such an image. It includes the [official Geant4 libraries pre-compiled on AlmaLinux 9](https://geant4.org/download) and two tiny universal Geant4 [application]s, [GEARS][] and [MinGLE][]. Both accept the `detector.tg` file exported from [Shine][].
 
 [application]: https://www.youtube.com/watch?v=3g9CkyBS31o
 
-To use this image, we need to install [Docker Desktop][], a program that manages container images and containers. Please follow <https://youtu.be/RIBJ-2LsqsA> to get familiar with the program and the concept behind it.
+To use this image, we need to install [Docker Desktop][], a program that manages container images and containers created from images. Please follow <https://youtu.be/RIBJ-2LsqsA> to get familiar with the program and the concept behind it. I promise, this is the only program you ever need to install to go from zero to hero in Geant4 simulation.
 
 [Docker Desktop]: https://www.docker.com/products/docker-desktop
 
 #### For Docker Users
+
+> **Warning**
+> The end user friendly documentation in this section is still under construction.
+> Some knowledge about command-line operations is needed beyond this point.
 
 [compose.yml](compose.yml) in this folder provides the following command to quickly start your container with automatic volume and port mapping to the host:
 
