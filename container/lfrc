@@ -7,17 +7,20 @@ map <enter> open
 cmd open ${{
   case ${f##*.} in
     csv) TERM=xterm-256color vd "$f";;
-    md) mdv "$f" | less -r;;
+    md) mdv -u h "$f" | less -r;;
+    py) python3 "$f";;
     *) micro $fx;;
   esac
 }}
 
-# create a new terminal window
+# create a new terminal window in current folder
 # https://github.com/gokcehan/lf/blob/master/etc/lfrc.example
 cmd window ${{ [[ -z "$TMUX" ]] && $SHELL || tmux neww }}
 map w window
-cmd vsplit ${{ [[ -z "$TMUX" ]] && $SHELL || tmux split-window -h }}
-map \\ vsplit
+cmd hsplit ${{ [[ -z "$TMUX" ]] && $SHELL || tmux split-window -h }}
+map \\ hsplit
+cmd vsplit ${{ [[ -z "$TMUX" ]] && $SHELL || tmux split-window }}
+map - vsplit
 
 # draw only one column
 # https://github.com/gokcehan/lf/wiki/Tips
