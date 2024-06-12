@@ -7,19 +7,21 @@ According to <https://geant4.org>, Geant4 is a
 
 which means that it is **NOT** a program that can be double-clicked and run after installation.
 
-Instead, Geant4 is provided as a set of C++ libraries that need to be compiled [^1]. One must write a C++ program (Geant4 application) that calls functions provided in the compiled Geant4 libraries. The application itself also needs to be compiled, before it can be double-clicked and run.
+Instead, Geant4 is provided as a set of C++ libraries that need to be compiled [^1]. One must write a C++ program (Geant4 [application]) that calls functions provided in the compiled Geant4 libraries. The [application] itself also needs to be compiled, before it can be double-clicked and run.
 
-[^1]: The compiled ones only work in very specific operating systems.
+[^1]: The compiled ones only work on very specific operating systems. This approach works best for Windows users. Please watch the first 5 videos in [this] YouTube playlist.
+
+[this]: https://www.youtube.com/playlist?list=PLw3G-vTgPrdB7cIYWEoCeIZrSePpefFEW
 
 Think Geant4 as a set of disassembled Lego pieces (libraries). One needs to put them together into a Lego model, such as a car, a plane, or a house, etc. (applications).
 
 The Geant4 [Q&A] hence defines three types of users:
 
-- the [end user], who uses a Geant4 application written by someone else,
-- the [application developer], who writes a Geant4 application, and
+- the [end user], who uses a Geant4 [application] written by someone else,
+- the [application developer], who writes a Geant4 [application], and
 - the *framework provider*, who updates or extends Geant4 libraries.
 
-This tutorial is provided to flatten the steep learning curve of Geant4 for the first two types of users with some thoughts on how a framework provider can serve the first two better.
+This website is provided to flatten the steep learning curve of Geant4 for the first two types of users with some thoughts on how a framework provider can serve the first two better.
 
 [Q&A]: https://geant4-userdoc.web.cern.ch/UsersGuides/IntroductionToGeant4/html/IntroductionToG4.html#software-knowledge-required-to-use-the-geant4-toolkit
 [end user]: #for-end-user
@@ -27,7 +29,7 @@ This tutorial is provided to flatten the steep learning curve of Geant4 for the 
 
 ## For End User
 
-Most of us are end users. All we need is a Geant4 application that has already been compiled for our operating system so that we can double click and run it. Geant4 does provide many [example applications] to show its muscles. However, too many choices actually paralyze a poor end user. Which one shall we choose?! A reasonable choice would be the simplest one. However, the simplest Geant4 application example, [B1][], has very limited functionality. To adopt it for our specific applications, we, as end users, are forced to learn how to modify and compile a Geant4 example application, and become an application developer. No wonder the first Geant4 User guide is for application developers instead of end users.
+Most of us are end users. All we need is a Geant4 [application] that has already been compiled for our operating system so that we can double click and run it. Geant4 does provide many [example applications] to show its muscles. However, too many choices actually paralyze a poor end user. Which one shall we choose?! A reasonable choice would be the simplest one. However, the simplest Geant4 application example, [B1][], has very limited functionality. To adopt it for our specific applications, we, as end users, are forced to learn how to modify and compile a Geant4 example [application], and become an [application developer]. No wonder the first Geant4 User guide is for application developers instead of end users.
 
 [example applications]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Examples/examples.html
 [B1]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Examples/BasicCodes.html#exmpbasic-b1
@@ -73,15 +75,14 @@ However, writing in a text file is not the most intuitive way to construct and d
 
 [![physino/geant4](https://img.shields.io/badge/physino-geant4-blue?style=flat)](https://hub.docker.com/r/physino/geant4)
 
-The [compilation][] of Geant4 C++ libraries and [application]s is a very challenging process for most end users who have limited experience on command-line user interface and C++ programming. The easiest way to bypass this challenge is to package both Geant4 libraries and some [versatile][universal] applications into a single [container][] image that can be used in all operating systems without any modification.
+The [compilation][] of Geant4 C++ libraries and [application]s is a very challenging process for most end users who have limited experience on command-line user interface and C++ programming. The easiest way to bypass this challenge is to package both Geant4 libraries and some versatile [application]s into a single [container][] image that can be used in all operating systems without any modification.
 
 [compilation]: https://www.youtube.com/playlist?list=PLw3G-vTgPrdB9Nt2ekl2oL1yoqEC294Uf
 [container]: https://www.docker.com/resources/what-container
-[application]: https://www.youtube.com/playlist?list=PLw3G-vTgPrdD4Y1knA5nFUsZv4pfSVc-i
 
-<https://hub.docker.com/r/physino/geant4> is such an image. It includes the [official Geant4 libraries pre-compiled on AlmaLinux 9](https://geant4.org/download) and two tiny [universal] Geant4 applications, [GEARS][] and [MinGLE][], that accept the `detector.tg` file exported from [Shine][].
+<https://hub.docker.com/r/physino/geant4> is such an image. It includes the [official Geant4 libraries pre-compiled on AlmaLinux 9](https://geant4.org/download) and two tiny universal Geant4 [application]s, [GEARS][] and [MinGLE][], that accept the `detector.tg` file exported from [Shine][].
 
-[universal]: https://www.youtube.com/watch?v=3g9CkyBS31o
+[application]: https://www.youtube.com/watch?v=3g9CkyBS31o
 
 To use this image, we need to install [Docker Desktop][], a program that manages container images and containers. Please follow <https://youtu.be/RIBJ-2LsqsA> to get familiar with the program and the concept behind it.
 
