@@ -34,7 +34,7 @@ alias la="ls -AF"
 alias ll="ls -lh"
 # a simple command-line calculator
 c() {
-  awk "BEGIN { pi=4.0*atan2(1.0,1.0); o=pi/180.0; print $*; }"
+  awk "BEGIN { pi=4.0*atan2(1.0,1.0); o=pi/180.0; print \$*; }"
 }
 EOT
 
