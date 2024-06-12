@@ -5,7 +5,7 @@
 According to <https://geant4.org>, Geant4 is a
 > **Toolkit** for the simulation of the passage of particles through matter.
 
-which means that it is **NOT** a program that can be installed, double-clicked, and run.
+which means that it is **NOT** a program that can be double-clicked and run after installation.
 
 Instead, Geant4 is provided as a set of C++ libraries that need to be compiled [^1]. One must write a C++ program (Geant4 application) that calls functions provided in the compiled Geant4 libraries. The application itself also needs to be compiled, before it can be double-clicked and run.
 
@@ -65,7 +65,7 @@ Fortunately, Geant4 also allows end users to write their detector definition in
 
 Their difference is similar to that between [markdown][md] and [HTML][]. The detector definition in [plain text][tg] is the easiest to learn.
 
-However, writing in a text file is not the most intuitive way to construct and debug 3D geometries. A graphic user interface (UI) is better suited for this task. [Shine][] is such a UI on the web. One can use the mouse to select, place, rotate basic shapes on a canvas, and export the constructed detector model to a [plain text file][tg] called `detector.tg`, which can be read by a Geant4 application.
+However, writing in a text file is not the most intuitive way to construct and debug 3D geometries. A graphic user interface (UI) is better suited for this task. [Shine][] is such a UI on the web. One can use the mouse to select, place, rotate basic shapes on a canvas, and export the constructed detector model to a [plain text file][tg] called `detector.tg`, which can be read by a Geant4 application that is configured to accept [detector definition in plain text format][tg].
 
 ![Shine: a Web UI for Geant4](https://lh3.googleusercontent.com/d/1IYnxORUysfgw7ymhGuH_jlVCUpe2lsd-)
 
@@ -73,13 +73,15 @@ However, writing in a text file is not the most intuitive way to construct and d
 
 [![physino/geant4](https://img.shields.io/badge/physino-geant4-blue?style=flat)](https://hub.docker.com/r/physino/geant4)
 
-The compilation of Geant4 C++ libraries and applications is a very challenging process for most end users who have limited experience on command-line user interface and C++ programming. The easiest way to bypass this challenge is to package both Geant4 libraries and some versatile applications into a single [container][] image that can be used in all operating systems without any modification.
+The [compilation][] of Geant4 C++ libraries and [application]s is a very challenging process for most end users who have limited experience on command-line user interface and C++ programming. The easiest way to bypass this challenge is to package both Geant4 libraries and some [versatile][universal] applications into a single [container][] image that can be used in all operating systems without any modification.
 
+[compilation]: https://www.youtube.com/playlist?list=PLw3G-vTgPrdB9Nt2ekl2oL1yoqEC294Uf
 [container]: https://www.docker.com/resources/what-container
+[application]: https://www.youtube.com/playlist?list=PLw3G-vTgPrdD4Y1knA5nFUsZv4pfSVc-i
 
-<https://hub.docker.com/r/physino/geant4> is such an image. It includes the [official Geant4 libraries pre-compiled on AlmaLinux 9](https://geant4.org/download) and two tiny [universial Geant4 applications], [GEARS][] and [MinGLE][], that accept the `detector.tg` file exported from [Shine][].
+<https://hub.docker.com/r/physino/geant4> is such an image. It includes the [official Geant4 libraries pre-compiled on AlmaLinux 9](https://geant4.org/download) and two tiny [universal] Geant4 applications, [GEARS][] and [MinGLE][], that accept the `detector.tg` file exported from [Shine][].
 
-[universial Geant4 applications]: https://www.youtube.com/watch?v=3g9CkyBS31o
+[universal]: https://www.youtube.com/watch?v=3g9CkyBS31o
 
 To use this image, we need to install [Docker Desktop][], a program that manages container images and containers. Please follow <https://youtu.be/RIBJ-2LsqsA> to get familiar with the program and the concept behind it.
 
