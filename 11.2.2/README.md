@@ -16,7 +16,7 @@ docker push physino/geant4:11.2.2
 
 ### Create image using docker compose
 
-There is an service called `min` defined in [../../compose.yml](../../compose.yml), which can be used to simplify the commands above to:
+There is an service called `g4` defined in [../../compose.yml](../../compose.yml), which can be used to simplify the commands above to:
 
 ```sh
 cd /path/to/mingle
