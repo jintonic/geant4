@@ -1,5 +1,6 @@
 {
+  "colorscheme": "solarized",
   "fakecursor": true,
-  "wordwrap": true,
   "softwrap": true,
+  "wordwrap": true
 }
