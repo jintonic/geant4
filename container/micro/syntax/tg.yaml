@@ -4,11 +4,15 @@ detect:
   filename: "\\.tg$"
 
 rules:
-  - identifier: "\\bG4_(Ge|AIR|Galactic)\\b"
+  - identifier: "\\bG4_(Ge|AIR|Galactic|TEFLON|CESIUM_IODIDE|SILICON_DIOXIDE)\\b"
+  - type.keyword: "\\b(?i)(photon_energies|rindex|type|model|finish|sigma_alpha|property|reflectivity)\\b"
   - type: "\\b(BOX|TUBE|TUBS|HYPE|TWISTEDTRD)\\b"
   - special: "(?i)^:(vis|volu|place|rotm|color|solid)"
-  - symbol: "[0-9]\\*(mm|cm|m|degree|rad)\\b"
+  - special: "(?i)^:(surf|prop)"
+  - preproc: "^#include\\b"
+  - symbol: "[0-9]\\*(mm|cm|m|degree|rad|eV)\\b"
   - statement: "\\b(?i)(subtraction|union|intersection)\\b"
   - constant.bool: "\\b(ON|OFF)\\b"
   - constant.number: "\\b\\d*\\.?\\d*"
+  - constant.string: "\\b(?i)(dielectric_dielectric|unified|ground|polished)\\b"
   - comment: "//.*$"
