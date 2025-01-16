@@ -1,0 +1,16 @@
+filetype: mac
+
+detect:
+  filename: "\\.macr?o?$"
+
+rules:
+  - identifier: "/run/(initialize|beamOn)\\b"
+  - identifier: "/vis/(open|drawTree)\\b"
+  - identifier: "/geometry/(source|test/run)\\b"
+  - identifier: "/physics_lists/(em|factory)\\b"
+  - identifier: "/gps/(particle|energy|direction|position)\\b"
+  - type: "\\b(gamma|e+|e-|mu+|mu-|neutron)\\b"
+  - symbol: "\\b(mm|cm|m|degree|rad|keV)\\b"
+  - constant.bool: "\\b(true|false)\\b"
+  - constant.number: "\\b\\d*\\.?\\d*"
+  - comment: "#.*$"
