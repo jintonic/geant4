@@ -2,7 +2,7 @@
 
 ## Compile a Simple C++ Program
 
-[hello.cc](hello.cc) is a very simple C++ program. It is just a pure text file with a special suffix `.cc`. A program called [compiler][] is needed to turn it into an executable file that can be run by a computer. In Linux, the most common compiler is GNU Compiler Collection, or [GCC][] in short. It includes a C++ compiler, `g++`, the usage of which is demonstrated by the commands below.
+[hello.cc](hello.cc) is a very simple C++ program. It is just a pure text file with a special suffix `.cc`. A program called [compiler][] is needed to turn it into an executable file that can be run by a computer. In Linux, the most common compiler is GNU Compiler Collection, or [GCC][] in short. It includes a C++ compiler, `g++`, the usage of which is demonstrated by the commands below. In a Mac, the default compiler is [Clang][]. However, the same command `g++` can be used to call it as well.
 
 ```sh
 # compile hello.cc using GNU C++ compiler, g++
@@ -14,9 +14,10 @@ g++ hello.cc
 g++ hellow.cc -o hello
 # run hello in current folder (./)
 ./hello
-# check which libraries are linked in hello
+# check which libraries are linked in hello in Linux
 # https://unix.stackexchange.com/questions/120015
 ldd hello
+# the equivalent cmd in Mac is otool -L hello
 ```
 
 `g++ hello.cc` does not show any output. One can request `g++` to show the compilation process in detail with the verbose option -v:
@@ -67,6 +68,7 @@ Now you are ready to proceed to <https://github.com/jintonic/mingle> to learn ho
 [recipe]: https://www.gnu.org/software/make/manual/html_node/Recipes.html
 [compiler]: https://en.wikipedia.org/wiki/Compiler
 [GCC]: https://gcc.gnu.org
+[Clang]: https://clang.llvm.org
 [Makefile]: https://opensource.com/article/18/8/what-how-makefile
 [make]: https://www.gnu.org/software/make/manual/make.html
 [CMake]: https://cmake.org
