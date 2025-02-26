@@ -1,0 +1,4 @@
+/geometry/source hexagonalHoles.tg
+/control/execute vis.mac
+/control/shell if [ -f G4Data0.heprep ]; then mv G4Data0.heprep hexagonalHoles.heprep; fi
+
