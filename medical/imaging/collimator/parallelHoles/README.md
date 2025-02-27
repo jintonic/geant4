@@ -1,0 +1,1 @@
+A parallel-hole collimator can be modeled by placing many holes made of G4_AIR in a lead brick (G4_Pb). The placement can be done in two ways. First, using for loops in a script to generate many lines of placement, as demonstrated in hexagonalHoles.sh. Second, using placement through parameterisation, as demonstrated in square.tg
