@@ -9,7 +9,7 @@ Unfortunately, [HepRApp][] only runs on java version 1.8 (or 8 in short). To use
 1. download and run [Docker][] Desktop
 2. for Mac and Windows users: run an [X11][] server ([XQuartz][] for Mac, [MobaXterm][] for Windows)
 3. for Mac and Linux users: run `xhost +` in a terminal
-4. save <> in a folder that contains the `G4Data*.heprep` file that you want to view, in that folder, run
+4. save [compose.yml][] in a folder that contains the `G4Data*.heprep` file that you want to view, in that folder, run
 
 ```sh
 docker compose run --rm heprapp
