@@ -1,23 +1,30 @@
 #!/bin/sh
+output=${0%.sh}.tg
 
-cat > hexagonalHoles.tg <<EOF
-:volu hall BOX 1*m 1*m 1*m G4_AIR
+echo "Generate $output file..."
+cat > $output <<EOF
+:volu hall BOX 150 150 150 G4_AIR
+:vis hall OFF
+
+:volu collimator BOX 100 100 50 G4_Pb
+:color collimator 0.57 0.63 0.63
 
 :rotm r000 0 0 0
-
-:solid base BOX 100 100 100
-:solid hole POLYHEDRA 0 360 6 2 -101 0 2 101 0 2
-EOF
-
-for (( x=0; x<30; x+=3 ))
-do
-  echo ":solid geom SUBTRACTION base hole r000 $x 0 0" >> hexagonalHoles.tg
-done
-
-cat >> hexagonalHoles.tg <<EOF
-
-:volu collimator geom G4_Pb
-:color collimator 0.9 0.3 0.2
 :place collimator 1 hall r000 0 0 0
 
+:volu hole POLYHEDRA 0 360 6 2 -50 0 2 50 0 2 G4_AIR
+:color hole 0.57 0.63 0.63
+
 EOF
+
+i=0
+for (( x=-90; x<100; x+=10 )); do
+  for (( y=-90; y<100; y+=10 )); do
+    echo ":place hole $i collimator r000 $x $y 0" >> $output
+    let i++
+  done
+done
+
+echo "Generate HepRepFile..."
+G4VIS_DEFAULT_DRIVER=HepRepFile gears hexagonal.mac
+
