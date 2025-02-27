@@ -8,7 +8,7 @@ Unfortunately, [HepRApp][] only runs on java version 1.8 (or 8 in short). To use
 1. download and run [Docker][] Desktop
 2. for Mac and Windows users: run an [X11][] server ([XQuartz][] for Mac, [MobaXterm][] for Windows)
 3. for Mac and Linux users: run `xhost +` in a terminal
-4. save <https://github.com/jintonic/geant4/raw/refs/heads/main/compose.yml> in a folder, in that folder, run
+4. save <https://github.com/jintonic/geant4/raw/refs/heads/main/compose.yml> in a folder that contains the `G4Data*.heprep` file that you want to view, in that folder, run
 
 ```sh
 docker compose run --rm heprapp
@@ -47,3 +47,10 @@ The [HepRApp][] Data Browser should pop up on your desktop.
 /vis/viewer/set/background 0 0.17 0.21 # solarized color: base03
 ```
 
+[HepRepFile]:http://geant4-userdoc.web.cern.ch/geant4-userdoc/UsersGuides/ForApplicationDeveloper/html/Visualization/visdrivers.html#heprepfile
+[Geant4]: http://geant4.cern.ch
+[HepRApp]: https://www.slac.stanford.edu/~perl/HepRApp
+[XQuartz]: https://www.xquartz.org
+[Docker]: https://docker.com
+[MobaXterm]: https://mobaxterm.mobatek.net
+[X11]: https://en.wikipedia.org/wiki/X_Window_System
