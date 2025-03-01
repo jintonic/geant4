@@ -48,7 +48,7 @@ make uninstall
 
 ## Use CMake to Generate Makefile or Its Equivalence
 
-It takes time to learn [how to write a proper Makefile]. The Windows operating system doesn't use Makefiles. Another program, [CMake][], can be used to generate Makefiles or their equivalence on a Windows computer. Instructions for the `cmake` command are written in a file called [CMakeLists.txt][]. They are easier to learn and more human-readable than Makefiles. The usage of `cmake` in a Linux or Mac terminal goes like
+It takes time to learn [how to write a proper Makefile]. The Windows operating system doesn't even use Makefiles. Another program, [CMake][], can be used to generate Makefiles on Linux and Mac, or their equivalence in a Windows computer. Instructions for the `cmake` command are written in a file called [CMakeLists.txt][]. They are easier to learn and more human-readable than Makefiles. The usage of `cmake` in a Linux or Mac terminal goes like
 
 ```sh
 # create a folder, build/, and generate Makefiles in it
@@ -61,7 +61,10 @@ make
 make install
 ```
 
-Note that [CMake][] doesn't provide `uninstall` option by default: <https://stackoverflow.com/questions/41471620/>.
+[CMake][] provides a graphic user interface (GUI) [cmake-gui][] for users who are not familiar with command line operations. Its installation on Windows is detailed in [this](https://youtu.be/Lfk-oSSOJ34) YouTube tutorial. Its usage on Windows is detailed in [this](https://youtu.be/GykiM1lPON4&t=117s) YouTube tutorial.
+
+> **Note**
+> [CMake][] doesn't provide `uninstall` by default: <https://stackoverflow.com/questions/41471620/>.
 
 Now you are ready to proceed to <https://github.com/jintonic/mingle> to learn how to write and compile (or *build* if we use the [CMake][] terminology) a very simple C++ program that uses [Geant4][] libraries.
 
@@ -77,3 +80,4 @@ Now you are ready to proceed to <https://github.com/jintonic/mingle> to learn ho
 [make]: https://www.gnu.org/software/make/manual/make.html
 [CMake]: https://cmake.org
 [CMakeLists.txt]: https://github.com/jintonic/geant4/blob/main/cpp/CMakeLists.txt
+[cmake-gui]: https://cmake.org/cmake/help/latest/manual/cmake-gui.1.html
