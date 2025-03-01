@@ -1,15 +1,16 @@
 [![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://www.youtube.com/@physino)
 [![Web UI](https://img.shields.io/badge/Web-UI-blue?style=flat)](#shine-a-web-ui-for-geant4)
 [![Geant4 Container](https://img.shields.io/badge/Geant4-Container-green?style=flat)](#geant4-container)
+[![cpp](https://img.shields.io/badge/C-++-green?style=flat)](cpp)
 
 According to <https://geant4.org>, Geant4 is a
 > **Toolkit** for the simulation of the passage of particles through matter.
 
 which means that it is **NOT** a program that can be double-clicked and run after installation.
 
-Instead, Geant4 is provided as a set of C++ libraries that need to be compiled [^1]. One must write a C++ program (Geant4 application) that calls functions provided in the compiled Geant4 libraries. The application itself also needs to be compiled, before it can be double-clicked and run.
+Instead, Geant4 is provided as a set of [C++](cpp) libraries that need to be compiled [^1]. One must write a C++ program (Geant4 application) that calls functions provided in the compiled Geant4 libraries. The application itself also needs to be compiled, before it can be double-clicked and run.
 
-[^1]: The compiled ones only work on very specific operating systems. This approach works best for Windows users. Please watch the first 5 videos in [this] YouTube playlist.
+[^1]: Binary releases on <https://geant4.org/download> are pre-compiled Geant4 libraries. They only work on very specific operating systems. This approach works best for Windows users. Please watch the first 5 videos in [this] YouTube playlist.
 
 [this]: https://www.youtube.com/playlist?list=PLw3G-vTgPrdB7cIYWEoCeIZrSePpefFEW
 
