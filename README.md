@@ -1,7 +1,7 @@
 [![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://www.youtube.com/@physino)
 [![Web UI](https://img.shields.io/badge/Web-UI-blue?style=flat)](#shine-a-web-ui-for-geant4)
 [![Geant4 Container](https://img.shields.io/badge/Geant4-Container-green?style=flat)](#geant4-container)
-[![cpp](https://img.shields.io/badge/C-++-magenta?style=flat)](cpp)
+[![cpp](https://img.shields.io/badge/C-++-yellow?style=flat)](cpp)
 
 According to <https://geant4.org>, Geant4 is a
 > **Toolkit** for the simulation of the passage of particles through matter.
