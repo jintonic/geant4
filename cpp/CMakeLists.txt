@@ -1,5 +1,5 @@
 # must-haves
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.10)
 project(HelloWorld)
 
 # add an executable to the project using the specified source file
