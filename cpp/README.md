@@ -11,7 +11,7 @@ g++ hello.cc
 # run a.out in current folder (./ means current folder)
 ./a.out
 # rename output file from a.out to to hello
-g++ hellow.cc -o hello
+g++ hello.cc -o hello
 # run hello in current folder (./)
 ./hello
 # check which libraries are linked in hello in Linux
