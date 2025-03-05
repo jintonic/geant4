@@ -15,7 +15,7 @@ The [VRML][] visualization driver is available in any [Geant4][] installation. I
 
 ## Example
 
-[detector.tg][] describes the model in the basic Geant4 example [B1][]. [mingle.mac][] and [gears.mac][] can be used by [MinGLE][] and [GEARS][], respectively, to generate the `.wrl` file from [detector.tg][].
+[detector.tg][] describes the model in the basic Geant4 example [B1][]. [mingle.mac][] and [gears.mac][] can be used by [MinGLE][] and [GEARS][], respectively, to generate `g4_??.wrl` from [detector.tg][].
 
 ```sh
 # assume mingle is available in your PATH
@@ -24,10 +24,10 @@ mingle mingle.mac
 gears gears.mac
 ```
 
-[detector.tg]: https://github.com/jintonic/geant4/visualization/VRML/raw/refs/heads/main/detector.tg
+[detector.tg]: https://github.com/jintonic/geant4/blob/main/visualization/VRML/detector.tg
 [B1]: https://github.com/Geant4/geant4/tree/master/examples/basic/B1
-[mingle.mac]: https://github.com/jintonic/geant4/visualization/VRML/raw/refs/heads/main/mingle.mac
-[gears.mac]: https://github.com/jintonic/geant4/visualization/VRML/raw/refs/heads/main/gears.mac
+[mingle.mac]: https://github.com/jintonic/geant4/blob/main/visualization/VRML/mingle.mac
+[gears.mac]: https://github.com/jintonic/geant4/blob/visualization/VRML/gears.mac
 [MinGLE]: https://github.com/jintonic/mingle
 [GEARS]: https://github.com/jintonic/gears
 
@@ -47,17 +47,18 @@ gears gears.mac
 
 The command to generate a 3D G4 logo ([/vis/scene/add/logo][]) works because the logo is made of two 3D objects.
 
-The color of a volume specified by [/vis/geometry/set/colour][] `volumeName ! 0.3 0.6 0.7 0.3` is saved in the `.wrl` file, but the opacity setting is not, because the opacity of a volume can normally be tuned in a [VRML][] viewer.
+The color of a volume specified by [/vis/geometry/set/colour][] `volumeName ! 0.3 0.6 0.7 0.3` is saved in `g4_??.wrl`, but the opacity setting is not, because the opacity of a volume can normally be tuned in a [VRML][] viewer.
 
-Colors of trajectories are saved in the `.wrl` file. They can be shown correctly in some [VRML][] viewers. However, their color settings are not obeyed in the wireframe mode in a [VRML][] viewer.
+Colors of trajectories are saved in `g4_??.wrl`. They can be shown correctly in some [VRML][] viewers. However, their color settings are not obeyed in the wireframe mode in a [VRML][] viewer.
 
-A volume turned off by [/vis/geometry/set/visibility][] `volumeName ! false` will not be saved in the `.wrl` file.
+A volume turned off by [/vis/geometry/set/visibility][] `volumeName ! false` will not be saved in `g4_??.wrl`.
 
-Setting [/vis/viewer/set/style][] `surface/wireframe/cloud` is not saved in the `.wrl` file. But they can be toggled in a [VRML][] viewer.
+Setting [/vis/viewer/set/style][] `surface/wireframe/cloud` is not saved in `g4_??.wrl`. But they can be toggled in a [VRML][] viewer.
 
 Settings related to viewpoint or orientations seem to have no effect, because they can be changed in a [VRML][] viewer.
 
-[vis/scene/add/log]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Control/AllResources/Control/UIcommands/_vis_scene_add_.html#c15
-[vis/geometry/set/colour]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Control/AllResources/Control/UIcommands/_vis_geometry_set_.html#c0
-[vis/geometry/set/visibility]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Control/AllResources/Control/UIcommands/_vis_geometry_set_.html#c9
-[vis/viewer/set/style]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Control/AllResources/Control/UIcommands/_vis_viewer_set_.html#c27
+[/vis/scene/add/logo]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Control/AllResources/Control/UIcommands/_vis_scene_add_.html#c15
+[/vis/geometry/set/colour]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Control/AllResources/Control/UIcommands/_vis_geometry_set_.html#c0
+[/vis/geometry/set/visibility]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Control/AllResources/Control/UIcommands/_vis_geometry_set_.html#c9
+[/vis/viewer/set/style]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Control/AllResources/Control/UIcommands/_vis_viewer_set_.html#c27
+
