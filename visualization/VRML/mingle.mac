@@ -1,0 +1,34 @@
+/control/verbose 2
+
+/run/initialize
+
+/geometry/test/run
+/vis/geometry/list
+
+/vis/ASCIITree/verbose 13
+/vis/drawTree
+
+# mimick Geant4 basic example B1
+/gps/particle gamma
+/gps/energy 6 MeV
+/gps/direction 0 0 1
+/gps/pos/centre 0 0 -150 mm
+/gps/pos/type Plane
+/gps/pos/shape Square
+/gps/pos/halfx 80 mm
+/gps/pos/halfy 80 mm
+
+/vis/open VRML2FILE
+/vis/drawVolume # a scene is created here
+
+/vis/geometry/set/visibility World 0 false
+/vis/geometry/set/visibility Envelope 0 false
+/vis/geometry/set/colour Shape1 0 0 1 0
+/vis/geometry/set/colour Shape2 0 1 0 0
+
+/vis/scene/add/gps
+/vis/scene/add/axes
+/vis/scene/add/trajectories
+/vis/scene/endOfEventAction accumulate 100
+
+/run/beamOn 100
