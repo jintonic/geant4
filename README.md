@@ -2,6 +2,7 @@
 [![Web UI](https://img.shields.io/badge/Web-UI-blue?style=flat)](#shine-a-web-ui-for-geant4)
 [![Geant4 Container](https://img.shields.io/badge/Geant4-Container-green?style=flat)](#geant4-container)
 [![cpp](https://img.shields.io/badge/C-++-yellow?style=flat)](cpp)
+[![Visualization](https://img.shields.io/badge/Visualization-magenta?style=flat)](visualization)
 
 According to <https://geant4.org>, Geant4 is a
 > **Toolkit** for the simulation of the passage of particles through matter.
