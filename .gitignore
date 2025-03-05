@@ -19,3 +19,9 @@ macro
 source
 *.heprep
 *.wrl
+*.png
+*.jpg
+*.jpeg
+*.mp4
+*.mov
+*.mpeg
