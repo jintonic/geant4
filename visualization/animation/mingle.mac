@@ -1,0 +1,31 @@
+/control/verbose 2
+
+/run/initialize
+
+/geometry/test/run
+/vis/geometry/list
+
+/vis/ASCIITree/verbose 13
+/vis/drawTree
+
+# mimick Geant4 extended example "movies"
+/gps/particle gamma
+/gps/energy 10 GeV
+/gps/direction 0 0 1
+/gps/position 0 0 -20 cm
+
+/vis/open TSG_FILE
+/vis/drawVolume calorimeter # avoid drawing world
+
+/vis/geometry/set/colour absorber 0 0 0 1
+
+/vis/scene/add/axes
+/vis/scene/add/trajectories
+
+/run/beamOn 1
+
+/vis/viewer/set/upVector 0 0 -1
+/vis/viewer/set/viewpointThetaPhi 120 120
+/control/loop loop.mac phi 120 290 1
+
+/control/shell ffmpeg -i "g4tsg_offscreen_zb_png_%d.png" -pix_fmt yuv420p -y rotate.mp4

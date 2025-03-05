@@ -1,0 +1,14 @@
+// from extended Geant4 example "movies"
+:volu world BOX 500 500 500 G4_Galactic
+:volu calorimeter BOX 50 50 75 G4_Galactic
+:volu layer BOX 50 50 7.5 G4_Galactic
+:volu gap BOX 50 50 2.5 G4_lAr
+:volu absorber BOX 50 50 5 G4_Pb
+
+// https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Detector/Geometry/geomPhysical.html?highlight=replica#replicas
+:rotm r000 0 0 0
+:place gap 1 layer r000 0 0 5
+:place absorber 2 layer r000 0 0 -2.5
+:repl layer calorimeter Z 10 15
+:place calorimeter 1 world r000 0 0 0
+
