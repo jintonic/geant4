@@ -1,0 +1,13 @@
+:volu box BOX
+ 5  // half x in mm
+ 10 // half y in mm
+ 20 // half z in mm
+ G4_WATER
+:color box 0.4 0.3 0.8
+
+:volu hall BOX 30 30 30 G4_AIR
+:vis hall OFF
+
+:rotm r000 0 0 0
+:place box 1 hall r000 0 0 0
+
