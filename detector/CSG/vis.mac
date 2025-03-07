@@ -1,0 +1,15 @@
+/control/verbose 2
+
+/run/initialize
+
+/geometry/test/run
+
+/vis/open
+/vis/drawVolume
+
+/vis/scene/add/axes
+/vis/viewer/set/background black
+/vis/viewer/set/viewpointThetaPhi 60 120
+/vis/viewer/set/upVector 0 0 1
+/vis/viewer/flush
+
