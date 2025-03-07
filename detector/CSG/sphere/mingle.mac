@@ -4,16 +4,16 @@
 
 /geometry/test/run
 
-/control/execute ../electron.mac
+/control/execute ../gamma.mac
 
 /vis/open
-/vis/drawVolume box
+/vis/drawVolume sphere
 
 /control/execute ../vis.mac
 
 /control/doifBatch /control/execute ../tsg.mac
 
 /control/shell if ls *.png 1>/dev/null 2>&1; then \
- ffmpeg -i "g4tsg_offscreen_zb_png_%d.png" -y box.gif; fi
-/control/shell if [ -f box.gif ]; then rm -f *.png; fi
+ ffmpeg -i "g4tsg_offscreen_zb_png_%d.png" -y sphere.gif; fi
+/control/shell if [ -f sphere.gif ]; then rm -f *.png; fi
 

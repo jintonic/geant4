@@ -1,0 +1,16 @@
+:volu sphere SPHERE
+ 20 // inner r in mm
+ 40 // outer r in mm
+ 30 // phi0 in degree
+ 60 // dphi in degree
+ 45 // theta0 in degree
+ 60 // dtheta in degree
+ G4_WATER
+:color sphere 0.9 0 0
+
+:volu hall BOX 40 40 40 G4_AIR
+:vis hall OFF
+
+:rotm r000 0 0 0
+:place sphere 1 hall r000 0 0 0
+

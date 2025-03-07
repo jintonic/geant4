@@ -1,0 +1,15 @@
+:volu tubs TUBS 
+ 5  // inner r in mm
+ 10 // outer r in mm
+ 20 // half z in mm
+ 90 // phi0 in degree
+ 60 // dphi in degree
+ G4_WATER
+:color tubs 0.4 0.3 0.8
+
+:volu hall BOX 20 20 20 G4_AIR
+:vis hall OFF
+
+:rotm r000 0 0 0
+:place tubs 1 hall r000 0 0 0
+
