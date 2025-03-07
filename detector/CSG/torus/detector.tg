@@ -1,0 +1,15 @@
+:volu torus TORUS
+ 5 // inner r in mm
+ 10// outer r in mm
+ 25// swept radius
+ 60// phi0 in degree
+ 99// dphi in degree
+ G4_WATER
+:color torus 0.4 0.3 0.8
+
+:volu hall BOX 35 35 35 G4_Galactic
+:vis hall OFF
+
+:rotm r000 0 0 0
+:place torus 1 hall r000 0 0 0
+
