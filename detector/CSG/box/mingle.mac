@@ -1,13 +1,15 @@
-#/control/execute ../vis.mac
+/control/execute ../vis.mac
 
-/vis/open TSG_FILE
-/vis/drawVolume box
-/vis/scene/add/axes
-/vis/viewer/set/upVector 0 0 1
-/vis/viewer/set/viewpointThetaPhi 60 120
-/control/loop ../phi.mac phi 120 260 1
+# create png files if $G4VIS_DEFAULT_DRIVER == TSG_FILE
+/control/getEnv G4VIS_DEFAULT_DRIVER
+/control/strdoif {G4VIS_DEFAULT_DRIVER} == TSG_FILE \
+/control/loop ../phi.mac phi 0 360 3
 
-/control/shell if [ -f G4Data0.heprep ]; then mv G4Data0.heprep tubs.heprep; fi
-/control/shell if [ -f g4_00.wrl ]; then mv g4_00.wrl tubs.wrl; fi
-/control/shell if ls *.png 1>/dev/null 2>&1; then magick convert *.png box.gif; fi
+/control/shell if [ -f G4Data0.heprep ]; then \
+ mv G4Data0.heprep box.heprep; fi
+/control/shell if [ -f g4_00.wrl ]; then \
+ mv g4_00.wrl box.wrl; fi
+/control/shell if ls *.png 1>/dev/null 2>&1; then \
+ ffmpeg -i "g4tsg_offscreen_zb_png_%d.png" -y box.gif; fi
+/control/shell if [ -f box.gif ]; then rm -f *.png; fi
 
