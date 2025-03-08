@@ -1,10 +1,17 @@
-/vis/viewer/set/hiddenEdge 1
+#/vis/viewer/set/hiddenEdge 1
 /vis/viewer/set/auxiliaryEdge 1
+/vis/viewer/set/lineSegmentsPerCircle 30
 /vis/viewer/set/upVector 0 0 1
 /vis/viewer/set/viewpointThetaPhi 60 0
 
 /vis/scene/add/axes
-/vis/scene/add/trajectories
+/vis/scene/add/trajectories rich
 /vis/scene/endOfEventAction accumulate 100
+
+/vis/modeling/trajectories/list
+/vis/modeling/trajectories/create/drawByParticleID
+/vis/modeling/trajectories/drawByParticleID-0/set gamma yellow
+/vis/modeling/trajectories/drawByParticleID-0/default/setDrawStepPts true
+/vis/modeling/trajectories/drawByParticleID-0/default/setStepPtsColour blue
 
 /run/beamOn 10
