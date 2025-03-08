@@ -1,0 +1,42 @@
+/control/verbose 2
+
+/run/initialize
+
+# mimick Geant4 basic example B1
+/gps/particle gamma
+/gps/energy 6 MeV
+/gps/direction 0 0 1
+/gps/pos/centre 0 0 -150 mm
+# gamma-rays start from a 80x80 mm2 square plane
+/gps/pos/type Plane
+/gps/pos/shape Square
+/gps/pos/halfx 80 mm
+/gps/pos/halfy 80 mm
+
+/vis/open
+/vis/drawVolume
+
+/vis/geometry/set/colour Shape1 0 1 1 0
+/vis/geometry/set/colour Shape2 0 1 0 1
+/vis/geometry/set/colour Envelope 0 0 0 1
+/vis/geometry/set/visibility World 0 false
+
+/vis/viewer/set/upVector 1 0 0
+/vis/viewer/set/auxiliaryEdge 1
+/vis/viewer/set/viewpointThetaPhi 60 0
+/vis/viewer/set/lineSegmentsPerCircle 20
+
+/vis/scene/add/gps
+/vis/scene/add/axes
+/vis/scene/add/trajectories rich
+
+/vis/modeling/trajectories/create/drawByParticleID
+/vis/modeling/trajectories/drawByParticleID-0/default/setDrawStepPts true
+
+# animation with TSG_FILE
+/control/doifBatch /control/execute tsg.mac
+/control/shell if ls *.png 1>/dev/null 2>&1; then \
+ ffmpeg -i "g4tsg_offscreen_zb_png_%d.png" -y square.gif; fi
+/control/shell if [ -f square.gif ]; then \
+ rm -f *.png; fi
+
