@@ -1,6 +1,6 @@
 <img align="right" width="120px" src="https://yt3.ggpht.com/PpWFdVlWCwTuVRMmxA5EMsWqmsLqgo63AepVoZdCzslc0huYKvRjNOtgIyrWiynNgkmgyzNiODFh=s600-c-fcrop64=1,00000000ffffffff-nd-v1-rwa"/>
 
-# Parameterisation
+# Parameterized Placement
 
 [![Detector Definition](https://img.shields.io/badge/Detector-Definition-blue?style=flat)](..)
 [![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://youtube.com/shorts/Ep6Amj-enAU)
