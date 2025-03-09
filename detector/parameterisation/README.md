@@ -1,6 +1,6 @@
 ---
 title: Geant4 Zero to Hero
-description: <a href="..">Detector</a>/Parameterisation
+description: Detector/Parameterisation
 ---
 <img align="right" width="120px" src="https://yt3.ggpht.com/PpWFdVlWCwTuVRMmxA5EMsWqmsLqgo63AepVoZdCzslc0huYKvRjNOtgIyrWiynNgkmgyzNiODFh=s600-c-fcrop64=1,00000000ffffffff-nd-v1-rwa"/>
 
