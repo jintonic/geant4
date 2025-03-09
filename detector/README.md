@@ -11,25 +11,7 @@
 - [Text with simple syntax][tg]: the **easiest to use and surprisingly versatile**, but only briefly mentioned in Geant4 [User Guide for Application Developers][guide] with an outdated [manual][].
 - [GDML][]: XML files for exchange of geometry data between programs, such as [CAD][], [Geant4][] and [ROOT][]. It is optional and **NOT** enabled by default in a Geant4 installation.
 
-Every detector defined using C++ demands the creation of a new Geant4 applicaiton:
-
-```mermaid
-A[Detector A]-->B[Application A];
-C[Detector B]-->D[Application B];
-E[Detector C]-->F[Application C];
-G[Detector ...]-->H[Application ...];
-```
-
-Detectors defined using [simple text][tg] can be all used by the same Geant4 application that accepts detector definitions in simple text (for example, [MinGLE][] or [GEARS][]):
-
-```mermaid
-A[Detector A]-->E[Universal Geant4 Application];
-B[Detector B]-->E;
-C[Detector C]-->E;
-D[Detector ...]-->E;
-```
-
-A lot of redundent work can be avoided this way.
+Every detector defined using C++ demands the creation of a new Geant4 applicaiton. Detectors defined using [simple text][tg] can be all used by the same Geant4 application that accepts detector definitions in simple text (for example, [MinGLE][] or [GEARS][]). A lot of redundant work can be avoided this way.
 
 [Geant4]: https://physino.xyz/geant4
 [C++]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Detector/Geometry/geomSolids.html
@@ -40,3 +22,5 @@ A lot of redundent work can be avoided this way.
 [CAD]: http://cad-gdml.in2p3.fr
 [GDML]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Detector/Geometry/geomXML.html
 [ROOT]: https://root.cern/doc/master/group__Geometry__gdml.html
+[MinGLE]: https://github.com/jintonic/mingle
+[GEARS]: https://github.com/jintonic/gears
