@@ -14,24 +14,25 @@
 Every detector defined using C++ demands the creation of a new Geant4 applicaiton:
 
 ```mermaid
-A[Detector A]-->B[Application A]
-C[Detector B]-->D[Application B]
-E[Detector C]-->F[Application C]
-G[Detector ...]-->H[Application ...]
+A[Detector A]-->B[Application A];
+C[Detector B]-->D[Application B];
+E[Detector C]-->F[Application C];
+G[Detector ...]-->H[Application ...];
 ```
 
 Detectors defined using [simple text][tg] can be all used by the same Geant4 application that accepts detector definitions in simple text (for example, [MinGLE][] or [GEARS][]):
 
 ```mermaid
-A[Detector A]-->E[Universal Geant4 Application]
-B[Detector B]-->E
-C[Detector C]-->E
-D[Detector ...]-->E
+A[Detector A]-->E[Universal Geant4 Application];
+B[Detector B]-->E;
+C[Detector C]-->E;
+D[Detector ...]-->E;
 ```
 
 A lot of redundent work can be avoided this way.
 
 [Geant4]: https://physino.xyz/geant4
+[C++]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Detector/Geometry/geomSolids.html
 [guide]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/index.html
 [examples]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Examples/examples.html
 [tg]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Detector/Geometry/geomASCII.html
