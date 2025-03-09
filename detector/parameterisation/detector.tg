@@ -1,0 +1,17 @@
+:volu World BOX 2940 2940 2940 G4_AIR
+:volu Target TUBS 0 25 25 0 360 G4_Pb
+:volu Tracker TUBS 0 2400 2400 0 360 G4_AIR
+
+:rotm r000 0 0 0
+:place Tracker 0 World r000 0 0 0
+:place Target 0 World r000 0 0 -2425
+:volu Chamber0 TUBS 0 240+540*0 100 0 360 G4_Xe
+:place Chamber0 0 Tracker r000 0 0 -1600+800*0
+:volu Chamber1 TUBS 0 240+540*1 100 0 360 G4_Xe
+:place Chamber1 1 Tracker r000 0 0 -1600+800*1
+:volu Chamber2 TUBS 0 240+540*2 100 0 360 G4_Xe
+:place Chamber2 2 Tracker r000 0 0 -1600+800*2
+:volu Chamber3 TUBS 0 240+540*3 100 0 360 G4_Xe
+:place Chamber3 3 Tracker r000 0 0 -1600+800*3
+:volu Chamber4 TUBS 0 240+540*4 100 0 360 G4_Xe
+:place Chamber4 4 Tracker r000 0 0 -1600+800*4

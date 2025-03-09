@@ -1,0 +1,42 @@
+/control/verbose 2
+
+/run/initialize
+
+/geometry/test/run
+
+/gps/particle proton
+/gps/energy 3 GeV
+/gps/direction 0 0 1
+/gps/position 0 0 -2939.000001 mm
+
+/vis/open
+/vis/drawVolume
+
+/vis/geometry/set/colour Chamber0 0 1 1 0
+/vis/geometry/set/colour Chamber1 0 1 1 0
+/vis/geometry/set/colour Chamber2 0 1 1 0
+/vis/geometry/set/colour Chamber3 0 1 1 0
+/vis/geometry/set/colour Chamber4 0 1 1 0
+/vis/geometry/set/visibility World 0 false
+/vis/geometry/set/visibility Tracker 0 false
+
+/vis/viewer/set/upVector 1 0 0
+/vis/viewer/set/auxiliaryEdge 1
+/vis/viewer/set/viewpointThetaPhi 60 0
+/vis/viewer/set/lineSegmentsPerCircle 20
+
+/vis/scene/add/axes
+/vis/scene/add/trajectories rich
+
+/vis/modeling/trajectories/create/drawByCharge
+/vis/modeling/trajectories/drawByCharge-0/default/setDrawStepPts true
+/vis/modeling/trajectories/list
+
+/vis/verbose 0
+/control/verbose 0
+/control/doifBatch /control/execute tsg.mac
+/control/shell if ls *.png 1>/dev/null 2>&1; then \
+ ffmpeg -i "g4tsg_offscreen_zb_png_%d.png" -y B2b.gif; fi
+/control/shell if [ -f B2b.gif ]; then \
+ rm -f *.png; fi
+
