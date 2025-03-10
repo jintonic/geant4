@@ -1,0 +1,17 @@
+:volu cons CONS
+ 8  // inner r in mm @ - half z
+ 20 // outer r in mm @ - half z
+ 5  // inner r in mm @ half z
+ 10 // outer r in mm @ half z
+ 20 // half z in mm
+ 0  // phi0 in degree
+ 270// dphi in degree
+ G4_Cu // material
+:color cons 0.98 0.61 0.11
+
+:volu hall BOX 25 25 25 G4_AIR
+:vis hall OFF
+
+:rotm r000 0 0 0
+:place cons 1 hall r000 0 0 0
+
