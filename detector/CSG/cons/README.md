@@ -16,7 +16,7 @@ A conical section can be constructed using [C++][] or some [simple text](../..):
  G4_Cu // material
 ```
 
-The full source code is in [detector.tg][], which can be visualized using the macro file [mingle.mac][] or [gears.mac][], assuming [MinGLE][] or [GEARS][] is available:
+The full source code is in [detector.tg][], which can be visualized using the macro file [mingle.mac][] or [gears.mac][], assuming an [universal Geant4 application][], such as [MinGLE][] or [GEARS][], is available:
 
 ```sh
 git clone https://github.com/jintonic/geant4

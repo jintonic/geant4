@@ -13,7 +13,7 @@ A box can be constructed using [C++][] or some [simple text](../..):
  G4_WATER // material
 ```
 
-The full source code is in [detector.tg][], which can be visualized using the macro file [mingle.mac][] or [gears.mac][], assuming [MinGLE][] or [GEARS][] is available:
+The full source code is in [detector.tg][], which can be visualized using the macro file [mingle.mac][] or [gears.mac][], assuming an [universal Geant4 application][], such as [MinGLE][] or [GEARS][], is available:
 
 ```sh
 git clone https://github.com/jintonic/geant4
@@ -26,5 +26,6 @@ G4VIS_DEFAULT_DRIVER=TSG_FILE gears gears.mac
 [detector.tg]: https://github.com/jintonic/geant4/blob/main/detector/CSG/box/detector.tg
 [mingle.mac]: https://github.com/jintonic/geant4/blob/main/detector/CSG/box/mingle.mac
 [gears.mac]: https://github.com/jintonic/geant4/blob/main/detector/CSG/box/gears.mac
+[universal Geant4 application]: https://youtu.be/3g9CkyBS31o
 [MinGLE]: https://github.com/jintonic/mingle
 [GEARS]: https://github.com/jintonic/gears
