@@ -1,0 +1,78 @@
+/control/verbose 2
+
+/run/initialize
+
+/geometry/test/run
+/vis/geometry/list
+
+/gps/particle proton
+/gps/energy 1 GeV
+/gps/direction 0 0 1
+/gps/position 0 0 -80 mm
+
+/vis/open
+/vis/drawVolume absorber
+/vis/set/textColour 0 1 0
+
+/vis/viewer/set/projection p
+/vis/viewer/set/upVector 0 0 1
+/vis/viewer/set/viewpointThetaPhi 80 60
+/vis/viewer/set/timeWindow/fadeFactor 1
+
+/vis/scene/add/axes
+/vis/scene/add/trajectories rich
+
+/vis/modeling/trajectories/create/drawByParticleID
+/vis/modeling/trajectories/drawByParticleID-0/default/setDrawStepPts true
+/vis/modeling/trajectories/drawByParticleID-0/default/setTimeSliceInterval 0.01 ns
+/vis/modeling/trajectories/list
+
+/run/beamOn
+
+/vis/ogl/export
+/vis/scene/add/text 100 -55 -67.5 mm ! ! ! Pb absorber 0
+/vis/viewer/set/timeWindow/startTime 0 ns 0.05 ns
+/vis/viewer/set/viewpointThetaPhi 79 61
+/vis/ogl/export
+/vis/scene/add/text 99 -55 -52.5 mm ! ! ! Pb absorber 1
+/vis/viewer/set/timeWindow/startTime 0.05 ns 0.05 ns
+/vis/viewer/set/viewpointThetaPhi 78 62
+/vis/ogl/export
+/vis/scene/add/text 98 -55 -37.5 mm ! ! ! Pb absorber 2
+/vis/viewer/set/timeWindow/startTime 0.1 ns 0.05 ns
+/vis/viewer/set/viewpointThetaPhi 77 63
+/vis/ogl/export
+/vis/scene/add/text 97 -55 -22.5 mm ! ! ! Pb absorber 3
+/vis/viewer/set/timeWindow/startTime 0.15 ns 0.05 ns
+/vis/viewer/set/viewpointThetaPhi 76 64
+/vis/ogl/export
+/vis/scene/add/text 96 -55  -7.5 mm ! ! ! Pb absorber 4
+/vis/viewer/set/timeWindow/startTime 0.2 ns 0.05 ns
+/vis/viewer/set/viewpointThetaPhi 75 65
+/vis/ogl/export
+/vis/scene/add/text 95 -55   7.5 mm ! ! ! Pb absorber 5
+/vis/viewer/set/timeWindow/startTime 0.25 ns 0.05 ns
+/vis/viewer/set/viewpointThetaPhi 74 66
+/vis/ogl/export
+/vis/scene/add/text 94 -55  22.5 mm ! ! ! Pb absorber 6
+/vis/viewer/set/timeWindow/startTime 0.3 ns 0.05 ns
+/vis/viewer/set/viewpointThetaPhi 73 67
+/vis/ogl/export
+/vis/scene/add/text 93 -55  37.5 mm ! ! ! Pb absorber 7
+/vis/viewer/set/timeWindow/startTime 0.35 ns 0.05 ns
+/vis/viewer/set/viewpointThetaPhi 72 68
+/vis/ogl/export
+/vis/scene/add/text 92 -55  52.5 mm ! ! ! Pb absorber 8
+/vis/viewer/set/timeWindow/startTime 0.4 ns 0.05 ns
+/vis/viewer/set/viewpointThetaPhi 71 69
+/vis/ogl/export
+/vis/scene/add/text 91 -55  67.5 mm ! ! ! Pb absorber 9
+/vis/viewer/set/timeWindow/startTime 0.5 ns 0.05 ns
+/vis/viewer/set/viewpointThetaPhi 70 70
+/vis/ogl/export
+
+/control/shell if ls *.jpg 1>/dev/null 2>&1; then \
+ ffmpeg -r 2 -i "G4OpenGL_viewer-0_%4d.jpg" -y B4.gif; fi
+/control/shell if [ -f B4.gif ]; then \
+ rm -f *.jpg; fi
+
