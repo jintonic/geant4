@@ -2,7 +2,7 @@
 [![Source Shape](https://img.shields.io/badge/Source-Shape-yellow?style=flat)](..)
 [![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://youtube.com/shorts/YwhMtgNypwU)
 
-# Particles Originated from a Square Plane
+# Particles from a Square Plane
 
 The particle source, gamma-rays originated from a square plane, constructed in C++ in the [Geant4][] basic example [B1][] is re-implemented using [gps](../..) macro commands in [mingle.mac][].
 
