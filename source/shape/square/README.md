@@ -4,7 +4,14 @@
 
 # Particles from a Square Plane
 
-The particle source, gamma-rays originated from a square plane, constructed in C++ in the [Geant4][] basic example [B1][] is re-implemented using [gps](../..) macro commands in [mingle.mac][].
+The particle source, gamma-rays originated from a square plane, constructed in C++ in the [Geant4][] basic example [B1][] is re-implemented using [gps](../..) macro commands in [mingle.mac][]:
+
+```sh
+/gps/pos/type Plane
+/gps/pos/shape Square
+/gps/pos/halfx 80 mm
+/gps/pos/halfy 80 mm
+```
 
 [B1][]'s detector model defined in C++ is also re-implemented with [simple text geometry description](../../../detector) in [detector.tg][].
 
