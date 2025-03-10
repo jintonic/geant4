@@ -7,7 +7,7 @@
 
 [Geant4][] provides 3 ways for its users to define their own detector models:
 
-- [C++][]: the **hardest to use and master**, yet described in detail in Geant4 [User Guide for Application Developers][guide], and demonstrated in most Geant4 official [examples][]
+- [C++][]: the **hardest to use and master**, yet described in detail in Geant4 [User Guide for Application Developers][guide], and demonstrated in most Geant4 official [examples][].
 - [Text with simple syntax][tg]: the **easiest to use and surprisingly versatile**, but only briefly mentioned in Geant4 [User Guide for Application Developers][guide] with an outdated [manual][].
 - [GDML][]: XML files for exchange of geometry data between programs, such as [CAD][], [Geant4][] and [ROOT][]. It is optional and **NOT** enabled by default in a Geant4 installation.
 
