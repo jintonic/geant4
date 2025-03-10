@@ -11,6 +11,8 @@
 
 /control/execute ../vis.mac
 
+/vis/verbose 0
+/control/verbose 0
 /control/doifBatch /control/execute ../tsg.mac
 
 /control/shell if ls *.png 1>/dev/null 2>&1; then \
