@@ -1,8 +1,8 @@
 [![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://www.youtube.com/@physino)
 [![Web UI](https://img.shields.io/badge/Web-UI-blue?style=flat)](#shine-a-web-ui-for-geant4)
-[![Geant4 Container](https://img.shields.io/badge/Geant4-Container-green?style=flat)](#geant4-container)
+[![Installation](https://img.shields.io/badge/Get-Geant4-green?style=flat)](installation)
 [![Detector](https://img.shields.io/badge/Detector-Definition-yellow?style=flat)](detector)
-[![Visualization](https://img.shields.io/badge/Visualization-magenta?style=flat)](visualization)
+[![Visualization](https://img.shields.io/badge/Visualization-orange?style=flat)](visualization)
 [![Source](https://img.shields.io/badge/Particle-Source-cyan?style=flat)](source)
 
 According to <https://geant4.org>, Geant4 is a
