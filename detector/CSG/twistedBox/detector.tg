@@ -1,0 +1,14 @@
+:volu twistedBox TWISTEDBOX
+ 3.14159265/6 // twist angle in rad
+ 10 // half x in mm
+ 15 // half y in mm
+ 20 // half z in mm
+ G4_WATER // material
+:color twistedBox 0.4 0.3 0.8
+
+:volu hall BOX 20 20 20 G4_Galactic
+:vis hall OFF
+
+:rotm r000 0 0 0
+:place twistedBox 1 hall r000 0 0 0
+
