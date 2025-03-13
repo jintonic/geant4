@@ -1,6 +1,7 @@
 # Detector Definition
 
 [![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://www.youtube.com/playlist?list=PLw3G-vTgPrdBxXZo1UpOD_xVFSgM3hLn-)
+[![Material](https://img.shields.io/badge/Material-Definition-orange?style=flat)](material)
 [![CSG](https://img.shields.io/badge/CSG-Solids-blue?style=flat)](CSG)
 [![Parameterisation](https://img.shields.io/badge/Parameterized-Placement-magenta?style=flat)](parameterisation)
 [![Replica](https://img.shields.io/badge/Replicated-Placement-yellow?style=flat)](replica)
