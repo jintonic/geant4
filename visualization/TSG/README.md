@@ -1,5 +1,7 @@
 # TSG
 
+[![Visualization](https://img.shields.io/badge/Visualization-Drivers-blue?style=flat)](..)
+
 ## Limitations
 
 [TSG_FILE][] can only be saved using [/vis/viewer/rebuild][] command, which ignores settings specified by [/vis/viewer/set/timeWindow][]. It cannot be used for the animation of particle movement.

@@ -1,6 +1,6 @@
 # OpenGL
 
-[![Visualization](https://img.shields.io/badge/Visualization-drivers-blue?style=flat)](..)
+[![Visualization](https://img.shields.io/badge/Visualization-Drivers-blue?style=flat)](..)
 
 [OpenGL][] is the probably the only visualization driver that can be used to animate particles' motion through their global time.
 
