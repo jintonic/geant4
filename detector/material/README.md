@@ -59,7 +59,7 @@ A color can be assigned to a volume to indicate its material if the geometry is 
 :color stage 0.85 0.65 0.13
 ```
 
-The color is defined in the form of `R, G, B`, representing the red, green, and blue portions of the color, ranging from 0 to 1. For more color codes, please check <https://johndecember.com/html/spec/colorper.html>.
+The color is defined in the form of `R G B`, representing the red, green, and blue portions of the color, ranging from 0 to 1. For more color codes, please check <https://johndecember.com/html/spec/colorper.html>.
 
 [common materials]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Appendix/materialNames.html
 [Geant4]: https://physino.xyz/geant4
