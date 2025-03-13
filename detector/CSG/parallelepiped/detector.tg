@@ -1,0 +1,16 @@
+:volu parallelepiped PARA
+ 30 // half x in mm
+ 40 // half y in mm
+ 60 // half z in mm
+ 10 // alpha in degrees
+ 30 // theta in degrees
+ 20 // phi in degrees
+ G4_AIR // material
+:color parallelepiped 0.4 0.3 0.8
+
+:volu hall BOX 80 80 80 G4_Galactic
+:vis hall OFF
+
+:rotm r000 0 0 0
+:place parallelepiped 1 hall r000 0 0 0
+
