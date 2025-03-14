@@ -1,6 +1,6 @@
 # Polycone
 
-[![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://youtube.com/shorts/XMJQ0hi3E7A)
+[![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://youtube.com/shorts/Df-n7fzkt7o)
 [![CSG](https://img.shields.io/badge/CSG-Solids-blue?style=flat)](..)
 
 A polycone can be constructed using [C++][] or some [simple text](../..):
