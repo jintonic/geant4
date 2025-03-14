@@ -1,0 +1,28 @@
+:volu polycone1 POLYCONE
+ 108 270 // phi0, dphi in degrees
+ 3       // number of z planes
+-2 3 3.5 // z1, r1inner, r1outer
+ 1 3 3.5 // z2, r2inner, r2outer
+ 2 4 4.5 // ...
+ G4_Cu   // material
+:color polycone1 0.5 0.5 0.1
+
+:volu polycone2 POLYCONE
+ 0 360    // phi0, dphi in degrees
+ 6        // number of rz points
+ 3 -2     // r1, z1 in mm
+ 3.5 -2   // r2, z2 in mm
+ 3.5 0.75 // ...
+ 3.75 1
+ 3.75 2
+ 3 2
+ G4_WATER // material
+:color polycone2 0.4 0.3 0.8
+
+:volu hall BOX 10 5 5 G4_Galactic
+:vis hall OFF
+
+:rotm r000 0 0 0
+:place polycone1 1 hall r000 0 0 0
+:place polycone2 2 hall r000 10 0 0
+
