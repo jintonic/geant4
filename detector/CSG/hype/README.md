@@ -1,6 +1,6 @@
 # Tube with Hyperbolic Profile
 
-[![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://youtube.com/shorts/tKe92R8hP9c)
+[![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://youtube.com/shorts/Y7IosK99fQI)
 [![CSG](https://img.shields.io/badge/CSG-Solids-blue?style=flat)](..)
 
 A tube with hyperboic profile can be constructed using [C++][] or some [simple text](../..):
