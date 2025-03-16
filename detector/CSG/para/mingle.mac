@@ -7,7 +7,7 @@
 /control/execute ../electron.mac
 
 /vis/open
-/vis/drawVolume parallelepiped
+/vis/drawVolume para
 
 /control/execute ../vis.mac
 

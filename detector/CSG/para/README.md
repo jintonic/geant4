@@ -20,7 +20,7 @@ The full source code is in [detector.tg][], which can be visualized using the ma
 
 ```sh
 git clone https://github.com/jintonic/geant4
-cd geant4/detector/CSG/parallelepiped
+cd geant4/detector/CSG/para
 # generate animated picture, para.gif
 G4VIS_DEFAULT_DRIVER=TSG_FILE gears gears.mac
 ```
