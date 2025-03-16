@@ -1,0 +1,15 @@
+:volu hype HYPE
+ 20 // inner r in mm
+ 30 // outer r in mm
+ 0  // theta of asymptote of inner profile in degree
+ 45 // theta of asymptote of outer profile in degree
+ 50  // half z in mm
+ G4_Cu // material
+:color hype 0.4 0.3 0.8
+
+:volu hall BOX 500 500 500 G4_Galactic
+:vis hall OFF
+
+:rotm r000 0 0 0
+:place hype 1 hall r000 0 0 0
+
