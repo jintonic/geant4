@@ -1,0 +1,15 @@
+:volu ellipsoid ELLIPSOID
+ 10 // semi axis in x [mm]
+ 20 // semi axis in x [mm]
+ 50 // semi axis in x [mm]
+-10 // lower limit on z [mm]
+ 40 // upper limit on z [mm]
+ G4_ADIPOSE_TISSUE_ICRP // material
+:color ellipsoid 0.4 0.3 0.8
+
+:volu hall BOX 50 50 50 G4_Galactic
+:vis hall OFF
+
+:rotm r000 0 0 0
+:place ellipsoid 1 hall r000 0 0 0
+
