@@ -1,0 +1,55 @@
+// measured with an on-screen rule using drawings on
+// https://forum.nasaspaceflight.com/index.php?topic=50049.0
+:solid body0 POLYCONE
+0 360         // full circle
+21            // 21 (r, z) points
+0	-1000 // (r1, z1) in mm
+8	-997  // (r2, z2) in mm
+14	-994  // ...
+19	-990
+23	-985
+35	-963
+46	-949
+56	-929
+67	-908
+84	-876
+102	-841
+126	-775
+149	-714
+161	-665
+171	-620
+183	-559
+186	-521
+190	-472
+193	-406
+193	1136
+0	1136
+
+:solid frontFin TRAP
+ 10  // thickness in mm
+ 0 0 // no twist of z
+ 120 // half height in mm of the trapozoid in x-y plane
+ 300 // half length of the long base of the trapozoid
+ 60  // half length of the short base of the trapozoid
+ 45  // angle between the height and bases
+ 120 300 60 45 // same setup on another xy plane
+
+// merge front fins with the body of the vehicle
+:rotm ry90 0 90 0
+:rotm ryz 0 -90 180
+:solid body1 UNION body0 frontFin ry90 0 180 -500
+:solid body2 UNION body1 frontFin ryz 0 -180 -500
+:volu vehicle body2 G4_STAINLESS-STEEL
+:color vehicle 0.3 0.3 0.3
+
+:volu backFin TRAP 10 0 0 106 350 95 45 106 350 95 45 G4_STAINLESS-STEEL
+:color backFin 0.3 0.3 0.3
+
+:volu atmosphere TUBE 0 500 1500 G4_AIR
+:vis atmosphere OFF
+
+:rotm r000 0 0 0
+:place vehicle 1 atmosphere r000 0 0  -400
+:place backFin 1 atmosphere ry90 0 299 470
+:place backFin 2 atmosphere ryz 0 -299 470
+
