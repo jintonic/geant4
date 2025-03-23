@@ -1,3 +1,5 @@
+# Parallel-hole collimators
+
 <a href="https://www.nuclear-shields.com/parallel-hole-colimator.html"><img align="right" width="200px" src="https://www.nuclear-shields.com/pub/media/catalog/product/cache/image/485x460/e9c3970ab036de70892d86c6d221abfe/p/a/parallel_hole_lead_collimators_-_nuclear_shields.png"/></a>
 
 Parallel-hole collimators as shown in the right picture can be modeled in Geant4 by placing many holes made of G4_AIR in a lead brick (G4_Pb). The holes are daughter volumes of the lead mother volume. The material of the daughter volumes (G4_AIR) replaces that of the mother volume (G4_Pb).
@@ -31,8 +33,6 @@ However, overlapping check is surprisingly fast for such a file. One can verify 
 [square.tg]: https://github.com/jintonic/geant4/blob/main/medical/imaging/collimator/parallelHoles/square.tg
 [square.mac]: https://github.com/jintonic/geant4/blob/main/medical/imaging/collimator/parallelHoles/square.mac
 [hexagonal.sh]: https://github.com/jintonic/geant4/blob/main/medical/imaging/collimator/parallelHoles/hexagonal.sh
-[hexagonal.sh]: https://github.com/jintonic/geant4/blob/main/medical/imaging/collimator/parallelHoles/hexagonal.sh
 [hexagonal.mac]: https://github.com/jintonic/geant4/blob/main/medical/imaging/collimator/parallelHoles/hexagonal.mac
-[/geometry/test/run]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Control/AllResources/Control/UIcommands/_geometry_test_.html#c7
 [/geometry/test/run]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Control/AllResources/Control/UIcommands/_geometry_test_.html#c7
 
