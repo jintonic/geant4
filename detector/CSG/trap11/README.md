@@ -1,6 +1,6 @@
 # Generic Trapezoid
 
-[![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://youtube.com/shorts/LHk_w4kchaU)
+[![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://youtube.com/shorts/viwgRu1O-uc)
 [![CSG](https://img.shields.io/badge/CSG-Solids-blue?style=flat)](..)
 
 A generic trapezoid is a solid with six trapezoidal faces, it has two bases parallel to the XY-plane and four lateral faces. The bases are located at the same distance from the XY-plane, but on opposite sides of it. Each base has two sides parallel the X-axis. Let’s call the line joining middle point of these sides - the centre line of the base, and the middle point of this line - the centre of the base. An important property of this shape is that the line joining the centres of the bases goes through the origin of the local coordinate system. It can be constructed using [C++][] or some [simple text](../..):
