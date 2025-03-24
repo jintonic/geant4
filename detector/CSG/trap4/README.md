@@ -1,6 +1,6 @@
 # Right Angular Wedge
 
-[![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://youtube.com/shorts/LHk_w4kchaU)
+[![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://youtube.com/shorts/6aUt6wrDHRw)
 [![CSG](https://img.shields.io/badge/CSG-Solids-blue?style=flat)](..)
 
 A right angular wedge can be constructed using [C++][] or some [simple text](../..):
