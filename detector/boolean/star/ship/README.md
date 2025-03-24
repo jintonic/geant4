@@ -4,7 +4,7 @@
 [![Boolean](https://img.shields.io/badge/Boolean-Operation-green?style=flat)](../..)
 [![Detector](https://img.shields.io/badge/Detector-Definition-blue?style=flat)](../../..)
 
-The shape of [SpaceX][] [Starship][] vehicle's front fins cannot be approximated by any [Geant4][] [CSG][]s due to the tapering of the vehicle's body toward its tip. This can be solved by embeding part of a [trapzoid][] into the vehicle's body through the [UNION](../..) operation of two [CSG][]s, a [trapezoid][] approximating the fin and a series of [cone sections][cons] approcimating the body.
+The shape of [SpaceX][] [Starship][] vehicle's front fins cannot be approximated by any [Geant4][] [CSG][]s due to the tapering of the vehicle's body toward its tip. This can be solved by embeding part of a [trapezoid][] into the vehicle's body through the [UNION](../..) operation of two [CSG][]s, a [trapezoid][] approximating the fin and a series of [cone sections][cons] approcimating the body.
 
 The geometry is defined in [vehicle.tg][]. Dimensions are measured using an on-screen ruler on drawings from <https://forum.nasaspaceflight.com/index.php?topic=50049.0>. Fire out of the vehicle is mimicked using many electrons, as demonstrated in [gears.mac][]. The animation shown on [YouTube][] is generated using [tsg.mac][] and [loop.mac][].
 
