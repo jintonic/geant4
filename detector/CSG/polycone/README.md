@@ -24,6 +24,8 @@ cd geant4/detector/CSG/polycone
 G4VIS_DEFAULT_DRIVER=TSG_FILE gears gears.mac
 ```
 
+![Figure of Polycone](https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/_images/aBREPSolidPCone.jpg)
+
 [C++]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Detector/Geometry/geomSolids.html#constructed-solid-geometry-csg-solids
 [detector.tg]: https://github.com/jintonic/geant4/blob/main/detector/CSG/polycone/detector.tg
 [mingle.mac]: https://github.com/jintonic/geant4/blob/main/detector/CSG/polycone/mingle.mac

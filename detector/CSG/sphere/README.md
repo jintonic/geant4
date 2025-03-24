@@ -1,4 +1,4 @@
-# Sphere
+# Spherical Shell Section
 
 [![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://youtube.com/shorts/XMJQ0hi3E7A)
 [![CSG](https://img.shields.io/badge/CSG-Solids-blue?style=flat)](..)
@@ -24,6 +24,8 @@ cd geant4/detector/CSG/sphere
 # generate animated picture, sphere.gif
 G4VIS_DEFAULT_DRIVER=TSG_FILE gears gears.mac
 ```
+
+![Figure of Sphere](https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/_images/aSphere.jpg)
 
 [C++]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Detector/Geometry/geomSolids.html#constructed-solid-geometry-csg-solids
 [detector.tg]: https://github.com/jintonic/geant4/blob/main/detector/CSG/sphere/detector.tg

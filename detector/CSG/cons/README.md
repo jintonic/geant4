@@ -25,6 +25,8 @@ cd geant4/detector/CSG/cons
 G4VIS_DEFAULT_DRIVER=TSG_FILE gears gears.mac
 ```
 
+![Figure of Cone Section](https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/_images/aCons.jpg)
+
 [C++]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Detector/Geometry/geomSolids.html#constructed-solid-geometry-csg-solids
 [detector.tg]: https://github.com/jintonic/geant4/blob/main/detector/CSG/cons/detector.tg
 [mingle.mac]: https://github.com/jintonic/geant4/blob/main/detector/CSG/cons/mingle.mac
