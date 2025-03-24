@@ -3,7 +3,7 @@
 [![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://youtube.com/shorts/LHk_w4kchaU)
 [![CSG](https://img.shields.io/badge/CSG-Solids-blue?style=flat)](..)
 
-A trapozoid that has 2 rectangular bases on the top and bottom as shown in the right figure can be constructed using [C++][] or some [simple text](../..):
+A trapezoid that has 2 rectangular bases on the top and bottom as shown in the right figure can be constructed using [C++][] or some [simple text](../..):
 
 ```cpp
 :volu wedge TRD
