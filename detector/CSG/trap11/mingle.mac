@@ -1,0 +1,21 @@
+/control/verbose 2
+
+/run/initialize
+
+/geometry/test/run
+
+/control/execute ../geantino.mac
+
+/vis/open
+/vis/drawVolume trap11
+
+/control/execute ../vis.mac
+
+/vis/verbose 0
+/control/verbose 0
+/control/doifBatch /control/execute ../tsg.mac
+
+/control/shell if ls *.png 1>/dev/null 2>&1; then \
+ ffmpeg -i "g4tsg_offscreen_zb_png_%d.png" -y trap11.gif; fi
+/control/shell if [ -f trap11.gif ]; then rm -f *.png; fi
+

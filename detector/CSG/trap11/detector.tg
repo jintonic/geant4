@@ -1,0 +1,20 @@
+:volu trap11 TRAP
+ 60 // half height along z in mm
+ 20 // theta of the line connecting top and bottom centers [degree]
+ 5  // phi of the line connectng top and bottom centers [degree]
+ 40 // half height of the bottom base in mm (along y)
+ 30 // half length of one side of the bottom base in mm
+ 40 // half length of another side of the bottom base in mm
+ 10 // angle between y and the center line of the bottom base [degree]
+ 16 // half height of the top base in mm (along y)
+ 10 // half length of one side of the top base in mm
+ 14 // half length of another side of the top base in mm
+ 10 // angle between y and the center line of the top base [degree]
+ G4_W // material
+:color trap11 0.4 0.3 0.8
+
+:volu hall BOX 200 200 200 G4_Galactic
+:vis hall OFF
+
+:rotm r000 0 0 0
+:place trap11 1 hall r000 0 0 0

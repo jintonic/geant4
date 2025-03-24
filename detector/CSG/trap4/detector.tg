@@ -1,0 +1,14 @@
+:volu wedge TRAP
+ 30 // half height along z in mm
+ 40 // half height of the base (along y) in mm
+ 50 // half length of the long side of the base in mm
+ 20 // half length of the short side of the base in mm
+ G4_W // material
+:color wedge 0.9 0.3 0.2
+
+:volu hall BOX 60 50 30 G4_Galactic
+:vis hall OFF
+
+:rotm r000 0 0 0
+:place wedge 2 hall r000 0 0 0
+

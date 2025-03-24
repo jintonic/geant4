@@ -1,0 +1,17 @@
+/gps/source/intensity 0.16 # 16%%
+
+/gps/source/add 0.16
+/gps/direction 0 0 1
+
+/gps/source/add 0.16
+/gps/direction 0 1 0
+
+/gps/source/add 0.16
+/gps/direction 0 -1 0
+
+/gps/source/add 0.16
+/gps/direction 1 0 0
+
+/gps/source/add 0.20
+/gps/direction -1 0 0
+
