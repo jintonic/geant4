@@ -5,6 +5,7 @@
 [![CSG](https://img.shields.io/badge/CSG-Solids-blue?style=flat)](CSG)
 [![Parameterisation](https://img.shields.io/badge/Parameterized-Placement-magenta?style=flat)](parameterisation)
 [![Replica](https://img.shields.io/badge/Replicated-Placement-yellow?style=flat)](replica)
+[![Boolean](https://img.shields.io/badge/Boolean-Operation-green?style=flat)](boolean)
 
 [Geant4][] provides 3 ways for its users to define their own detector models:
 
