@@ -1,0 +1,15 @@
+:volu trapezoid TRD
+ 30 // half x in mm @-z/2
+ 10 // half x in mm @ z/2
+ 45 // half y in mm @-z/2
+ 15 // half y in mm @ z/2
+ 60 // half z in mm
+ G4_Pb // material
+:color trapezoid 0.4 0.3 0.8
+
+:volu hall BOX 30 50 70 G4_Galactic
+:vis hall OFF
+
+:rotm r000 0 0 0
+:place trapezoid 1 hall r000 0 0 0
+
