@@ -7,9 +7,9 @@ A box can be constructed using [C++][] or some [simple text](../..):
 
 ```cpp
 :volu box BOX
- 5  // half x in mm
- 10 // half y in mm
- 20 // half z in mm
+ 30 // half x in mm
+ 40 // half y in mm
+ 60 // half z in mm
  G4_WATER // material
 ```
 
@@ -22,6 +22,7 @@ cd geant4/detector/CSG/box
 G4VIS_DEFAULT_DRIVER=TSG_FILE gears gears.mac
 ```
 
+![Figure of box](https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/_images/aBox.jpg)
 [C++]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Detector/Geometry/geomSolids.html#constructed-solid-geometry-csg-solids
 [detector.tg]: https://github.com/jintonic/geant4/blob/main/detector/CSG/box/detector.tg
 [mingle.mac]: https://github.com/jintonic/geant4/blob/main/detector/CSG/box/mingle.mac

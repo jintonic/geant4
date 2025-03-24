@@ -7,11 +7,11 @@ A tube section can be constructed using [C++][] or some [simple text](../..):
 
 ```cpp
 :volu tubs TUBS
- 5  // inner r in mm
- 10 // outer r in mm
+ 10 // inner r in mm
+ 15 // outer r in mm
  20 // half z in mm
- 90 // phi0 in degree
- 60 // dphi in degree
+ 0  // phi0 in degree
+ 90 // dphi in degree
  G4_WATER // material
 ```
 
@@ -23,7 +23,7 @@ cd geant4/detector/CSG/tubs
 # generate animated picture, tubs.gif
 G4VIS_DEFAULT_DRIVER=TSG_FILE gears gears.mac
 ```
-
+![Figure of tube](https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/_images/aTubs.jpg)
 [C++]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Detector/Geometry/geomSolids.html#constructed-solid-geometry-csg-solids
 [detector.tg]: https://github.com/jintonic/geant4/blob/main/detector/CSG/tubs/detector.tg
 [mingle.mac]: https://github.com/jintonic/geant4/blob/main/detector/CSG/tubs/mingle.mac
