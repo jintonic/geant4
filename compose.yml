@@ -45,4 +45,16 @@ services:
       - net.ipv4.tcp_keepalive_intvl=60
       - net.ipv4.tcp_keepalive_probes=5
       - net.ipv4.tcp_keepalive_time=300
+  jekyll: # docker compuse up
+    image: physino/jekyll:pages
+    # --force_polling: needed in bash in windows to watch for file changes
+    # --livereload: let a browser to reload when the site is regenerated
+    command: jekyll serve --incremental --livereload --force_polling
+    ports:
+      # port for http service
+      - 4000:4000
+      # port for livereload service. --livereload won't work without it
+      - 35729:35729
+    volumes:
+      - .:/srv/jekyll
 
