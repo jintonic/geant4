@@ -25,3 +25,5 @@ macro
 *.mov
 *.mpeg
 *.gif
+_site
+.jekyll*
