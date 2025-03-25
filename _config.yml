@@ -9,5 +9,6 @@ exclude:
   - datasets/*6*
   - datasets/*2*
   - examples
-  - UI
+  - UI/shine
+  - UI/macro
   - compose.yml
