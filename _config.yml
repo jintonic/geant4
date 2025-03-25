@@ -1,5 +1,13 @@
 theme: jekyll-theme-slate
-title: Geant4
-description: Zero to Hero
+title: Geant4 Zero to Hero
+description: The Definitive Guide for End Users
 show_downloads: false
 google_analytics: G-GWLWQKHS6W
+exclude:
+  - 11
+  - datasets/G4*
+  - datasets/*6*
+  - datasets/*2*
+  - examples
+  - UI
+  - compose.yml
