@@ -1,11 +1,13 @@
 [![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://youtu.be/0UHyO2agCAc)
 [![Installation](https://img.shields.io/badge/Get-Geant4-blue?style=flat)](..)
 
-[Geant4][] is written in C++. The following knowledge of C++ can be helpful to understand the usage of [Geant4][].
+# How to Compile C++ Program
 
-## Compile a Simple C++ Program
+[Geant4][] is written in C++. The following knowledge of C++ can be helpful to understand the compilation of [Geant4][].
 
-[hello.cc][] is a very simple C++ program. It is just a pure text file with a special suffix `.cc` instead of `.txt`. A program called [compiler][] is needed to turn it into an executable file that can be run by a computer. In Linux, the most common compiler is GNU Compiler Collection, or [GCC][] in short. It includes a C++ compiler, `g++`, the usage of which is demonstrated by the commands below (Lines started with # are comments. They are not commands). In a Mac, the default compiler is [Clang][]. However, the same command `g++` can be used to call it as well.
+## Manual Compilation
+
+[hello.cc][] is a very simple C++ program. It is just a pure text file with a special suffix `.cc` instead of `.txt`. A program called [compiler][] is needed to turn it into an executable file that can be run by a computer. In Linux, the most common compiler is *GNU Compiler Collection*, or [GCC][] in short. It includes a C++ compiler, `g++`, the usage of which is demonstrated by the commands below (Lines started with # are comments. They are not commands). In a Mac, the default compiler is [Clang][]. However, the same command `g++` can be used to call it as well.
 
 ```sh
 # compile hello.cc using GNU C++ compiler, g++
@@ -20,7 +22,7 @@ g++ hello.cc -o hello
 # check which libraries are linked in hello in Linux
 # https://unix.stackexchange.com/questions/120015
 ldd hello
-# the equivalent cmd in Mac is otool -L hello
+# the equivalent cmd of ldd in Mac is otool -L hello
 ```
 
 `g++ hello.cc` does not show any output. One can request `g++` to show the compilation process in detail with the verbose option -v:
@@ -31,7 +33,7 @@ g++ -v hello.cc
 
 For people who want to learn more, the verbose output of g++ is explained in detail here: <https://stackoverflow.com/a/13456065/1801749>
 
-## Makefile - Collection of Compilation Commands
+## Makefile
 
 Compilation related commands can be written in a [Makefile][] as [recipes][] of compilation [rules][], which can be called by the [make][] command:
 
@@ -49,9 +51,9 @@ hello
 make uninstall
 ```
 
-## Use CMake to Generate Makefile or Its Equivalence
+## CMake
 
-It takes time to learn [how to write a proper Makefile]. The Windows operating system doesn't even use Makefiles. Another program, [CMake][], can be used to generate Makefiles on Linux and Mac, or their equivalence in a Windows computer. Instructions for the `cmake` command are written in a file called [CMakeLists.txt][]. They are easier to learn and more human-readable than Makefiles. The usage of `cmake` in a Linux or Mac terminal goes like
+It takes time to learn [how to write a proper Makefile]. The Windows operating system doesn't even use Makefiles. Another program, [CMake][], can be used to generate Makefiles on Linux and Mac, or their equivalence in a Windows computer. Instructions for the `cmake` command are written in a file called [CMakeLists.txt][]. They are easier to learn and more human-readable than those in a Makefile. The usage of `cmake` in a Linux or Mac terminal goes like
 
 ```sh
 # create a folder, build/, and generate Makefiles in it
@@ -71,16 +73,16 @@ make install
 
 Now you are ready to proceed to <https://github.com/jintonic/mingle> to learn how to write and compile (or *build* if we use the [CMake][] terminology) a very simple C++ program that uses [Geant4][] libraries.
 
-[Geant4]: https://physino.xyz/geant4
-[hello.cc]: https://github.com/jintonic/geant4/blob/main/cpp/hello.cc
+[Geant4]: ../..
+[hello.cc]: https://github.com/jintonic/geant4/blob/main/installation/cpp/hello.cc
 [recipes]: https://www.gnu.org/software/make/manual/html_node/Recipes.html
 [rules]: https://www.gnu.org/software/make/manual/html_node/Rules.html
 [compiler]: https://en.wikipedia.org/wiki/Compiler
 [GCC]: https://gcc.gnu.org
 [Clang]: https://clang.llvm.org
-[Makefile]: https://github.com/jintonic/geant4/blob/main/cpp/Makefile
+[Makefile]: https://github.com/jintonic/geant4/blob/main/installation/cpp/Makefile
 [how to write a proper Makefile]: https://opensource.com/article/18/8/what-how-makefile
 [make]: https://www.gnu.org/software/make/manual/make.html
 [CMake]: https://cmake.org
-[CMakeLists.txt]: https://github.com/jintonic/geant4/blob/main/cpp/CMakeLists.txt
+[CMakeLists.txt]: https://github.com/jintonic/geant4/blob/main/installation/cpp/CMakeLists.txt
 [cmake-gui]: https://cmake.org/cmake/help/latest/manual/cmake-gui.1.html
