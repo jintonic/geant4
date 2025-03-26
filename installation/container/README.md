@@ -67,15 +67,6 @@ export GEANT4_DATA_DIR=~/path/to/geant4/data/in/the/host/
 apptainer exec docker://physino/geant4 bash
 ```
 
-#### Download Official Geant4 Examples
-
-[![GEARS](https://img.shields.io/badge/GEARS-red?style=flat)](https://www.github.com/jintonic/gears)
-[![MinGLE](https://img.shields.io/badge/MinGLE-blue?style=flat)](https://www.github.com/jintonic/mingle)
-[![Official Examples](https://img.shields.io/badge/Official-Examples-green?style=flat)](https://github.com/Geant4/geant4/tree/master/examples)
-
-[GEARS][] and [MinGLE][] are more [end user] friendly than official geant4 examples. However, if you've already grown out of them and want to learn more, the best way to download a single example from <https://github.com/Geant4/geant4/tree/master/examples> is to follow this [StackOverflow][] post: <https://stackoverflow.com/a/70729494/1801749>.
-
-[official geant4 examples]: https://github.com/Geant4/geant4/tree/master/examples
 ## Tools
 
 ### Text Editor
@@ -154,4 +145,5 @@ By default `apptainer pull libray://physino/geant4/latest` will pull `library://
 [Singularity]: https://en.wikipedia.org/wiki/Singularity_(software)
 [sylabs]: https://cloud.sylabs.io/library/physino/geant4/latest
 [remote]: https://apptainer.org/docs/user/1.0/endpoint.html
-
+[StackOverflow]: https://stackoverflow.com
+[git]: https://git-scm.com
