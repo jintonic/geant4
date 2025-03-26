@@ -8,7 +8,10 @@ exclude:
   - datasets/G4*
   - datasets/*6*
   - datasets/*2*
-  - examples
+  - examples/gears
+  - examples/mingle
+  - examples/QF
+  - examples/pct
   - UI/shine
   - UI/macro
   - compose.yml
