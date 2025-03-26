@@ -47,13 +47,23 @@ Is it possible to provide a compiled Geant4 application that can be double click
 - There is no way to include all existing, or to-be-constructed radiation detectors or shielding geometries into one program. Even end users must learn [how to model their own experimental setups](detector) if nobody else does that for them.
 - A [C++ program must be compiled](installation/cpp) on a specific OS to run on that system. A C++ program that is compiled on a Mac cannot be used on Windows or Linux.
 
-## Survival Tips for Geant4 End Users
+## Fastest Way to Learn Geant4
 
-First, find people around you who know how to use Geant4, ask them to walk you through the process. If there is nobody around you who can do this, follow this guide. It is possible to learn Geant4 by following the official [User Guide for Application Developers][guide]. But it is hard, because the official guide targets application developers, **NOT** end users.
+Despite of all these obstacles, it is possible for beginners to start their own Geant4 simulations within a few hours if they are pointed to the right direction. I taught Geant4 in a [summer school](https://pire.gemadarc.org/education/school24). Some undergraduate students managed to simulate a simple radiation detector system after 6 hours of instruction. Of course, your mileage may vary due to different background and resources available around you. But there are some basic tips that can help speed up your learning process and make it exciting instead of frastrating.
 
-Second, avoid [installing Geant4](installation) by yourself whenever possible. It is often possible to find some computers in your research or working group that already have Geant4 installed. If you are in a large research group, you may be able to gain access to some high performance computing clusters (HPC), where multiple versions of Geant4 are available. If you cannot find any, please consider using [containerized Geant4](installation/container), or [cloud-based Geant4](UI), which can be used in any OS without installation.
+First, find people around you who know how to use Geant4, ask them to walk you through the process. If nobody around you can help, follow this guide. It is possible to learn Geant4 by following the official [User Guide for Application Developers][guide]. But it is hard, because the official guide targets application developers, **NOT** end users.
 
-Third, avoid writing your own Geant4 applications.
+Second, **avoid** [installing Geant4](installation) by yourself. It is often possible to find some computers in your research or working group that already have Geant4 installed. If you are in a large research group, you may be able to gain access to some high performance computing (HPC) clusters, where multiple versions of Geant4 are available. If you cannot find any, please consider using [containerized Geant4](installation/container), or [cloud-based Geant4](UI), which can be used in any OS without installation.
+
+Third, **avoid** writing your own Geant4 applications. Ask your supervisor to provide one, or modify an official Geant4 [example application] that is close to what you are trying to simulate. If you don't know how to modify C++ code, consider using [GEARS][] - Geant4 Example Application with Rich features yet Small footprint, one of the [universal Geant4 applications](https://youtu.be/3g9CkyBS31o), which allows you to perform most simulations without writing a single line of C++.
+
+At this point, some of you may ask, so I don't have to learn anything? You do, but I don't recommend you to start with things that are only remotely related to the simulation that you want to do.
+
+Instead, you may start with getting familiar with Geant4 user interface ([UI](UI)), where you can learn how to use Geant4 [macro][] commmands to perform a simulation. You may also want to learn various ways to [visualize](visualization) your detector model and particle trajectories to make sure that you simulation makes sense.
+
+After playing around with some existing detector models, you may be keen to [create your own models](detector). Remember, this can be done **without** any C++. Geant4 allows you to [describe your model using simple text](detector). I have created a series of [![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://www.youtube.com/playlist?list=PLw3G-vTgPrdBxXZo1UpOD_xVFSgM3hLn-) videos to demonstrate this method.
+
+In summary, the fastest way to start your own Geant4 simulation is to use an existing Geant4 installation and application to get familiar with Geant4 [UI](UI), [macro][] commands, [visualization](visualization), and [detector definition using simple text](detector). This way, you are actually learning how to **use** Geant4 instead of learning how to install Geant4.
 
 ## Epilogue
 
@@ -76,4 +86,5 @@ This [repository] was originally created to avoid duplicating common [Geant4][] 
 [GDML]: https://gdml.web.cern.ch/GDML/
 [md]: https://en.wikipedia.org/wiki/Markdown
 [HTML]: https://www.w3schools.com/html
-
+[macro]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Control/commands.html
+[CAD]: https://en.wikipedia.org/wiki/Computer-aided_design
