@@ -28,29 +28,30 @@ This website is provided to flatten the steep learning curve of Geant4 for its e
 
 [Q&A]: https://geant4-userdoc.web.cern.ch/UsersGuides/IntroductionToGeant4/html/IntroductionToG4.html#software-knowledge-required-to-use-the-geant4-toolkit
 
-## Why Is It Hard to Learn Geant4
+## Why It Is Hard to Learn Geant4
 
-Most of us are end users. All we need is a Geant4 application that has already been compiled for our operating system so that we can double click and run it. Geant4 does provide many [example application]s to show its muscles. However, too many choices actually paralyze a poor end user. Which one shall we choose?! A reasonable choice would be the simplest one. However, the simplest Geant4 application example, [B1][], has very limited functionality. To adopt it for our specific applications, we, as end users, are forced to learn how to modify and compile a Geant4 [example application], and become an application developer. No wonder the first Geant4 User guide is for application developers instead of end users.
+As end users, all we need is a Geant4 application that has already been compiled for our operating systems (OS), and we can just double click and run it. Geant4 does provide many [example application]s to show its muscles. However, too many choices actually paralyze a poor end user. Which one shall we choose?! A reasonable choice would be the simplest one. However, the simplest Geant4 application example, [B1][], has very limited functionality. To adopt it for our specific applications, we, as end users, are forced to learn how to modify and compile a Geant4 [example application], and become an application developer. No wonder the first Geant4 User guide is for application developers instead of end users.
 
 [example application]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Examples/examples.html
 [B1]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Examples/BasicCodes.html#exmpbasic-b1
 
-According to <https://geant4.org/docs/#user-guides>, 
-> If you are new to Geant4, we recommend that you read this document ([Geant4 User Guide for Application Developers]) first. The first part of the document provides a step-by-step tutorial in the use of Geant4; this is for a **novice** user. The second part describes the usage of the toolkit for practical applications, with a lot of example codes. After reading this part, you will be able to start to *write a detector simulation program* for most applications/experiments.
+According to <https://geant4.org/docs/#user-guides>,
+> If you are new to Geant4, we recommend that you read this document ([Geant4 User Guide for Application Developers][guide]) first. The first part of the document provides a step-by-step tutorial in the use of Geant4; this is for a **novice** user. The second part describes the usage of the toolkit for practical applications, with a lot of example codes. After reading this part, you will be able to start to *write a detector simulation program* for most applications/experiments.
 
-[Geant4 User Guide for Application Developers]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/index.html
+[guide]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/index.html
 
 The shocking fact is that there is **NO** official guide for end users! This is understandable, because Geant4 is provided as a **toolkit** (individual Lego pieces), way more flexible than a specific **application** (a finished Lego model). Nevertheless, this is bad news for absolute beginners who need an executable application instead of a comprehensive but complicated toolkit.
 
-Is it possible to provide a compiled Geant4 application that can be double clicked and run for different simulations on different operating systems? This is a mission impossible because
+Is it possible to provide a compiled Geant4 application that can be double clicked and run for different simulations on different OS? It is possible but quit hard, because
 
-- There is no way to include all existing, or to-be-constructed radiation detectors or shielding geometries into one program. Even end users must learn [how to model their specific setups](detector).
-- A [C++ program must be compiled](installation/cpp) on a specific operating system to run on that system. A C++ program that is compiled on a Mac cannot be used on Windows or Linux.
+- There is no way to include all existing, or to-be-constructed radiation detectors or shielding geometries into one program. Even end users must learn [how to model their own experimental setups](detector) if nobody else does that for them.
+- A [C++ program must be compiled](installation/cpp) on a specific OS to run on that system. A C++ program that is compiled on a Mac cannot be used on Windows or Linux.
 
 ## Survival Tips for Geant4 End Users
 
-However, there are ways to get closer to this goal. To solve the first problem, a [web-based user interface] can be used by an end user to construct a specific detector or shielding structure without C++ programming. To solve the second problem, a container image can be used to include compiled Geant4 libraries and ready-to-run applications that can read the output of the web UI. Both can run on all major operating systems and require no C++ programming experience to begin with.
+First, find people around you who know how to use Geant4, ask them to walk you through the process. If there is nobody around you who can do this, follow this guide. It is possible to learn Geant4 by following the official [User Guide for Application Developers][guide]. But it is hard, because the official guide targets application developers, **NOT** end users.
 
+Second, avoid [installing Geant4](installation) by yourself whenever possible. It is often possible to find some computers in your research or working group that already have Geant4 installed. If you are in a large research group, you may be able to gain access to some high performance computing clusters (HPC), where multiple versions of Geant4 are available. If you cannot find any, please consider using [containerized Geant4](installation/container), or [cloud-based Geant4](UI).
 
 ## Epilogue
 
