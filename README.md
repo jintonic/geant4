@@ -1,4 +1,4 @@
-[![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://www.youtube.com/@physino)
+[![Tutorials](https://img.shields.io/badge/You-Tube-red?style=flat)](https://www.youtube.com/@physino)
 [![UI](https://img.shields.io/badge/User-Interface-blue?style=flat)](UI)
 [![Installation](https://img.shields.io/badge/Get-Geant4-green?style=flat)](installation)
 [![Detector](https://img.shields.io/badge/Detector-Definition-yellow?style=flat)](detector)
@@ -10,13 +10,13 @@ According to <https://geant4.org>, Geant4 is a
 
 which means that it is **NOT** a program that can be double-clicked and run after installation.
 
-Instead, Geant4 is provided as a set of [C++](installation/cpp) libraries that need to be compiled [^1]. One must write a C++ program (Geant4 application) that calls functions provided in the compiled Geant4 libraries. The application itself also needs to be compiled, before it can be double-clicked and run.
+Instead, Geant4 is provided as a set of [C++](installation/cpp) libraries that need to be compiled [^1]. One must write a C++ program (Geant4 [application](examples)) that calls functions provided in the compiled Geant4 libraries. The application itself also needs to be compiled, before it can be double-clicked and run.
 
 [^1]: Binary releases on <https://geant4.org/download> are pre-compiled Geant4 libraries. They only work on very specific operating systems. This approach works best for Windows users. Please watch the first 5 videos in [this] YouTube playlist to understand the pro's and con's of pre-compiled Geant4 libraries.
 
 [this]: https://www.youtube.com/playlist?list=PLw3G-vTgPrdB7cIYWEoCeIZrSePpefFEW
 
-Think Geant4 as a set of disassembled Lego pieces (libraries). One needs to put them together into a Lego model, such as a car, a plane, or a house, etc. (applications).
+Think Geant4 as a set of disassembled Lego pieces (libraries). One needs to put them together into a Lego model, such as a car, a plane, or a house, etc. ([applications](examples)).
 
 The Geant4 [Q&A] hence defines three types of users:
 
@@ -24,7 +24,7 @@ The Geant4 [Q&A] hence defines three types of users:
 - the **application developer**, who writes a Geant4 application,
 - the **framework provider**, who updates or extends Geant4 libraries.
 
-This website is provided to flatten the steep learning curve of Geant4 for its end users, with some thoughts on how application developers and framework providers can serve end users better.
+This guide is provided to flatten the steep learning curve of Geant4 for its end users, with some thoughts on how application developers and framework providers can serve end users better.
 
 [Q&A]: https://geant4-userdoc.web.cern.ch/UsersGuides/IntroductionToGeant4/html/IntroductionToG4.html#software-knowledge-required-to-use-the-geant4-toolkit
 
@@ -67,24 +67,16 @@ In summary, the fastest way to start your own Geant4 simulation is to use an exi
 
 ## Epilogue
 
-This [repository] was originally created to avoid duplicating common [Geant4][] related stuff (e.g. datasets, containers, documentation, etc.) in individual [Geant4][] applications, such as [GEARS][] and [MinGLE][]. It has evolved into a central hub to collect and disseminate my ideas and effort toward a more end user friendly Geant4 ecosystem. Welcome to join [me][] if you are interested in the development of [Shine][], [GEARS][], [MinGLE][], [containerized Geant4](installation/container), or YouTube [tutorials][].
+This guide was originally created as a GitHub [repository] to avoid duplicating common [Geant4][] related tasks (e.g. datasets, containers, documentation, etc.) in individual [Geant4][] applications, such as [GEARS][] and [MinGLE][]. It has evolved into a central hub to collect and disseminate my ideas and effort toward a more end user friendly Geant4 ecosystem. Welcome to join [me][] if you are interested in the development of [Shine][], [GEARS][], [MinGLE][], [containerized Geant4](installation/container), or YouTube [tutorials][].
 
 ## Footnote
 
-[StackOverflow]: https://stackoverflow.com
-[git]: https://git-scm.com
-[Apptainer]: https://apptainer.org
 [Geant4]: https://geant4.org
 [GEARS]: https://github.com/jintonic/gears
 [MinGLE]: https://github.com/jintonic/mingle
 [repository]: https://github.com/jintonic/geant4
 [me]: https://physino.xyz
 [shine]: https://physino.xyz/shine
-[image]: https://hub.docker.com/r/physino/geant4
 [tutorials]: https://www.youtube.com/@physino
-[tg]: http://geant4-userdoc.web.cern.ch/geant4-userdoc/UsersGuides/ForApplicationDeveloper/html/Detector/Geometry/geomASCII.html
-[GDML]: https://gdml.web.cern.ch/GDML/
-[md]: https://en.wikipedia.org/wiki/Markdown
-[HTML]: https://www.w3schools.com/html
 [macro]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Control/commands.html
 [CAD]: https://en.wikipedia.org/wiki/Computer-aided_design
