@@ -51,7 +51,9 @@ Is it possible to provide a compiled Geant4 application that can be double click
 
 First, find people around you who know how to use Geant4, ask them to walk you through the process. If there is nobody around you who can do this, follow this guide. It is possible to learn Geant4 by following the official [User Guide for Application Developers][guide]. But it is hard, because the official guide targets application developers, **NOT** end users.
 
-Second, avoid [installing Geant4](installation) by yourself whenever possible. It is often possible to find some computers in your research or working group that already have Geant4 installed. If you are in a large research group, you may be able to gain access to some high performance computing clusters (HPC), where multiple versions of Geant4 are available. If you cannot find any, please consider using [containerized Geant4](installation/container), or [cloud-based Geant4](UI).
+Second, avoid [installing Geant4](installation) by yourself whenever possible. It is often possible to find some computers in your research or working group that already have Geant4 installed. If you are in a large research group, you may be able to gain access to some high performance computing clusters (HPC), where multiple versions of Geant4 are available. If you cannot find any, please consider using [containerized Geant4](installation/container), or [cloud-based Geant4](UI), which can be used in any OS without installation.
+
+Third, avoid writing your own Geant4 applications.
 
 ## Epilogue
 
