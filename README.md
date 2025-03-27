@@ -1,9 +1,10 @@
 [![Tutorials](https://img.shields.io/badge/You-Tube-red?style=flat)](https://www.youtube.com/@physino)
-[![UI](https://img.shields.io/badge/User-Interface-blue?style=flat)](UI)
-[![Installation](https://img.shields.io/badge/Get-Geant4-green?style=flat)](installation)
-[![Detector](https://img.shields.io/badge/Detector-Definition-yellow?style=flat)](detector)
-[![Visualization](https://img.shields.io/badge/Visualization-orange?style=flat)](visualization)
-[![Source](https://img.shields.io/badge/Particle-Source-cyan?style=flat)](source)
+[![Installation](https://img.shields.io/badge/Get-Geant4-orange?style=flat)](installation)
+[![UI](https://img.shields.io/badge/User-Interface-yellow?style=flat)](UI)
+[![Visualization](https://img.shields.io/badge/Visualization-green?style=flat)](visualization)
+[![Detector](https://img.shields.io/badge/Detector-Definition-cyan?style=flat)](detector)
+[![Source](https://img.shields.io/badge/Particle-Source-blue?style=flat)](source)
+[![Examples](https://img.shields.io/badge/Example-Applications-purple?style=flat)](example)
 
 According to <https://geant4.org>, Geant4 is a
 > **Toolkit** for the simulation of the passage of particles through matter.
