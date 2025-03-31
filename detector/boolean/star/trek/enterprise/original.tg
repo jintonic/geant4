@@ -1,0 +1,23 @@
+:solid disk POLYCONE 0 360 13
+0   190
+68  190
+105 180
+119 170
+128 160
+132 150
+140 130
+250 120
+350 100
+400  40
+710  40
+670 -30
+0   -30
+
+:volu ship disk G4_Al
+
+:volu space BOX 800 800 800 G4_Galactic
+:vis space OFF
+
+:rotm r000 0 0 0
+:place ship 1 space r000 0 0 0
+
