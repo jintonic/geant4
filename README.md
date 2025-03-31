@@ -6,7 +6,7 @@
 [![Source](https://img.shields.io/badge/Particle-Source-blue?style=flat)](source)
 [![Examples](https://img.shields.io/badge/Example-Applications-purple?style=flat)](example)
 
-According to <https://geant4.org>, Geant4 is a
+According to <https://geant4.web.cern.ch>, Geant4 is a
 > **Toolkit** for the simulation of the passage of particles through matter.
 
 which means that it is **NOT** a program that can be double-clicked and run after installation.
