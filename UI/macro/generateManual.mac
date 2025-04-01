@@ -1,0 +1,11 @@
+# print macro cmds on screen before execute them
+/control/verbose
+# create the manual in HTML format
+/control/createHTML
+# move HTML files to the cmds/ subfolder
+# NOTE: this only works on Linux/WSL/Mac
+/control/shell mkdir -p cmds && mv *.html cmds
+/control/shell ./listColors.sh
+/control/shell ./listMaterials.sh
+/control/shell ./listParticles.sh
+/control/shell ./listUnits.sh
