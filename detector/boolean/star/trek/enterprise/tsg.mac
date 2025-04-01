@@ -1,0 +1,4 @@
+/control/getEnv G4VIS_DEFAULT_DRIVER
+/control/strdoif {G4VIS_DEFAULT_DRIVER} == TSG_FILE \
+/control/loop loop.mac phi 0 360 1
+
