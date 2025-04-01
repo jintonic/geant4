@@ -13,5 +13,4 @@ exclude:
   - examples/QF
   - examples/pct
   - UI/shine
-  - UI/macro
   - compose.yml

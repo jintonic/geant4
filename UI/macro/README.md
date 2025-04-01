@@ -10,7 +10,7 @@ The usage of these [commands][] can be found online [here](https://geant4-userdo
 mingle generateManuals.mac
 ~~~
 
-assuming that [MinGLE][] (or any Geant4 [examples](../../examples) is available in your system. The command generates a list of macro [commands][] in HTML format in a sub-folder `cmds/`, as well as built-in [colors][], [materials][], [particles][], and [units][].
+assuming that [MinGLE][] (or any Geant4 [example](../../examples) is available in your system. The command generates a list of macro [commands][] in HTML format in a sub-folder `cmds/`, as well as built-in [colors][], [materials][], [particles][], and [units][].
 
 > **NOTE**
 > [generateManuals.mac][] uses some commands that are only available on Linux/WSL/Mac. If you are on Windows, the generated HTML files will stay in the current folder. Lists of [colors][], [materials][], [particles][], and [units][] can be printed out using the following commands:
@@ -26,6 +26,7 @@ All macro files can be found on <https://github.com/jintonic/geant4/UI/macro>.
 
 [commands]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Control/commands.html
 [generateManuals.mac]: https://github.com/jintonic/geant4/blob/main/UI/macro/generateManuals.mac
+[MinGLE]: https://github.com/jintonic/mingle
 [colors]: colors.txt
 [materials]: materials.txt
 [particles]: particles.txt
