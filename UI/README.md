@@ -1,7 +1,8 @@
+# Geant4 User Interface (UI)
+[![Macro](https://img.shields.io/badge/Macro-Commands-blue?style=flat)](macro)
+[![Shine](https://img.shields.io/badge/Shine-orange?style=flat)](https://physino.xyz/shine)
 
 ## Shine: a Web UI for Geant4
-
-[![Shine](https://img.shields.io/badge/Shine-orange?style=flat)](https://physino.xyz/shine)
 
 It is the user's responsibility to provide a detector model for a Geant4 simulation. The [Geant4 User Guide for Application Developers] provides detailed instruction on how to [program detector definition and response in C++]. Again, end users are forced to become application developers if they choose to go that route.
 
