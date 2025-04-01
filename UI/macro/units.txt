@@ -1,0 +1,170 @@
+          ----- The Table of Units ----- 
+
+  category: Length
+    parsec ( pc) = 3.08568e+19
+ kilometer ( km) = 1e+06
+     meter (  m) = 1000
+centimeter ( cm) = 10
+millimeter ( mm) = 1
+micrometer ( um) = 0.001
+ nanometer ( nm) = 1e-06
+  angstrom (Ang) = 1e-07
+     fermi ( fm) = 1e-12
+
+  category: Surface
+ kilometer2 (   km2) = 1e+12
+     meter2 (    m2) = 1e+06
+centimeter2 (   cm2) = 100
+millimeter2 (   mm2) = 1
+       barn (  barn) = 1e-22
+  millibarn ( mbarn) = 1e-25
+  microbarn (mubarn) = 1e-28
+   nanobarn ( nbarn) = 1e-31
+   picobarn ( pbarn) = 1e-34
+
+  category: Volume
+ kilometer3 (km3) = 1e+18
+     meter3 ( m3) = 1e+09
+centimeter3 (cm3) = 1000
+millimeter3 (mm3) = 1
+      liter (  L) = 1e+06
+         dL ( dL) = 100000
+         cL ( cL) = 10000
+         mL ( mL) = 1000
+
+  category: Angle
+     radian ( rad) = 1
+milliradian (mrad) = 0.001
+     degree ( deg) = 0.0174533
+
+  category: Solid angle
+     steradian ( sr) = 1
+millisteradian (msr) = 0.001
+
+  category: Time
+     second (  s) = 1e+09
+millisecond ( ms) = 1e+06
+microsecond ( us) = 1000
+ nanosecond ( ns) = 1
+ picosecond ( ps) = 0.001
+     minute (min) = 6e+10
+       hour (  h) = 3.6e+12
+        day (  d) = 8.64e+13
+       year (  y) = 3.1536e+16
+
+  category: Frequency
+    hertz ( Hz) = 1e-09
+kilohertz (kHz) = 1e-06
+megahertz (MHz) = 0.001
+
+  category: Velocity
+cm/ns (cm/ns) = 10
+mm/ns (mm/ns) = 1
+cm/us (cm/us) = 0.01
+ km/s ( km/s) = 0.001
+cm/ms (cm/ms) = 1e-05
+  m/s (  m/s) = 1e-06
+ cm/s ( cm/s) = 1e-08
+ mm/s ( mm/s) = 1e-09
+
+  category: Electric charge
+  eplus (e+) = 1
+coulomb ( C) = 6.24151e+18
+
+  category: Energy
+     electronvolt ( eV) = 1e-06
+ kiloelectronvolt (keV) = 0.001
+ megaelectronvolt (MeV) = 1
+ gigaelectronvolt (GeV) = 1000
+ teraelectronvolt (TeV) = 1e+06
+ petaelectronvolt (PeV) = 1e+09
+millielectronVolt (meV) = 1e-09
+            joule (  J) = 6.24151e+12
+
+  category: Momentum
+ eV/c ( eV/c) = 1e-06
+keV/c (keV/c) = 0.001
+MeV/c (MeV/c) = 1
+GeV/c (GeV/c) = 1000
+TeV/c (TeV/c) = 1e+06
+
+  category: Energy/Length
+GeV/cm (GeV/cm) = 100
+MeV/cm (MeV/cm) = 0.1
+keV/cm (keV/cm) = 0.0001
+ eV/cm ( eV/cm) = 1e-07
+
+  category: Mass
+milligram (mg) = 6.24151e+18
+     gram ( g) = 6.24151e+21
+ kilogram (kg) = 6.24151e+24
+
+  category: Volumic Mass
+ g/cm3 ( g/cm3) = 6.24151e+18
+mg/cm3 (mg/cm3) = 6.24151e+15
+ kg/m3 ( kg/m3) = 6.24151e+15
+
+  category: Mass/Surface
+ g/cm2 ( g/cm2) = 6.24151e+19
+mg/cm2 (mg/cm2) = 6.24151e+16
+kg/cm2 (kg/cm2) = 6.24151e+22
+
+  category: Surface/Mass
+cm2/g (cm2/g) = 1.60218e-20
+
+  category: Energy*Surface/Mass
+ eV*cm2/g ( eV*cm2/g) = 1.60218e-26
+keV*cm2/g (keV*cm2/g) = 1.60218e-23
+MeV*cm2/g (MeV*cm2/g) = 1.60218e-20
+GeV*cm2/g (GeV*cm2/g) = 1.60218e-17
+
+  category: Power
+watt (W) = 6241.51
+
+  category: Force
+newton (N) = 6.24151e+09
+
+  category: Pressure
+    pascal ( Pa) = 6241.51
+       bar (bar) = 6.24151e+08
+atmosphere (atm) = 6.32421e+08
+
+  category: Electric current
+     ampere (  A) = 6.24151e+09
+milliampere ( mA) = 6.24151e+06
+microampere (muA) = 6241.51
+ nanoampere ( nA) = 6.24151
+
+  category: Electric potential
+    volt ( V) = 1e-06
+kilovolt (kV) = 0.001
+megavolt (MV) = 1
+
+  category: Electric field
+    volt/m ( V/m) = 1e-09
+kilovolt/m (kV/m) = 1e-06
+megavolt/m (MV/m) = 0.001
+
+  category: Magnetic flux
+weber (Wb) = 1000
+
+  category: Magnetic flux density
+    tesla ( T) = 0.001
+kilogauss (kG) = 0.0001
+    gauss ( G) = 1e-07
+
+  category: Temperature
+kelvin (K) = 1
+
+  category: Amount of substance
+mole (mol) = 1
+
+  category: Molar mass
+g/mole (g/mol) = 6.24151e+21
+
+  category: Activity
+becquerel (Bq) = 1e-09
+    curie (Ci) = 37
+
+  category: Dose
+gray (Gy) = 1e-12
