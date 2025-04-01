@@ -12,7 +12,7 @@ The geometry is defined in [original.tg][]. Dimensions are measured using an on-
 [CSG]: ../../../../CSG
 [trapezoid]: ../../../../CSG/trap11
 [polycone]: ../../../../CSG/cons
-[YouTube]: https://youtube.com/shorts/9q6X-I14T9Q
+[YouTube]: https://youtube.com/shorts/psQj1MiIR8A
 [original.tg]: https://github.com/jintonic/geant4/blob/main/detector/boolean/star/trek/enterprise/original.tg
 [gears.mac]: https://github.com/jintonic/geant4/blob/main/detector/boolean/star/trek/enterprise/gears.mac
 [tsg.mac]: https://github.com/jintonic/geant4/blob/main/detector/boolean/star/trek/enterprise/tsg.mac
