@@ -22,7 +22,7 @@ mingle listParticles.mac
 mingle listUnits.mac
 ~~~
 
-All macro files can be found on <https://github.com/jintonic/geant4/UI/macro>.
+All macro files can be found on <https://github.com/jintonic/geant4/tree/main/UI/macro>.
 
 [commands]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Control/commands.html
 [generateManuals.mac]: https://github.com/jintonic/geant4/blob/main/UI/macro/generateManuals.mac
