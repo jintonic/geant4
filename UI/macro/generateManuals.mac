@@ -10,4 +10,5 @@
 /control/shell ./listColors.sh
 /control/shell ./listMaterials.sh
 /control/shell ./listParticles.sh
+/control/shell ./listProcesses.sh
 /control/shell ./listUnits.sh
