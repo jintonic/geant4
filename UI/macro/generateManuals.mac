@@ -1,5 +1,7 @@
 # print macro cmds on screen before execute them
 /control/verbose
+# create menu in GUI for manual printing
+/control/ifInteractive gui.mac
 # create the manual in HTML format
 /control/createHTML
 # move HTML files to the cmds/ subfolder
