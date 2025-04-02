@@ -1,0 +1,8 @@
+/vis/verbose 0
+/physics_lists/factory/addRadioactiveDecay
+/physics_lists/factory/addOptical
+/physics_lists/factory/addThermal
+/physics_lists/factory/addNeutrino
+/physics_lists/factory/addChargeExchange
+/run/initialize
+/process/list

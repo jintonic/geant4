@@ -1,0 +1,59 @@
+CoupledTransportation,   GammaGeneralProc,                msc,              eIoni
+              eBrem,        CoulombScat,                msc,              eIoni
+              eBrem,            annihil,        CoulombScat,                msc
+            ionIoni,                msc,             muIoni,            muBrems
+         muPairProd,        CoulombScat,             muIoni,                msc
+              hIoni,             hBrems,          hPairProd,        CoulombScat
+              hIoni,                msc,              hIoni,             hBrems
+          hPairProd,        CoulombScat,              hIoni,                msc
+              hIoni,             hBrems,          hPairProd,        CoulombScat
+                msc,              hIoni,        CoulombScat,              hIoni
+              hIoni,                msc,            ionIoni,                msc
+            ionIoni,              hIoni,              hIoni,              hIoni
+              hIoni,              hIoni,              hIoni,              hIoni
+              hIoni,              hIoni,              hIoni,              hIoni
+              hIoni,              hIoni,              hIoni,              hIoni
+              hIoni,              hIoni,              hIoni,              hIoni
+              hIoni,              hIoni,              hIoni,              hIoni
+              hIoni,              hIoni,              hIoni,              hIoni
+              hIoni,              hIoni,              hIoni,              hIoni
+              hIoni,              hIoni,              hIoni,              hIoni
+              hIoni,              hIoni,              hIoni,    electronNuclear
+    positronNuclear,        muonNuclear,              Decay,         hadElastic
+         hadElastic,         hadElastic,         hadElastic,         hadElastic
+         hadElastic,         hadElastic,         hadElastic,         hadElastic
+         hadElastic,         hadElastic,         hadElastic,         hadElastic
+         hadElastic,         hadElastic,         hadElastic,         hadElastic
+         hadElastic,         hadElastic,         hadElastic,         hadElastic
+         hadElastic,         hadElastic,         hadElastic,         hadElastic
+         hadElastic,         hadElastic,         hadElastic,         hadElastic
+         hadElastic,         hadElastic,         hadElastic,         hadElastic
+         hadElastic,         hadElastic,         hadElastic,         hadElastic
+         hadElastic,         hadElastic,         hadElastic,         hadElastic
+         hadElastic,         hadElastic,         hadElastic,         hadElastic
+         hadElastic,         hadElastic,         hadElastic,         hadElastic
+         hadElastic,         hadElastic,         hadElastic,         hadElastic
+         hadElastic,         hadElastic,         hadElastic,         hadElastic
+         hadElastic,         hadElastic,         hadElastic,   neutronInelastic
+           nCapture,    protonInelastic,       pi+Inelastic,       pi-Inelastic
+     kaon+Inelastic,     kaon-Inelastic,    kaon0LInelastic,    kaon0SInelastic
+anti_protonInelastic,anti_neutronInelastic,anti_deuteronInelastic,anti_tritonInelastic
+  anti_He3Inelastic,anti_alphaInelastic,    lambdaInelastic,    sigma+Inelastic
+    sigma-Inelastic,       xi0Inelastic,       xi-Inelastic,    omega-Inelastic
+anti_lambdaInelastic,anti_sigma+Inelastic,anti_sigma-Inelastic,  anti_xi0Inelastic
+  anti_xi-Inelastic,anti_omega-Inelastic,        D+Inelastic,        D0Inelastic
+        D-Inelastic,   anti_D0Inelastic,       Ds+Inelastic,       Ds-Inelastic
+        B+Inelastic,        B0Inelastic,        B-Inelastic,   anti_B0Inelastic
+       Bs0Inelastic,  anti_Bs0Inelastic,       Bc+Inelastic,       Bc-Inelastic
+ lambda_c+Inelastic,     xi_c+Inelastic,     xi_c0Inelastic,  omega_c0Inelastic
+  lambda_bInelastic,     xi_b0Inelastic,     xi_b-Inelastic,  omega_b-Inelastic
+anti_lambda_c+Inelastic,anti_xi_c+Inelastic,anti_xi_c0Inelastic,anti_omega_c0Inelastic
+anti_lambda_bInelastic,anti_xi_b0Inelastic,anti_xi_b-Inelastic,anti_omega_b-Inelastic
+hFritiofCaptureAtRest,hBertiniCaptureAtRest,muMinusCaptureAtRest,         dInelastic
+         tInelastic,       He3Inelastic,     alphaInelastic,       ionInelastic
+            nKiller,   RadioactiveDecay,   RadioactiveDecay,       OpAbsorption
+         OpRayleigh,            OpMieHG,         OpBoundary,              OpWLS
+             OpWLS2,           Cerenkov,      Scintillation,   nuVacOscillation
+         nuElectron,        muNuNucleus,tau-neutrino-nucleus,        elNuNucleus
+        pi-ChargeEx,        pi+ChargeEx,      kaon-ChargeEx,      kaon+ChargeEx
+     kaon0LChargeEx
