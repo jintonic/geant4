@@ -1,0 +1,16 @@
+/gui/addMenu window Window
+/gui/addButton window Close exit
+
+/gui/addMenu list List
+/gui/addButton list Analysis "/analysis/list 1"
+/gui/addButton list Materials "/material/nist/listMaterials all"
+/gui/addButton list Particles "/particle/list all"
+/gui/addButton list "Particle Definitions" /gps/List
+/gui/addButton list Processes "/process/list all"
+/gui/addButton list Score /score/list 
+/gui/addButton list Source /gps/source/list 
+/gui/addButton list Units /units/list 
+/gui/addButton list Visualization "/vis/list all"
+
+/gui/addMenu run Run
+/gui/addButton run /run/initialize /run/initialize
