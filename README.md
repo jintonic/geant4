@@ -4,7 +4,8 @@
 [![Visualization](https://img.shields.io/badge/Visualization-green?style=flat)](visualization)
 [![Detector](https://img.shields.io/badge/Detector-cyan?style=flat)](detector)
 [![Source](https://img.shields.io/badge/Particle-blue?style=flat)](source)
-[![Examples](https://img.shields.io/badge/Examples-purple?style=flat)](example)
+[![Examples](https://img.shields.io/badge/Examples-magenta?style=flat)](example)
+[![Physics](https://img.shields.io/badge/Physics-purple?style=flat)](physics)
 
 According to <https://geant4.web.cern.ch>, Geant4 is a
 > **Toolkit** for the simulation of the passage of particles through matter.
