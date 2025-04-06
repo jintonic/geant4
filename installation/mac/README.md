@@ -1,0 +1,17 @@
+[![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://www.youtube.com/playlist?list=PLw3G-vTgPrdDShnVve7JAqafhyQeU7nHR)
+[![Get Geant4](https://img.shields.io/badge/Get-Geant4-blue?style=flat)](..)
+
+# Geant4 Installation on Mac
+
+The easiest way to install Geant4 on Mac is to compile Geant4's source code using [CMake][] GUI, which can be installed using [Homebrew][]:
+
+~~~sh
+brew install --cask cmake
+~~~
+
+Since version 11.3.0, Geant4 can be compiled with [Qt][] 6 instead of 5. [Qt][] installed through `brew install qt` is version 6. Because [CMake][] can find [Qt][] 6 installed through [Homebrew][] automatically, I recommand Mac users to turn on [GEANT4_USE_QT_QT6][], which is `off` by default for the moment.
+
+[Qt]: https://www.qt.io
+[CMake]: ../cpp#cmake
+[Homebrew]: https://brew.sh
+[GEANT4_USE_QT_QT6]: https://geant4-userdoc.web.cern.ch/UsersGuides/InstallationGuide/html/installguide.html?highlight=qt6#advanced-options
