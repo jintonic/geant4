@@ -1,0 +1,28 @@
+:volu method1 POLYHEDRA
+ 0 270    // start phi, dphi in degree
+ 5 3      // # of sides, # of z planes
+ -20 2 10 // z0, R0in, R0out,
+   0 3 8  // z1, R1in, R1out,
+  20 5 10 // ...
+ G4_AIR
+:color method1 0.4 0.3 0.8
+
+:volu method2 POLYHEDRA
+ 0 270  // start phi, dphi in degree
+ 5 6    // # of sides, # of rz points
+ 2  -20 // r0, z0,
+ 10 -20 // r1, z1,
+ 8   0  // ...
+ 10  20
+ 5   20
+ 3   0
+ G4_AIR
+:color method2 0.9 0.3 0.2
+
+:volu hall BOX 80 80 80 G4_Galactic
+:vis hall OFF
+
+:rotm r000 0 0 0
+:place method1 1 hall r000 0 0 0
+:place method2 2 hall r000 25 0 0
+

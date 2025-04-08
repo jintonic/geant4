@@ -1,0 +1,23 @@
+/control/verbose
+
+/process/em/verbose 0
+/process/had/verbose 0
+
+/run/initialize
+
+/geometry/test/run
+
+/control/execute ../electron.mac
+
+/vis/open
+/vis/drawVolume
+
+/control/execute ../vis.mac
+
+/vis/verbose 0
+/control/verbose 0
+/control/doifBatch /control/execute ../tsg.mac
+
+/control/shell if ls *.png 1>/dev/null 2>&1; then \
+ ffmpeg -i "g4tsg_offscreen_zb_png_%d.png" -y polyhedra.gif; fi
+/control/shell if [ -f polyhedra.gif ]; then rm -f *.png; fi
