@@ -17,6 +17,7 @@
 	gStyle->SetTitleSize(0.05,"h");
 
 	// statistic box
+	gStyle->SetOptFit();
 	gStyle->SetOptStat(111110);
 	gStyle->SetStatX(0.98);
 	gStyle->SetStatY(0.98);
