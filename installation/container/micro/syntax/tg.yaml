@@ -8,7 +8,7 @@ rules:
   - comment: "//.*$"
   - statement: "#include"
   - constant.bool: "\\b(ON|OFF)\\b"
-  - constant.number: "[-+]?\\d*\\.?\\d*"
+  - constant.number: "\\b[-+]?\\d*\\.?\\d*"
   - preproc: "(?i)^:place_param\\b"
   - preproc: "(?i)^:(color|colour|mixt_by_natoms|place|prop|rotm|repl|solid|surf|vis|volu)\\b"
   - symbol: "[0-9](\\*|/)(eV|keV|MeV|mm|cm|m|micrometer|nm|um|ns|degree|rad)\\b"
