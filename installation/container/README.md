@@ -8,7 +8,7 @@ The [compilation][] of Geant4 C++ libraries and applications is a very challengi
 [compilation]: https://www.youtube.com/playlist?list=PLw3G-vTgPrdB9Nt2ekl2oL1yoqEC294Uf
 [container]: https://www.docker.com/resources/what-container
 
-<https://hub.docker.com/r/physino/geant4> is such an image. It includes the [official Geant4 libraries pre-compiled on AlmaLinux 9](https://geant4.org/download) and two tiny universal Geant4 [application]s, [GEARS][] and [MinGLE][]. Both accept the `detector.tg` file exported from [Shine][].
+<https://hub.docker.com/r/physino/geant4> is such an image. It includes the [official Geant4 libraries pre-compiled on AlmaLinux 9](https://geant4.org/download) and two tiny universal Geant4 [application]s, [GEARS][] and [MinGLE][]. Both accept [detector](../../detector) definitions described in [simple text](../../detector).
 
 [application]: https://www.youtube.com/watch?v=3g9CkyBS31o
 
@@ -16,13 +16,29 @@ To use this image, we need to install [Docker Desktop][], a program that manages
 
 [Docker Desktop]: https://www.docker.com/products/docker-desktop
 
-#### For Docker Users
+## Tools Provided in the Container
+
+### Text Editor
+[Micro][] is chosen instead of [Vim][] or other classical text editors because it is very friendly to inexperienced users, and powerful enough for experienced users.
+
+### Markdown Viewer
+A decent text editor can already show markdown files nicely. However, a viewer can avoid accidental modification of the original file from inexperienced users. It can also hide control marks from them to reduce confusion.
+
+There are many terminal based markdown viewers. [mdv][] is chosen because it can be easily installed through [pip][]. Since we already choose quite some [Python][] tools, most prerequisites of [mdv][] should have been fulfilled. Adding [mdv][] won't change the image size a lot.
+
+[Micro]: https://micro-editor.github.io
+[Vim]: https://www.vim.org
+[mdv]: https://github.com/axiros/terminal_markdown_viewer
+[pip]: https://pypi.org/project/pip
+[Python]: https://www.python.org
 
 > **Warning**
 > The end user friendly documentation in this section is still under construction.
 > Some knowledge about command-line operations is needed beyond this point.
 
-[compose.yml](compose.yml) in this folder provides the following command to quickly start your container with automatic volume and port mapping to the host:
+#### For Docker Users
+
+[compose.yml][] provides the following command to quickly start your container with automatic volume and port mapping to the host:
 
 ```sh
 docker compose run geant4
@@ -58,36 +74,20 @@ Use the following command to get into the container in a Linux host that has [Ap
 apptainer exec docker://physino/geant4 bash --login
 ```
 
-Without the `--login` option, an interactive, non-login shell will be created for the container, and the host's `~/.bashrc` is sourced. In a Ubuntu, Debian, or Arch-based Linux host, `~/.bashrc` doesn't source `/etc/bashrc` in the container, where `GEANT4_DATA_DIR` is declared to be `~/geant4/data`. The `--login` option is used to create an interactive, login shell, which will source the `/etc/profile` file in the container before it sources the `~/.bashrc` file in the host. The `/etc/profile` file sources the `/etc/bashrc` file internally. This way, the `GEANT4_DATA_DIR` environment variable is defined for the container created.
+Without the `--login` option, an interactive, non-login shell will be created for the container, and the host's `~/.bashrc` is sourced. In a Ubuntu, Debian, or Arch-based Linux host, `~/.bashrc` doesn't source `/etc/bashrc` in the container, where `GEANT4_DATA_DIR` is declared to be `~/geant4/datasets`. The `--login` option is used to create an interactive, login shell, which will source the `/etc/profile` file in the container before it sources the `~/.bashrc` file in the host. The `/etc/profile` file sources the `/etc/bashrc` file internally. This way, the `GEANT4_DATA_DIR` environment variable is defined for the container created.
 
 If `GEANT4_DATA_DIR` is declared in the host already, it will be inherited by the container. There is no need to declare it again in the container. In this case, `--login` is not needed. For example, the following combination works just fine.
 
 ```sh
-export GEANT4_DATA_DIR=~/path/to/geant4/data/in/the/host/
+export GEANT4_DATA_DIR=~/path/to/geant4/datasets/in/the/host/
 apptainer exec docker://physino/geant4 bash
 ```
-
-## Tools
-
-### Text Editor
-[Micro][] is chosen instead of [Vim][] or other classical text editors because it is very friendly to inexperienced users, and powerful enough for experienced users.
-
-### Markdown Viewer
-A decent text editor can already show markdown files nicely. However, a viewer can avoid accidental modification of the original file from inexperienced users. It can also hide control marks from them to reduce confusion.
-
-There are many terminal based markdown viewers. [mdv][] is chosen because it can be easily installed through [pip][]. Since we already choose quite some [Python][] tools, most prerequisites of [mdv][] should have been fulfilled. Adding [mdv][] won't change the image size a lot.
-
-[Micro]: https://micro-editor.github.io
-[Vim]: https://www.vim.org
-[mdv]: https://github.com/axiros/terminal_markdown_viewer
-[pip]: https://pypi.org/project/pip
-[Python]: https://www.python.org
 
 ## Apptainer
 
 [![physino/geant4](https://img.shields.io/badge/physino-geant4-blue?style=flat)](https://cloud.sylabs.io/library/physino/geant4/latest)
 
-The [Geant4][] [Apptainer][]/[Singularity][] image can be pulled from [sylabs][]:
+The Geant4 [Apptainer][]/[Singularity][] image can be pulled from [sylabs][]:
 
 ```sh
 singularity pull geant4.sif library://physino/geant4/latest
@@ -112,7 +112,7 @@ The `sif` file can be directly used as an executable:
 ./geant4.sif example.mac
 ```
 
-### For Developer
+### For Apptainer Image Developer
 
 [apptainer.def](apptainer.def) in this folder is used to generate the [Apptainer][]/[Singularity][] images from the physino/geant4 Docker image using the following commands:
 
@@ -140,7 +140,9 @@ apptainer push geant4.sif library://physino/geant4/latest
 
 By default `apptainer pull libray://physino/geant4/latest` will pull `library://physino/geant4/latest:latest`. The `latest` tag has to be assigned to the image for this default behavior to work out.
 
-[GEARS]: https://github.com/physino/gears
+[GEARS]: https://github.com/jintonic/gears
+[MinGLE]: https://github.com/jintonic/mingle
+[compose.yml]: https://github.com/jintonic/geant4/blob/main/compose.yml
 [Apptainer]: https://apptainer.org
 [Singularity]: https://en.wikipedia.org/wiki/Singularity_(software)
 [sylabs]: https://cloud.sylabs.io/library/physino/geant4/latest
