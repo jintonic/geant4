@@ -1,5 +1,5 @@
 # https://hub.docker.com/r/physino/geant4
-from physino/geant4:11.3.0
+from physino/geant4:11.3.1
 
 # install git, tmux, micro, lf, gears, uproot, visidata, seaborn, pandas, mdv
 # tornado is used by matplotlib's WebAgg, psutil is used by visidata
