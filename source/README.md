@@ -1,7 +1,8 @@
 # General Particle Source (GPS)
 
 [![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://www.youtube.com/playlist?list=PLw3G-vTgPrdAJnoCsOLzzl3Wq60ncIkT_)
-[![shape](https://img.shields.io/badge/Source-Shape-blue?style=flat)](shape)
+[![Shape](https://img.shields.io/badge/Source-Shape-blue?style=flat)](shape)
+[![Direction](https://img.shields.io/badge/Angular-Distribution-green?style=flat)](direction)
 
 [Geant4][] provides 3 ways for a user to generate primary particles for a simulation:
 
