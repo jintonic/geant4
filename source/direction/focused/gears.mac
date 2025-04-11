@@ -1,0 +1,93 @@
+/process/em/verbose 0
+/process/had/verbose 0
+
+/geometry/source stars.tg
+/run/initialize
+
+/geometry/test/run
+
+/gps/source/intensity 0.04
+/gps/particle alpha
+/gps/energy 110 MeV
+/gps/pos/centre 0 1.1 1.1 mm
+/gps/direction 0 1 1
+
+/gps/source/add 0.12
+/gps/particle gamma
+/gps/energy 1 keV
+/gps/pos/centre 0 -120 -17 mm
+/gps/ang/type focused
+/gps/ang/focuspoint 0 0 0
+
+/gps/source/add 0.12
+/gps/particle gamma
+/gps/energy 1 keV
+/gps/pos/centre 0 -17 -120 mm
+/gps/ang/type focused
+/gps/ang/focuspoint 0 0 0
+
+/gps/source/add 0.12
+/gps/particle gamma
+/gps/energy 1 keV
+/gps/pos/centre 73 -68 -68 mm
+/gps/ang/type focused
+/gps/ang/focuspoint 0 0 0
+
+/gps/source/add 0.12
+/gps/particle gamma
+/gps/energy 1 keV
+/gps/pos/centre -73 -68 -68 mm
+/gps/ang/type focused
+/gps/ang/focuspoint 0 0 0
+
+/gps/source/add 0.12
+/gps/particle gamma
+/gps/energy 1 keV
+/gps/pos/centre 63 -94 -43 mm
+/gps/ang/type focused
+/gps/ang/focuspoint 0 0 0
+
+/gps/source/add 0.12
+/gps/particle gamma
+/gps/energy 1 keV
+/gps/pos/centre -63 -94 -43 mm
+/gps/ang/type focused
+/gps/ang/focuspoint 0 0 0
+
+/gps/source/add 0.12
+/gps/particle gamma
+/gps/energy 1 keV
+/gps/pos/centre 63 -43 -94 mm
+/gps/ang/type focused
+/gps/ang/focuspoint 0 0 0
+
+/gps/source/add 0.12
+/gps/particle gamma
+/gps/energy 1 keV
+/gps/pos/centre -63 -43 -94 mm
+/gps/ang/type focused
+/gps/ang/focuspoint 0 0 0
+
+/vis/open
+/vis/drawVolume
+
+/vis/viewer/zoom 4
+/vis/viewer/set/auxiliaryEdge 1
+/vis/viewer/set/lineSegmentsPerCircle 45
+/vis/viewer/set/upVector 0 0 1
+/vis/viewer/set/targetPoint 0 0 -50 mm
+
+/vis/modeling/trajectories/create/drawByParticleID
+/vis/modeling/trajectories/drawByParticleID-0/set alpha green
+/vis/modeling/trajectories/drawByParticleID-0/default/setLineWidth 10
+
+/vis/scene/add/trajectories smooth
+/vis/scene/endOfEventAction accumulate
+
+/vis/verbose 0
+/control/verbose 0
+/control/doifBatch /control/execute tsg.mac
+
+/control/shell if ls *.png 1>/dev/null 2>&1; then \
+ ffmpeg -i "g4tsg_offscreen_zb_png_%d.png" -y deathstar.gif; fi
+/control/shell if [ -f deathstar.gif ]; then rm -f *.png; fi

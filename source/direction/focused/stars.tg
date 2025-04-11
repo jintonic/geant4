@@ -1,0 +1,22 @@
+:solid big ORB 200
+:solid small ORB 100
+
+:rotm r000 0 0 0
+:solid base SUBTRACTION big small r000 0 180 180
+
+:volu deathstar base G4_Galactic
+:color deathstar 0.5 0.5 0.5
+
+:volu planet ORB 1000 G4_AIR
+:color planet 0.1 0.2 0.8
+
+:volu focus ORB 1 G4_Pb
+:color focus 0.1 0.8 0.1
+
+:volu universe BOX 2000 2000 2000 G4_Galactic
+:vis universe OFF
+
+:place deathstar 1 universe r000 0 -200 -200
+:place planet 2 universe r000 0 800 800
+:place focus 3 universe r000 0 0 0
+

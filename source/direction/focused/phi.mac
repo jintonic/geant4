@@ -1,0 +1,3 @@
+/vis/viewer/set/viewpointThetaPhi 60 {phi}
+/run/beamOn 5
+/vis/viewer/rebuild
