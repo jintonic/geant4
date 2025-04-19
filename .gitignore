@@ -28,3 +28,4 @@ _site
 *.log
 *.err
 *.out
+*.gz
