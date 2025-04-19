@@ -12,7 +12,6 @@ manual/
 *.sif
 B?
 Mordred*
-a.out
 hello
 *DS_Store
 *.heprep
@@ -26,3 +25,6 @@ hello
 *.gif
 _site
 .jekyll*
+*.log
+*.err
+*.out
