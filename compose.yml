@@ -14,7 +14,7 @@ services:
     environment: [ TZ=US/Central ]
     hostname: AlmaLinux
     container_name: physino-geant4
-    build: installation/container # for container developers
+    build: build/container # for container developers
   g4: # docker compose run --rm g4
     image: physino/geant4:11.3.1 # minimalistic container image
     platform: linux/amd64
