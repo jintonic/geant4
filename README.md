@@ -1,5 +1,5 @@
 [![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://www.youtube.com/@physino)
-[![Installation](https://img.shields.io/badge/Installation-pink?style=flat)](installation)
+[![Build](https://img.shields.io/badge/Build-pink?style=flat)](build)
 [![UI](https://img.shields.io/badge/UI-orange?style=flat)](UI)
 [![Visualization](https://img.shields.io/badge/Visualization-yellow?style=flat)](visualization)
 [![Detector](https://img.shields.io/badge/Detector-green?style=flat)](detector)
@@ -13,7 +13,7 @@ According to <https://geant4.web.cern.ch>, Geant4 is a
 
 which means that it is **NOT** a program that can be double-clicked and run after installation.
 
-Instead, Geant4 is provided as a set of [C++](installation/cpp) libraries that need to be compiled [^1]. One must write a C++ program (Geant4 [application](examples)) that calls functions provided in the compiled Geant4 libraries. The application itself also needs to be compiled, before it can be double-clicked and run.
+Instead, Geant4 is provided as a set of [C++](build/cpp) libraries that need to be compiled [^1]. One must write a C++ program (Geant4 [application](examples)) that calls functions provided in the compiled Geant4 libraries. The application itself also needs to be compiled, before it can be double-clicked and run.
 
 [^1]: Binary releases on <https://geant4.org/download> are pre-compiled Geant4 libraries. They only work on very specific operating systems. This approach works best for Windows users. Please watch the first 5 videos in [this] YouTube playlist to understand the pro's and con's of pre-compiled Geant4 libraries.
 
@@ -48,7 +48,7 @@ The shocking fact is that there is **NO** official guide for end users! This is 
 Is it possible to provide a compiled Geant4 application that can be double clicked and run for different simulations on different OS? It is possible but quit hard, because
 
 - There is no way to include all existing, or to-be-constructed radiation detectors or shielding geometries into one program. Even end users must learn [how to model their own experimental setups](detector) if nobody else does that for them.
-- A [C++ program must be compiled](installation/cpp) on a specific OS to run on that system. A C++ program that is compiled on a Mac cannot be used on Windows or Linux.
+- A [C++ program must be compiled](build/cpp) on a specific OS to run on that system. A C++ program that is compiled on a Mac cannot be used on Windows or Linux.
 
 ## Fastest Way to Learn Geant4
 
@@ -56,7 +56,7 @@ Despite of all these obstacles, it is possible for beginners to start their own 
 
 First, find people around you who know how to use Geant4, ask them to walk you through the process. If nobody around you can help, follow this guide. It is possible to learn Geant4 by following the official [User Guide for Application Developers][guide]. But it is hard, because the official guide targets application developers, **NOT** end users.
 
-Second, **avoid** [installing Geant4](installation) by yourself. It is often possible to find some computers in your research or working group that already have Geant4 installed. If you are in a large research group, you may be able to gain access to some high performance computing (HPC) clusters, where multiple versions of Geant4 are available. If you cannot find any, please consider using [containerized Geant4](installation/container), or [cloud-based Geant4](UI), which can be used in any OS without installation.
+Second, **avoid** [installing Geant4](build) by yourself. It is often possible to find some computers in your research or working group that already have Geant4 installed. If you are in a large research group, you may be able to gain access to some high performance computing (HPC) clusters, where multiple versions of Geant4 are available. If you cannot find any, please consider using [containerized Geant4](build/container), or [cloud-based Geant4](UI), which can be used in any OS without installation.
 
 Third, **avoid** writing your own Geant4 applications. Ask your supervisor to provide one, or modify an official Geant4 [example application] that is close to what you are trying to simulate. If you don't know how to modify C++ code, consider using [GEARS][] - Geant4 Example Application with Rich features yet Small footprint, one of the [universal Geant4 applications](https://youtu.be/3g9CkyBS31o), which allows you to perform most simulations without writing a single line of C++.
 
@@ -70,7 +70,7 @@ In summary, the fastest way to start your own Geant4 simulation is to use an exi
 
 ## Epilogue
 
-This guide was originally created as a GitHub [repository] to avoid duplicating common [Geant4][] related tasks (e.g. datasets, containers, documentation, etc.) in individual [Geant4][] applications, such as [GEARS][] and [MinGLE][]. It has evolved into a central hub to collect and disseminate my ideas and effort toward a more end user friendly Geant4 ecosystem. Welcome to join [me][] if you are interested in the development of [Shine][], [GEARS][], [MinGLE][], [containerized Geant4](installation/container), or YouTube [tutorials][].
+This guide was originally created as a GitHub [repository] to avoid duplicating common [Geant4][] related tasks (e.g. datasets, containers, documentation, etc.) in individual [Geant4][] applications, such as [GEARS][] and [MinGLE][]. It has evolved into a central hub to collect and disseminate my ideas and effort toward a more end user friendly Geant4 ecosystem. Welcome to join [me][] if you are interested in the development of [Shine][], [GEARS][], [MinGLE][], [containerized Geant4](build/container), or YouTube [tutorials][].
 
 ## Footnote
 
