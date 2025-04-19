@@ -36,7 +36,9 @@ There are many terminal based markdown viewers. [mdv][] is chosen because it can
 > The end user friendly documentation in this section is still under construction.
 > Some knowledge about command-line operations is needed beyond this point.
 
-#### For Docker Users
+## Docker Image
+
+### For Docker Users
 
 [compose.yml][] provides the following command to quickly start your container with automatic volume and port mapping to the host:
 
@@ -66,12 +68,13 @@ git pull origin main
 git branch --set-upstream-to=origin/main main
 ```
 
-#### For Apptainer Users
+### For Apptainer Users
 
-Use the following command to get into the container in a Linux host that has [Apptainer][] installed.
+Use the following commands to get and convert a docker image to an apptainer image, create a container from it and get into the container:
 
 ```sh
-apptainer exec docker://physino/geant4 bash --login
+apptainer pull geant4.sif docker://physino/geant4
+apptainer exec geant4.sif bash --login
 ```
 
 Without the `--login` option, an interactive, non-login shell will be created for the container, and the host's `~/.bashrc` is sourced. In a Ubuntu, Debian, or Arch-based Linux host, `~/.bashrc` doesn't source `/etc/bashrc` in the container, where `GEANT4_DATA_DIR` is declared to be `~/geant4/datasets`. The `--login` option is used to create an interactive, login shell, which will source the `/etc/profile` file in the container before it sources the `~/.bashrc` file in the host. The `/etc/profile` file sources the `/etc/bashrc` file internally. This way, the `GEANT4_DATA_DIR` environment variable is defined for the container created.
