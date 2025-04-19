@@ -23,13 +23,13 @@ gears listProcesses.mac
 gears listUnits.mac
 ~~~
 
-All macro files can be found on <https://github.com/jintonic/geant4/tree/main/UI/macro>.
+All macro files can be found on <https://github.com/jintonic/geant4/tree/main/run/macro>.
 
 Another way for Windows users to list useful information is to use a GUI menu defined in [gui.mac][], which is called by [generateManuals.mac][]. Simply run `gears` in this folder and open [generateManuals.mac][] through the GUI and you should be able to see some more menus showing up in the GUI. Select one of them to see the output on the GUI.
 
 [commands]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Control/commands.html
-[generateManuals.mac]: https://github.com/jintonic/geant4/blob/main/UI/macro/generateManuals.mac
-[gui.mac]: https://github.com/jintonic/geant4/blob/main/UI/macro/gui.mac
+[generateManuals.mac]: https://github.com/jintonic/geant4/blob/main/run/macro/generateManuals.mac
+[gui.mac]: https://github.com/jintonic/geant4/blob/main/run/macro/gui.mac
 [GEARS]: https://github.com/jintonic/gears
 [colors]: colors.txt
 [materials]: materials.txt

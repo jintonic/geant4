@@ -1,7 +1,7 @@
 [![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://www.youtube.com/@physino)
 [![Build](https://img.shields.io/badge/Build-pink?style=flat)](build)
-[![UI](https://img.shields.io/badge/UI-orange?style=flat)](UI)
-[![Visualization](https://img.shields.io/badge/Visualization-yellow?style=flat)](visualization)
+[![Run](https://img.shields.io/badge/Run-orange?style=flat)](run)
+[![Visualization](https://img.shields.io/badge/Visualization-yellow?style=flat)](vis)
 [![Detector](https://img.shields.io/badge/Detector-green?style=flat)](detector)
 [![Source](https://img.shields.io/badge/Particle-cyan?style=flat)](source)
 [![Examples](https://img.shields.io/badge/Examples-blue?style=flat)](example)
@@ -56,17 +56,17 @@ Despite of all these obstacles, it is possible for beginners to start their own 
 
 First, find people around you who know how to use Geant4, ask them to walk you through the process. If nobody around you can help, follow this guide. It is possible to learn Geant4 by following the official [User Guide for Application Developers][guide]. But it is hard, because the official guide targets application developers, **NOT** end users.
 
-Second, **avoid** [installing Geant4](build) by yourself. It is often possible to find some computers in your research or working group that already have Geant4 installed. If you are in a large research group, you may be able to gain access to some high performance computing (HPC) clusters, where multiple versions of Geant4 are available. If you cannot find any, please consider using [containerized Geant4](build/container), or [cloud-based Geant4](UI), which can be used in any OS without installation.
+Second, **avoid** [installing Geant4](build) by yourself. It is often possible to find some computers in your research or working group that already have Geant4 installed. If you are in a large research group, you may be able to gain access to some high performance computing (HPC) clusters, where multiple versions of Geant4 are available. If you cannot find any, please consider using [containerized Geant4](build/container), or [cloud-based Geant4](run), which can be used in any OS without installation.
 
 Third, **avoid** writing your own Geant4 applications. Ask your supervisor to provide one, or modify an official Geant4 [example application] that is close to what you are trying to simulate. If you don't know how to modify C++ code, consider using [GEARS][] - Geant4 Example Application with Rich features yet Small footprint, one of the [universal Geant4 applications](https://youtu.be/3g9CkyBS31o), which allows you to perform most simulations without writing a single line of C++.
 
 At this point, some of you may ask, so I don't have to learn anything? You do, but I don't recommend you to start with things that are only remotely related to the simulation that you want to do.
 
-Instead, you may start with getting familiar with Geant4 user interface ([UI](UI)), where you can learn how to use Geant4 [macro][] commmands to perform a simulation. You may also want to learn various ways to [visualize](visualization) your detector model and particle trajectories to make sure that you simulation makes sense.
+Instead, you may start with getting familiar with Geant4 user interface ([UI](run)), where you can learn how to use Geant4 [macro][] commmands to perform a simulation. You may also want to learn various ways to [visualize](vis) your detector model and particle trajectories to make sure that you simulation makes sense.
 
 After playing around with some existing detector models, you may be keen to [create your own models](detector). Remember, this can be done **without** any C++. Geant4 allows you to [describe your model using simple text](detector). I have created a series of [![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://www.youtube.com/playlist?list=PLw3G-vTgPrdBxXZo1UpOD_xVFSgM3hLn-) videos to demonstrate this method.
 
-In summary, the fastest way to start your own Geant4 simulation is to use an existing Geant4 installation and application to get familiar with Geant4 [UI](UI), [macro][] commands, [visualization](visualization), and [detector definition using simple text](detector). This way, you are actually learning how to **use** Geant4 instead of learning how to install Geant4.
+In summary, the fastest way to start your own Geant4 simulation is to use an existing Geant4 installation and application to get familiar with Geant4 [UI](run), [macro][] commands, [visualization](vis), and [detector definition using simple text](detector). This way, you are actually learning how to **use** Geant4 instead of learning how to install Geant4.
 
 ## Epilogue
 

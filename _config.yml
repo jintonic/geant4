@@ -12,5 +12,5 @@ exclude:
   - examples/mingle
   - examples/QF
   - examples/pct
-  - UI/shine
+  - run/shine
   - compose.yml

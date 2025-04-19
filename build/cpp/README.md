@@ -75,15 +75,15 @@ Now you are ready to proceed to <https://github.com/jintonic/mingle> to learn ho
 [Geant4]: ../..
 [libraries]: ..
 [applications]: ../../examples
-[hello.cc]: https://github.com/jintonic/geant4/blob/main/installation/cpp/hello.cc
+[hello.cc]: https://github.com/jintonic/geant4/blob/main/build/cpp/hello.cc
 [recipes]: https://www.gnu.org/software/make/manual/html_node/Recipes.html
 [rules]: https://www.gnu.org/software/make/manual/html_node/Rules.html
 [compiler]: https://en.wikipedia.org/wiki/Compiler
 [GCC]: https://gcc.gnu.org
 [Clang]: https://clang.llvm.org
-[Makefile]: https://github.com/jintonic/geant4/blob/main/installation/cpp/Makefile
+[Makefile]: https://github.com/jintonic/geant4/blob/main/build/cpp/Makefile
 [how to write a proper Makefile]: https://opensource.com/article/18/8/what-how-makefile
 [make]: https://www.gnu.org/software/make/manual/make.html
 [CMake]: https://cmake.org
-[CMakeLists.txt]: https://github.com/jintonic/geant4/blob/main/installation/cpp/CMakeLists.txt
+[CMakeLists.txt]: https://github.com/jintonic/geant4/blob/main/build/cpp/CMakeLists.txt
 [cmake-gui]: https://cmake.org/cmake/help/latest/manual/cmake-gui.1.html
