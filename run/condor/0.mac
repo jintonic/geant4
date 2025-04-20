@@ -1,0 +1,6 @@
+/control/execute setup.mac
+
+# must be different in each mac file to avoid same results
+/random/setSeeds 234 3459 6817
+/run/beamOn 10000
+

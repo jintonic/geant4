@@ -1,0 +1,14 @@
+/geometry/source detector.tg
+
+/process/em/verbose 0
+/process/had/verbose 0
+
+/run/initialize
+/run/printProgress 1000
+
+/gps/particle gamma
+/gps/energy 1461 keV
+/gps/position 0 0 55 mm
+
+/analysis/setFileName output.root
+

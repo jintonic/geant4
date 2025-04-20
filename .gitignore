@@ -29,3 +29,5 @@ _site
 *.err
 *.out
 *.gz
+*.bz2
+*.root
