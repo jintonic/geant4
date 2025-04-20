@@ -1,6 +1,6 @@
-[![Macro](https://img.shields.io/badge/Macro-Commands-blue?style=flat)](macro)
-[![Condor](https://img.shields.io/badge/HT-Condor-blue?style=flat)](condor)
-[![Shine](https://img.shields.io/badge/Shine-orange?style=flat)](https://physino.xyz/shine)
+[![Macro](https://img.shields.io/badge/Macro-Cmds-red?style=flat)](macro)
+[![Condor](https://img.shields.io/badge/HT-Condor-orange?style=flat)](condor)
+[![Web UI](https://img.shields.io/badge/Web-UI-blue?style=flat)](#web-ui-for-geant4)
 
 Again, [Geant4] is **NOT** a program that can be double clicked and run. We can only run a Geant4 [Applicaiton](../examples) compiled into an executable locally or on the [cloud].
 
@@ -16,7 +16,7 @@ We control a Geant4 application primarily through [macro](macro) commands, which
 
 Every once in a while, we need to distribute a large Geant4 simulation on a computer cluster. There are at least two computer clusters in US that can be used for free if the simulation is done for research purpose. They are [OSG] and [NRP]. [OSG] relies on [HTConder](condor) to submit jobs. [NRP] relies on [Kubernetes].
 
-## Shine: a Web UI for Geant4
+## Web UI for Geant4
 
 It is the user's responsibility to provide a [detector](../detector) model for a Geant4 simulation. The [Geant4 User Guide for Application Developers][guide] provides detailed instruction on how to [program detector definition and response in C++]. Again, end users are forced to become application developers if they choose to go that route.
 
@@ -33,3 +33,4 @@ However, writing in a text file is not the most intuitive way to construct and d
 [NRP]: https://nrp.ai
 [Kubernetes]: https://kubernetes.io
 [program detector definition and response in C++]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Detector/detector.html
+[Shine]: https://physino.xyz/shine

@@ -1,6 +1,6 @@
 [![Run Geant4](https://img.shields.io/badge/Run-Geant4-blue?style=flat)](..)
 
-# Run Geant4 on the Cloud through HTCondor
+# Run Geant4 through HTCondor
 
 ~~~sh
 ssh username@ap20.uc.osg-htc.org
