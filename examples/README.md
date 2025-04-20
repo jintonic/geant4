@@ -12,7 +12,7 @@ The simplest [Geant4](..) example application is [MinGLE][] - Mini Geant4 Learni
 
 Both [MinGLE][] and [GEARS][] are regarded as [universal][] Geant4 applications, that is, they are not tied to any specific [detector](../../detector) definition, and can be used for most Geant4 simulations without the modification of their source code (See the following YouTube video for more information).
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/3g9CkyBS31o?si=YiZqbZ_z3qoqtfD0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/3g9CkyBS31o?si=YiZqbZ_z3qoqtfD0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Official Geant4 Examples
 

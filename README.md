@@ -1,10 +1,10 @@
 [![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://www.youtube.com/@physino)
 [![Build](https://img.shields.io/badge/Build-pink?style=flat)](build)
 [![Run](https://img.shields.io/badge/Run-orange?style=flat)](run)
-[![Visualization](https://img.shields.io/badge/Visualization-yellow?style=flat)](vis)
+[![Visualize](https://img.shields.io/badge/Visualize-yellow?style=flat)](vis)
 [![Detector](https://img.shields.io/badge/Detector-green?style=flat)](detector)
 [![Source](https://img.shields.io/badge/Particle-cyan?style=flat)](source)
-[![Examples](https://img.shields.io/badge/Examples-blue?style=flat)](example)
+[![Examples](https://img.shields.io/badge/Examples-blue?style=flat)](examples)
 [![Physics](https://img.shields.io/badge/Physics-magenta?style=flat)](physics)
 [![Analysis](https://img.shields.io/badge/Analysis-purple?style=flat)](analysis)
 
@@ -15,7 +15,7 @@ which means that it is **NOT** a program that can be double-clicked and run afte
 
 Instead, Geant4 is provided as a set of [C++](build/cpp) libraries that need to be compiled [^1]. One must write a C++ program (Geant4 [application](examples)) that calls functions provided in the compiled Geant4 libraries. The application itself also needs to be compiled, before it can be double-clicked and run.
 
-[^1]: Binary releases on <https://geant4.org/download> are pre-compiled Geant4 libraries. They only work on very specific operating systems. This approach works best for Windows users. Please watch the first 5 videos in [this] YouTube playlist to understand the pro's and con's of pre-compiled Geant4 libraries.
+[^1]: Binary releases on <https://geant4.web.cern.ch/download> are libraries already compiled on very specific operating systems. They work best for Windows users. Please watch the first 5 videos in [this] YouTube playlist to understand the pro's and con's of pre-compiled Geant4 libraries.
 
 [this]: https://www.youtube.com/playlist?list=PLw3G-vTgPrdB7cIYWEoCeIZrSePpefFEW
 
