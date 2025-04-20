@@ -12,15 +12,15 @@ condor_watch_q
 
 [gears.submit] is used to submit 5 jobs:
 
-- [gears.sh] [0.mac]
-- [gears.sh] [1.mac]
-- [gears.sh] [2.mac]
-- [gears.sh] [3.mac]
-- [gears.sh] [4.mac]
+- [gears.sh][] [0.mac][]
+- [gears.sh][] [1.mac][]
+- [gears.sh][] [2.mac][]
+- [gears.sh][] [3.mac][]
+- [gears.sh][] [4.mac][]
 
 These macro files differ from each other in their random seeds to ensure unique MC simulation results. They call [setup.mac] for configurations common for all jobs. Detection definition is in [detector.tg].
 
-[Access point], `ap20.uc.osg-htc.org`, of [OSPool] is used to submit these [HTCondor] jobs. [Docker] image [physino/geant4] is used to create an [Apptainer] image (~375 MB), which is transferred to execution points (remote computers). Transferred together are [Geant4] [datasets] packed in a `tar.gz` file (~1.6 GB). Output [ROOT] files are `output0~4.root`.
+[Access point], `ap20.uc.osg-htc.org`, of [OSPool] is used to submit these [HTCondor] jobs. [Docker] image [physino/geant4] is used to create an [Apptainer] image (~375 MB), which is transferred to execution points (remote computers). Transferred together are [Geant4][] [datasets][] packed in a `tar.gz` file (~1.6 GB). Output [ROOT] files are `output0~4.root`.
 
 [Access point]: https://portal.osg-htc.org/documentation/overview/account_setup/connect-access
 [OSPool]: https://osg-htc.org/services/open_science_pool.html
