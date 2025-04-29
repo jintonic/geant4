@@ -5,8 +5,8 @@ executable = gears.sh
 arguments = $(Process).mac
 
 # specify files to be transferred
-container_image = osdf:///ospool/ap20/data/jingliu/g4.11.3.1.sif
-transfer_input_files = osdf:///ospool/ap20/data/jingliu/geant4/datasets.tar.gz?pack=auto, setup.mac, $(Process).mac, detector.tg
+container_image = osdf:///ospool/uc-shared/public/Physino_Liu/g4.11.3.1.sif
+transfer_input_files = osdf:///ospool/uc-shared/public/Physino_Liu/geant4/datasets.tar.gz?pack=auto, setup.mac, $(Process).mac, detector.tg
 transfer_output_remaps = "output.root = output$(Process).root"
 
 # no job can be submitted without specifying a log file
