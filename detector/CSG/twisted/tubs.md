@@ -36,7 +36,7 @@ gears
 ![Figure of Twisted Tubs](https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/_images/aTwistedTubs.jpg)
 
 [C++]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Detector/Geometry/geomSolids.html#constructed-solid-geometry-csg-solids
-[tubs.tg]: https://github.com/jintonic/geant4/blob/main//CSG/twisted/tubs.tg
+[tubs.tg]: https://github.com/jintonic/geant4/blob/main/detector/CSG/twisted/tubs.tg
 [tubs.mac]: https://github.com/jintonic/geant4/blob/main/detector/CSG/twisted/tubs.mac
 [universal Geant4 application]: https://youtu.be/3g9CkyBS31o
 [MinGLE]: https://github.com/jintonic/mingle
