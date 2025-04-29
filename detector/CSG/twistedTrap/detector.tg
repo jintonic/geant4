@@ -1,0 +1,21 @@
+:volu twistedTrap TWISTEDTRAP
+ 30*degree // angle twisted around z
+ 60 // dz/2: half height in z [mm]
+ 20*degree // theta
+ 5*degree // phi
+ 40 // dy1/2: half y @ -dz/2 [mm]
+ 30 // half x @ -dz/2 and -dy1/2 [mm]
+ 40 // half x @ -dz/2 and +dy1/2 [mm]
+ 16 // dy1/2: half y @ dz/2 [mm]
+ 10 // half x @ dz/2 and -dy1/2 [mm]
+ 14 // half x @ dz/2 and +dy1/2 [mm]
+ 10*degree // angle with respect to y from the centre of the side
+ G4_WATER // material
+:color twistedTrap 0.4 0.3 0.8
+
+:volu hall BOX 100 100 100 G4_Galactic
+:vis hall OFF
+
+:rotm r000 0 0 0
+:place twistedTrap 1 hall r000 0 0 0
+
