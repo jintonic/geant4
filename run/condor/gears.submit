@@ -1,3 +1,6 @@
+# specify project
++ProjectName="Physino_Liu"
+
 # specify shell script to be submitted
 executable = gears.sh
 # specify the argument after the shell script
