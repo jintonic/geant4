@@ -19,6 +19,7 @@ A tube section twisted along z-axis can be constructed using [C++][] or some [si
 >
 > - The default unit of the twist angle here is *rad*, not *degree*. We need to explicitly multiply the number with `degree` if we want to use *degree* as the unit. This is different from untwisted shapes, where the default unit of an angle is already *degree*.
 > - The twist can go beyond 180 degree in code, but note that any shape twisted 180 degree will snap in the middle in reality.
+> - The twist angle can be negative, which is just a twist clockwise if we see it from above.
 
 The full source code is in [tubs.tg][], which can be visualized using the macro file [tubs.mac][], assuming an [universal Geant4 application][], such as [MinGLE][] or [GEARS][], is available:
 

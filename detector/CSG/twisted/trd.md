@@ -19,7 +19,7 @@ volu twisted TWISTEDTRD
 > **NOTE**!
 >
 > - The default unit of the twist angle here is *rad*, not *degree*. We need to explicitly multiply the number with `degree` if we want to use *degree* as the unit. This is different from untwisted shapes, where the default unit of an angle is already *degree*.
-> - The twist must be within (0, 90) degree
+> - The twist must be within ±(0, 90) degree (not including 0 and 90 degrees).
  
 The full source code is in [trd.tg][], which can be visualized using the macro file [trd.mac][], assuming an [universal Geant4 application][], such as [MinGLE][] or [GEARS][], is available:
 
