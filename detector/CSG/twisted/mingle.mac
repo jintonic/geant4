@@ -1,0 +1,4 @@
+/control/execute ../checkOverlap.mac
+/control/execute ../geantino.mac
+/control/execute vis.mac
+/control/doifBatch /control/execute tsg.mac

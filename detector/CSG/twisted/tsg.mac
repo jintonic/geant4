@@ -1,4 +1,4 @@
 # create png files if $G4VIS_DEFAULT_DRIVER == TSG_FILE
 /control/getEnv G4VIS_DEFAULT_DRIVER
 /control/strdoif {G4VIS_DEFAULT_DRIVER} == TSG_FILE \
-/control/loop ../phi.mac phi 0 360 1
+/vis/viewer/rebuild

@@ -1,0 +1,14 @@
+:volu twisted TWISTEDTUBS
+ 89.9*degree // angle twisted around z
+ 10 // inner radius [mm]
+ 15 // outer radius [mm]
+ 20 // half z length [mm]
+ 180*degree // dphi. NOTE: phi0=-dphi/2
+ G4_AIR
+:color twisted 0.7 0.2 0.1
+
+:volu hall BOX 20 20 30 G4_Galactic
+:vis hall OFF
+
+:rotm r000 0 0 0
+:place twisted 1 hall r000 0 0 0

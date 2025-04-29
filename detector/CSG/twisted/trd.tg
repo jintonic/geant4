@@ -1,0 +1,15 @@
+:volu twisted TWISTEDTRD
+ 30 // Half x-length at the surface at -dz/2 [mm]
+ 10 // Half x-length at the surface at +dz/2 [mm]
+ 40 // Half y-length at the surface at -dz/2 [mm]
+ 15 // Half y-length at the surface at +dz/2 [mm]
+ 60 // Half z length: dz/2 [mm]
+ 89.9*degree // angle twisted
+ G4_AIR
+:color twisted 0.7 0.2 0.1
+
+:volu hall BOX 50 50 70 G4_Galactic
+:vis hall OFF
+
+:rotm r000 0 0 0
+:place twisted 1 hall r000 0 0 0

@@ -1,4 +1,4 @@
-/geometry/source detector.tg
+/geometry/source trd.tg
 
 /control/execute mingle.mac
 
