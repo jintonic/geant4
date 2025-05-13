@@ -24,6 +24,17 @@ cd geant4
 git submodule update --init --depth 1
 ```
 
+where `--depth 1` is used to avoid downloading the whole development history of [GEARS] and [MinGLE].
+
+To update, run
+```sh
+cd /path/to/geant4
+# update geant4
+git pull
+# update gears and mingle
+git submodule update --remote
+```
+
 ## Official Geant4 Examples
 
 [GEARS][] and [MinGLE][] are more end-user-friendly than any official geant4 examples. However, if you've already grown out of them and want to learn more, the best way to download a single one from official [![Geant4 examples](https://img.shields.io/badge/Geant4-examples-green?style=flat)](https://github.com/Geant4/geant4/tree/master/examples) is to follow this [StackOverflow][] post: <https://stackoverflow.com/a/70729494/1801749>.
