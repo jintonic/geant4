@@ -16,7 +16,7 @@ Both [MinGLE][] and [GEARS][] are regarded as [universal][] Geant4 applications,
 
 ## Get GEARS and MinGLE
 
-Both applications can be downloaded from their [GitHub] pages individually. They are also included in [this repository](https://github.com/jintonic/geant4) as [Git] [submodule]s, and can be downloaded the following way if you are familiar with [Git]:
+Both applications can be downloaded from their [GitHub] pages individually. They are also included in [this repository](https://github.com/jintonic/geant4) as [Git][] [submodule]s, and can be downloaded the following way if you are familiar with [Git]:
 
 ```sh
 git clone https://github.com/jintonic/geant4
@@ -41,7 +41,7 @@ git submodule update --remote
 
 ## For Developers
 
-[GEARS] and [MinGLE] are added as [Git] [submodule]s the following way:
+[GEARS] and [MinGLE] are added as [Git][] [submodule]s the following way:
 
 ```sh
 cd /path/to/geant4
