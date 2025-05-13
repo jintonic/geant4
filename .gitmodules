@@ -1,0 +1,5 @@
+[submodule ".examples/gears"]
+	shallow = true
+[submodule "examples/gears"]
+	path = examples/gears
+	url = https://github.com/jintonic/gears
