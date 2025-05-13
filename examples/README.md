@@ -35,7 +35,7 @@ git submodule update --init --depth 1
 ```sh
 cd /path/to/geant4
 git submodule add --depth 1 https://github.com/jintonic/gears examples/gears
-git config -f .gitmodules submodule..examples/gears.shallow true
+git config -f .gitmodules submodule.examples/gears.shallow true
 git commit -am 'added gears as submodule'
 git push
 ```
