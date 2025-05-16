@@ -2,3 +2,6 @@
 Canvas.ShowEventStatus: true
 # avoid missing menu in ROOT GUI running in Docker
 X11.UseXft: no
+# https://root-forum.cern.ch/t/tbrowser-opening-in-my-web-browser-instead-of-a-root-file-explorer-like-window/55875/2
+Browser.Name: TRootBrowserLite
+Canvas.Name: TRootCanvas
