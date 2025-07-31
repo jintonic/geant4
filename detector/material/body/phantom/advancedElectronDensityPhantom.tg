@@ -6,16 +6,60 @@
 :solid body SUBTRACTION base hole r000 0 0 0
 :volu body body G4_WATER
 
+:volu eye TUBE 0 10 $l G4_EYE_LENS_ICRP
+:volu fat TUBE 0 10 $l G4_ADIPOSE_TISSUE_ICRP
 :volu room BOX 3*m 3*m 3*m G4_AIR
 :volu head TUBE 10 100 $l G4_WATER
 :volu bone TUBE 0 10 $l G4_BONE_COMPACT_ICRU
+:volu lung TUBE 0 10 $l G4_LUNG_ICRP
+:volu skin TUBE 0 10 $l G4_SKIN_ICRP
+:volu brain TUBE 0 10 $l G4_BRAIN_ICRP
+:volu blood TUBE 0 10 $l G4_BLOOD_ICRP
+:volu muscle TUBE 0 10 $l G4_MUSCLE_STRIATED_ICRU
+:volu testis TUBE 0 10 $l G4_TESTIS_ICRP
+:volu tissue1 TUBE 0 10 $l G4_TISSUE_SOFT_ICRP
+:volu tissue2 TUBE 0 10 $l G4_TISSUE-METHANE
+:volu tissue3 TUBE 0 10 $l G4_TISSUE-PROPANE
+:volu tissue4 TUBE 0 10 $l G4_TISSUE_SOFT_ICRU-4
+:volu cortical TUBE 0 10 $l G4_BONE_CORTICAL_ICRP
+:volu skeletal TUBE 0 10 $l G4_MUSCLE_SKELETAL_ICRP
 
 :vis room OFF
+:color eye 0.3 0.5 0.9
+:color fat 0.9 0.9 0.9
 :color head 0.1 0.3 0.6
 :color body 0.1 0.5 0.5
 :color bone 0.5 0.5 0.5
+:color lung 0.3 0.8 0.3
+:color skin 0.8 0.9 0.8
+:color brain 0.6 0.3 0.1
+:color blood 0.9 0.1 0.1
+:color muscle 0.6 0.5 0.4
+:color testis 0.3 0.8 0.4
+:color tissue1 0.3 0.6 0.4
+:color tissue2 0.6 0.6 0.4
+:color tissue3 0.9 0.9 0.2
+:color tissue4 0.2 0.6 0.6
+:color cortical 0.6 0.6 0.6
+:color skeletal 0.7 0.5 0.3
 
 :place body 1 room r000 0 0 0
-:place head 2 room r000 0 0 0
-:place bone 2 head r000 80 0 0
+:place head 2 room r000 0 0 30
+
+:place eye 3 head r000 -56 56 0
+:place fat 4 head r000 56 -56 0
+:place bone 5 head r000 80 0 0
+:place lung 6 head r000 -80 0 0
+:place skin 7 head r000 0 -80 0
+:place brain 8 head r000 56 56 0
+:place blood 9 head r000 0 80 0
+:place muscle 10 head r000 -56 -56 0
+:place cortical 10 head r000 0 -40 0
+
+:place testis 11 body r000 91 91 0
+:place tissue1 12 body r000 91 -91 0
+:place tissue2 13 body r000 -91 91 0
+:place tissue3 14 body r000 -130 0 0
+:place tissue4 15 body r000 -91 -91 0
+:place skeletal 16 body r000 130 0 0
 
