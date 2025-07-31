@@ -1,0 +1,12 @@
+:volu room BOX 3*m 3*m 3*m G4_AIR
+:volu head TUBE 5 100 165 G4_WATER
+:volu body ELLIPTICALTUBE 200 150 165 G4_WATER
+
+:vis room OFF
+:color head 0.1 0.3 0.6
+:color body 0.1 0.5 0.5
+
+:rotm r000 0 0 0
+:place body 1 room r000 0 0 0
+:place head 2 body r000 0 0 0
+

@@ -1,0 +1,10 @@
+/control/verbose
+/process/em/verbose 0
+/process/had/verbose 0
+
+/geometry/source advancedElectronDensityPhantom.tg
+
+/run/initialize
+
+/geometry/test/run
+
