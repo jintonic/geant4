@@ -1,12 +1,21 @@
+:p l 165/2
+:rotm r000 0 0 0
+
+:solid base ELLIPTICALTUBE 200 150 $l
+:solid hole TUBE 0 100 $l
+:solid body SUBTRACTION base hole r000 0 0 0
+:volu body body G4_WATER
+
 :volu room BOX 3*m 3*m 3*m G4_AIR
-:volu head TUBE 5 100 165 G4_WATER
-:volu body ELLIPTICALTUBE 200 150 165 G4_WATER
+:volu head TUBE 10 100 $l G4_WATER
+:volu bone TUBE 0 10 $l G4_BONE_COMPACT_ICRU
 
 :vis room OFF
 :color head 0.1 0.3 0.6
 :color body 0.1 0.5 0.5
+:color bone 0.5 0.5 0.5
 
-:rotm r000 0 0 0
 :place body 1 room r000 0 0 0
-:place head 2 body r000 0 0 0
+:place head 2 room r000 0 0 0
+:place bone 2 head r000 80 0 0
 
