@@ -9,7 +9,7 @@
 :: the following numbers are set for Geant4 11.3
 set url=http://cern.ch/geant4-data/datasets
 :: https://stackoverflow.com/a/18464353
-setlocal enabledelayedexpansion
+setlocal enableDelayedExpansion
 @for %%a in (
 G4ABLA3.3
 G4CHANNELING1.0
@@ -33,7 +33,7 @@ RealSurface2.2
   if not !first!==G set folder=G4!folder!
 
   :: construct tarball file names
-  for /f "tokens=1,* delims=." %%i in ("%folder%") do (
+  for /f "tokens=1,* delims=." %%i in ("!folder!") do (
     set name=%%i
     set minor=%%j
   )
