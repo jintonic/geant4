@@ -33,7 +33,7 @@ RealSurface2.2
   if not !first!==G set folder=G4!folder!
 
   :: construct tarball file names
-  for /f "tokens=1-2 delims=." %%i in ("%folder%") do (
+  for /f "tokens=1,* delims=." %%i in ("%folder%") do (
     set name=%%i
     set minor=%%j
   )
