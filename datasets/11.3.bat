@@ -6,8 +6,7 @@
 :: turn off printing out commands on screen
 @echo off
 
-:: the following numbers are set for Geant4 11.2
-:: set4.xx.x.bat are for older versions of Geant4
+:: the following numbers are set for Geant4 11.3
 set url=http://cern.ch/geant4-data/datasets
 :: https://stackoverflow.com/a/18464353
 setlocal enabledelayedexpansion
@@ -34,9 +33,13 @@ RealSurface2.2
   if not !first!==G set folder=G4!folder!
 
   :: construct tarball file names
-  set version=!folder:~-3!
-  set dataset=!folder:~0,-3!
-  set tarball=!dataset!.!version!.tar.gz
+  for /f "tokens=1-2 delims=." %%i in ("%folder%") do (
+    set name=%%i
+    set minor=%%j
+  )
+  set major=!name:~-1!
+  set dataset=!name:~0,-1!
+  set tarball=!dataset!.!major!.!minor!.tar.gz
 
   :: download dataset if it does not exist
   if not exist %%a (
