@@ -5,7 +5,7 @@ There is no need to switch to [Linux] or [Mac] to run Geant4. Windows is perfect
 
 [Linux]: ../linux
 [Mac]: ../mac/
-[video]]: https://youtu.be/_g3nvEbhOx8?si=XHNjvpH5b5q93RDu
+[video]: https://youtu.be/_g3nvEbhOx8?si=XHNjvpH5b5q93RDu
 
 # Geant4 Installation on Windows
 
