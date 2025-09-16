@@ -1,0 +1,13 @@
+:volu space SPHERE 6341 7000*km 0 360 0 60 G4_AIR
+:vis space OFF
+
+:volu atmosphere SPHERE 6341 6471*km 0 360 0 60 G4_AIR
+:color atmosphere 0 0.2 0.8
+
+:volu earth SPHERE 6341 6371*km 0 360 0 60 G4_SILICON_DIOXIDE
+:color earth 0.3 0.3 0.3
+
+:rotm r000 0 0 0
+:place earth 1 atmosphere r000 0 0 0
+:place atmosphere 2 space r000 0 0 0
+
