@@ -9,7 +9,7 @@
 :: the following numbers are set for Geant4 11.3
 set url=http://cern.ch/geant4-data/datasets
 :: https://stackoverflow.com/a/18464353
-setlocal EnableDelayedExpansion
+setlocal enableDelayedExpansion
 @for %%a in (
 G4ABLA3.3
 G4CHANNELING1.0
