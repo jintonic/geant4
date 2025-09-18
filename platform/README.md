@@ -4,9 +4,9 @@
 [![Windows](https://img.shields.io/badge/On-Windows-orange?style=flat)](windows)
 [![Mac](https://img.shields.io/badge/On-MacOS-yellow?style=flat)](mac)
 [![Linux](https://img.shields.io/badge/On-Linux-green?style=flat)](linux)
-[![C++](https://img.shields.io/badge/C++-cyan?style=flat)](cpp)
-[![Docker](https://img.shields.io/badge/Docker-blue?style=flat)](docker)
-[![Apptainer](https://img.shields.io/badge/Apptainer-orange?style=flat)](apptainer)
+[![Docker](https://img.shields.io/badge/In-Docker-blue?style=flat)](docker)
+[![Apptainer](https://img.shields.io/badge/In-Apptainer-orange?style=flat)](apptainer)
+[![IDE](https://img.shields.io/badge/IDE-cyan?style=flat)](IDE)
 
 [Geant4] libraries are available in various formats:
 
