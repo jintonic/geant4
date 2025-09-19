@@ -8,6 +8,8 @@ Visual Studio (VS) Code is a free popular code editor. It uses extensions that c
 
 <iframe width="640" height="360" src="https://www.youtube.com/embed/r4BCafxzPy0?si=4L-qjXd4KQXrvFQN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+If you cannot see the CMake icons in the bottom status bar in your VS code, please watch [this YouTube videos](https://youtu.be/l2hXJzduyYI?si=j14fIgJYwpXc9jK7) to learn how to change their visibility.
+
 ## Cursor, the AI-first Editor
 
 Cursor is a branch of VS Code. It inherits the extension framework of CS Code, with more emphasize on AI assistance.
