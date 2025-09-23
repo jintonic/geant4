@@ -1,5 +1,6 @@
 [![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://www.youtube.com/@physino)
-[![Platform](https://img.shields.io/badge/Platform-pink?style=flat)](platform)
+[![Platform](https://img.shields.io/badge/Platform-crimson?style=flat)](platform)
+[![Datasets](https://img.shields.io/badge/datasets-chocolate?style=flat)](datasets)
 [![Run](https://img.shields.io/badge/Run-orange?style=flat)](run)
 [![Visualize](https://img.shields.io/badge/Visualize-yellow?style=flat)](vis)
 [![Detector](https://img.shields.io/badge/Detector-green?style=flat)](detector)
