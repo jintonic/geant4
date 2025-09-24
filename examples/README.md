@@ -39,6 +39,8 @@ git submodule update --remote
 
 [GEARS][] and [MinGLE][] are more end-user-friendly than any official geant4 examples. However, if you've already grown out of them and want to learn more, the best way to download a single one from official [![Geant4 examples](https://img.shields.io/badge/Geant4-examples-green?style=flat)](https://github.com/Geant4/geant4/tree/master/examples) is to follow this [StackOverflow][] post: <https://stackoverflow.com/a/70729494/1801749>.
 
+Some official Geant4 examples are outdated and cannot be compiled without modification. [DICOM] is one of them. The solution can be found in [this YouTube video](https://youtu.be/qjOnN6uroKA?si=0AytidShJMdu8mbj).
+
 ## For Developers
 
 [GEARS] and [MinGLE] are added as [Git][] [submodule]s the following way:
@@ -58,3 +60,4 @@ git push
 [Git]: https://git-scm.com
 [submodule]: https://stackoverflow.com/questions/1260748/how-do-i-remove-a-submodule
 [GitHub]: https://github.com
+[DICOM]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Examples/ExtendedCodes.html?highlight=dicom#medical-applications
