@@ -25,6 +25,13 @@ Geant4 libraries and applications can be compiled and run on [Linux], [Mac], and
 [AUR]: https://aur.archlinux.org/packages/geant4
 [Linux]: linux
 [Mac]: mac
+[video]: https://youtu.be/_g3nvEbhOx8?si=yZJUAj2XkU4yZ6Uz
+
+## Verify a Geant4 Installation
+
+Please perform the following checks to verify an existing Geant4 installation:
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/s3IPRTYOq6A?si=oibsdnrw4vcHYVSB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Multiple Versions of Geant4
 
