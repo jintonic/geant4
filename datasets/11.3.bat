@@ -1,4 +1,3 @@
-
 :: Place this batch file in the same folder where you'd like to save Geant4
 :: datasets, and double click it to download the datasets automatically and
 :: set GEANT4_DATA_DIR environment variable afterward.
@@ -9,7 +8,7 @@
 :: the following numbers are set for Geant4 11.3
 set url=http://cern.ch/geant4-data/datasets
 :: https://stackoverflow.com/a/18464353
-setlocal enableDelayedExpansion
+setLocal enableDelayedExpansion
 @for %%a in (
 G4ABLA3.3
 G4CHANNELING1.0
