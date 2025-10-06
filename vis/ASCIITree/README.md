@@ -1,9 +1,10 @@
 # ASCIITree
 
+[![Home](https://img.shields.io/badge/Home-blue?style=flat)](../..)
+[![Visualization](https://img.shields.io/badge/Visualization-Drivers-orange?style=flat)](..)
 [![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://youtu.be/Z1p_U5SJN0I?t=59)
-[![Visualization](https://img.shields.io/badge/Visualization-Drivers-blue?style=flat)](..)
 
-The [ASCIITree][] visualization driver does not really visualize anything. Instead, it prints a hierarchical list of volumes defined in your Geant4 simulation in a terminal. This seems not very useful, but is one of my favorate ways to understand a detector model created by other people, especially if it is written in [C++][] or [GDML][], which is hard to read.
+The [ASCIITree][] visualization driver is available in any geant4 installation. It does not really visualize anything. Instead, it prints a hierarchical list of volumes defined in your Geant4 simulation in a terminal. This seems not very useful, but is one of my favorite ways to understand a detector model created by other people, especially if it is written in [C++][] or [GDML][], which is hard to read.
 
 If your geometry is simple, the only two commands you need in your macro is:
 
