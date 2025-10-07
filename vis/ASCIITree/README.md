@@ -5,7 +5,7 @@
 
 The [ASCIITree][] visualization driver is available in any geant4 installation. It does not really visualize anything. Instead, it prints a hierarchical list of volumes defined in your Geant4 simulation in a terminal. This seems not very useful, but is one of my favorite ways to understand a detector model created by other people, especially if it is written in [C++][] or [GDML][], which is hard to read.
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/Z1p_U5SJN0I?si=oRj_zz7_vt5bj_MH&t=60" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/Z1p_U5SJN0I?si=oRj_zz7_vt5bj_MH&t=60s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 If your geometry is simple, the only two commands you need in your macro is:
 
