@@ -1,11 +1,10 @@
 [![Home](https://img.shields.io/badge/Home-blue?style=flat)](../..)
 [![Visualization](https://img.shields.io/badge/Visualization-Drivers-orange?style=flat)](..)
+[![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://www.youtube.com/watch?v=Z1p_U5SJN0I&t=261s)
 
 # RayTracer
 
 The [RayTracer][] visualization driver is included in any Geant4 installation, and can be used for geometries that other tools may fail to visualize. Detailed instructions on [RayTracer][] related built-in commands can be found [here](http://geant4-userdoc.web.cern.ch/geant4-userdoc/UsersGuides/ForApplicationDeveloper/html/Control/AllResources/Control/UIcommands/_vis_rayTracer_.html).
-
-<iframe width="640" height="360" src="https://youtu.be/Z1p_U5SJN0I?list=PLw3G-vTgPrdATGRFqclPsXrxgHl9G4Ov6&t=261" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 A sample RayTracer [macro] file is shipped with this guide. It can be tried out if you have [GEARS] or [MinGLE] installed:
 
