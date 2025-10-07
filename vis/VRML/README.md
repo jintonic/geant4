@@ -16,6 +16,8 @@ The [VRML][] visualization driver is available in any [Geant4][] installation. I
 [FreeWRL]: http://freewrl.sourceforge.net/download.html
 [X3D]:https://stackoverflow.com/questions/14849593/vrml-to-x3d-conversion
 
+<iframe width="640" height="360" src="https://youtu.be/Z1p_U5SJN0I?list=PLw3G-vTgPrdATGRFqclPsXrxgHl9G4Ov6&t=366" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Example
 
 [detector.tg][] describes the model in the basic Geant4 example [B1][]. [mingle.mac][] and [gears.mac][] can be used by [MinGLE][] and [GEARS][], respectively, to generate `g4_??.wrl` from [detector.tg][].
