@@ -27,4 +27,4 @@ Every detector defined using C++ demands the creation of a new Geant4 applicatio
 [MinGLE]: https://github.com/jintonic/mingle
 [GEARS]: https://github.com/jintonic/gears
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/TSP0RLjhLDw?si=vdI118vifO8aFE-x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/7wXBrtkzDQI?si=MVUgKnzzUOePaOSH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
