@@ -1,7 +1,8 @@
+[![Home](https://img.shields.io/badge/Home-blue?style=flat)](..)
 [![Macro](https://img.shields.io/badge/Macro-Cmds-red?style=flat)](macro)
 [![Web UI](https://img.shields.io/badge/Web-UI-blue?style=flat)](#web-ui-for-geant4)
 
-Again, [Geant4] is **NOT** a program that can be double clicked and run. We can only run a Geant4 [Applicaiton](../examples) compiled into an executable locally or on the [cloud].
+Again, [Geant4] is **NOT** a program that can be double clicked and run. We can only run a Geant4 [Application](../examples) compiled into an executable locally or on the [cloud].
 
 # Run Geant4 Application Locally
 

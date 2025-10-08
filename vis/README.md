@@ -14,9 +14,11 @@ The [visualization] chapter of the [Geant4 Book For Application Developers][manu
 [![TSG](https://img.shields.io/badge/TSG-cyand?style=flat)](TSG)
 [![VRML](https://img.shields.io/badge/VRML-blue?style=flat)](VRML)
 
-You can click the badges above to learn more about individual tools or watch the following tutorial for an overview:
+You can click the badges above to learn more about individual tools or watch the following tutorials for an overview:
 
 <iframe width="640" height="360" src="https://www.youtube.com/embed/Z1p_U5SJN0I?si=ZcVKLk6YT7HrL03h" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/U7CGerE6Zes?si=rc4QNkY2MY14lxoP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## X11 Server for Remote Geant4 Visualization
 
