@@ -20,9 +20,6 @@ brew install root
 
 assuming that you already have [Homebrew][] and [Xcode][] installed already.
 
-> **NOTE**
-> ROOT installed through brew doesn't work for Sequoia 15.4!
-
 ## Install Pre-compiled ROOT on Linux
 
 Please refer to <https://root.cern/install/> for detailed instruction.

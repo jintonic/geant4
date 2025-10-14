@@ -1,3 +1,6 @@
+[![Home](https://img.shields.io/badge/Home-blue?style=flat)](../..)
+[![Physics](https://img.shields.io/badge/Physics-red?style=flat)](..)
+
 # Muon Interactions
 
 Muons, being charged particles (mu+ and mu-), can interact with matter by ionizing it. They themselves lose energy during this process.

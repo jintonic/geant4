@@ -1,3 +1,6 @@
+[![Home](https://img.shields.io/badge/Home-blue?style=flat)](../..)
+[![Physics](https://img.shields.io/badge/Physics-red?style=flat)](..)
+
 # Alpha interactions
 
 Alpha particles, or ions in general, are heavy (compared to elemental particles) electrically charged particles. According to Knoll's [Radiation Detection and Measurement](https://www.amazon.com/dp/0470131489), they interact with matter primarily through coulomb forces between their positive charge and the negative charge of the orbital electrons within the absorber atoms. Although interactions of the particle with nuclei (as in Rutherford scattering or alpha-particle-induced reactions) are also possible, such encounters occur only rarely and they are not normally significant in the response of radiation detectors.

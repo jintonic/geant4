@@ -26,3 +26,5 @@ G4VIS_DEFAULT_DRIVER=TSG_FILE mingle mingle.mac
 [detector.tg]: https://github.com/jintonic/geant4/blob/main/detector/replica/detector.tg
 [mingle.mac]: https://github.com/jintonic/geant4/blob/main/detector/replica/mingle.mac
 [gears.mac]: https://github.com/jintonic/geant4/blob/main/detector/replica/gears.mac
+[MinGLE]: https://github.com/jintonic/mingle
+[GEARS]: https://github.com/jintonic/gears

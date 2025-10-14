@@ -1,10 +1,12 @@
+[![Home](https://img.shields.io/badge/Home-blue?style=flat)](..)
+[![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://www.youtube.com/playlist?list=PLw3G-vTgPrdAJnoCsOLzzl3Wq60ncIkT_)
+
 # General Particle Source (GPS)
 
-[![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://www.youtube.com/playlist?list=PLw3G-vTgPrdAJnoCsOLzzl3Wq60ncIkT_)
 [![Shape](https://img.shields.io/badge/Source-Shape-blue?style=flat)](shape)
 [![Direction](https://img.shields.io/badge/Angular-Distribution-green?style=flat)](direction)
 
-[Geant4][] provides 3 ways for a user to generate primary particles for a simulation:
+Geant4 provides 3 ways for a user to generate primary particles for a simulation:
 
 - [C++][]: the hardest to learn and use, hence covered intensively in Geant4 [User Guide for Application Developers][guide], and demonstrated in most Geant4 official [examples][].
 - [particle gun][]: the easiest to learn and use (no C++, just macro commands), yet limited in its functionality.
