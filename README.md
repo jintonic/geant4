@@ -1,13 +1,13 @@
-[![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://www.youtube.com/@physino)
+[![YouTube](https://img.shields.io/badge/You-Tube-firebrick?style=flat)](https://www.youtube.com/@physino)
 [![Platform](https://img.shields.io/badge/Platform-crimson?style=flat)](platform)
 [![Datasets](https://img.shields.io/badge/datasets-chocolate?style=flat)](datasets)
 [![Run](https://img.shields.io/badge/Run-orange?style=flat)](run)
 [![Visualize](https://img.shields.io/badge/Visualize-yellow?style=flat)](vis)
-[![Detector](https://img.shields.io/badge/Detector-green?style=flat)](detector)
-[![Particle](https://img.shields.io/badge/Particle-cyan?style=flat)](gps)
+[![Detector](https://img.shields.io/badge/Detector-darkseegreen?style=flat)](detector)
+[![Particle](https://img.shields.io/badge/Particle-deepskyblue?style=flat)](gps)
 [![Examples](https://img.shields.io/badge/Examples-blue?style=flat)](examples)
-[![Physics](https://img.shields.io/badge/Physics-magenta?style=flat)](physics)
-[![Analysis](https://img.shields.io/badge/Analysis-purple?style=flat)](analysis)
+[![Physics](https://img.shields.io/badge/Physics-purple?style=flat)](physics)
+[![Analysis](https://img.shields.io/badge/Analysis-indigo?style=flat)](analysis)
 
 According to <https://geant4.web.cern.ch>, Geant4 is a
 > **Toolkit** for the simulation of the passage of particles through matter.
