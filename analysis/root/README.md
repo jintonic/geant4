@@ -1,14 +1,15 @@
-[![Analysis](https://img.shields.io/badge/Analysis-blue?style=flat)](..)
+[![Home](https://img.shields.io/badge/Home-blue?style=flat)](../..)
+[![Analysis](https://img.shields.io/badge/Analysis-red?style=flat)](..)
 [![Jupyter](https://img.shields.io/badge/Jupyter-notebook-green?style=flat)](notebook)
 [![Docker](https://img.shields.io/badge/Docker-images-orange?style=flat)](#docker-images)
 
 # ROOT for Geant4 Data Analysis
 
-[ROOT][] is **NOT** needed to compile or run [Geant4][]. It is not even needed for the analysis of Geant4 output files. Instead, one can use [uproot][] to read the file in [Python][]. However, it is very convenient to analyze Geant4 output data in a [ROOT][] interactive session using [TTree][]::[Draw][]. The compilation of [ROOT][] takes a long time. However, installation of pre-compiled [ROOT][] libraries is very easy.
+[ROOT][] is **NOT** needed to compile or run [Geant4][]. It is not even needed for the analysis of Geant4 output files. Instead, one can use [uproot][] to read a [ROOT] file using [Python](../python) or [Julia](../julia). However, it is very convenient to analyze Geant4 output data in a [ROOT][] interactive session using [TTree][]::[Draw][]. The compilation of [ROOT][] takes a long time. However, installation of pre-compiled [ROOT][] libraries is very easy.
 
 ## Install Pre-compiled ROOT on Windows
 
-Some manual [modifications](https://root-forum.cern.ch/t/windows-install-issue-with-root-version-618-02/35773/7) have to be done after installing pre-compiled ROOT in version 6. If you don't mind, install version 5 instead. It works right after the installation. Old ROOT releases can be found at <https://root.cern.ch/releases>. In the installation, please don't forget to add root folder to PATH. You can also choose "Add ROOT to the system PATH for current user" if you don't have the administrator privilege.
+<iframe width="640" height="360" src="https://www.youtube.com/embed/Q4t3pztSnMo?si=wd1QKtFKwsl8vRk9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Install Pre-compiled ROOT on MacOS
 
@@ -20,9 +21,13 @@ brew install root
 
 assuming that you already have [Homebrew][] and [Xcode][] installed already.
 
+<iframe width="640" height="360" src="https://www.youtube.com/embed/GrEFp4pXkd4?si=LWCZlVOhr1zGxv5H" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Install Pre-compiled ROOT on Linux
 
-Please refer to <https://root.cern/install/> for detailed instruction.
+Please refer to <https://root.cern/install/> for detailed instruction. If you use Debian, Ubuntu, or Mint Linux, please watch the following tutorial.
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/8Q4_SipwAPQ?si=T_FW2bzGwdN2LkvB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Docker Images
 
