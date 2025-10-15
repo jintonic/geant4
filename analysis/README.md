@@ -13,7 +13,7 @@ It is the user's responsibility to extract and save information from a Geant4 si
 
 <iframe width="640" height="360" src="https://www.youtube.com/embed/Iza2gY-HCsI?si=QPpTUVgGZf_M2tYd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-Geant4 allows a user to save data in 4 different format. Please watch the following video to learn more. I recommend [ROOT](root), because
+Geant4 allows a user to save data in 4 different formats. Please watch the following video to learn more. I recommend [ROOT](root), because
 
 - It exists in any Geant4 installation. No additional effort is needed to enable it.
 - A [ROOT](root) file is a compressed binary file, it ensures very small disk usage for large amount of data.
@@ -21,3 +21,5 @@ Geant4 allows a user to save data in 4 different format. Please watch the follow
 - [Python](python) and [Julia](julia) can be used to read a [ROOT](root) file.
   
 <iframe width="640" height="360" src="https://www.youtube.com/embed/CEniIMd67X8?si=nnbfg8GMqtJCpL10" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+[GEARS]: https://github.com/jintonic/gears
