@@ -1,0 +1,33 @@
+// vacuum chamber (end cap with flange and vacuum inside)
+
+// default unit: mm, in: inch
+// O: outer diameter, I: inner diameter
+// T: thickness, L: length
+// e: end cap, f: flange
+
+:p in 25.4
+:p Of 3.5*$in
+:p Tf 10.5
+:p Oe 70.2
+:p Ie 67.7
+:p Te 0.05*$in
+:p Le 165.5
+
+:volu RmP124 TUBE 0 $Of $Le G4_AIR
+:volu endCap TUBE 0 $Oe/2 ($Le-$Tf)/2 G4_Al
+:volu flange TUBE 0 $Of/2 $Tf/2 G4_Al
+:volu vacuum TUBE 0 $Ie/2 ($Le-$Tf)/2-$Te G4_Galactic
+
+:p x0 1.473
+:p z0 44.98
+:rotm r000 0 0 0
+
+:place flange -10 RmP124 r000 $x0 0 $z0+$Tf/2-$Le
+:place endCap -11 RmP124 r000 $x0 0 $z0+$Tf/2-$Le/2
+:place vacuum -12 endCap r000   0 0 0
+
+:vis RmP124 OFF
+:color flange 0.39 0.48 0.51
+:color endCap 0.39 0.48 0.51
+:color vacuum 0.39 0.48 0.51
+
