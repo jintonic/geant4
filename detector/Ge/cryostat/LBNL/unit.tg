@@ -1,0 +1,9 @@
+// default unit: mm
+// in: inch
+:p in 25.4
+
+// rotation matrix
+:rotm r000   0 0   0
+:rotm rx92 -90 0   2
+:rotm rxz9 -90 0 -90
+
