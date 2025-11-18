@@ -1,4 +1,4 @@
-/geometry/source chamber.tg
+/geometry/source shield.tg
 
 /control/execute checkOverlap.mac
 

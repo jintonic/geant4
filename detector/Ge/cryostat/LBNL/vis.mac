@@ -3,5 +3,12 @@
 
 /vis/scene/add/axes
 
+/vis/viewer/set/style surface
 /vis/viewer/set/auxiliaryEdge
+/vis/viewer/set/viewpointVector
+
+/vis/viewer/addCutawayPlane 0 0 0 cm 0 0 -1
+/vis/viewer/addCutawayPlane 0 0 0 cm 0 -1 0
+
+/vis/viewer/rebuild
 
