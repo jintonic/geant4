@@ -1,5 +1,7 @@
 The LBNL cryostat located in room Patterson 124 at the University of South Dakota (USD) has been used to characterize many HPGe detectors fabricated in the HPGe detector development lab at USD slightly above liquid nitrogen temperature (77 Kelvin).
 
+<img width="605" alt="LBNL cryostat visualization" src="https://github.com/user-attachments/assets/fc8921eb-746b-4343-af1e-71964cc1a6e8" />
+
 ## Organization of .tg Files
 
 To simulate the characterization of a HPGe detector, one needs to define the detector geometry, the cryostat, and the radiation source used in the characterization. It is hence natural to have at least three detector definition files, such as `detector.tg`, `cryostat.tg`, and `source.tg`, so that they can be used as building blocks to create a characterization setup, for example, `setup.tg`, where the first three `.tg` files are included. An advantage of such configuration is that the detector, cryostat, and source definition files can be kept unchanged through Git, and used by a `newSetup.tg` later.
