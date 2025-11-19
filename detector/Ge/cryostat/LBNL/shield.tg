@@ -2,7 +2,7 @@
 #include chamber.tg
 // L/W/H/T: length/width/height/thickness
 // R: radius of the round corner
-// ir/bk/fr/sd/bm/tp: infrared/back/front/side/bottom/top
+// ir/bk/fr/sd/bm/tp/vc: infrared/back/front/side/bottom/top/vacuum
 :p Hir (1.79+0.05)*$in
 :p Lir 3.10*$in
 :p Wir 1.72*$in
@@ -14,12 +14,14 @@
 :p Rcr 0.25*$in
 :p Hvc ($Hir-$Tbm-$Ttp)/2 
 
+:rotm rx90 90 0 0
+
 :solid large BOX $Wir/2-$Tsd      $Hvc ($Lir-$Tbk-$Tfr-$Rcr)/2
 :solid small BOX $Wir/2-$Tsd-$Rcr $Hvc $Rcr/2+1
-:solid corner TUBS 0 $Rcr         $Hvc 0 94
+:solid corner TUBE 0 $Rcr         $Hvc
 :solid tmp1 UNION large small r000 0 0 ($Lir-$Tbk-$Tfr)/2-1 
-:solid tmp2 UNION tmp1 corner rx92  $Wir/2-$Tsd-$Rcr 0 ($Lir-$Tbk-$Tfr-$Rcr)/2 
-:solid tmp3 UNION tmp2 corner rxz9 -$Wir/2+$Tsd+$Rcr 0 ($Lir-$Tbk-$Tfr-$Rcr)/2
+:solid tmp2 UNION tmp1 corner rx90  $Wir/2-$Tsd-$Rcr 0 ($Lir-$Tbk-$Tfr-$Rcr)/2 
+:solid tmp3 UNION tmp2 corner rx90 -$Wir/2+$Tsd+$Rcr 0 ($Lir-$Tbk-$Tfr-$Rcr)/2
 
 :volu shield BOX $Wir/2 $Hir/2 $Lir/2 G4_Al
 :volu vacuum tmp3 G4_Galactic
@@ -27,6 +29,6 @@
 :place shield -20 hollow r000 0 ($Hir/2-24.003) ($Lir/2-13.1)
 :place vacuum -21 shield r000 0 ($Tbm-$Ttp)/2 ($Tbk-$Tfr-$Rcr)/2
 
-:color shield 0 0.6 0.8
-:color vacuum 0 0.6 0.8
+:color shield 0 0.6 0.8 0.5
+:color vacuum 0 0.6 0.8 0.5
 
