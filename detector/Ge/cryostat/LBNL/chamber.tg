@@ -14,14 +14,14 @@
 :volu flange TUBE 0 $Ofl/2 $Tfl/2 G4_Al
 :volu hollow TUBE 0 $Iec/2 ($Lec-$Tfl)/2-$Tec G4_Galactic
 
-:p x0 1.473
+:p y0 1.473
 :p z0 44.98
 
 :rotm r000 0 0 0
 
-:place flange -10 RmP124 r000 $x0 0 $z0+$Tfl/2-$Lec
-:place endCap -11 RmP124 r000 $x0 0 $z0+$Tfl/2-$Lec/2
-:place hollow -12 endCap r000   0 0 0
+:place flange -10 RmP124 r000 0 $y0 $z0+$Tfl/2-$Lec
+:place endCap -11 RmP124 r000 0 $y0 $z0+$Tfl/2-$Lec/2
+:place hollow -12 endCap r000 0 0 0
 
 :vis RmP124 OFF
 :color flange 0.39 0.48 0.51 0.1

@@ -12,22 +12,24 @@
 :p Tbm 0.10*$in
 :p Ttp 0.05*$in
 :p Rcr 0.25*$in
-:p Hvc ($Hir-$Tbm-$Ttp)/2 
+
+// size of vacuum inside IR shield (ignoring round corner part)
+:p Hvc $Hir-$Tbm-$Ttp
+:p Lvc $Lir-$Tbk-$Tfr-$Rcr
 
 :rotm rx90 90 0 0
 
-:solid large BOX $Wir/2-$Tsd      $Hvc ($Lir-$Tbk-$Tfr-$Rcr)/2
-:solid small BOX $Wir/2-$Tsd-$Rcr $Hvc $Rcr/2+1
-:solid corner TUBE 0 $Rcr         $Hvc
+:solid large BOX $Wir/2-$Tsd      $Hvc/2 $Lvc/2
+:solid small BOX $Wir/2-$Tsd-$Rcr $Hvc/2 $Rcr/2+1
+:solid corner TUBE 0 $Rcr         $Hvc/2
 :solid tmp1 UNION large small r000 0 0 ($Lir-$Tbk-$Tfr)/2-1 
-:solid tmp2 UNION tmp1 corner rx90  $Wir/2-$Tsd-$Rcr 0 ($Lir-$Tbk-$Tfr-$Rcr)/2 
-:solid tmp3 UNION tmp2 corner rx90 -$Wir/2+$Tsd+$Rcr 0 ($Lir-$Tbk-$Tfr-$Rcr)/2
-
-:volu shield BOX $Wir/2 $Hir/2 $Lir/2 G4_Al
+:solid tmp2 UNION tmp1 corner rx90  $Wir/2-$Tsd-$Rcr 0 $Lvc/2 
+:solid tmp3 UNION tmp2 corner rx90 -$Wir/2+$Tsd+$Rcr 0 $Lvc/2
 :volu vacuum tmp3 G4_Galactic
+:volu shield BOX $Wir/2 $Hir/2 $Lir/2 G4_Al
 
-:place shield -20 hollow r000 0 ($Hir/2-24.003) ($Lir/2-13.1)
-:place vacuum -21 shield r000 0 ($Tbm-$Ttp)/2 ($Tbk-$Tfr-$Rcr)/2
+:place vacuum -20 shield r000 0 ($Tbm-$Ttp)/2   ($Tbk-$Tfr-$Rcr)/2
+:place shield -21 hollow r000 0 ($Hir/2-24.003) ($Lir/2-13.1)
 
 :color shield 0 0.6 0.8 0.5
 :color vacuum 0 0.6 0.8 0.5
