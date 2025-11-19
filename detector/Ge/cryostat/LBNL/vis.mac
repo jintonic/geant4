@@ -1,3 +1,13 @@
+/control/verbose
+/process/em/verbose 0
+/process/had/verbose 0
+
+/geometry/source shield.tg
+
+/run/initialize
+
+/geometry/test/run
+
 /vis/open
 /vis/drawVolume
 
@@ -6,6 +16,7 @@
 /vis/viewer/set/style surface
 /vis/viewer/set/auxiliaryEdge
 /vis/viewer/set/viewpointVector
+/vis/viewer/set/background 0.99 0.96 0.89 1
 
 /vis/viewer/addCutawayPlane 0 0 0 cm 0 0 -1
 /vis/viewer/addCutawayPlane 0 0 0 cm 0 -1 0
