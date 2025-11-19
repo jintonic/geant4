@@ -1,0 +1,26 @@
+// detector stage
+#include shield.tg
+// L/W/H/T/O: length/width/height/thickness/outer diameter
+// stg/scb: stage/stage bottom/stage back/screw bar
+:p Lstg 1.90*$in
+:p Wstg 1.42*$in
+:p Hstg 1.30*$in
+:p Tstg 0.20*$in
+:p Hscb 1.01*$in
+:p Oscb	0.112*$in
+
+:volu backStage BOX $Wstg/2 $Hstg/2 $Tstg/2         G4_Al
+:volu stage     BOX $Wstg/2 $Tstg/2 ($Lstg-$Tstg)/2 G4_Al
+:volu screwBar TUBE 0       $Oscb/2 ($Hstg-$Tstg)/2 G4_Al
+
+:place stage     -30 vacuum r000 0 ($Tstg-$Hvc)/2+8.4 ($Lstg+$Tstg-$Lvc)/2+10.8
+:place backStage -31 vacuum r000 0 ($Hstg-$Hvc)/2+8.4 ($Tstg-$Lvc)/2+10.8
+:place screwBar  -32 vacuum rx90 -10 $Tstg+($Hscb-$Hvc)/2+8.4  10
+:place screwBar  -33 vacuum rx90 -10 $Tstg+($Hscb-$Hvc)/2+8.4 -10
+:place screwBar  -34 vacuum rx90  10 $Tstg+($Hscb-$Hvc)/2+8.4  10
+:place screwBar  -35 vacuum rx90  10 $Tstg+($Hscb-$Hvc)/2+8.4 -10
+
+:color stage     0.38 0.69 1 0.9
+:color backStage 0.38 0.69 1 0.9
+:color screwBar  0.38 0.69 1 0.9
+
