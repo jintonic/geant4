@@ -1,6 +1,6 @@
 // infrared shield (an Al box)
 #include chamber.tg
-// L/W/H/T: length/width/height/thickness
+// W/H/L/T: width(x)/height(y)/length(z)/thickness
 // R: radius of the round corner
 // ir/bk/fr/sd/bm/tp/vc: infrared/back/front/side/bottom/top/vacuum
 :p Hir (1.79+0.05)*$in
@@ -31,6 +31,6 @@
 :place vacuum -20 shield r000 0 ($Tbm-$Ttp)/2   ($Tbk-$Tfr-$Rcr)/2
 :place shield -21 hollow r000 0 ($Hir/2-24.003) ($Lir/2-13.1)
 
-:color shield 0 0.6 0.8 0.5
-:color vacuum 0 0.6 0.8 0.5
+:color shield 0 0.6 0.8 0.2
+:color vacuum 0 0.6 0.8 0.2
 

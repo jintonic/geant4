@@ -1,23 +1,24 @@
-// vacuum chamber (end cap with flange and vacuum inside)
-#include unit.tg
-// O/I: outer/inner diameter, T: thickness, L: length
+// vacuum chamber (end Al cap with its flange and vacuum inside)
+
+// default unit: mm
+// in: inch
+:p in 25.4
+
+// T: thickness, L: length
 // ec: end cap, fl: flange
-:p Ofl 3.5*$in
 :p Tfl 10.5
-:p Oec 70.2
-:p Iec 67.7
-:p Tec 0.05*$in
 :p Lec 165.5
 
-:volu RmP124 TUBE 0 $Ofl $Lec G4_AIR
-:volu endCap TUBE 0 $Oec/2 ($Lec-$Tfl)/2 G4_Al
-:volu flange TUBE 0 $Ofl/2 $Tfl/2 G4_Al
-:volu hollow TUBE 0 $Iec/2 ($Lec-$Tfl)/2-$Tec G4_Galactic
-
-:p y0 1.473
-:p z0 44.98
+:volu RmP124 TUBE 0 50 130 G4_AIR
+:volu endCap TUBE 0 70.2/2 ($Lec-$Tfl)/2 G4_Al
+:volu flange TUBE 0 3.5*$in/2 $Tfl/2 G4_Al
+:volu hollow TUBE 0 67.7/2 ($Lec-$Tfl)/2-0.05*$in G4_Galactic
 
 :rotm r000 0 0 0
+
+// move origin to the bottom center of the HPGe detector
+:p y0 1.473
+:p z0 44.98
 
 :place flange -10 RmP124 r000 0 $y0 $z0+$Tfl/2-$Lec
 :place endCap -11 RmP124 r000 0 $y0 $z0+$Tfl/2-$Lec/2
