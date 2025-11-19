@@ -1,0 +1,35 @@
+// Am241 source
+
+// T: thickness
+// hdr/cvr/atv/bck/sbs: holder/cover/active/backing/substrate
+:p Thdr 2.520
+:p Tcvr 0.003
+:p Tatv 0.002
+:p Tbck 0.001
+:p Tsbs 0.200
+
+:rotm rtm 0 0 0
+
+:solid base  TUBE 0 3.16 $Thdr/2
+:solid inner TUBE 0 1.61 0.5
+:solid outer TUBE 1.61 3.17 1.23
+:solid top SUBTRACTION base inner rtm 0 0 1.26
+:solid holder SUBTRACTION top outer rtm 0 0 -1.26
+:volu  holder holder G4_Al
+
+:volu cover  TUBE 0 1.61 $Tcvr/2 G4_Au
+:volu active TUBE 0 1.61 $Tatv/2 G4_Au
+:volu backing TUBE 0 1.61 $Tbck/2  G4_Au
+:volu substrate TUBE 0 1.61 $Tsbs/2  G4_Ag
+
+:place cover -1 holder rtm 0 0 0.76-$Tcvr/2
+:place active -2 holder rtm 0 0 0.76-$Tcvr-$Tatv/2
+:place backing -3 holder rtm 0 0 0.76-$Tcvr-$Tatv-$Tbck/2
+:place substrate -4 holder rtm 0 0 0.76-$Tcvr-$Tatv-$Tbck-$Tsbs/2
+
+:color holder 0.78 0.44 0.44 0.1
+:color cover 0.5 0.5 0.5 0.1
+:color active 1.0 0.0 1.0 0.1
+:color backing 0.0 1.0 0.0 0.1
+:color substrate 0.0 0.0 1.0 0.1
+

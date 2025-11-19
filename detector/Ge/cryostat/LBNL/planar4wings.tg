@@ -1,0 +1,22 @@
+// planar HPGe detector with 4 handling wings
+#include stage.tg
+// W/H: width/height
+// ge: Ge
+:P Wge 10
+:P Hge 5
+:P Wwg 3.65
+:P Hwg 1
+
+:solid wingBase BOX ($Wge+$Wwg)/2 $Hwg/2 ($Wge+$Wwg)/2
+:solid detector BOX $Wge/2 $Hge/2 $Wge/2
+:solid wings SUBTRACTION wingBase detector r000 0 0 0
+
+:volu Ge(S) detector G4_Ge
+:volu wings wings    G4_Ge
+
+:place Ge(S)  1 vacuum r000 0 2 0
+:place wings -1 vacuum r000 0 0 0
+
+:color Ge(S) 0.74 0.93 0.41
+:color wings 0.74 0.93 0.41
+
