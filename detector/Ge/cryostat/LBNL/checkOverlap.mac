@@ -1,8 +1,0 @@
-/control/verbose
-/process/em/verbose 0
-/process/had/verbose 0
-
-/run/initialize
-
-/geometry/test/run
-

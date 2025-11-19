@@ -1,6 +1,0 @@
-/geometry/source shield.tg
-
-/control/execute checkOverlap.mac
-
-/control/execute vis.mac
-
