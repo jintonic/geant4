@@ -1,0 +1,206 @@
+:volu lab BOX 50 50 125 G4_AIR
+:vis lab OFF
+
+// global parameters
+:rotm r000 0 0 0
+:rotm r100 90 0 0
+:rotm r010 0 90 0
+:rotm r020 0 270 0
+:rotm r015 0 90 137.3
+:P in 25.4
+
+// HPGe(S) parameters
+:P DetectorWidth 10
+:P DetectorHeight 5
+:P WingWidth 3.65
+:P WingThickness 1
+:P aGeThickness 0.0012
+:P AlThickness 0.0003
+
+:solid WingBase BOX ($DetectorWidth+$WingWidth)/2 ($DetectorWidth+$WingWidth)/2 $WingThickness/2
+:solid Detector BOX $DetectorWidth/2 $DetectorWidth/2 $DetectorHeight/2
+:solid Wings SUBTRACTION WingBase Detector r000 0 0 0
+
+:volu HPGe(S) Detector G4_Ge
+:volu Wings   Wings    G4_Ge
+:volu aGeTop BOX $DetectorWidth/2 $DetectorWidth/2 $aGeThickness/2 G4_Ge
+:volu AlTop  BOX $DetectorWidth/2 $DetectorWidth/2 $AlThickness/2 G4_Al
+:volu aGeBot BOX ($DetectorWidth+$WingWidth)/2 ($DetectorWidth+$WingWidth)/2 $aGeThickness/2 G4_Ge
+:volu AlBot  BOX ($DetectorWidth+$WingWidth)/2 ($DetectorWidth+$WingWidth)/2 $AlThickness/2 G4_Al
+
+// Source Holder
+:P HolderHeight 2.520
+:P CoverThick   0.003
+:P ActiveThick  0.002
+:P BackThick    0.001
+:P SubsThick    0.200
+
+:solid base  TUBE 0 3.16 $HolderHeight/2
+:solid inner TUBE 0 1.61 0.5
+:solid outer TUBE 1.61 3.17 1.23
+:solid top SUBTRACTION base inner r000 0 0 1.26
+:solid holder SUBTRACTION top outer r000 0 0 -1.26
+:volu  Holder holder G4_Al
+
+// AmO2
+:MIXT_BY_NATOMS AmO2 11.68 2
+Am 1
+O 2
+
+// source
+:volu Cover  TUBE 0 1.61 $CoverThick/2 G4_Au
+:volu Active TUBE 0 1.61 $ActiveThick/2 G4_Au
+:volu Backing TUBE 0 1.61 $BackThick/2  G4_Au
+:volu Substrate TUBE 0 1.61 $SubsThick/2  G4_Ag
+:place Cover -1 Holder r000 0 0 0.76-$CoverThick/2
+:place Active -2 Holder r000 0 0 0.76-$CoverThick-$ActiveThick/2
+:place Backing -3 Holder r000 0 0 0.76-$CoverThick-$ActiveThick-$BackThick/2
+:place Substrate -4 Holder r000 0 0 0.76-$CoverThick-$ActiveThick-$BackThick-$SubsThick/2
+:color Cover 0.5 0.5 0.5 0.1
+:color Active 1.0 0.0 1.0 0.1
+:color Backing 0.0 1.0 0.0 0.1
+:color Substrate 0.0 0.0 1.0 0.1
+
+// End Cap
+:P FlangeOD 3.5*$in
+:P FlangeW 10.5
+:P CapOD 70.2
+:P CapID 67.7
+:P CapEndW 0.05*$in
+:P CapLength 165.5
+
+:solid CapBase TUBE 0   $FlangeOD/2 $CapLength/2
+:solid CapSub TUBE $CapOD/2 ($FlangeOD+1)/2 $CapLength/2
+:solid Cap SUBTRACTION CapBase CapSub r000 0 0 $FlangeW
+:volu EndCap Cap G4_Al
+:volu Vacuum TUBE 0  $CapID/2 ($CapLength-$FlangeW-$CapEndW)/2 G4_Galactic
+
+// IR Shield
+:P IRLength 3.10*$in
+:P IRWidth  1.72*$in
+:P IRHeight (1.79+0.05)*$in
+:P IRBack   0.50*$in
+:P IRFront  0.05*$in
+:P IRSide   0.05*$in
+:P IRBottom 0.10*$in
+:P IRTop    0.05*$in
+:P IRRadius 0.25*$in
+:P WindowLen 1.50*$in
+:P WindowWid 1.30*$in
+:P WindowThick 0.025*$in
+
+:solid IRBase BOX  $IRLength/2 $IRWidth/2 $IRHeight/2
+:solid IRSub1 BOX  ($IRLength-$IRBack-$IRFront)/2 ($IRWidth-2*$IRSide-2*$IRRadius)/2 ($IRHeight-$IRBottom-$IRTop)/2
+:solid IRSub2 BOX  ($IRLength-$IRBack-$IRFront-$IRRadius)/2 ($IRWidth-2*$IRSide)/2 ($IRHeight-$IRBottom-$IRTop)/2
+:solid IRSub3 TUBE 0 $IRRadius ($IRHeight-$IRBottom-$IRTop)/2
+
+:solid IRSub4 UNION IRSub1 IRSub2 r000 -$IRRadius/2 0 0
+:solid IRSub5 UNION IRSub4 IRSub3 r000 ($IRLength-$IRBack-$IRFront)/2-$IRRadius ($IRWidth-2*$IRSide)/2-$IRRadius 0
+:solid IRSub UNION IRSub5 IRSub3 r000 ($IRLength-$IRBack-$IRFront)/2-$IRRadius -($IRWidth-2*$IRSide)/2+$IRRadius  0
+
+:solid Window BOX  $WindowLen/2 $WindowWid/2 $WindowThick/2
+
+:solid Shield1 SUBTRACTION IRBase IRSub r000 (-$IRFront+$IRBack)/2 0 ($IRTop-$IRBottom)/2
+:solid Shield2 SUBTRACTION Shield1 Window r100 $IRLength/2-$WindowLen/2-0.55*$in  $WindowThick/2+$IRWidth/2-$IRSide 0
+:volu Shield Shield2 G4_Al
+
+// Stage
+:P StageLength 1.90*$in
+:P StageWidth 1.42*$in
+:P StageHeight 1.30*$in
+:P StageBottom 0.20*$in
+:P StageBack 0.20*$in
+:P PostOD  0.112*$in
+
+:solid StBase BOX  $StageLength/2 $StageWidth/2 $StageHeight/2
+:solid StSub BOX  $StageLength/2 ($StageWidth+1)/2 $StageHeight/2
+:solid Stage1 SUBTRACTION StBase StSub r000 $StageBack 0 -$StageBottom
+:solid Post TUBE 0    $PostOD/2 ($StageHeight-$StageBottom)/2
+:solid Stage2 Union Stage1 Post r000 -0.55*$in -0.6*$in 0
+:solid Stage3 Union Stage2 Post r000  0.75*$in -0.6*$in 0
+:solid Stage Union Stage3 Post r000  0.75*$in  0.6*$in 0
+
+:volu Stage Stage G4_Al
+
+// PTFE Bar
+:MIXT_BY_NATOMS PTFE 2.2 2
+C 2
+F 4
+
+:P BarLength 1.62*$in
+:P BarWidth 3
+:P BarHeight 2.5
+:P BarHoleOD 1.15
+
+:solid BarBase  BOX  $BarLength/2 $BarWidth/2  $BarHeight/2
+:solid BarHole  TUBE 0    $BarHoleOD/2 $BarHeight
+:solid SubBar1  SUBTRACTION BarBase BarHole r000  5 0 0
+:solid SubBar2  SUBTRACTION SubBar1 BarHole r000 -5 0 0
+:volu PTFEBar  SubBar2  PTFE
+
+// Boron Nitride Block
+:MIXT_BY_NATOMS BN 1.9 2
+B 1
+N 1
+
+:P BNLength 1.20*$in
+:P BNWidth  1.00*$in
+:P BNHeight 0.25*$in
+
+:volu BNBlock BOX $BNLength/2 $BNWidth/2 $BNHeight/2 BN
+
+// Indium Foil
+:P InThickBelow 0.01
+:P InThickAbove 0.1
+
+:volu InBelow BOX $BNLength/2 $BNWidth/2 $InThickBelow/2 G4_In
+:volu InAbove BOX $BNLength/2 $BNWidth/2 $InThickAbove/2 G4_In
+
+// Copper Plate
+:P CuThickness  1.0
+
+:volu   CuPlate BOX $BNLength/2 $BNWidth/2  $CuThickness/2 G4_Cu
+
+// Solder Blob
+:P BlobOD  3.0
+:P BlobHeight 1.5
+
+:volu Solder TUBE 0 $BlobOD/2 $BlobHeight/2 G4_Sn
+
+// Place Volumes
+:P VacOrigin 33.028
+
+:place Holder -5 lab r010 (36.573+1.26) 0 0
+:place EndCap -6  lab r000 1.473 0 -$CapLength/2+44.980
+:place Vacuum -7  EndCap r000 0 0 ($FlangeW-$CapEndW)/2
+:place Shield -8  Vacuum r010 ($IRHeight/2-24.003) 0 ($IRLength/2-13.1)
+:place Stage -9  Vacuum r010 ($StageHeight/2-13.103) 0 ($StageLength/2+10.2)
+:place InBelow -10 Vacuum r010 ($InThickBelow/2-8.023) 0 $VacOrigin
+:place BNBlock -11 Vacuum r010 ($BNHeight/2+$InThickBelow-8.023) 0 $VacOrigin
+:place CuPlate -12 Vacuum r010 ($BNHeight+$InThickBelow+$CuThickness/2-8.023) 0 $VacOrigin
+:place InAbove -13 Vacuum r010 ($BNHeight+$InThickBelow+$CuThickness+$InThickAbove/2-8.023) 0 $VacOrigin
+:place AlBot -14 Vacuum r010 ($BNHeight+$InThickBelow+$CuThickness+$InThickAbove+$AlThickness/2-8.023) 0 $VacOrigin
+:place aGeBot -15 Vacuum r010 ($BNHeight+$InThickBelow+$CuThickness+$InThickAbove+$AlThickness+$aGeThickness/2-8.023) 0 $VacOrigin
+:place HPGe(S)  1 Vacuum r010 ($BNHeight+$InThickBelow+$CuThickness+$InThickAbove+$AlThickness+$aGeThickness+$DetectorHeight/2-8.023) 0 $VacOrigin
+:place Wings -16 Vacuum r010 ($BNHeight+$InThickBelow+$CuThickness+$InThickAbove+$AlThickness+$aGeThickness+$WingThickness/2-8.023) 0 $VacOrigin
+:place aGeTop -17 Vacuum r010 ($BNHeight+$InThickBelow+$CuThickness+$InThickAbove+$AlThickness+1.5*$aGeThickness+$DetectorHeight-8.023) 0 $VacOrigin
+:place AlTop -18 Vacuum r010 ($BNHeight+$InThickBelow+$CuThickness+$InThickAbove+1.5*$AlThickness+2*$aGeThickness+$DetectorHeight-8.023) 0 $VacOrigin
+:place PTFEBar -19 Vacuum r015 ($BNHeight+$InThickBelow+$CuThickness+$InThickAbove+$DetectorHeight-8.023+5.5) 0 $VacOrigin+4.324
+:place Solder -20 Vacuum r015 ($BNHeight+$InThickBelow+$CuThickness+$InThickAbove+$DetectorHeight-8.023+5.5-$BlobHeight/2-$BarHeight/2) 0 $VacOrigin+4.324
+:place Solder -21 Vacuum r015 ($BNHeight+$InThickBelow+$CuThickness+$InThickAbove+$DetectorHeight-8.023+5.5+$BlobHeight/2+$BarHeight/2) 0 $VacOrigin+4.324
+
+// Color Volumes
+:color Holder  1.0 0.0 0.0 0.1 
+:color EndCap  0.5 0.5 0.5 0.1
+:color Vacuum  0.5 0.5 0.5 0.1
+:color Shield  0.0 1.0 0.0 0.1
+:color Stage  0.0 0.0 1.0 0.1
+:color InBelow  0.0 1.0 1.0 0.1
+:color CuPlate  1.0 0.6 0.0 0.1
+:color InAbove  0.0 1.0 1.0 0.1
+:color BNBlock  0.0 0.5 0.0 0.1
+:color PTFEBar  0.0 0.5 0.5 0.1
+:color HPGe(S)  0.0 0.0 0.5 0.5
+:color Wings  0.0 0.0 0.5 0.5
+:color Solder  0.5 0.0 0.5 0.5
+

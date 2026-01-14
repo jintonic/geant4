@@ -1,0 +1,15 @@
+/geometry/source XMASS.tg
+
+/run/initialize
+
+/geometry/test/run
+
+/vis/ASCIITree/verbose 13
+/vis/drawTree
+
+/vis/open OGL
+/vis/drawVolume
+/vis/viewer/flush
+
+/vis/viewer/set/style s
+
