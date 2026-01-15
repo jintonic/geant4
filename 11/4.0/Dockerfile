@@ -13,6 +13,8 @@ rm -fr afs media mnt srv /root/.*cshrc && cd /usr && rm -fr games src
 curl -LO https://cern.ch/geant4-data/releases/lib4.11.4/Linux-g++11.5.0-Alma9.tar.gz
 tar --no-same-owner --strip-components=2 -xf *.gz && rm -f *.gz README bin/geant4.*
 sed -i -E 's|/afs.{,100}data|datasets|g' bin/geant4-config
+curl -Lo /tini https://github.com/krallin/tini/releases/latest/download/tini-amd64
+chmod +x /tini
 EOT
 
 # compile and install MinGLE as a test of the Geant4 installation
@@ -77,7 +79,10 @@ env G4RUN_MANAGER_TYPE=Serial
 # avoid OpenGL related visualization drivers in a container
 env G4VIS_DEFAULT_DRIVER=TSG_FILE
 
-# display some information on Docker Desktop Logs
+# use https://github.com/krallin/tini to replace tail to clear zombie processes
+entrypoint ["/tini", "--"]
+
+# display some information on Docker Desktop Logs and
 # https://kodekloud.com/blog/keep-docker-container-running
 cmd echo "Geant4.`geant4-config --version` pre-compiled on" >> /tmp/info \
   && echo "`cat /etc/redhat-release` with" >> /tmp/info \
