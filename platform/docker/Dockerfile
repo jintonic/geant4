@@ -1,51 +1,49 @@
 # https://hub.docker.com/r/physino/geant4
-from physino/geant4:11.3.2
+from physino/geant4:11.4.0
 
-# install git, tmux, micro, lf, gears, uproot, visidata, seaborn, pandas, mdv
-# tornado is used by matplotlib's WebAgg, psutil is used by visidata
-# procps-ng provides pkill and ps, they are needed to kill tornado in bg
+# install git, tmux, fresh, yazi, gears, wget, uproot, visidata, seaborn, pandas
+# psutil is used by visidata, procps-ng provides pkill and ps
+# ps and wget are used by VS Code to install extensions
 run <<APPS
-dnf install -y git tmux python3-pip python3-tornado python3-psutil procps-ng
-cd /usr/local/bin && curl https://getmic.ro/r | bash
+dnf install -y git tmux python3-pip python3-psutil procps-ng wget dnf-plugins-core \
+https://github.com/sinelaw/fresh/releases/download/v0.1.77/fresh-editor-0.1.77-1.x86_64.rpm
+dnf copr enable -y lihaohong/yazi
+dnf install -y yazi --setopt=install_weak_deps=False
 curl -LO https://github.com/jintonic/gears/raw/master/gears.cc
-curl -LO https://github.com/jintonic/gears/raw/master/Makefile
-make && rm -f gears.cc Makefile && mkdir -p /etc/lf
-curl -LO https://github.com/gokcehan/lf/releases/download/r31/lf-linux-amd64.tar.gz
-tar xf *.gz && rm -f *.gz && dnf clean all && rm -fr /var/cache/*
-pip install uproot visidata seaborn pandas mdv && rm -fr /root/.cache
+curl -LO https://github.com/jintonic/gears/raw/master/CMakeLists.txt
+cmake . && make install && rm -fr gears* *ake* *.txt
+dnf clean all && rm -fr /var/cache/*
+pip install uproot visidata seaborn pandas && rm -fr /root/.cache
 APPS
 
 # set up environment
 copy tmux.conf /etc/
-copy lfrc /etc/lf/
-copy micro /root/.config/micro
-copy matplotlibrc /root/.config/matplotlib/
+copy yazi/keymap.toml /root/.config/yazi/keymap.toml
 
 # https://stackoverflow.com/a/27921346/1801749
 run cat <<'BASHRC' >> /etc/bashrc
+export MPLBACKEND=PDF
 alias t='tmux -u'
 alias ta='t attach'
-alias tl='t new lf'
-# https://github.com/gokcehan/lf/blob/master/etc/lfcd.sh
-l() {
-  lf -last-dir-path=/tmp/lfdir "$@"
-  cd "$(cat /tmp/lfdir)"
+alias ty='t new yazi'
+# https://yazi-rs.github.io/docs/quick-start#shell-wrapper
+y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
 }
 BASHRC
 
 run cat <<EOF >> /root/.bash_history
 git clone https://github.com/jintonic/geant4.git .
-git clone https://github.com/jintonic/mingle.git
-git clone https://github.com/jintonic/gears.git
 gears
-l
+ty
 EOF
 
 run echo 'options.disp_canvas_charset = " +"' >> /root/.visidatarc \
  && sed -i 's/bash/tmux -u/' /root/.profile
 
-# lf started by tmux uses vi without the following line
-env EDITOR=micro
-
-# for WebAgg backend for Matplotlib, up to two plots
-expose 8888 8889
+# yazi uses vi without the following line
+env EDITOR=fresh
