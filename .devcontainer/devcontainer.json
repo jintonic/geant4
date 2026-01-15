@@ -1,0 +1,9 @@
+{
+  "containerUser": "root",
+  "workspaceFolder": "/root/geant4",
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python"]
+    }
+  }
+}
