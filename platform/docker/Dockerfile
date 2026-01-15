@@ -1,14 +1,16 @@
 # https://hub.docker.com/r/physino/geant4
-from physino/geant4:11.4.0
+FROM physino/geant4:11.4.0
 
-# install git, tmux, fresh, yazi, gears, wget, uproot, visidata, seaborn, pandas
+# install git, tmux, fresh, yazi, chafa, gears, wget, uproot, visidata, seaborn, pandas
+# chafa is used by yazi for image preview
 # psutil is used by visidata, procps-ng provides pkill and ps
 # ps and wget are used by VS Code to install extensions
-run <<APPS
-dnf install -y git tmux python3-pip python3-psutil procps-ng wget dnf-plugins-core \
+RUN <<APPS
+dnf install -y git tmux python3-pip python3-psutil procps-ng wget epel-release dnf-plugins-core \
 https://github.com/sinelaw/fresh/releases/download/v0.1.77/fresh-editor-0.1.77-1.x86_64.rpm
+dnf config-manager --set-enabled crb
 dnf copr enable -y lihaohong/yazi
-dnf install -y yazi --setopt=install_weak_deps=False
+dnf install -y yazi chafa
 curl -LO https://github.com/jintonic/gears/raw/master/gears.cc
 curl -LO https://github.com/jintonic/gears/raw/master/CMakeLists.txt
 cmake . && make install && rm -fr gears* *ake* *.txt
@@ -17,12 +19,13 @@ pip install uproot visidata seaborn pandas && rm -fr /root/.cache
 APPS
 
 # set up environment
-copy tmux.conf /etc/
-copy yazi/keymap.toml /root/.config/yazi/keymap.toml
+COPY tmux.conf /etc/
+COPY yazi/keymap.toml /root/.config/yazi/keymap.toml
+COPY yazi/yazi.toml /root/.config/yazi/yazi.toml
 
 # https://stackoverflow.com/a/27921346/1801749
-run cat <<'BASHRC' >> /etc/bashrc
-export MPLBACKEND=PDF
+RUN cat <<'BASHRC' >> /etc/bashrc
+export MPLBACKEND=Agg
 alias t='tmux -u'
 alias ta='t attach'
 alias ty='t new yazi'
@@ -36,14 +39,14 @@ y() {
 }
 BASHRC
 
-run cat <<EOF >> /root/.bash_history
+RUN cat <<EOF >> /root/.bash_history
 git clone https://github.com/jintonic/geant4.git .
 gears
 ty
 EOF
 
-run echo 'options.disp_canvas_charset = " +"' >> /root/.visidatarc \
- && sed -i 's/bash/tmux -u/' /root/.profile
+RUN echo 'options.disp_canvas_charset = " +"' >> /root/.visidatarc \
+	&& sed -i 's/bash/tmux -u/' /root/.profile
 
 # yazi uses vi without the following line
-env EDITOR=fresh
+ENV EDITOR=fresh
