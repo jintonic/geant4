@@ -1,4 +1,4 @@
 [[mgr.prepend_keymap]]
 on = "s"
 run = 'shell "tmux new-window -c \"$PWD\""'
-desc = "Open a new tmux window in the current directory"
+desc = "Open current folder in a new shell using tmux"
