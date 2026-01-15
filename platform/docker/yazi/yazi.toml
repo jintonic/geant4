@@ -1,0 +1,5 @@
+[opener]
+visidata = [{ run = 'vd "$@"', block = true, desc = "VisiData" }]
+
+[open]
+prepend_rules = [{ url = "*.csv", use = "visidata" }]
