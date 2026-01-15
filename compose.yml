@@ -29,6 +29,15 @@ services:
     environment: [ TZ=US/Central ]
     hostname: AlmaLinux # https://stackoverflow.com/a/63291253/1801749
     build: 11/4.0 # docker compose build g4
+  vscode:
+    image: physino/geant4
+    platform: linux/amd64
+    profiles: [vscode]
+    command: sleep infinity
+    volumes:
+      - .:/root/geant4:cached
+    environment: [ TZ=US/Central ]
+    hostname: AlmaLinux
   heprapp:
     # docker compose run --rm heprapp
     command: /usr/bin/hv # launch HepRApp
