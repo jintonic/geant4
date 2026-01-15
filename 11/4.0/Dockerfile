@@ -19,9 +19,8 @@ EOT
 # `cmake` requires `make`, `which` is needed when run `make`
 # `mesa-libGL`, `libXmu`, `expat` are needed to compile Geant4 applications
 # their -devel packages are needed to provide unversioned .so files
-# wget is needed for vs code to download stuff inside the container
 run <<EOT
-dnf install -y gcc-c++ cmake which mesa-libGL-devel libXmu-devel expat-devel wget
+dnf install -y gcc-c++ cmake which mesa-libGL-devel libXmu-devel expat-devel
 dnf clean all && rm -fr /var/cache/*
 curl -LO https://github.com/jintonic/mingle/raw/main/CMakeLists.txt
 curl -LO https://github.com/jintonic/mingle/raw/main/mingle.cc
@@ -75,12 +74,13 @@ env ENV=/root/.profile
 
 # no need to enable multi-threading in a container
 env G4RUN_MANAGER_TYPE=Serial
-# avoid using OpenGL related visualization drivers in a container
-env G4VIS_DEFAULT_DRIVER=VRML2FILE
+# avoid OpenGL related visualization drivers in a container
+env G4VIS_DEFAULT_DRIVER=TSG_FILE
 
 # display some information on Docker Desktop Logs
 # https://kodekloud.com/blog/keep-docker-container-running
 cmd echo "Geant4.`geant4-config --version` pre-compiled on" >> /tmp/info \
-  && echo "`cat /etc/redhat-release`" >> /tmp/info \
+  && echo "`cat /etc/redhat-release` with" >> /tmp/info \
+  && echo "`g++ --version | head -n 1`" >> /tmp/info \
   && echo 'Switch to the "Exec" tab for an interactive shell' >> /tmp/info \
   && tail -f /tmp/info
