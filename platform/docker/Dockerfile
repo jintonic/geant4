@@ -31,11 +31,11 @@ alias ta='t attach'
 alias ty='t new yazi'
 # https://yazi-rs.github.io/docs/quick-start#shell-wrapper
 y() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-	command yazi "$@" --cwd-file="$tmp"
-	IFS= read -r -d '' cwd < "$tmp"
-	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
-	rm -f -- "$tmp"
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  command yazi "$@" --cwd-file="$tmp"
+  IFS= read -r -d '' cwd < "$tmp"
+  [ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+  rm -f -- "$tmp"
 }
 BASHRC
 
@@ -46,7 +46,7 @@ ty
 EOF
 
 RUN echo 'options.disp_canvas_charset = " +"' >> /root/.visidatarc \
-	&& sed -i 's/bash/tmux -u/' /root/.profile
+ && sed -i 's/bash/tmux -u/' /root/.profile
 
 # yazi uses vi without the following line
 ENV EDITOR=fresh
