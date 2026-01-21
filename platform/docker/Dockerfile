@@ -10,7 +10,7 @@ dnf install -y git tmux python3-pip python3-psutil procps-ng wget epel-release d
 https://github.com/sinelaw/fresh/releases/download/v0.1.77/fresh-editor-0.1.77-1.x86_64.rpm
 dnf config-manager --set-enabled crb
 dnf copr enable -y lihaohong/yazi
-dnf install -y yazi chafa
+dnf install -y yazi chafa poppler-utils --setopt=install_weak_deps=False
 curl -LO https://github.com/jintonic/gears/raw/master/gears.cc
 curl -LO https://github.com/jintonic/gears/raw/master/CMakeLists.txt
 cmake . && make install && rm -fr gears* *ake* *.txt
