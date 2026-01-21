@@ -20,18 +20,26 @@ To use this image, we need to install [Docker Desktop][], a program that manages
 ## Tools Provided in the Container
 
 ### Text Editor
-[Micro][] is chosen instead of [Vim][] or other classical text editors because it is very friendly to inexperienced users, and powerful enough for experienced users.
+[Fresh][] is chosen instead of [Vim][] or other classical text editors because it is very friendly to inexperienced users, and powerful enough for experienced users.
 
-### Markdown Viewer
-A decent text editor can already show markdown files nicely. However, a viewer can avoid accidental modification of the original file from inexperienced users. It can also hide control marks from them to reduce confusion.
+### Terminal
+[tmux][] is a terminal multiplexer that can be used to manage multiple terminal sessions in the container. Mouse can be used to open/close/switch between tabs and windows.
 
-There are many terminal based markdown viewers. [mdv][] is chosen because it can be easily installed through [pip][]. Since we already choose quite some [Python][] tools, most prerequisites of [mdv][] should have been fulfilled. Adding [mdv][] won't change the image size a lot.
+### File Manager
+[Yazi][] is a terminal file manager that can be used to manage files in the container. Mouse is supported. [Fresh][] is used by [Yazi][] to edit files. Press <kbd>s</kbd> in [Yazi][] to open a new **s**hell as a tab in [tmux][] in the current directory.
 
-[Micro]: https://micro-editor.github.io
+### Data Analysis Tools
+[uproot][] is a Python library that can be used to read and write [ROOT][] files. [visidata][] is a terminal spreadsheet program that can be used to view and analyze data in a tabular format. [pandas][] and [seaborn][] are also installed as dependents of [uproot][] and [visidata][].
+
+[Fresh]: https://github.com/Fresh-Editor/Fresh
 [Vim]: https://www.vim.org
-[mdv]: https://github.com/axiros/terminal_markdown_viewer
-[pip]: https://pypi.org/project/pip
-[Python]: https://www.python.org
+[Yazi]: https://github.com/yazi-rs/yazi
+[tmux]: https://github.com/tmux/tmux
+[uproot]: https://uproot.readthedocs.io
+[ROOT]: https://root.cern/
+[visidata]: https://www.visidata.org
+[pandas]: https://pandas.pydata.org
+[seaborn]: https://seaborn.pydata.org
 
 > **Warning**
 > The end user friendly documentation in this section is still under construction.
