@@ -51,9 +51,9 @@ anti_lambda_c+Inelastic,anti_xi_c+Inelastic,anti_xi_c0Inelastic,anti_omega_c0Ine
 anti_lambda_bInelastic,anti_xi_b0Inelastic,anti_xi_b-Inelastic,anti_omega_b-Inelastic
 hFritiofCaptureAtRest,hBertiniCaptureAtRest,muMinusCaptureAtRest,         dInelastic
          tInelastic,       He3Inelastic,     alphaInelastic,       ionInelastic
-            nKiller,   RadioactiveDecay,   RadioactiveDecay,       OpAbsorption
-         OpRayleigh,            OpMieHG,         OpBoundary,              OpWLS
-             OpWLS2,           Cerenkov,      Scintillation,   nuVacOscillation
-         nuElectron,        muNuNucleus,tau-neutrino-nucleus,        elNuNucleus
-        pi-ChargeEx,        pi+ChargeEx,      kaon-ChargeEx,      kaon+ChargeEx
-     kaon0LChargeEx
+            nKiller,        StepLimiter,     UserSpecialCut,   RadioactiveDecay
+   RadioactiveDecay,       OpAbsorption,         OpRayleigh,            OpMieHG
+         OpBoundary,              OpWLS,             OpWLS2,           Cerenkov
+      Scintillation,   nuVacOscillation,         nuElectron,        muNuNucleus
+tau-neutrino-nucleus,        elNuNucleus,        pi-ChargeEx,        pi+ChargeEx
+      kaon-ChargeEx,      kaon+ChargeEx,     kaon0LChargeEx
