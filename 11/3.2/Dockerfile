@@ -1,7 +1,7 @@
 # Geant4 (>11.1) is pre-compiled on 64-bit AlmaLinux (https://geant4.org/download)
 # So we target linux/amd64 platform (https://stackoverflow.com/a/60252669/1801749)
 # https://docs.docker.com/reference/build-checks/from-platform-flag-const-disallowed
-from almalinux
+from almalinux:9
 
 # install pre-compiled Geant4 in /usr to avoid setting LD_LIBRARY_PATH
 # change datasets location in /usr/bin/geant4-config to be ./datasets/
