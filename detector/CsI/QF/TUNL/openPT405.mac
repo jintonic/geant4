@@ -1,0 +1,22 @@
+# display applied commands on screen
+/control/verbose 
+
+
+/geometry/source PT405.tg
+/run/initialize
+
+/geometry/test/run
+/vis/geometry/list
+
+/vis/open
+/vis/drawVolume 
+/vis/drawTree
+
+#show the all at the same page
+#/vis/scene/endOfEventAction accumulate
+#/vis/scene/endOfRunAction refresh
+
+/vis/scene/add/trajectories smooth
+/vis/scene/add/hits
+/vis/viewer/set/style surface
+/vis/viewer/update
