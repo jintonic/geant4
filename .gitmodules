@@ -1,8 +1,8 @@
 [submodule "examples/gears"]
 	path = examples/gears
 	url = https://github.com/jintonic/gears
-	shallow = true
+	branch = master
 [submodule "examples/mingle"]
 	path = examples/mingle
 	url = https://github.com/jintonic/mingle
-	shallow = true
+	branch = main
