@@ -1,0 +1,201 @@
+:volu world BOX 100*m 100*m 100*m G4_Galactic
+:vis world OFF
+
+:volu Cap POLYCONE
+0 360       // phi0, dphi in degrees
+6          // number of z planes
+-100   0 57.65     // z1, r1inner, r1outer
+-97.46 0 57.65
+-97.46 57.15 57.65
+11.247 57.15 57.65 
+15.748 57.15 65.151
+17.78  57.15 65.151
+G4_Cu       // material
+
+:volu oring POLYCONE
+0 360       // phi0, dphi in degrees
+2          // number of z planes
+17.78  57.15 65.151
+19.431 57.15 65.151
+G4_Si       // material
+:color oring 0 100 0
+
+:volu irsh POLYCONE
+0 360       // phi0, dphi in degrees
+8          // number of z planes
+19.431  57.15 65.151     // z1, r1inner, r1outer
+21.463  57.15 65.151
+24.511  57.15 60.071
+207.391 57.15 60.071 
+207.391 57.15 88.9
+215.011 57.15 88.9
+215.011 69.85 88.9
+243.586 69.85 88.9
+G4_Cu       // material
+
+:volu rtcov POLYCONE
+0 360
+6
+8.246 57.65 59.65
+11.247 57.65 59.65
+15.748 65.151 67.151
+21.463 65.151 67.151
+24.511 60.071 62.071
+27.511 60.071 62.071
+G4_Si       // material
+:color rtcov 0 10 110
+
+:volu 30irshcap POLYCONE
+0 360       // phi0, dphi in degrees
+6          // number of z planes
+-87.3  0 41.4065     // z1, r1inner, r1outer
+-84.76 0 41.4065
+-84.76 40.9065 41.4065
+8.382  40.9065 41.4065 
+8.382  40.9065 51.054
+12.922 40.9065 51.054
+G4_Cu       // material
+
+:volu 30irsh POLYCONE
+0 360       // phi0, dphi in degrees
+6          // number of z planes
+12.922  42.2775 51.054    // z1, r1inner, r1outer
+15.97   42.2775 51.054
+15.97   49.53 51.054
+217.138 49.53 51.054
+217.138 49.53 60.325
+220.186 49.53 60.325
+G4_Cu       // material
+
+:volu flange1 POLYCONE
+0 360       // phi0, dphi in degrees
+2           // number of z planes
+41.395  0 15.05  // z1, r1inner, r1outer
+245.586 0 15.05
+G4_Cu       // material
+
+:volu flange2 POLYCONE
+0 360       // phi0, dphi in degrees
+2           // number of z planes
+41.395  0 9.6  // z1, r1inner, r1outer
+245.586 0 9.6
+G4_Cu       // material
+
+:volu flange3 POLYCONE
+0 360       // phi0, dphi in degrees
+2           // number of z planes
+245.586 0 88.9
+270.986 0 88.9
+G4_Cu       // material
+
+//the overlap not able to skip, keep ignore for now
+//:volu 30stg POLYCONE
+//0 360       // phi0, dphi in degrees
+//2           // number of z planes
+//220.186 0 60.325
+//232.175 0 60.325
+//G4_Si       // material
+//:color 30stg 0 0 100
+
+//:volu Hole1 TUBE 0 9.6 5.9945 G4_AIR
+//:volu Hole2 TUBE 0 15.05 5.9945 G4_AIR
+//:place Hole1 1 30stg r000 -25.515 4 226.1805
+//:place Hole2 2 30stg r000 12.69 -21.06 226.1805
+
+
+:volu 2kstg1 POLYCONE
+0 360       // phi0, dphi in degrees
+2           // number of z planes
+32.175 0 42.926
+41.395 0 42.926
+G4_Si       // material
+:color 2kstg1 0 0 100
+
+:volu 2kstg2 POLYCONE
+0 360       // phi0, dphi in degrees
+2           // number of z planes
+41.395 9.6 12.4995
+56.395 9.6 12.4995
+G4_Si       // material
+:color 2kstg2 0 0 100
+
+:volu 2kstg3 POLYCONE
+0 360       // phi0, dphi in degrees
+2           // number of z planes
+41.395 15.05 17.411
+56.395 15.05 17.411
+G4_Si       // material
+:color 2kstg3 0 0 100
+
+:volu tsensor POLYCONE
+0 360       // phi0, dphi in degrees
+2           // number of z planes
+41.395 0 5
+44.395 0 5
+G4_Si       // material
+:color tsensor 0 10 100
+
+:volu heater BOX 11.751 4.422 1.5 G4_Si
+:color heater 0 10 100
+
+:volu cybase BOX 14.3 14.3 15 G4_Cu
+:volu cy BOX 12.7 12.7 15 G4_Si
+:color cy 0 10 100
+
+:volu ircap POLYCONE
+0 360       // phi0, dphi in degrees
+6          // number of z planes
+-68.26   0 27.041     // z1, r1inner, r1outer
+-67.76   0 27.041
+-67.76   26.541 27.041
+10.89    26.541 27.041 
+10.89    26.541 33.041
+13.43    26.541 33.041
+G4_Cu       // material
+
+:volu irbase POLYCONE
+0 360       // phi0, dphi in degrees
+4          // number of z planes
+13.43    26.541 33.041
+29.635   26.541 33.041
+29.635   26.541 47.926
+32.175   26.541 47.926  
+G4_Cu       // material
+
+:volu lg1 BOX 19.5 13.25 160 G4_Cu
+:volu lg2 BOX 19.5 13.25 160 G4_Cu
+:volu lg3 BOX 13.25 19.5 160 G4_Cu
+:volu lg4 BOX 13.25 19.5 160 G4_Cu
+
+:rotm r001 15 0 0
+:rotm r002 -15 0 0
+:rotm r003 0 15 0
+:rotm r004 0 -15 0
+
+:rotm r000 0 0 0
+:place Cap       1 world r000 0 0 0
+:place oring     2 world r000 0 0 0
+:place irsh      3 world r000 0 0 0
+:place 30irshcap 4 world r000 0 0 0
+:place 30irsh    5 world r000 0 0 0
+:place flange1   6 world r000 12.69 -21.06 0
+:place flange2   6 world r000 -25.515 4 0
+:place flange3   6 world r000 0 0 0
+//:place 30stg     7 world r000 0 0 0
+:place 2kstg1    8 world r000 0 0 0
+:place 2kstg2    8 world r000 -25.515 4 0
+:place 2kstg3    8 world r000 12.69 -21.06 0
+:place tsensor   9 world r000 -26.759 -18 0
+:place heater    10 world r000 1 20 42.895
+:place cybase    11 world r000 0 0 17.175
+:place cy        12 world r000 0 0 -12.825
+:place ircap     13 world r000 0 0 0
+:place irbase    14 world r000 0 0 0
+
+:place lg1 15 world r003 150 0 50
+:place lg2 15 world r004 -150 0 50
+:place lg3 15 world r002 0 150 50
+:place lg4 15 world r001 0 -150 50
+:place rtcov 16 world r000 0 0 0
+
+
