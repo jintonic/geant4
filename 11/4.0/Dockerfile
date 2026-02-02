@@ -18,16 +18,20 @@ curl -Lo /tini https://github.com/krallin/tini/releases/latest/download/tini-amd
 chmod +x /tini
 EOT
 
-# compile and install MinGLE as a test of the Geant4 installation
+# compile and install MinGLE and GEARS to verify Geant4 installation
 # `cmake` requires `make`, `which` is needed when run `make`
+# `wget` and `which` are needed by `antigravity` to install extensions
 # `mesa-libGL`, `libXmu`, `expat` are needed to compile Geant4 applications
 # their -devel packages are needed to provide unversioned .so files
 RUN <<EOT
-dnf install -y gcc-c++ cmake which mesa-libGL-devel libXmu-devel expat-devel
+dnf install -y gcc-c++ cmake wget which mesa-libGL-devel libXmu-devel expat-devel
 dnf clean all && rm -fr /var/cache/*
 curl -LO https://github.com/jintonic/mingle/raw/main/CMakeLists.txt
 curl -LO https://github.com/jintonic/mingle/raw/main/mingle.cc
 cmake . && make install && rm -fr mingle* *ake* *.txt
+curl -LO https://github.com/jintonic/gears/raw/master/gears.cc
+curl -LO https://github.com/jintonic/gears/raw/master/CMakeLists.txt
+cmake . && make install && rm -fr gears* *ake* *.txt
 EOT
 
 # https://stackoverflow.com/a/77683802/1801749
@@ -36,7 +40,7 @@ PHYSLIST=FTFP_BERT
 GEANT4_DATA_DIR=~/geant4/datasets
 # https://www.tecmint.com/customize-bash-colors-terminal-prompt-linux/
 PS1="\[\e[32m\]\u@AlmaLinux:\[\e[34m\]\w \[\e[31m\]\$\[\e[m\] "
-export PS1 GEANT4_DATA_DIR PHYSLIST
+export GEANT4_DATA_DIR PHYSLIST
 alias ls="ls --color"
 alias la="ls -AF"
 alias ll="ls -lh"
@@ -53,6 +57,7 @@ c 'sin(pi/2)'
 c 'cos(90*o)'
 alias
 mingle
+gears
 curl -LO https://github.com/jintonic/geant4/raw/main/compose.yml
 geant4-config --help
 geant4-config --version

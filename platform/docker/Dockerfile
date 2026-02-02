@@ -1,19 +1,16 @@
 # https://hub.docker.com/r/physino/geant4
 FROM physino/geant4:11.4.0
 
-# install git, tmux, fresh, yazi, chafa, gears, wget, uproot, visidata, seaborn, pandas
+# install git, tmux, fresh, yazi, chafa, uproot, visidata, seaborn, pandas
 # chafa is used by yazi for image preview
 # psutil is used by visidata, procps-ng provides pkill and ps
-# ps and wget are used by VS Code to install extensions
+# ps is used by VS Code to install extensions
 RUN <<APPS
-dnf install -y git tmux python3-pip python3-psutil procps-ng wget epel-release dnf-plugins-core \
+dnf install -y git tmux python3-pip python3-psutil procps-ng epel-release dnf-plugins-core \
 https://github.com/sinelaw/fresh/releases/download/v0.1.77/fresh-editor-0.1.77-1.x86_64.rpm
 dnf config-manager --set-enabled crb
 dnf copr enable -y lihaohong/yazi
 dnf install -y yazi chafa poppler-utils --setopt=install_weak_deps=False
-curl -LO https://github.com/jintonic/gears/raw/master/gears.cc
-curl -LO https://github.com/jintonic/gears/raw/master/CMakeLists.txt
-cmake . && make install && rm -fr gears* *ake* *.txt
 dnf clean all && rm -fr /var/cache/*
 pip install uproot visidata seaborn pandas && rm -fr /root/.cache
 APPS
