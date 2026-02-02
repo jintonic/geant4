@@ -28,7 +28,7 @@ RUN cat <<'BASHRC' >> /etc/bashrc
 export MPLBACKEND=Agg
 alias t='tmux -u'
 alias ta='t attach'
-alias ty='t new yazi'
+alias ty='t new-window yazi'
 # https://yazi-rs.github.io/docs/quick-start#shell-wrapper
 y() {
   local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
@@ -37,6 +37,9 @@ y() {
   [ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
   rm -f -- "$tmp"
 }
+# include Git branch information in the prompt
+. /usr/share/git-core/contrib/completion/git-prompt.sh
+PS1='\[\e[32m\]\u@AlmaLinux:\[\e[34m\]\w\[\e[31m\]$(__git_ps1 " (%s)")\[\e[35m\]\$ \[\e[m\]'
 BASHRC
 
 RUN cat <<EOF >> /root/.bash_history
@@ -46,7 +49,7 @@ ty
 EOF
 
 RUN echo 'options.disp_canvas_charset = " +"' >> /root/.visidatarc \
- && sed -i 's/bash/tmux -u/' /root/.profile
+  && sed -i 's/bash/tmux -u/' /root/.profile
 
 # yazi uses vi without the following line
 ENV EDITOR=fresh
