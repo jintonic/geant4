@@ -2,4 +2,10 @@
 visidata = [{ run = 'vd "$@"', block = true, desc = "VisiData" }]
 
 [open]
-prepend_rules = [{ url = "*.csv", use = "visidata" }]
+prepend_rules = [{ url = "*.csv", mime = "*/csv", use = "visidata" }]
+
+[preview]
+wrap = "yes"
+
+[plugin]
+prepend_previewers = [{ url = "*.txt", run = "code" }]
