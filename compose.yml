@@ -4,7 +4,7 @@ services:
     image: physino/geant4 # minimalistic container image + cmd-line tools
     platform: linux/amd64 # pre-compiled geant4 is not available for arm64
     profiles: [ "geant4" ] # avoid running it by `docker compose up`
-    command: /usr/bin/bash # `docker compose up` quits immediately
+    command: /usr/bin/tmux -u # `docker compose up` quits immediately
     volumes:
       # no X11 setup is included to be beginner friendly
       - .:/root/geant4 # load current folder as /root/geant4 in container
