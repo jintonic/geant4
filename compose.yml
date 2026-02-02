@@ -1,21 +1,17 @@
 services:
   geant4:
-    # docker compose run --service-ports geant4
+    # docker compose run --rm geant4
     image: physino/geant4 # minimalistic container image + cmd-line tools
     platform: linux/amd64 # pre-compiled geant4 is not available for arm64
-    profiles: [ "g4" ] # avoid running it by `docker compose up`
+    profiles: [ "geant4" ] # avoid running it by `docker compose up`
     command: /usr/bin/bash # `docker compose up` quits immediately
     volumes:
       # no X11 setup is included to be beginner friendly
       - .:/root/geant4 # load current folder as /root/geant4 in container
-    # ports are only exposed by `compose up`, not `compose run`
-    # --service-ports is needed for `compose run` to expose ports
-    ports: [ 8888:8888, 8889:8889 ]
     # feel free to change the timezone identifier below according to
     # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List
     environment: [ TZ=US/Central ]
     hostname: AlmaLinux
-    container_name: physino-geant4
     build: platform/docker # for container developers
   g4:
     # docker compose run --rm g4
