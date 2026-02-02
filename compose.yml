@@ -12,11 +12,14 @@ services:
     # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List
     environment: [ TZ=US/Central ]
     hostname: AlmaLinux
-    build: platform/docker # for container developers
+    build:
+      context: platform/docker  # docker compose build geant4
+      platforms:
+        - "linux/amd64" # for build time
   g4:
     # docker compose run --rm g4
     image: physino/geant4:11.4.0 # minimalistic container image
-    platform: linux/amd64
+    platform: linux/amd64 # for run time
     profiles: [ "g4" ] # avoid running it by `docker compose up`
     command: /usr/bin/bash
     volumes: [ .:/root/geant4 ]
@@ -24,7 +27,10 @@ services:
     # https://stackoverflow.com/a/63291253/1801749
     environment: [ TZ=US/Central ]
     hostname: AlmaLinux # https://stackoverflow.com/a/63291253/1801749
-    build: 11/4.0 # docker compose build g4
+    build:
+      context: 11/4.0  # docker compose build g4
+      platforms:
+        - "linux/amd64" # for build time
   vscode:
     image: physino/geant4
     platform: linux/amd64
