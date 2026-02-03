@@ -1,10 +1,8 @@
 services:
   geant4:
-    # docker compose run --rm geant4
+    # docker compose run --rm geant4 tmux -u
     image: physino/geant4 # minimalistic container image + cmd-line tools
     platform: linux/amd64 # pre-compiled geant4 is not available for arm64
-    profiles: [ "geant4" ] # avoid running it by `docker compose up`
-    command: /usr/bin/tmux -u # `docker compose up` quits immediately
     volumes:
       # no X11 setup is included to be beginner friendly
       - .:/root/geant4 # load current folder as /root/geant4 in container
@@ -31,15 +29,6 @@ services:
       context: 11/4.0  # docker compose build g4
       platforms:
         - "linux/amd64" # for build time
-  vscode:
-    image: physino/geant4
-    platform: linux/amd64
-    profiles: [vscode]
-    command: sleep infinity
-    volumes:
-      - .:/root/geant4:cached
-    environment: [ TZ=US/Central ]
-    hostname: AlmaLinux
   heprapp:
     # docker compose run --rm heprapp
     command: /usr/bin/hv # launch HepRApp
@@ -86,6 +75,7 @@ services:
   jekyll:
     # docker compuse up
     image: physino/jekyll:pages
+    profiles: [ "jekyll" ] # avoid running it by `docker compose up`
     # --force_polling: needed in bash in windows to watch for file changes
     # --livereload: let a browser to reload when the site is regenerated
     command: jekyll serve --incremental --livereload --force_polling
