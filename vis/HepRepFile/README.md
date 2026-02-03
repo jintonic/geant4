@@ -4,7 +4,9 @@
 
 # HepRepFile
 
-The [HepRepFile][] visualization driver is available in any [Geant4][] installation. It can be used to generate `G4Data*.heprep` files, which can be viewed using an external program called [HepRApp][] Data Browser in wireframe mode, that is, no surface, only outlines, which sounds primitive, but is one of the best ways to troubleshoot a complicated geometry.
+> **Note:** The [HepRepFile][] visualization driver has been removed from Geant4 since version 11.4.0. I keep its source code from Geant4 11.3.2 in this folder and include the compiled shared library `libG4HepRepFile.so` in images on <https://hub.docker.com/r/physino/geant4> for Geant4 11.4.0 and newer versions. For Geant4 11.3.2 and older versions, you can use the driver directly from the Geant4 installation.
+
+The [HepRepFile][] visualization driver is used to generate `G4Data*.heprep` files, which can be viewed using an external program called [HepRApp][] Data Browser in wireframe mode, that is, no surface, only outlines, which sounds primitive, but is one of the best ways to troubleshoot a complicated geometry.
 
 <iframe width="640" height="360" src="https://www.youtube.com/embed/UEM4X8Pdse8?si=Z927ydc0g6Pxn8qg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -46,11 +48,11 @@ The following Geant4 [macro][../../run/macro] command can be used to add a 3D co
 
 You can select a few different views to display your geometry through right click on your HepRApp browser:
 
-- *Beam view*: view against z; y points up; x points to the right.
-- *Top view*: view against y; x points up; z points to the right.
-- *Side view*: view along x; y points up; z points to the right.
+- _Beam view_: view against z; y points up; x points to the right.
+- _Top view_: view against y; x points up; z points to the right.
+- _Side view_: view along x; y points up; z points to the right.
 
-**Note**: all [/vis/viewer/set] commands have NO effort in HepRApp Data Browser  but they do work in Qt.
+**Note**: all [/vis/viewer/set] commands have NO effort in HepRApp Data Browser but they do work in Qt.
 
 ```sh
 /vis/viewer/set/upVector 0 1 0 # y points up
