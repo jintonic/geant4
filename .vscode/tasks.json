@@ -1,0 +1,20 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Docker Compose: exec geant4 tmux",
+            "detail": "start geant4 container in background and attach tmux",
+            "type": "shell",
+            "command": "docker compose up -d && docker compose exec geant4 tmux -u",
+            "group": "build",
+            "presentation": {
+                "echo": false,
+                "focus": true,
+                "clear": true,
+                "close": true
+            }
+        }
+    ]
+}
