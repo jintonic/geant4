@@ -1,0 +1,10 @@
+# the following cmd must be called before any visualization
+# since it triggers the construction of the detector
+/run/initialize
+
+# the only two cmds needed to print detector components (volumes) on screen
+/vis/ASCIITree/verbose 14
+/vis/drawTree
+
+# check if there is any overlapping between detector components (volumes)
+/geometry/test/run
