@@ -50,7 +50,7 @@ G4ASCIITreeSceneHandler::EndModeling
 
 We can see that there must be 9 "ring"s in the "Detector", each of them contains a "crystal" numbered 11.
 
-Note that the name is case sensitive, you won't be able to find "crystal" if you type "Crytal":
+Note that the name is case sensitive, you won't be able to find "crystal" if you type "Crystal":
 
 ~~~
 /vis/open ATree
