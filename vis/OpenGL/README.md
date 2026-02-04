@@ -3,7 +3,11 @@
 
 # OpenGL
 
-[OpenGL][] is the probably the only visualization driver that can be used to animate particles' motion through their global time.
+[OpenGL][] visualization driver is normally tied with a Geant4 GUI, and is the default driver in Geant4 if no driver is specified. Qt base GUI provides most controls of the viewer. It is my default choice for Geant4 visualization on macOS.
+
+However, it is hard to use this driver in a Geant4 installation in a container, which may not even have a GUI. In such a case, it is better to use a combination of [ATree](../ASCIITree/), [VRML2FILE](../VRML/), and [TSG_FILE](../TSG/) to cover everything that OpenGL with the Qt base GUI can do.
+
+## Animation Example Code
 
 ```c++
 // only "rich" trajectories contain time information
