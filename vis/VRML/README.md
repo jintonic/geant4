@@ -4,7 +4,7 @@
 
 # VRML
 
-The [VRML][] visualization driver is available in any [Geant4][] installation. It is used to generate files, `g4_??.wrl`, which can be viewed online with [Shine][], or using an external program, such as [ParaView][], [castle model viewer][] (formerly *view3dscene*, not available for Macs with Apple silicon chips), [3D builder][] (Windows App), [ORBISNAP][] (not available for Macs with Apple silicon chips), [FreeWRL][] (not available for Macs with Apple silicon chips), [OpenVRML][] (10 years old!), etc., or be converted to its succeeder [X3D][], which can be viewed directly in a modern web browser that supports WebGL.
+The [VRML][] visualization driver is available in any [Geant4][] installation. It is used to generate files, `g4_??.wrl`, which can be viewed online with [Shine][], or using an external program, such as [ParaView][], [castle model viewer][] (formerly *view3dscene*), [3D builder][] (Windows App), [ORBISNAP][] (not available for Macs with Apple silicon chips), [FreeWRL][] (not available for Macs with Apple silicon chips), [OpenVRML][] (10 years old!), etc., or be converted to its succeeder [X3D][], which can be viewed directly in a modern web browser that supports WebGL.
 
 [VRML]:http://geant4-userdoc.web.cern.ch/geant4-userdoc/UsersGuides/ForApplicationDeveloper/html/Visualization/visdrivers.html#vrml
 [Geant4]: https://physino.xyz/geant4
