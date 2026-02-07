@@ -1,0 +1,14 @@
+c 'sin(pi/2)'
+c 'cos(90*o)'
+a
+l
+y
+alias
+gears
+mingle
+geant4-config --help
+geant4-config --version
+geant4-config --features
+geant4-config --check-datasets
+geant4-config --install-datasets
+history

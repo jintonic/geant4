@@ -1,0 +1,1 @@
+This folder contains files to build an AlmaLinux docker image as the base for physino/geant4 images.
