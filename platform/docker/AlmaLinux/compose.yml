@@ -1,0 +1,9 @@
+services:
+  linux: # docker compose up or docker compose run --rm linux bash
+    image: physino/almalinux:9
+    platform: linux/amd64 # for run time
+    environment: [ TZ=US/Central ]
+    build: # docker compose build linux
+      args: [ "VERSION=9" ]
+      context: .
+      platforms: [ "linux/amd64" ] # Geant4 (>11.1) is pre-compiled on amd64 AlmaLinux

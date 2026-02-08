@@ -1,0 +1,11 @@
+services:
+  g4: # docker compose up
+    # docker compose run --rm g4 bash
+    image: physino/geant4:11.4.0 # minimalistic container image
+    platform: linux/amd64 # for run time
+    volumes: [ ../..:/root/geant4 ]
+    environment: [ TZ=US/Central ]
+    build: # docker compose build g4
+      context: ../../vis/HepRepFile # add HepRepFile to the container
+      dockerfile: ../../11/4.0/Dockerfile # with respect to vis/HepRepFile
+      platforms: [ "linux/amd64" ] # for build time

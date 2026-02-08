@@ -1,7 +1,7 @@
 services:
   geant4: # docker compose up
     # docker compose run --rm geant4 tmux -u
-    image: physino/geant4 # minimalistic container image + cmd-line tools
+    image: physino/geant4:latest # minimalistic container image + cmd-line tools
     platform: linux/amd64 # pre-compiled geant4 is not available for arm64
     volumes:
       # no X11 setup is included to be beginner friendly
@@ -12,24 +12,6 @@ services:
     build:
       context: platform/docker  # docker compose build geant4
       platforms: [ "linux/amd64" ] # for build time
-  g4: # docker compose run --rm g4
-    image: physino/geant4:11.4.0 # minimalistic container image
-    platform: linux/amd64 # for run time
-    profiles: [ "g4" ] # docker compose up g4
-    command: /usr/bin/bash
-    volumes: [ .:/root/geant4 ]
-    environment: [ TZ=US/Central ]
-    build: # docker compose build g4
-      context: vis/HepRepFile # add HepRepFile to the container
-      dockerfile: ../../11/4.0/Dockerfile # with respect to vis/HepRepFile
-      platforms: [ "linux/amd64" ] # for build time
-  linux: # docker compose build linux
-    image: physino/almalinux:9
-    profiles: [ "linux" ]
-    build:
-      args: [ "VERSION=9" ]
-      context: platform/docker/AlmaLinux
-      platforms: [ "linux/amd64" ] # Geant4 (>11.1) is pre-compiled on amd64 AlmaLinux
   heprapp:
     # docker compose run --rm heprapp
     command: /usr/bin/hv # launch HepRApp
