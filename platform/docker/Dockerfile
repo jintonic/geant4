@@ -1,28 +1,27 @@
 # https://hub.docker.com/r/physino/geant4
 FROM physino/geant4:11.4.0
 
-# install git, tmux, fresh, yazi, chafa, uproot, visidata, seaborn, pandas
-# chafa is used by yazi for image preview
-# psutil is used by visidata, procps-ng provides pkill and ps
-# ps is used by VS Code to install extensions
+# install tmux, fresh, yazi, procps-ng
+#   chafa is used by yazi for image preview
+#   poppler-utils is used by yazi for pdf preview
+#   procps-ng provides pkill and ps
+#   ps is used by VS Code to install extensions
 RUN <<APPS
-dnf install -y git tmux python3-pip python3-psutil procps-ng epel-release dnf-plugins-core \
-https://github.com/sinelaw/fresh/releases/download/v0.1.77/fresh-editor-0.1.77-1.x86_64.rpm
+dnf install -y tmux procps-ng epel-release dnf-plugins-core \
+https://github.com/sinelaw/fresh/releases/download/v0.1.99/fresh-editor-0.1.99-1.x86_64.rpm
 dnf config-manager --set-enabled crb
 dnf copr enable -y lihaohong/yazi
 dnf install -y yazi chafa poppler-utils --setopt=install_weak_deps=False
 dnf clean all && rm -fr /var/cache/*
-pip install uproot visidata seaborn pandas && rm -fr /root/.cache
 APPS
 
 # set up environment
 COPY tmux.conf /etc/
-COPY yazi/keymap.toml /root/.config/yazi/keymap.toml
-COPY yazi/yazi.toml /root/.config/yazi/yazi.toml
+COPY yazi /etc/yazi/
 
 # https://stackoverflow.com/a/27921346/1801749
-RUN cat <<'BASHRC' >> /etc/bashrc
-export MPLBACKEND=Agg
+RUN cat <<'EOT' >> /etc/profile.d/setup.sh
+alias f='fresh'
 alias t='tmux -u'
 alias ta='t attach'
 alias ty='t new-window yazi'
@@ -34,19 +33,7 @@ y() {
   [ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
   rm -f -- "$tmp"
 }
-# include Git branch information in the prompt
-. /usr/share/git-core/contrib/completion/git-prompt.sh
-PS1='\[\e[32m\]\u@AlmaLinux:\[\e[34m\]\w\[\e[31m\]$(__git_ps1 " (%s)")\[\e[35m\]\$ \[\e[m\]'
-BASHRC
+EOT
 
-RUN cat <<EOF >> /root/.bash_history
-git clone https://github.com/jintonic/geant4.git .
-gears
-ty
-EOF
-
-RUN echo 'options.disp_canvas_charset = " +"' >> /root/.visidatarc \
-  && sed -i 's/bash/tmux -u/' /root/.profile
-
-# yazi uses vi without the following line
 ENV EDITOR=fresh
+ENV YAZI_CONFIG_HOME=/etc/yazi
