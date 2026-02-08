@@ -30,3 +30,4 @@ _site
 *.gz
 *.bz2
 *.root
+.Trash*
