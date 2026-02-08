@@ -1,4 +1,34 @@
 [[mgr.prepend_keymap]]
+on   = [ "g", "d" ]
+run = "cd ~/geant4/detector"
+desc = "Goto ~/geant4/detector"
+
+[[mgr.prepend_keymap]]
+on   = [ "g", "e" ]
+run = "cd ~/geant4/examples"
+desc = "Goto ~/geant4/examples"
+
+[[mgr.prepend_keymap]]
+on   = [ "g", "p" ]
+run = "cd ~/geant4/physics"
+desc = "Goto ~/geant4/physics"
+
+[[mgr.prepend_keymap]]
+on   = [ "g", "r" ]
+run = "cd ~/geant4/run"
+desc = "Goto ~/geant4/run"
+
+[[mgr.prepend_keymap]]
+on   = [ "g", "s" ]
+run = "cd ~/geant4/gps"
+desc = "Goto ~/geant4/gps"
+
+[[mgr.prepend_keymap]]
+on   = [ "g", "v" ]
+run = "cd ~/geant4/vis"
+desc = "Goto ~/geant4/vis"
+
+[[mgr.prepend_keymap]]
 on = "s"
 run = 'shell "tmux new-window -c \"$PWD\""'
 desc = "Open current folder in a new shell using tmux"
