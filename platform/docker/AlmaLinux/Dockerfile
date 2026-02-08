@@ -12,12 +12,15 @@ dnf install -y gcc-c++ cmake wget which mesa-libGL-devel libXmu-devel expat-deve
 dnf clean all && rm -fr var/cache/* afs media mnt srv opt root/.*cshrc
 EOT
 
-# set up the welcome message
-COPY welcome.sh /etc/profile.d/
-
-# provide some example commands in bash history
+# provide some example commands
 COPY bash_history /etc/
-COPY inject_history.sh /etc/profile.d/
+
+# inject welcome.sh, customize.sh, inject_history.sh, 99-geant4.sh to
+# - print welcome message
+# - customize bash prompt
+# - inject example commands into bash history
+# - set Geant4 environment variables
+COPY *.sh /etc/profile.d/
 
 # overwrite the default workdir /
 # putting it under /root makes it easier to find with cd and g h in yazi
@@ -31,8 +34,6 @@ VOLUME /root/geant4
 ENV ENV=/etc/bashrc
 
 # Set Geant4 environment variables
-# for Docker interactive shell
-COPY 99-geant4.sh /etc/profile.d/
 # for Docker non-interactive shell
 ENV BASH_ENV=/etc/profile.d/99-geant4.sh
 # for Apptainer users
@@ -50,7 +51,8 @@ ENTRYPOINT ["/tini", "-g", "--"]
 
 # display some information on Docker Desktop "Logs" tab and
 # https://kodekloud.com/blog/keep-docker-container-running
-CMD echo 'Switch to the "Exec" tab in Docker Desktop for an interactive shell, or' >> /tmp/info \
-  && echo 'Run the following command in a host terminal to attach to this container' >> /tmp/info \
-  && echo '    docker exec -it '${HOSTNAME}' bash' >> /tmp/info \
-  && tail -f /tmp/info
+CMD . /etc/profile.d/welcome.sh >> /tmp/info && \
+    echo 'Switch to the "Exec" tab in Docker Desktop for an interactive shell, or' >> /tmp/info && \
+    echo 'Run the following command in a host terminal to attach to this container' >> /tmp/info && \
+    echo '    docker exec -it '${HOSTNAME}' bash' >> /tmp/info && \
+    tail -n 100 -f /tmp/info
