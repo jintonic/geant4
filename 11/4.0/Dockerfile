@@ -2,7 +2,7 @@
 FROM physino/almalinux:9
 
 # install pre-compiled Geant4 in /usr to avoid setting LD_LIBRARY_PATH
-#   --strip-components=2 is used to skip folder Geant4-11.4-Linux/ in gz file
+#   --strip-components=2 is used to skip folder Geant4-*-Linux/ in gz file
 #   --no-same-owner is used to avoid introducing user/group unknown to the image
 # change datasets location in geant4-config to be $GEANT4_DATA_DIR
 #   {,100} specifies the range to search for 'data' after 'afs'
