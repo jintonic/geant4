@@ -1,5 +1,5 @@
 services:
-  geant4:
+  geant4: # docker compose up
     # docker compose run --rm geant4 tmux -u
     image: physino/geant4 # minimalistic container image + cmd-line tools
     platform: linux/amd64 # pre-compiled geant4 is not available for arm64
@@ -9,29 +9,23 @@ services:
     # feel free to change the timezone identifier below according to
     # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List
     environment: [ TZ=US/Central ]
-    hostname: AlmaLinux
     build:
       context: platform/docker  # docker compose build geant4
-      platforms:
-        - "linux/amd64" # for build time
-  g4:
-    # docker compose run --rm g4
+      platforms: [ "linux/amd64" ] # for build time
+  g4: # docker compose run --rm g4
     image: physino/geant4:11.4.0 # minimalistic container image
     platform: linux/amd64 # for run time
-    profiles: [ "g4" ] # avoid running it by `docker compose up`
+    profiles: [ "g4" ] # docker compose up g4
     command: /usr/bin/bash
     volumes: [ .:/root/geant4 ]
-    # https://unix.stackexchange.com/a/698068/26929
-    # https://stackoverflow.com/a/63291253/1801749
     environment: [ TZ=US/Central ]
-    hostname: AlmaLinux # https://stackoverflow.com/a/63291253/1801749
-    build:
-      context: 11/4.0  # docker compose build g4
-      platforms:
-        - "linux/amd64" # for build time
-  alma: # docker compose build alma
+    build: # docker compose build g4
+      context: vis/HepRepFile # add HepRepFile to the container
+      dockerfile: ../../11/4.0/Dockerfile # with respect to vis/HepRepFile
+      platforms: [ "linux/amd64" ] # for build time
+  linux: # docker compose build linux
     image: physino/almalinux:9
-    profiles: [ "alma" ]
+    profiles: [ "linux" ]
     build:
       args: [ "VERSION=9" ]
       context: platform/docker/AlmaLinux
@@ -40,7 +34,7 @@ services:
     # docker compose run --rm heprapp
     command: /usr/bin/hv # launch HepRApp
     image: physino/heprapp # https://hub.docker.com/r/physino/heprapp
-    profiles: [ "g4" ]
+    profiles: [ "heprapp" ]
     environment:
       - DISPLAY=host.docker.internal:0.0
     # host.docker.internal doesn't exist in a Linux host
