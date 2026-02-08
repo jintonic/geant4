@@ -1,6 +1,6 @@
 #!/bin/sh
 # only show the welcome message once
-if [ "X$WELCOME_MESSAGE_SHOWN" != "X" ]; then return; fi
+if [ -f /tmp/welcome ]; then return; fi
 
 # detect host OS via kernel fingerprint
 if grep -qi "microsoft" /proc/version; then HOST_OS="Windows"
@@ -22,16 +22,28 @@ echo "CONTAINER: $(cat /etc/redhat-release)"
 echo "COMPILER: $(g++ --version | head -n 1)"
 echo "CMAKE: $(cmake --version | head -n 1)"
 
+if [ -f /usr/bin/fresh ]; then
+    echo "FILE EDITOR: $(fresh --version) (f↵ to launch; mouse enabled)"
+fi
+if [ -f /usr/bin/yazi ]; then
+    echo "FILE MANAGER: $(yazi --version) (y↵ to launch; mouse enabled)"
+fi
+if [ -f /usr/bin/tmux ]; then
+    echo "TERMINAL MULTIPLEXER: $(tmux -V) (t↵ to launch; mouse enabled; \`? for help)"
+fi
+
 # print information about Geant4 if geant4-config is available
-if [ -f /usr/bin/geant4-config ]; then
+if [ -f /usr/bin/geant4-config ] && [ -n "$PS1" ]; then
     echo "geant4-config --version: $(geant4-config --version)"
     echo "geant4-config --prefix: $(geant4-config --prefix)"
     echo "geant4-config --check-datasets:"
-    geant4-config --check-datasets | grep NOTFOUND
-    nMissing=$(geant4-config --check-datasets | grep NOTFOUND | wc -l)
-    if [ "$nMissing" -gt 0 ]; then
-        echo "Missing datasets can be installed to ${GEANT4_DATA_DIR} using"
+    n=$(geant4-config --check-datasets | grep NOTFOUND | wc -l)
+    if [ "$n" -gt 0 ]; then
+        echo "$n missing datasets can be installed to ${GEANT4_DATA_DIR}"
+        echo "using the following command brought up by ↑ key"
         echo "        geant4-config --install-datasets"
+    else
+        echo "All datasets are installed in ${GEANT4_DATA_DIR}"
     fi
 fi
 
@@ -54,18 +66,4 @@ if [ "$(id -u)" != "0" ] && [ "$ENGINE" = "Docker" ]; then
     echo "ROOT ACCESS: docker exec -u 0 -it $HOSTNAME bash"
 fi
 
-# https://www.tecmint.com/customize-bash-colors-terminal-prompt-linux/
-PS1="\[\e[31m\]\u\[\e[33m\]@\[\e[32m\]\h\[\e[36m\]:\[\e[34m\]\w\[\e[35m\];) \[\e[m\]"
-
-alias ls="ls --color"
-alias a="ls -AF"
-alias l="ls -Alh"
-alias ..="cd .."
-alias ...="cd ../.."
-
-# a simple command-line calculator
-c() {
-  awk "BEGIN { pi=4.0*atan2(1.0,1.0); o=pi/180.0; print \$*; }"
-}
-
-export WELCOME_MESSAGE_SHOWN=1
+touch /tmp/welcome
