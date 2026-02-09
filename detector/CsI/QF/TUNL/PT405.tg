@@ -10,7 +10,7 @@
 11.247 57.15 57.65 
 15.748 57.15 65.151
 17.78  57.15 65.151
-G4_STAINLESS-STEEL       // material
+G4_Al      // material
 
 :volu Oring POLYCONE
 0 360       // phi0, dphi in degrees
@@ -31,7 +31,7 @@ G4_Si       // material
 215.011 57.15 88.9
 215.011 69.85 88.9
 243.586 69.85 88.9
-G4_STAINLESS-STEEL        // material
+G4_Al        // material
 
 :volu clamp POLYCONE
 0 360
@@ -54,7 +54,7 @@ G4_STAINLESS-STEEL        // material
 6.382  40.9065 41.4065 
 6.382  40.9065 51.054
 10.922 40.9065 51.054
-G4_STAINLESS-STEEL       // material
+G4_Al     // material
 
 :volu IRshield30K POLYCONE
 0 360       // phi0, dphi in degrees
@@ -65,36 +65,36 @@ G4_STAINLESS-STEEL       // material
 215.138 49.53 51.054
 215.138 49.53 60.325
 218.186 49.53 60.325
-G4_STAINLESS-STEEL       // material
+G4_Al      // material
 
 :volu pulseTube-In POLYCONE
 0 360       // phi0, dphi in degrees
 2           // number of z planes
 39.395  0 15.05  // z1, r1inner, r1outer
 243.586 0 15.05
-G4_STAINLESS-STEEL      // material
+G4_Al     // material
 
 :volu pulseTube-Out POLYCONE
 0 360       // phi0, dphi in degrees
 2           // number of z planes
 39.395  0 9.6  // z1, r1inner, r1outer
 243.586 0 9.6
-G4_STAINLESS-STEEL       // material
+G4_Al      // material
 
 :volu flange POLYCONE
 0 360       // phi0, dphi in degrees
 2           // number of z planes
 243.586 0 88.9
 268.986 0 88.9
-G4_STAINLESS-STEEL       // material
+G4_Al       // material
 
-:volu Stage2K POLYCONE
+:volu stage2K POLYCONE
 0 360       // phi0, dphi in degrees
 2           // number of z planes
 30.175 0 42.926
 39.395 0 42.926
 G4_Cu       // material
-:color Stage2K 100 65 0
+:color stage2K 100 65 0
 
 :volu weldingRing-Out POLYCONE
 0 360       // phi0, dphi in degrees
@@ -117,7 +117,7 @@ G4_Cu       // material
 2           // number of z planes
 39.395 0 5
 42.395 0 5
-G4_Si       // material
+G4_Al      // material
 :color Tsensor 0 10 100
 
 :volu heater BOX 11.751 4.422 1.5 G4_Si
@@ -136,7 +136,7 @@ G4_Si       // material
 8.89    26.541 27.041 
 8.89    26.541 33.041
 11.43    26.541 33.041
-G4_STAINLESS-STEEL        // material
+G4_Al        // material
 
 :volu feedthrough2K POLYCONE
 0 360       // phi0, dphi in degrees
@@ -145,12 +145,12 @@ G4_STAINLESS-STEEL        // material
 27.635   26.541 33.041
 27.635   26.541 42.926
 30.175   26.541 42.926  
-G4_STAINLESS-STEEL       // material
+G4_Al      // material
 
-:volu leg1 BOX 19.5 13.25 160 G4_STAINLESS-STEEL 
-:volu leg2 BOX 19.5 13.25 160 G4_STAINLESS-STEEL 
-:volu leg3 BOX 13.25 19.5 160 G4_STAINLESS-STEEL 
-:volu leg4 BOX 13.25 19.5 160 G4_STAINLESS-STEEL 
+:volu leg1 BOX 19.5 13.25 160 G4_Al 
+:volu leg2 BOX 19.5 13.25 160 G4_Al 
+:volu leg3 BOX 13.25 19.5 160 G4_Al 
+:volu leg4 BOX 13.25 19.5 160 G4_Al 
 
 :rotm r000 0 0 0
 :rotm r001 15 0 0
@@ -168,7 +168,7 @@ G4_STAINLESS-STEEL       // material
 :place pulseTube-In        6 world  r000 12.69 -21.06 $z+0
 :place pulseTube-Out       6 world  r000 -25.515 4 $z+0
 :place flange              6 world  r000 0 0 $z+0
-:place Stage2K             8 world  r000 0 0 $z+0
+:place stage2K             8 world  r000 0 0 $z+0
 :place weldingRing-Out     8 world  r000 -25.515 4 $z+0
 :place weldingRing-In      8 world  r000 12.69 -21.06 $z+0
 :place Tsensor             9 world  r000 -26.759 -18 $z+0
