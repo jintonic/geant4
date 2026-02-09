@@ -22,6 +22,13 @@ COPY bash_history /etc/
 # - set Geant4 environment variables
 COPY *.sh /etc/profile.d/
 
+RUN <<'EOT' >> /usr/bin/welcome
+#!bin/sh
+rm -f /tmp/welcome
+source /etc/profile.d/welcome.sh
+EOT
+RUN chmod +x /usr/bin/welcome
+
 # overwrite the default workdir /
 # putting it under /root makes it easier to find with cd and g h in yazi
 # because macOS and Windows Docker users get into the container as root
