@@ -1,0 +1,186 @@
+:volu world BOX 100*m 100*m 100*m G4_Galactic
+:vis world OFF
+
+:volu cap POLYCONE
+0 360       // phi0, dphi in degrees
+6          // number of z planes
+-100   0 57.65     // z1, r1inner, r1outer
+-97.46 0 57.65
+-97.46 57.15 57.65
+11.247 57.15 57.65 
+15.748 57.15 65.151
+17.78  57.15 65.151
+G4_Al      // material
+
+:volu Oring POLYCONE
+0 360       // phi0, dphi in degrees
+2          // number of z planes
+17.78  57.15 65.151
+19.431 57.15 65.151
+G4_Si       // material
+:color Oring 0 100 0
+
+:volu chamber POLYCONE
+0 360       // phi0, dphi in degrees
+8          // number of z planes
+19.431  57.15 65.151     // z1, r1inner, r1outer
+21.463  57.15 65.151
+24.511  57.15 60.071
+207.391 57.15 60.071 
+207.391 57.15 88.9
+215.011 57.15 88.9
+215.011 69.85 88.9
+243.586 69.85 88.9
+G4_Al        // material
+
+:volu clamp POLYCONE
+0 360
+6
+8.246 57.65 59.65
+11.247 57.65 59.65
+15.748 65.151 67.151
+21.463 65.151 67.151
+24.511 60.071 62.071
+27.511 60.071 62.071
+G4_STAINLESS-STEEL        // material
+:color clamp 0 10 110
+
+:volu cap30K POLYCONE
+0 360       // phi0, dphi in degrees
+6          // number of z planes
+-89.3  0 41.4065     // z1, r1inner, r1outer
+-86.76 0 41.4065
+-86.76 40.9065 41.4065
+6.382  40.9065 41.4065 
+6.382  40.9065 51.054
+10.922 40.9065 51.054
+G4_Al     // material
+
+:volu IRshield30K POLYCONE
+0 360       // phi0, dphi in degrees
+6          // number of z planes
+10.922  42.2775 51.054    // z1, r1inner, r1outer
+13.97   42.2775 51.054
+13.97   49.53 51.054
+215.138 49.53 51.054
+215.138 49.53 60.325
+218.186 49.53 60.325
+G4_Al      // material
+
+:volu pulseTube-In POLYCONE
+0 360       // phi0, dphi in degrees
+2           // number of z planes
+39.395  0 15.05  // z1, r1inner, r1outer
+243.586 0 15.05
+G4_STAINLESS-STEEL    // material
+
+:volu pulseTube-Out POLYCONE
+0 360       // phi0, dphi in degrees
+2           // number of z planes
+39.395  0 9.6  // z1, r1inner, r1outer
+243.586 0 9.6
+G4_STAINLESS-STEEL    // material
+
+:volu flange POLYCONE
+0 360       // phi0, dphi in degrees
+2           // number of z planes
+243.586 0 88.9
+268.986 0 88.9
+G4_Al       // material
+
+:volu stage2K POLYCONE
+0 360       // phi0, dphi in degrees
+2           // number of z planes
+30.175 0 42.926
+39.395 0 42.926
+G4_Cu       // material
+:color stage2K 100 65 0
+
+:volu weldingRing-Out POLYCONE
+0 360       // phi0, dphi in degrees
+2           // number of z planes
+39.395 9.6 12.4995
+54.395 9.6 12.4995
+G4_Cu       // material
+:color weldingRing-Out 100 65 0
+
+:volu weldingRing-In POLYCONE
+0 360       // phi0, dphi in degrees
+2           // number of z planes
+39.395 15.05 17.411
+54.395 15.05 17.411
+G4_Cu       // material
+:color weldingRing-In 100 65 0
+
+:volu Tsensor POLYCONE
+0 360       // phi0, dphi in degrees
+2           // number of z planes
+39.395 0 5
+42.395 0 5
+G4_Al      // material
+:color Tsensor 0 10 100
+
+:volu heater BOX 11.751 4.422 1.5 G4_Si
+:color heater 0 10 100
+
+:volu baseAl BOX 14.3 14.3 15 G4_Cu
+:volu crystal BOX 12.7 12.7 15 G4_Si
+:color crystal 0 10 100
+
+:volu cap2K POLYCONE
+0 360       // phi0, dphi in degrees
+6          // number of z planes
+-70.26   0 27.041     // z1, r1inner, r1outer
+-69.76   0 27.041
+-69.76   26.541 27.041
+8.89    26.541 27.041 
+8.89    26.541 33.041
+11.43    26.541 33.041
+G4_Al        // material
+
+:volu feedthrough2K POLYCONE
+0 360       // phi0, dphi in degrees
+4          // number of z planes
+11.43    26.541 33.041
+27.635   26.541 33.041
+27.635   26.541 42.926
+30.175   26.541 42.926  
+G4_Al      // material
+
+:volu leg1 BOX 19.5 13.25 160 G4_Al 
+:volu leg2 BOX 19.5 13.25 160 G4_Al 
+:volu leg3 BOX 13.25 19.5 160 G4_Al 
+:volu leg4 BOX 13.25 19.5 160 G4_Al 
+
+:rotm r000 0 0 0
+:rotm r001 15 0 0
+:rotm r002 -15 0 0
+:rotm r003 0 15 0
+:rotm r004 0 -15 0
+
+:p z 100
+
+:place cap                 1 world  r000 0 0 $z+0
+:place Oring               2 world  r000 0 0 $z+0
+:place chamber             3 world  r000 0 0 $z+0
+:place cap30K              4 world  r000 0 0 $z+0
+:place IRshield30K         5 world  r000 0 0 $z+0
+:place pulseTube-In        6 world  r000 12.69 -21.06 $z+0
+:place pulseTube-Out       6 world  r000 -25.515 4 $z+0
+:place flange              6 world  r000 0 0 $z+0
+:place stage2K             8 world  r000 0 0 $z+0
+:place weldingRing-Out     8 world  r000 -25.515 4 $z+0
+:place weldingRing-In      8 world  r000 12.69 -21.06 $z+0
+:place Tsensor             9 world  r000 -26.759 -18 $z+0
+:place heater              10 world r000 1 20 $z+40.895
+:place baseAl              11 world r000 0 0 $z+15.175
+:place crystal             12 world r000 0 0 $z+-14.825
+:place cap2K               13 world r000 0 0 $z+0
+:place feedthrough2K       14 world r000 0 0 $z+0
+:place leg1                15 world r003 150 0 $z+50
+:place leg2                15 world r004 -150 0 $z+50
+:place leg3                15 world r002 0 150 $z+50
+:place leg4                15 world r001 0 -150 $z+50
+:place clamp               16 world r000 0 0 $z+0
+
+
