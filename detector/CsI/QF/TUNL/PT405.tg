@@ -72,14 +72,14 @@ G4_Al      // material
 2           // number of z planes
 39.395  0 15.05  // z1, r1inner, r1outer
 243.586 0 15.05
-G4_Al     // material
+G4_STAINLESS-STEEL    // material
 
 :volu pulseTube-Out POLYCONE
 0 360       // phi0, dphi in degrees
 2           // number of z planes
 39.395  0 9.6  // z1, r1inner, r1outer
 243.586 0 9.6
-G4_Al      // material
+G4_STAINLESS-STEEL    // material
 
 :volu flange POLYCONE
 0 360       // phi0, dphi in degrees
