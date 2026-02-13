@@ -1,3 +1,7 @@
 {
-  "cmake.ignoreCMakeListsMissing": true
+  "cmake.ignoreCMakeListsMissing": true,
+  "files.associations": {
+    "*.tg": "geant4-tg",
+    "*.mac": "g4macro"
+  }
 }
