@@ -7,7 +7,7 @@
             "label": "Docker Compose: exec geant4 tmux",
             "detail": "start geant4 container in background and attach tmux",
             "type": "shell",
-            "command": "docker compose up -d && docker compose exec geant4 tmux -u",
+            "command": "docker compose --profile geant4 up -d && docker compose exec geant4 tmux -u",
             "group": "build",
             "presentation": {
                 "echo": false,
@@ -15,6 +15,34 @@
                 "clear": true,
                 "close": true
             }
+        },
+        {
+            "label": "Docker Compose: Launch HepRApp",
+            "detail": "launch HepRApp in a browser",
+            "type": "shell",
+            "command": "export RES='${input:resChoice}'; export W=${RES%x*}; export H=${RES#*x}; DISPLAY_WIDTH=$W DISPLAY_HEIGHT=$H docker compose --profile heprapp up",
+            "group": "build",
+            "presentation": {
+                "echo": false,
+                "focus": true,
+                "clear": true,
+                "close": false
+            }
+        }
+    ],
+    "inputs": [
+        {
+            "id": "resChoice",
+            "type": "pickString",
+            "description": "Choose a resolution (Note: Browser UI takes ~100px of height)",
+            "options": [
+                "1024x768",
+                "1280x720",
+                "1440x900",
+                "1600x900",
+                "1920x1080"
+            ],
+            "default": "1280x720"
         }
     ]
 }
