@@ -1,40 +1,60 @@
 services:
-  geant4: # docker compose up
-    # docker compose run --rm geant4 tmux -u
+  geant4: # docker compose --profile geant4 up or docker compose run --rm geant4 tmux -u
     image: physino/geant4:latest # minimalistic container image + cmd-line tools
-    platform: linux/amd64 # pre-compiled geant4 is not available for arm64
-    volumes:
-      # no X11 setup is included to be beginner friendly
-      - .:/root/geant4 # load current folder as /root/geant4 in container
+    platform: linux/amd64 # for run time
+    profiles: [ "geant4" ]
+    volumes: [ ".:/root/geant4" ] # load current folder as /root/geant4 in container
     # feel free to change the timezone identifier below according to
     # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List
-    environment: [ TZ=US/Central ]
-    build:
-      context: platform/docker  # docker compose build geant4
+    environment: [ "TZ=US/Central" ]
+    build: # docker compose build geant4
+      context: platform/docker
       platforms: [ "linux/amd64" ] # for build time
-  heprapp:
-    # docker compose run --rm heprapp
-    command: /usr/bin/hv # launch HepRApp
-    image: physino/heprapp # https://hub.docker.com/r/physino/heprapp
-    profiles: [ "heprapp" ]
+  novnc: # X window display sidecar
+    image: theasp/novnc
+    profiles: [ "heprapp", "root" ]
+    platform: linux/amd64
+    ports: [ "8080:8080" ]
     environment:
-      - DISPLAY=host.docker.internal:0.0
-    # host.docker.internal doesn't exist in a Linux host
-    # https://stackoverflow.com/a/24326540
-    # https://stackoverflow.com/questions/70725881
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
-    volumes:
-      - /tmp/.X11-unix:/tmp/.X11-unix
-      - .:/root/geant4
-    # https://github.com/microsoft/WSL/issues/5339#issuecomment-1125709672
-    # https://docs.docker.com/compose/compose-file/#sysctls
-    sysctls:
-      - net.ipv4.tcp_keepalive_intvl=60
-      - net.ipv4.tcp_keepalive_probes=5
-      - net.ipv4.tcp_keepalive_time=300
-  root:
-    # docker-compose run root
+      - DISPLAY_WIDTH=${DISPLAY_WIDTH:-1280}
+      - DISPLAY_HEIGHT=${DISPLAY_HEIGHT:-720}
+      - RUN_XTERM=no
+    command: >
+      bash -c "
+      mkdir -p ~/.fluxbox &&
+      echo 'session.screen0.toolbar.visible: false' > ~/.fluxbox/init &&
+      echo 'session.styleFile: /usr/share/fluxbox/styles/bora_blue' >> ~/.fluxbox/init &&
+      echo '[app] (title=HepRApp Data Browser.*)' >> ~/.fluxbox/apps &&
+      echo '  [Maximized] {yes}' >> ~/.fluxbox/apps &&
+      echo '[end]' >> ~/.fluxbox/apps &&
+      /app/entrypoint.sh --forever --shared
+      "
+    networks: [ "X11"]
+    healthcheck:
+      test: ["CMD-SHELL", "timeout 1s bash -c 'cat < /dev/null > /dev/tcp/127.0.0.1/8080' || exit 1"]
+      interval: 2s     # Check every 2 seconds
+      timeout: 5s      # Give up on a single check after 5s
+      retries: 5       # Try 5 times before failing
+      start_period: 2s # Wait 2s before the first check
+  heprapp: # docker compose --profile heprapp up
+    image: physino/heprapp
+    profiles: [ "heprapp" ]
+    command: 
+      - /bin/sh
+      - -c
+      - |
+        echo "Access HepRApp at: http://localhost:8080/vnc.html?autoconnect=true&scale=true"
+        sleep 2 && hv
+    depends_on:
+      novnc:
+        condition: service_healthy
+    environment:
+      - DISPLAY=novnc:0.0
+      - LIBGL_ALWAYS_SOFTWARE=1 # Software rendering "failsafe" for both Windows and Mac
+      - GALLIUM_DRIVER=llvmpipe
+    volumes: [ ".:/root/geant4" ]
+    networks: [ "X11"]
+  root: # docker compose --profile root up
     command: /usr/bin/bash # launch a command line to run root
     image: physino/root # https://hub.docker.com/r/physino/root
     profiles: [ "root" ]
@@ -69,3 +89,5 @@ services:
       - 35729:35729
     volumes:
       - .:/srv/jekyll
+networks:
+  X11:
