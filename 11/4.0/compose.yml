@@ -6,6 +6,6 @@ services:
     volumes: [ ../..:/root/geant4 ]
     environment: [ TZ=US/Central ]
     build: # docker compose build g4
-      context: ../../vis/HepRepFile # add HepRepFile to the container
-      dockerfile: ../../11/4.0/Dockerfile # with respect to vis/HepRepFile
+      context: ../../vis/HepRepFile/lib # add HepRepFile to the container
+      dockerfile: ../../../11/4.0/Dockerfile # with respect to vis/HepRepFile/lib
       platforms: [ "linux/amd64" ] # for build time
