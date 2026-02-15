@@ -3,6 +3,7 @@ services:
     image: physino/geant4:latest # minimalistic container image + cmd-line tools
     platform: linux/amd64 # for run time
     profiles: [ "geant4" ]
+    container_name: Geant4
     volumes: [ ".:/root/geant4" ] # load current folder as /root/geant4 in container
     # feel free to change the timezone identifier below according to
     # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List
@@ -10,9 +11,10 @@ services:
     build: # docker compose build geant4
       context: platform/docker
       platforms: [ "linux/amd64" ] # for build time
-  novnc: # X window display sidecar
+  novnc: # X window display sidecar for heprapp and root
     image: theasp/novnc
     profiles: [ "heprapp", "root" ]
+    container_name: noVNC
     platform: linux/amd64
     ports: [ "8080:8080" ]
     environment:
@@ -20,40 +22,39 @@ services:
       - DISPLAY_HEIGHT=${DISPLAY_HEIGHT:-720}
       - RUN_XTERM=no
     command: >
-      bash -c "
-      mkdir -p ~/.fluxbox &&
+      bash -c "mkdir -p ~/.fluxbox &&
       echo 'session.screen0.toolbar.visible: false' > ~/.fluxbox/init &&
       echo 'session.styleFile: /usr/share/fluxbox/styles/bora_blue' >> ~/.fluxbox/init &&
-      echo '[app] (title=HepRApp Data Browser.*)' >> ~/.fluxbox/apps &&
-      echo '  [Maximized] {yes}' >> ~/.fluxbox/apps &&
-      echo '[end]' >> ~/.fluxbox/apps &&
-      /app/entrypoint.sh --forever --shared
-      "
+      /app/entrypoint.sh --forever --shared"
     networks: [ "X11"]
     healthcheck:
       test: ["CMD-SHELL", "timeout 1s bash -c 'cat < /dev/null > /dev/tcp/127.0.0.1/8080' || exit 1"]
-      interval: 2s     # Check every 2 seconds
-      timeout: 5s      # Give up on a single check after 5s
-      retries: 5       # Try 5 times before failing
-      start_period: 2s # Wait 2s before the first check
+      interval: 1s     # check every 1 seconds
+      timeout: 1s      # give up on a single check after 1s
+      retries: 5       # try 5 times before failing
+      start_period: 0s # wait 0s before the first check
   heprapp: # docker compose --profile heprapp up
-    image: physino/heprapp
+    image: physino/heprapp:latest
     profiles: [ "heprapp" ]
-    command: 
+    container_name: HepRApp
+    command:
       - /bin/sh
       - -c
       - |
-        echo "Access HepRApp at: http://localhost:8080/vnc.html?autoconnect=true&scale=true"
-        sleep 2 && hv
+        echo "Access HepRApp @ \033[1;36mhttp://localhost:8080/vnc.html?autoconnect=true&scale=true\033[0m"
+        java -jar HepRApp.jar
     depends_on:
       novnc:
         condition: service_healthy
     environment:
       - DISPLAY=novnc:0.0
-      - LIBGL_ALWAYS_SOFTWARE=1 # Software rendering "failsafe" for both Windows and Mac
-      - GALLIUM_DRIVER=llvmpipe
-    volumes: [ ".:/root/geant4" ]
+    volumes:
+      - ".:/root/geant4"
+      - "./vis/HepRepFile/app/user.properties:/user.properties"
     networks: [ "X11"]
+    build: # docker compose build heprapp
+      context: vis/HepRepFile/app
+      platforms: [ "linux/amd64", "linux/arm64" ]
   root: # docker compose --profile root up
     command: /usr/bin/bash # launch a command line to run root
     image: physino/root # https://hub.docker.com/r/physino/root
