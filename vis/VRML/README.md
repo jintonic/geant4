@@ -1,8 +1,8 @@
-[![Home](https://img.shields.io/badge/Home-blue?style=flat)](../..)
-[![Visualization](https://img.shields.io/badge/Visualization-Drivers-orange?style=flat)](..)
-[![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://www.youtube.com/watch?v=Z1p_U5SJN0I&t=366s)
+[![Home](https://img.shields.io/badge/Home-/-blue?style=flat)](../..)
+[![Visualization](https://img.shields.io/badge/Visualization-/-orange?style=flat)](..)
 
 # VRML
+[![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://www.youtube.com/watch?v=Z1p_U5SJN0I&t=366s)
 
 The [VRML][] visualization driver is available in any [Geant4][] installation. It is used to generate files, `g4_??.wrl`, which can be viewed online with [Shine][], [Three.js/editor](https://threejs.org/editor), [image2stl.com](https://imagetostl.com/view-wrl-online),or using an external program, such as [ParaView][], [castle model viewer][] (formerly *view3dscene*), [3D builder][] (Windows App), [ORBISNAP][] (not available for Macs with Apple silicon chips), [FreeWRL][] (not available for Macs with Apple silicon chips), [OpenVRML][] (10 years old!), etc., or be converted to its succeeder [X3D][], which can be viewed directly in a modern web browser that supports WebGL.
 
@@ -28,10 +28,10 @@ mingle mingle.mac
 gears gears.mac
 ```
 
-[detector.tg]: https://github.com/jintonic/geant4/blob/main/visualization/VRML/detector.tg
+[detector.tg]: https://github.com/jintonic/geant4/blob/main/vis/VRML/detector.tg
 [B1]: https://github.com/Geant4/geant4/tree/master/examples/basic/B1
-[mingle.mac]: https://github.com/jintonic/geant4/blob/main/visualization/VRML/mingle.mac
-[gears.mac]: https://github.com/jintonic/geant4/blob/visualization/VRML/gears.mac
+[mingle.mac]: https://github.com/jintonic/geant4/blob/main/vis/VRML/mingle.mac
+[gears.mac]: https://github.com/jintonic/geant4/blob/vis/VRML/gears.mac
 [MinGLE]: https://github.com/jintonic/mingle
 [GEARS]: https://github.com/jintonic/gears
 

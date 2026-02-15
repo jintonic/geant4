@@ -1,7 +1,7 @@
-[![Home](https://img.shields.io/badge/Home-blue?style=flat)](..)
-[![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://youtube.com/playlist?list=PLw3G-vTgPrdATGRFqclPsXrxgHl9G4Ov6&si=PvJ1YOGyC7QH02KL)
+[![Home](https://img.shields.io/badge/Home-/-blue?style=flat)](..)
 
 # Visualization
+[![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://youtube.com/playlist?list=PLw3G-vTgPrdATGRFqclPsXrxgHl9G4Ov6&si=PvJ1YOGyC7QH02KL)
 
 The [visualization] chapter of the [Geant4 Book For Application Developers][manual] documents in detail how to visualize detector geometries, particle trajectories, and other things using various tools. The following are the ones I use frequently.
 

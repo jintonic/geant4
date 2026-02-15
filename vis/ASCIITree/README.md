@@ -1,7 +1,7 @@
-# ASCIITree
+[![Home](https://img.shields.io/badge/Home-/-blue?style=flat)](../..)
+[![Visualization](https://img.shields.io/badge/Visualization-/-orange?style=flat)](..)
 
-[![Home](https://img.shields.io/badge/Home-blue?style=flat)](../..)
-[![Visualization](https://img.shields.io/badge/Visualization-Drivers-orange?style=flat)](..)
+# ASCIITree
 [![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://www.youtube.com/watch?v=Z1p_U5SJN0I&t=60s)
 
 The [ASCIITree][] visualization driver is available in any geant4 installation. It does not really visualize anything. Instead, it prints a hierarchical list of volumes defined in your Geant4 simulation in a terminal. This seems not very useful, but is one of my favorite ways to understand a detector model created by other people, especially if it is written in [C++][] or [GDML][], which is hard to read.

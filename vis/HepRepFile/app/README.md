@@ -16,6 +16,22 @@ docker compose --profile heprapp up
 
 This will launch HepRApp inside a webpage: <http://localhost:8080/vnc.html?autoconnect=true&scale=true>, assuming you have [Docker Desktop][] running in the background, which will download required docker images automatically if they are not available locally. No Java or X-window server is needed on your host machine.
 
+## Views in HepRApp
+
+You can select a few different views to display your geometry through right click on HepRApp:
+
+- _Beam view_: view against z; y points up; x points to the right.
+- _Top view_: view against y; x points up; z points to the right.
+- _Side view_: view along x; y points up; z points to the right.
+
+**Note**: all [/vis/viewer/set][] commands have NO effort in HepRApp but they do work in Qt.
+
+```sh
+/vis/viewer/set/upVector 0 1 0 # y points up
+/vis/viewer/set/viewpointVector 0 0 1 # view against z (beam view)
+/vis/viewer/set/background 0 0.17 0.21 # solarized color: base03
+```
+
 [HepRep]: https://www.slac.stanford.edu/pubs/slacpubs/8250/slac-pub-8332.pdf
 [SLAC]: https://www.slac.stanford.edu
 [Wayback Machine]: http://web.archive.org/web/20220120134233/http://www.slac.stanford.edu/~perl/HepRApp.
@@ -25,3 +41,4 @@ This will launch HepRApp inside a webpage: <http://localhost:8080/vnc.html?autoc
 [Dockerfile]: https://github.com/jintonic/geant4/blob/main/vis/HepRepFile/app/Dockerfile
 [compose.yml]: https://github.com/jintonic/geant4/blob/main/compose.yml
 [Docker Desktop]: https://www.docker.com/products/docker-desktop/
+[/vis/viewer/set]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Control/AllResources/Control/UIcommands/_vis_viewer_set_.html

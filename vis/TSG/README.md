@@ -1,8 +1,8 @@
-[![Home](https://img.shields.io/badge/Home-blue?style=flat)](../..)
-[![Visualization](https://img.shields.io/badge/Visualization-Drivers-orange?style=flat)](..)
-[![Art Gallery](https://img.shields.io/badge/Art-Gallery-red?style=flat)](https://youtube.com/playlist?list=PLw3G-vTgPrdCRH66iijLnuAngdKD_I9Rs&si=q7brfL8sqM2crfup)
+[![Home](https://img.shields.io/badge/Home-/-blue?style=flat)](../..)
+[![Visualization](https://img.shields.io/badge/Visualization-/-orange?style=flat)](..)
 
 # TSG
+[![Art Gallery](https://img.shields.io/badge/Art-Gallery-red?style=flat)](https://youtube.com/playlist?list=PLw3G-vTgPrdCRH66iijLnuAngdKD_I9Rs&si=q7brfL8sqM2crfup)
 
 [TSG][] is a very versatile Geant4 visualization driver. You can use it with ([TSG][]) or without ([TSG_FILE][]) a Geant4 GUI. It's my favorite driver for the creation of [animated Geant4 visualization examples](https://www.youtube.com/@physino/shorts).
 
