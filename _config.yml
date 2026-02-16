@@ -1,7 +1,6 @@
 theme: jekyll-theme-slate
 title: Geant4 Zero to Hero
-description: The Definitive Guide for End Users
-show_downloads: false
+description: Dev Space for End Users
 google_analytics: G-GWLWQKHS6W
 exclude:
   - 11
