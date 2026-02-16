@@ -1,4 +1,4 @@
-[![Home](https://img.shields.io/badge/Home-blue?style=flat)](..)
+[![Home](https://img.shields.io/badge/Home-/-blue?style=flat)](..)
 [![Macro](https://img.shields.io/badge/Macro-Cmds-red?style=flat)](macro)
 [![Web UI](https://img.shields.io/badge/Web-UI-blue?style=flat)](#web-ui-for-geant4)
 

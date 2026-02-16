@@ -10,11 +10,12 @@
 [![Analysis](https://img.shields.io/badge/Analysis-indigo?style=flat)](analysis)
 
 According to <https://geant4.web.cern.ch>, Geant4 is a
+
 > **Toolkit** for the simulation of the passage of particles through matter.
 
 which means that it is **NOT** a program that can be double-clicked and run after [installation].
 
-Instead, Geant4 is provided as a set of [C++](platform/cpp) libraries that need to be compiled [^1]. One must write a C++ program (Geant4 [application](examples)) that calls functions provided in the compiled Geant4 libraries. The application itself also needs to be compiled, before it can be double-clicked and run.
+Instead, Geant4 is provided as a set of [C++](/examples/cpp) libraries that need to be compiled [^1]. One must write a C++ program (Geant4 [application](examples)) that calls functions provided in the compiled Geant4 libraries. The application itself also needs to be compiled, before it can be double-clicked and run.
 
 [^1]: Binary releases on <https://geant4.web.cern.ch/download> are libraries already compiled on very specific operating systems. They work best for Windows users. Please watch the first 5 videos in [this] YouTube playlist to understand the pro's and con's of pre-compiled Geant4 libraries.
 
@@ -41,7 +42,8 @@ As end users, all we need is a Geant4 application that has already been compiled
 [B1]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Examples/BasicCodes.html#exmpbasic-b1
 
 According to <https://geant4.org/docs/#user-guides>,
-> If you are new to Geant4, we recommend that you read this document ([Geant4 User Guide for Application Developers][guide]) first. The first part of the document provides a step-by-step tutorial in the use of Geant4; this is for a **novice** user. The second part describes the usage of the toolkit for practical applications, with a lot of example codes. After reading this part, you will be able to start to *write a detector simulation program* for most applications/experiments.
+
+> If you are new to Geant4, we recommend that you read this document ([Geant4 User Guide for Application Developers][guide]) first. The first part of the document provides a step-by-step tutorial in the use of Geant4; this is for a **novice** user. The second part describes the usage of the toolkit for practical applications, with a lot of example codes. After reading this part, you will be able to start to _write a detector simulation program_ for most applications/experiments.
 
 [guide]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/index.html
 
@@ -50,7 +52,7 @@ The shocking fact is that there is **NO** official guide for end users! This is 
 Is it possible to provide a compiled Geant4 application that can be double clicked and run for different simulations on different OS? It is possible but quit hard, because
 
 - There is no way to include all existing, or to-be-constructed radiation detectors or shielding geometries into one program. Even end users must learn [how to model their own experimental setups](detector) if nobody else does that for them.
-- A [C++ program must be compiled](platform/cpp) on a specific OS to run on that system. A C++ program that is compiled on a Mac cannot be used on Windows or Linux.
+- A [C++ program must be compiled](examples/cpp) on a specific OS to run on that system. A C++ program that is compiled on a Mac cannot be used on Windows or Linux.
 
 ## Fastest Way to Learn Geant4
 

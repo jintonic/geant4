@@ -1,5 +1,5 @@
-[![Home](https://img.shields.io/badge/Home-blue?style=flat)](../..)
-[![Analysis](https://img.shields.io/badge/Analysis-red?style=flat)](..)
+[![Home](https://img.shields.io/badge/Home-/-blue?style=flat)](../..)
+[![Analysis](https://img.shields.io/badge/Analysis-/-red?style=flat)](..)
 
 # Julia for Geant4 Data Analysis
 

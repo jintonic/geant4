@@ -1,9 +1,10 @@
-[![Home](https://img.shields.io/badge/HOME-blue?style=flat)](..)
+[![Home](https://img.shields.io/badge/Home-/-blue?style=flat)](..)
+
+# Example Applications
+
 [![GEARS](https://img.shields.io/badge/GEARS-red?style=flat)](https://www.github.com/jintonic/gears)
 [![MinGLE](https://img.shields.io/badge/MinGLE-orange?style=flat)](https://www.github.com/jintonic/mingle)
 [![Official Examples](https://img.shields.io/badge/Official-Examples-green?style=flat)](https://github.com/Geant4/geant4/tree/master/examples)
-
-# Example Applications
 
 A [Geant4](..) application is a C++ program that calls functions in [Geant4](..) libraries to perform some simulations. It must [be compiled into an executable](../platform/cpp) file before one can run it.
 
@@ -28,6 +29,7 @@ git submodule update --init --depth 1
 where `--depth 1` is used to avoid downloading the whole development history of [GEARS] and [MinGLE].
 
 To update, run
+
 ```sh
 cd /path/to/geant4
 # update geant4

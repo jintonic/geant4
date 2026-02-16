@@ -1,12 +1,15 @@
+[![Home](https://img.shields.io/badge/Home-/-blue?style=flat)](../..)
+[![Examples](https://img.shields.io/badge/Examples-/-orange?style=flat)](..)
+
 # How to Compile C++ Program
 
-[Geant4] libraries and its applications are written in C++. The following knowledge of C++ can be helpful to understand the compilation of Geant4 [libraries] and its [applications].
+Geant4 libraries and its applications are written in C++. The following knowledge of C++ can be helpful to understand the compilation of Geant4 [libraries](../../platform) and its [applications](..).
 
 <iframe width="640" height="360" src="https://www.youtube.com/embed/0UHyO2agCAc?si=ye3nguR-7F6geR_-&amp;start=53" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Manual Compilation
 
-[hello.cc] is a very simple C++ program. It is just a pure text file with a special suffix `.cc` instead of `.txt`. A program called [compiler] is needed to turn it into an executable file that can be run by a computer. In Linux, the most common compiler is *GNU Compiler Collection*, or [GCC] in short. It includes a C++ compiler, `g++`, the usage of which is demonstrated by the commands below (Lines started with # are comments. They are not commands). In a Mac, the default compiler is [Clang]. However, the same command `g++` can be used to call it as well.
+[hello.cc] is a very simple C++ program. It is just a pure text file with a special suffix `.cc` instead of `.txt`. A program called [compiler] is needed to turn it into an executable file that can be run by a computer. In Linux, the most common compiler is _GNU Compiler Collection_, or [GCC] in short. It includes a C++ compiler, `g++`, the usage of which is demonstrated by the commands below (Lines started with # are comments. They are not commands). In a Mac, the default compiler is [Clang]. However, the same command `g++` can be used to call it as well.
 
 ```sh
 # compile hello.cc using GNU C++ compiler, g++
@@ -70,11 +73,8 @@ make install
 > **Note**
 > [CMake][] doesn't provide `uninstall` by default: <https://stackoverflow.com/questions/41471620/>.
 
-Now you are ready to proceed to <https://github.com/jintonic/mingle> to learn how to write and compile (or *build* if we use the [CMake][] terminology) a very simple C++ program that uses [Geant4][] libraries.
+Now you are ready to proceed to <https://github.com/jintonic/mingle> to learn how to write and compile (or _build_ if we use the [CMake][] terminology) a very simple C++ program that uses Geant4 libraries.
 
-[Geant4]: ../..
-[libraries]: ..
-[applications]: ../../examples
 [hello.cc]: https://github.com/jintonic/geant4/blob/main/platform/cpp/hello.cc
 [recipes]: https://www.gnu.org/software/make/manual/html_node/Recipes.html
 [rules]: https://www.gnu.org/software/make/manual/html_node/Rules.html

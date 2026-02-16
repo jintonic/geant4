@@ -1,8 +1,10 @@
+[![Home](https://img.shields.io/badge/Home-/-blue?style=flat)](../..)
+[![Detector](https://img.shields.io/badge/Detector-/-red?style=flat)](..)
+
 <img align="right" width="120px" src="https://yt3.ggpht.com/PpWFdVlWCwTuVRMmxA5EMsWqmsLqgo63AepVoZdCzslc0huYKvRjNOtgIyrWiynNgkmgyzNiODFh=s600-c-fcrop64=1,00000000ffffffff-nd-v1-rwa"/>
 
 # Parameterized Placement
 
-[![Detector Definition](https://img.shields.io/badge/Detector-Definition-blue?style=flat)](..)
 [![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://youtube.com/shorts/Ep6Amj-enAU)
 
 [Geant4][] basic example [B2b][] demonstrates how to place a series of similar volumes with slight difference along a line in C++. Parameterized placement of a series of volumes does exist in pure [text description][] of Geant4 geometry. However, it only allows the placement of the same volume multiple times without any change of the volume itself, while in [B2b][], the size of the volume increases with each placement.

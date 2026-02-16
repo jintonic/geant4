@@ -1,6 +1,8 @@
+[![Home](https://img.shields.io/badge/Home-/-blue?style=flat)](../..)
+[![Detector](https://img.shields.io/badge/Detector-/-red?style=flat)](..)
+
 # Replicated Placement
 
-[![Detector Definition](https://img.shields.io/badge/Detector-Definition-blue?style=flat)](..)
 [![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://youtube.com/shorts/-jNPx66Q7Zk)
 
 [Geant4][] basic example [B4][] (also extended example [movies][]) demonstrates how to fill a parent volume entirely with the same daughter volume multiple times ([replicas][]) in C++. Replicated placement is also available in pure [text description][] of Geant4 geometry, and is demonstrated in [detector.tg][],

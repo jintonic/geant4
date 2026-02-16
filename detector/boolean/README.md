@@ -1,6 +1,8 @@
+[![Home](https://img.shields.io/badge/Home-/-blue?style=flat)](../..)
+[![Detector](https://img.shields.io/badge/Detector-/-red?style=flat)](..)
+
 # Boolean Operations
 
-[![Detector](https://img.shields.io/badge/Detector-Definition-red?style=flat)](..)
 [![Starship](https://img.shields.io/badge/SpaceX-Starship-blue?style=flat)](star/ship)
 [![ENTERPRISE](https://img.shields.io/badge/Startrek-ENTERPRISE-green?style=flat)](star/trek/enterprise)
 

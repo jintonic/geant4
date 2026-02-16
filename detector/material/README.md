@@ -1,12 +1,13 @@
+[![Home](https://img.shields.io/badge/Home-/-blue?style=flat)](../..)
+[![Detector](https://img.shields.io/badge/Detector-/-red?style=flat)](..)
+
 # Material Definition
 
-[![Home](https://img.shields.io/badge/Home-blue?style=flat)](../..)
-[![Detector Definition](https://img.shields.io/badge/Detector-Definition-orange?style=flat)](..)
 [![Human Body](https://img.shields.io/badge/Human-Body-orange?style=flat)](body)
 
 [Common materials][], such as water, air, copper, even vacuum, etc., have been defined in [Geant4][]. One can run [/material/nist/listMaterials][] at any [Geant4][] state to print this long list on screen:
 
-~~~sh
+```sh
 PreInit> /material/nist/listMaterials
 =======================================================
 ###   Simple Materials from the NIST Data Base      ###
@@ -38,20 +39,20 @@ PreInit> /material/nist/listMaterials
          1             6
          8             1
  ...
-~~~
+```
 
 They can be directly used in code written in [C++][], [simple text][tg], or [GDML][]. For example, an experimental hall filled with air can be defined in [simple text][tg] this way:
 
-~~~cpp
+```cpp
 :volu hall BOX 5*m 5*m 5*m G4_AIR
-~~~
+```
 
 If you cannot find a specific material in Geant4, you can always define it using simpler materials, for example,
 
-~~~cpp
+```cpp
 // use elements, C and H, to define TPB
 :mixt_by_natoms TPB 1.079 2 C 28 H 22
-~~~
+```
 
 A color can be assigned to a volume to indicate its material if the geometry is [visualized](../../visualization). For example, yellow can be assigned to a volume made of copper:
 
@@ -68,4 +69,3 @@ The color is defined in the form of `R G B`, representing the red, green, and bl
 [C++]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Detector/material.html
 [tg]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Detector/Geometry/geomASCII.html
 [GDML]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Detector/Geometry/geomXML.html
-

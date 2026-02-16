@@ -1,5 +1,5 @@
-[![Home](https://img.shields.io/badge/Home-blue?style=flat)](../..)
-[![Analysis](https://img.shields.io/badge/Analysis-red?style=flat)](..)
+[![Home](https://img.shields.io/badge/Home-/-blue?style=flat)](../..)
+[![Analysis](https://img.shields.io/badge/Analysis-/-red?style=flat)](..)
 [![Jupyter](https://img.shields.io/badge/Jupyter-notebook-green?style=flat)](notebook)
 [![Docker](https://img.shields.io/badge/Docker-images-orange?style=flat)](#docker-images)
 

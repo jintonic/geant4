@@ -1,4 +1,4 @@
-[![Home](https://img.shields.io/badge/Home-blue?style=flat)](..)
+[![Home](https://img.shields.io/badge/Home-/-blue?style=flat)](..)
 [![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://www.youtube.com/playlist?list=PLw3G-vTgPrdBQEyRxeCcKIgPLqIgDBLf8)
 [![ROOT](https://img.shields.io/badge/ROOT-green?style=flat)](root)
 [![Python](https://img.shields.io/badge/Python-orange?style=flat)](python)
@@ -19,7 +19,7 @@ Geant4 allows a user to save data in 4 different formats. Please watch the follo
 - A [ROOT](root) file is a compressed binary file, it ensures very small disk usage for large amount of data.
 - [ROOT](root) provides a nice user interface to analyze a file in [ROOT](root) format.
 - [Python](python) and [Julia](julia) can be used to read a [ROOT](root) file.
-  
+
 <iframe width="640" height="360" src="https://www.youtube.com/embed/CEniIMd67X8?si=nnbfg8GMqtJCpL10" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 [GEARS]: https://github.com/jintonic/gears
