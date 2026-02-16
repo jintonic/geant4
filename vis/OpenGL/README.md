@@ -1,11 +1,11 @@
-[![Home](https://img.shields.io/badge/Home-blue?style=flat)](../..)
-[![Visualization](https://img.shields.io/badge/Visualization-Drivers-orange?style=flat)](..)
+[![Home](https://img.shields.io/badge/Home-/-blue?style=flat)](../..)
+[![Visualization](https://img.shields.io/badge/Visualization-/-orange?style=flat)](..)
 
 # OpenGL
 
 [OpenGL][] visualization driver is normally tied with a Geant4 GUI, and is the default driver in Geant4 if no driver is specified. Qt base GUI provides most controls of the viewer. It is my default choice for Geant4 visualization on macOS.
 
-However, it is hard to use this driver in a Geant4 installation in a container, which may not even have a GUI. In such a case, it is better to use a combination of [ATree](../ASCIITree/), [VRML2FILE](../VRML/), and [TSG_FILE](../TSG/) to cover everything that OpenGL with the Qt base GUI can do.
+However, it is hard to use this driver in a Geant4 installation in a container, which may not even have a GUI. In such a case, there are two options. One is to use a combination of [ATree](../ASCIITree/), [VRML2FILE](../VRML/), and [TSG_FILE](../TSG/) to cover everything that OpenGL with the Qt base GUI can do. The other is to generate [HepRepFile](../HepRepFile)s, which can be visualized using [HepRApp](../HepRepFile/app) offline. The latter is almost as powerful as the Qt based [OpenGL][].
 
 ## Animation Example Code
 
