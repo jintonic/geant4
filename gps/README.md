@@ -1,8 +1,8 @@
-[![Home](https://img.shields.io/badge/Home-blue?style=flat)](..)
-[![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://www.youtube.com/playlist?list=PLw3G-vTgPrdAJnoCsOLzzl3Wq60ncIkT_)
+[![Home](https://img.shields.io/badge/Home-/-blue?style=flat)](..)
 
 # General Particle Source (GPS)
 
+[![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://www.youtube.com/playlist?list=PLw3G-vTgPrdAJnoCsOLzzl3Wq60ncIkT_)
 [![Shape](https://img.shields.io/badge/Source-Shape-blue?style=flat)](shape)
 [![Direction](https://img.shields.io/badge/Angular-Distribution-green?style=flat)](direction)
 
@@ -18,7 +18,7 @@ An [outdated webpage](http://hurel.hanyang.ac.kr/Geant4/Geant4_GPS/reat.space.qi
 
 `/run/beamOn` with tracking verbosity of 2 without any setting on [GPS][] reveals the default settings of [GPS][]:
 
-~~~cpp
+```cpp
 Idle> /tracking/verbose 2
 Idle> /run/beamOn
 G4WT3 > *********************************************************************************************************
@@ -28,7 +28,7 @@ G4WT3 >
 G4WT3 > Step#    X(mm)    Y(mm)    Z(mm) KinE(MeV)  dE(MeV) StepLeng TrackLeng  NextVolume ProcName
 G4WT3 >     0        0        0        0         1        0        0         0        hall initStep
 G4WT3 >     1        0        0   -1e+03         1        0    1e+03     1e+03  OutOfWorld CoupledTransportation
-~~~
+```
 
 - Default particle: geantino
 - Default energy: 1 MeV
