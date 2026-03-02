@@ -17,6 +17,19 @@
       }
     },
     {
+      "label": "Docker Compose: Launch ROOT",
+      "type": "shell",
+      "command": "docker compose run --rm --service-ports root",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "dedicated",
+        "close": true
+      }
+    },
+    {
       "label": "Docker Compose: Start Jupyter server",
       "type": "shell",
       "command": "docker compose --profile python up",
