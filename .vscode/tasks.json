@@ -4,8 +4,8 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Docker Compose: exec geant4 tmux",
-      "detail": "start geant4 container in background and attach tmux",
+      "label": "Docker: Run Geant4 Container",
+      "detail": "Run Geant4 container in background and run tmux in it",
       "type": "shell",
       "command": "docker compose --profile geant4 up -d && docker compose exec geant4 tmux -u",
       "group": "build",
@@ -17,7 +17,8 @@
       }
     },
     {
-      "label": "Docker Compose: Launch ROOT",
+      "label": "Docker: Run ROOT Container",
+      "detail": "Run ROOT container in an integrated terminal",
       "type": "shell",
       "command": "docker compose run --rm --service-ports root",
       "group": "build",
@@ -30,7 +31,8 @@
       }
     },
     {
-      "label": "Docker Compose: Start Jupyter server",
+      "label": "Docker: Run Python Container",
+      "detail": "Start a Jupyter server in a Python container",
       "type": "shell",
       "command": "docker compose --profile python up",
       "group": "build",
@@ -40,8 +42,8 @@
       }
     },
     {
-      "label": "Open HepRApp in Editor",
-      "detail": "open HepRApp in the simple browser in the editor",
+      "label": "Show HepRApp in Editor",
+      "detail": "Show HepRApp in the simple browser in the editor",
       "type": "shell",
       "command": "echo ${input:openSimpleBrowser}",
       "group": "build",
@@ -53,8 +55,8 @@
       }
     },
     {
-      "label": "Docker Compose: Serve HepRApp",
-      "detail": "serve HepRApp in a VNC viewer",
+      "label": "Docker: Run HepRApp Container",
+      "detail": "Serve HepRApp in a VNC viewer",
       "type": "shell",
       "command": "export RES='${input:resChoice}'; export W=${RES%x*}; export H=${RES#*x}; DISPLAY_WIDTH=$W DISPLAY_HEIGHT=$H docker compose --profile heprapp up",
       "group": "build",
