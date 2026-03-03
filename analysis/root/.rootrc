@@ -1,3 +1,4 @@
+# --- for traditional ROOT GUI ---
 # enable status bar at the bottom of a canvas
 Canvas.ShowEventStatus: true
 # avoid missing menu in ROOT GUI running in Docker
@@ -5,3 +6,10 @@ X11.UseXft: no
 # https://root-forum.cern.ch/t/tbrowser-opening-in-my-web-browser-instead-of-a-root-file-explorer-like-window/55875/2
 Browser.Name: TRootBrowserLite
 Canvas.Name: TRootCanvas
+
+# --- for ROOT Web GUI ---
+# default settings can be found in system.rootrc
+
+# a short key made of random characters is still appended to the URL with the following setting,
+# but the URL is significantly shorter
+WebGui.OnetimeKey: no
