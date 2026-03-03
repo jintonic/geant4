@@ -12,11 +12,12 @@
 /vis/scene/add/trajectories
 /vis/scene/endOfEventAction accumulate
 
-/gps/particle 
+/gps/particle gamma
 /gps/energy 1 keV
 /gps/position -6 0 0 cm
 /gps/direction 1 0 0
 
+/tracking/verbose 2
 /run/beamOn 10
 /vis/viewer/refresh
 
