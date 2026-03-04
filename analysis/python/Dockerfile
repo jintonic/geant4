@@ -1,7 +1,7 @@
 FROM python:3.14-slim
 
 RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir uproot ipympl jupyter-server ipykernel pandas
+    pip install --no-cache-dir uproot ipympl jupyter-server ipykernel pandas scipy
 
 WORKDIR /root/geant4
 EXPOSE 8988
@@ -15,4 +15,8 @@ CMD ["jupyter", "server", \
     "--port=8988", \
     "--no-browser", \
     "--allow-root", \
-    "--ServerApp.disable_check_xsrf=True"]
+    "--ServerApp.disable_check_xsrf=True", \
+    "--ServerApp.allow_origin='*'", \
+    "--ServerApp.allow_remote_access=True", \
+    "--ServerApp.token=''", \
+    "--ServerApp.password=''"]
