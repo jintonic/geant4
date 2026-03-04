@@ -10,13 +10,11 @@ ENV QT_QPA_PLATFORM=offscreen
 # send logs to stdout immediately
 ENV PYTHONUNBUFFERED=1
 
-CMD ["jupyter", "server", \
-    "--ip=0.0.0.0", \
-    "--port=8988", \
-    "--no-browser", \
-    "--allow-root", \
-    "--ServerApp.disable_check_xsrf=True", \
-    "--ServerApp.allow_origin='*'", \
-    "--ServerApp.allow_remote_access=True", \
-    "--ServerApp.token=''", \
-    "--ServerApp.password=''"]
+CMD ["sh", "-c", "echo 'Access Jupyter server @ http://localhost:8988/?token=geant4' && \
+    exec jupyter server \
+    --ip=0.0.0.0 \
+    --port=8988 \
+    --no-browser \
+    --allow-root \
+    --ServerApp.log_level='ERROR' \
+    --IdentityProvider.token='geant4'"]
