@@ -42,6 +42,17 @@
       }
     },
     {
+      "label": "Docker: Run Jupyter Notebook Container",
+      "detail": "Start a Jupyter server in a ROOT container",
+      "type": "shell",
+      "command": "docker compose --profile notebook up",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
       "label": "Show HepRApp in Editor",
       "detail": "Show HepRApp in the simple browser in the editor",
       "type": "shell",

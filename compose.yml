@@ -4,20 +4,19 @@ services:
     image: physino/geant4:latest # minimalistic container image + cmd-line tools
     platform: linux/amd64 # for run time
     profiles: [ "geant4" ]
-    container_name: Geant4
+    container_name: geant4
     volumes: [ ".:/root/geant4" ] # load current folder as /root/geant4 in container
     # feel free to change the timezone identifier below according to
     # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List
     environment: [ "TZ=US/Central" ]
     build:
-      # docker compose build geant4
       context: platform/docker
       platforms: [ "linux/amd64" ] # for build time
   novnc:
-    # X window display sidecar for heprapp and root
+    # X window display sidecar for heprapp
     image: theasp/novnc
     profiles: [ "heprapp" ]
-    container_name: noVNC
+    container_name: vnc
     platform: linux/amd64
     ports: [ "8080:8080" ]
     environment:
@@ -34,10 +33,9 @@ services:
       retries: 5 # try 5 times before failing
       start_period: 0s # wait 0s before the first check
   heprapp:
-    # docker compose --profile heprapp up
     image: physino/heprapp:latest
     profiles: [ "heprapp" ]
-    container_name: HepRApp
+    container_name: heprapp
     command:
       - /bin/sh
       - -c
@@ -54,16 +52,14 @@ services:
       - "./vis/HepRepFile/app/user.properties:/user.properties"
     networks: [ "X11" ]
     build:
-      # docker compose build heprapp
       context: vis/HepRepFile/app
       platforms: [ "linux/amd64", "linux/arm64" ]
   root:
-    # docker compose --profile root up
     command: >
-      bash -c "socat -d0 TCP-LISTEN:9001,fork,reuseaddr TCP:127.0.0.1:9375 &  root -l --web=server:9375 -e \"new TBrowser;\""
+      bash -c "socat -d0 TCP-LISTEN:9001,fork,reuseaddr TCP:127.0.0.1:9375 &  root -l --web=server:9375 -e 'new TBrowser;'"
     image: physino/root # https://hub.docker.com/r/physino/root
     profiles: [ "root" ]
-    container_name: ROOT
+    container_name: root
     ports: [ "9375:9001" ]
     volumes:
       - .:/root/geant4
@@ -74,13 +70,14 @@ services:
       context: analysis/root
       platforms: [ "linux/amd64", "linux/arm64" ]
   notebook:
-    # docker-compose up notebook
-    command: /usr/bin/root --notebook --allow-root --no-browser --ip=0.0.0.0
     image: physino/root:notebook
     profiles: [ "notebook" ]
-    ports: [ "8888:8888" ] # only exposed with `up`, not 'run`
+    container_name: notebook
+    ports: [ "8888:8888" ]
     volumes: [ ".:/root/geant4" ]
-    build: analysis/root/notebook # docker-compose build notebook
+    build:
+      context: analysis/root/notebook
+      platforms: [ "linux/amd64", "linux/arm64" ]
   python:
     image: physino/python
     profiles: [ "python" ]
