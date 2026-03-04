@@ -1,13 +1,26 @@
-#!/usr/bin/env python
+# ---
+# jupyter:
+#   jupytext:
+#     formats: py:percent
+#     text_representation:
+#       extension: .py
+#       format_name: percent
+#       format_version: '1.3'
+#       jupytext_version: 1.19.1
+#   kernelspec:
+#     display_name: Python 3 (ipykernel)
+#     language: python
+#     name: python3
+# ---
 
-# %% get path to the script relative to the workdir of the kernel
+# %% get path relative to project root if script runs in vscode
 import os
-workdir = os.getcwd()
-print(f"workdir in the container: {workdir}")
-scriptdir = os.path.dirname(__file__)
-print(f"script path in the host: {scriptdir}")
-subdir = scriptdir.rpartition("geant4/")[-1]
-print(f"path relative to the workdir: {subdir}")
+import sys
+subdir = "."
+if any('vscode' in mod for mod in sys.modules):
+    scriptdir = os.path.dirname(__file__)
+    subdir = scriptdir.rpartition("geant4/")[-1]
+print(f"path relative to the project root: {subdir}")
 
 # %% generate random numbers based on a gaussian distribution
 import numpy as np
@@ -27,6 +40,7 @@ with uproot.open(filename) as f:
 print(f"read branch e from {filename}")
 
 # %% plot data
+# %matplotlib ipympl
 import matplotlib.pyplot as plt
 plt.hist(e, bins=100)
 plt.title("Spectrum generated from a ROOT TTree")
