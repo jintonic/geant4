@@ -30,4 +30,5 @@ _site
 *.gz
 *.bz2
 *.root
+*.pyc
 .Trash*
