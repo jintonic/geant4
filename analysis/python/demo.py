@@ -13,7 +13,11 @@
 #     name: python3
 # ---
 
-# %% import matplotlib
+"""
+A demo of common Geant4 data analysis tasks
+"""
+
+# %% https://peps.python.org/pep-0008/#imports
 import os
 import sys
 import numpy as np
