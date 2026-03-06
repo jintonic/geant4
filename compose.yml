@@ -84,6 +84,8 @@ services:
     container_name: Python
     ports: [ "8988:8988" ]
     volumes: [ ".:/root/geant4" ]
+    environment:
+      - PYTHONPATH=/root/geant4/analysis/python
     build:
       context: analysis/python
       platforms: [ "linux/amd64", "linux/arm64" ]
