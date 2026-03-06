@@ -1,5 +1,6 @@
 {
   "cmake.ignoreCMakeListsMissing": true,
+  "python.terminal.activateEnvironment": false,
   "files.associations": {
     "*.tg": "geant4-tg",
     "*.mac": "g4macro"
