@@ -17,21 +17,14 @@ def can_access(url, timeout=1.0):
     except Exception:
         return False
 
-setting = '''"jupyter.widgetScriptSources": [
-    "jsdelivr.com",
-    "unpkg.com"
-],'''
-
 def _set_matplotlib_backend():
     if 'ipykernel' in sys.modules:
         if any('vscode' in mod for mod in sys.modules):
             if can_access('https://cdn.jsdelivr.net'):
                 matplotlib.use('module://ipympl.backend_nbagg')
-            else:
-                if can_access('https://8.8.8.8'):
-                    print("Consider adding")
-                    print(setting)
-                    print("in your user settings for interactive plot")
+                print("Interactive plot is enabled.")
+                print('Select "Enable Downloads" if you are asked,')
+                print("and restart the kernel (maybe a few times) to let it take effect.")
         else: # in jupyter notebook
             matplotlib.use('module://ipympl.backend_nbagg')
 
