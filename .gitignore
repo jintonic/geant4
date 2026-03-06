@@ -31,4 +31,5 @@ _site
 *.bz2
 *.root
 *.pyc
+*checkpoints*
 .Trash*
