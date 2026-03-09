@@ -64,7 +64,7 @@ If you are familiar with [ROOT][] and would like to migrate to [Python][] for an
     >>> import awkward as ak
     >>> import matplotlib.pyplot as plot
     >>> x = t.arrays(['x'], "vlm==1") # get all x in vlm 1
-    >>> plot.hist(ak.flatten(x, axis=None)), bins=100)
+    >>> plot.hist(ak.flatten(x, axis=None), bins=100)
     >>> plot.show()
     ```
     Ref. <https://awkward-array.org/doc/main/user-guide/how-to-restructure-flatten.html>
