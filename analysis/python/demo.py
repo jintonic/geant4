@@ -39,12 +39,12 @@ if any('vscode' in mod for mod in sys.modules):
 print(f"path relative to the project root: {subdir}")
 filename = subdir + "/spectrum.root"
 with uproot.recreate(filename) as f:
-    f["t"] = {"e": data}
+    f.mktree("t", {"e": data})
 print(f"data saved to {filename} (tree: t, branch: e)")
 
 # %% read data from the root file
 with uproot.open(filename) as f:
-    e = f["t"].arrays("e", library="np")["e"]
+    e = f["t"]["e"].array(library="np")
 print(f"read branch e from {filename}")
 
 # %% generate histogram step by step
