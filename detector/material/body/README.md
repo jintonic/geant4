@@ -8,7 +8,7 @@ Elemental compositions of common body parts are available in [Geant4][] as [NIST
 If you need information for a specific body part that is not in Geant4, please refer to chapter "13. ELEMENTAL COMPOSITION OF BODY TISSUES" in [ICRP][] publication [89][], or [ICRU][] report [64][]. For example,
 
 ```
-:MIXT_BY_WEIGHT breast 0.979
+:MIXT_BY_WEIGHT breast 0.979 8
  H  0.106
  C  0.332
  N  0.030
@@ -18,7 +18,7 @@ If you need information for a specific body part that is not in Geant4, please r
  S  0.002
  Cl 0.001
 
-:MIXT_BY_WEIGHT liver 1.094
+:MIXT_BY_WEIGHT liver 1.094 9
  H  0.102
  C  0.139
  N  0.030
