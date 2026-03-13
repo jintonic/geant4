@@ -1,0 +1,114 @@
+:volu world BOX 100*m 100*m 100*m G4_Galactic
+:vis world OFF
+
+:MIXT_BY_NATOMS EJ309 0.964 2
+C 4.35 
+H 5.43
+
+:volu pdshield POLYCONE
+0 360       // phi0, dphi in degrees
+2          // number of z planes
+-14.825 0 26.95
+-12.825 0 26.95
+G4_Pd       // material
+
+:volu EJM POLYCONE
+0 360       // phi0, dphi in degrees
+12
+-12.825    0 26.95
+-10.325    0 26.95
+-10.325  24.45 26.95
+34.925   24.45 26.95
+34.925   24.45 32
+41.425   24.45 32
+41.425   24.45 38.1
+48.275   24.45 38.1
+48.275   24.45 31.75
+246.325  24.45 31.75
+246.325  0 31.75
+247.175  0 31.75
+G4_Al 
+
+:volu gasbb POLYCONE
+0 360       // phi0, dphi in degrees
+2          // number of z planes
+-10.325 0 24.45
+41.425  0 24.45
+G4_Ar     // material
+:color gasbb 1 1 0
+
+:volu EJ309(S-1) POLYCONE
+0 300       // phi0, dphi in degrees
+2          // number of z planes
+-10.325 0 24.45
+41.425  0 24.45
+EJ309      // material
+:color EJ309(S-1) 0.8 0.4 0.2
+
+:volu EJ309(S-2)  POLYHEDRA
+0 60        // phi0 dphi in degrees
+1 2            // numSide numZPlanes  ← 这行要两个数
+-10.325 0 21.1
+41.425  0 21.1
+EJ309        // material
+:color EJ309(S-2)  0.8 0.4 0.2
+
+:p z 100
+:rotm r000 0 0 0
+:rotm r111 0 0 60
+:rotm r222 0 0 120
+
+:rotm ry46.1 90 -46.1 0
+:rotm ry38.8 90 -38.8 0
+:rotm ry33.5 90 -33.5 0
+:rotm ry26.5 90 -26.5 0
+:rotm ry18.8 90 -18.8 0
+:rotm ry11.5 90 -11.5 0
+
+:rotm ry-11.8 90 11.8 0
+:rotm ry-18.2 90 18.2 0
+:rotm ry-26 90 26 0
+:rotm ry-32.3 90 32.3 0
+:rotm ry-39.7 90  39.7 0
+:rotm ry-45.2 90  45.2 0
+
+
+:place EJ309(S-1)          1 gasbb  r111 0 0 0
+:place EJ309(S-2)          1 gasbb  r222 0 0 0
+:place gasbb               1 EJM    r000 0 0 0
+
+:place EJM                 1 world  ry46.1 452.506 435.456 $z+0
+:place pdshield            1 world  ry46.1 452.506 435.456 $z+0
+
+//:place EJM               2 world  ry38.8 382.228 475.396 $z+0
+//:place pdshield          2 world  ry38.8 382.228 475.396 $z+0
+
+:place EJM                 3 world  ry33.5 361.519 546.195 $z+0
+:place pdshield            3 world  ry33.5 361.519 546.195 $z+0
+
+:place EJM                 4 world  ry26.5 283.782 569.178 $z+0
+:place pdshield            4 world  ry26.5 283.782 569.178 $z+0
+
+:place EJM                 5 world  ry18.8 209.795 616.269 $z+0
+:place pdshield            5 world  ry18.8 209.795 616.269 $z+0
+
+:place EJM                 6 world  ry11.5 127.19 625.192 $z+0
+:place pdshield            6 world  ry11.5 127.19 625.192 $z+0
+
+:place EJM                 7 world  ry-11.8 -130.05 622.56 $z+0
+:place pdshield            7 world  ry-11.8 -130.05 622.56 $z+0
+
+:place EJM                 8 world  ry-18.2 -203.018 617.482 $z+0
+:place pdshield            8 world  ry-18.2 -203.018 617.482 $z+0
+
+:place EJM                 9 world  ry-26 -281.873 577.925 $z+0
+:place pdshield            9 world  ry-26 -281.873 577.925 $z+0
+
+:place EJM                 10 world  ry-32.3 -351.069 555.337 $z+0
+:place pdshield            10 world  ry-32.3 -351.069 555.337 $z+0
+
+//:place EJM               11 world  ry-39.7 -389.01 468.564 $z+0
+//:place pdshield          11 world  ry-39.7 -389.01 468.564 $z+0
+
+:place EJM                 12 world  ry-45.2 -442.772 439.692 $z+0
+:place pdshield            12 world  ry-45.2 -442.772 439.692 $z+0
