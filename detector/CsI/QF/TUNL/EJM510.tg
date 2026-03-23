@@ -2,13 +2,6 @@
 C 4.35 
 H 5.43
 
-:volu pdshield POLYCONE
-0 360       // phi0, dphi in degrees
-2          // number of z planes
--14.825 0 26.95
--12.825 0 26.95
-G4_Pd       // material
-
 :volu EJM510 POLYCONE
 0 360       // phi0, dphi in degrees
 12
@@ -75,37 +68,15 @@ EJ309        // material
 :place argon               1 EJM510 r000 0 0 0
 
 :place EJM510              1 world  ry46.1 452.506 435.456 $z+0
-:place pdshield            1 world  ry46.1 452.506 435.456 $z+0
-
 //:place EJM510            2 world  ry38.8 382.228 475.396 $z+0
-//:place pdshield          2 world  ry38.8 382.228 475.396 $z+0
-
 :place EJM510              3 world  ry33.5 361.519 546.195 $z+0
-:place pdshield            3 world  ry33.5 361.519 546.195 $z+0
-
 :place EJM510              4 world  ry26.5 283.782 569.178 $z+0
-:place pdshield            4 world  ry26.5 283.782 569.178 $z+0
-
 :place EJM510              5 world  ry18.8 209.795 616.269 $z+0
-:place pdshield            5 world  ry18.8 209.795 616.269 $z+0
-
 :place EJM510              6 world  ry11.5 127.19 625.192 $z+0
-:place pdshield            6 world  ry11.5 127.19 625.192 $z+0
-
 :place EJM510              7 world  ry-11.8 -130.05 622.56 $z+0
-:place pdshield            7 world  ry-11.8 -130.05 622.56 $z+0
-
 :place EJM510              8 world  ry-18.2 -203.018 617.482 $z+0
-:place pdshield            8 world  ry-18.2 -203.018 617.482 $z+0
-
 :place EJM510              9 world  ry-26 -281.873 577.925 $z+0
-:place pdshield            9 world  ry-26 -281.873 577.925 $z+0
-
 :place EJM510              10 world  ry-32.3 -351.069 555.337 $z+0
-:place pdshield            10 world  ry-32.3 -351.069 555.337 $z+0
-
 //:place EJM510            11 world  ry-39.7 -389.01 468.564 $z+0
-//:place pdshield          11 world  ry-39.7 -389.01 468.564 $z+0
-
 :place EJM510              12 world  ry-45.2 -442.772 439.692 $z+0
-:place pdshield            12 world  ry-45.2 -442.772 439.692 $z+0
+
