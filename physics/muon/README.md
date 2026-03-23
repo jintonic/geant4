@@ -1,5 +1,5 @@
-[![Home](https://img.shields.io/badge/Home-blue?style=flat)](../..)
-[![Physics](https://img.shields.io/badge/Physics-red?style=flat)](..)
+[![Home/](https://img.shields.io/badge/Home-/-blue?style=flat)](../..)
+[![Physics/](https://img.shields.io/badge/Physics-/-red?style=flat)](..)
 
 # Muon Interactions
 
@@ -7,10 +7,14 @@ Muons, being charged particles (mu+ and mu-), can interact with matter by ionizi
 
 ## Stopping power
 
-The stopping power of a material to a particle is defined as the energy loss in a unit track length, _S = -dE/dx_. It changes with material, particle type, and the kinetic energy of the particle. The [first figure](https://pdg.lbl.gov/2022/web/viewer.html?file=../figures/passage/figures/rpp_icru49_cu_col.pdf) in the [PDG][] [review][] on [Passage of particles through matter](https://pdg.lbl.gov/2022/reviews/rpp2022-rev-passage-particles-matter.pdf) shows the *dE/dx* of muons in Cu as a function of their energies. It reaches its minimum around 1 GeV.
+The stopping power of a material to a particle is defined as the energy loss in a unit track length, _S = -dE/dx_. It changes with material, particle type, and the kinetic energy of the particle. The [first figure](https://pdg.lbl.gov/2025/web/viewer.html?file=../figures/passage/figures/rpp_icru49_cu_col.pdf) in the [PDG][] review on [Passage of particles through matter](https://pdg.lbl.gov/2025/reviews/rpp2025-rev-passage-particles-matter.pdf) shows the _dE/dx_ of muons in Cu as a function of their energies. It reaches its minimum around 1 GeV.
 
 ## Cosmic ray muons
+
 According to [HyperPhysics][], the average energy of muons reaching sea level is about 4 GeV. They are called [minimum ionizing particles][mip], as their [dE/dx in air](https://pdg.lbl.gov/2022/web/viewer.html?file=../figures/passage/figures/dedx_table_98.pdf) is around its minimum . A muon loses about 2 GeV passing through the atmosphere, its original energy is then about 6 GeV.
 
-[Both mu+ and mu- can be created in the air by protons from the Sun](https://physics.okstate.edu/people/faculty-directory/93-pages/540-benton-rpl-studies-in-cosmic-ray-muons). The ratio of (number of mu+)/(number of mu-) is around 1.3 according to <http://arxiv.org/abs/1005.5332>. The momentum and angular distributions of cosmic ray muons at sea level can be found in <https://arxiv.org/abs/nucl-ex/0601019>.
+[Both mu+ and mu- can be created in the air by protons from the Sun](https://cas.okstate.edu/physics/about_us/dr_bentons_lab/research/studies_in_cosmic_ray_muons). The ratio of (number of mu+)/(number of mu-) is around 1.3 according to <http://arxiv.org/abs/1005.5332>. The momentum and angular distributions of cosmic ray muons at sea level can be found in <https://arxiv.org/abs/nucl-ex/0601019>.
 
+[mip]: https://pdg.lbl.gov/2022/web/viewer.html?file=../figures/passage/figures/rpp_icru49_cu_col.pdf
+[HyperPhysics]: http://hyperphysics.phy-astr.gsu.edu/hbase/Particles/muonatm.html
+[PDG]: https://pdg.lbl.gov
