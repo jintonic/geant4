@@ -153,10 +153,10 @@ G4_Al      // material
 :volu leg4 BOX 13.25 19.5 160 G4_Al 
 
 :rotm r000 0 0 0
-:rotm r001 15 0 0
-:rotm r002 -15 0 0
-:rotm r003 0 15 0
-:rotm r004 0 -15 0
+:rotm r001 15 -15 45
+:rotm r002 15 15 135
+:rotm r003 -15 15 135
+:rotm r004 -15 -15 45
 
 :p z 100
 
@@ -177,10 +177,10 @@ G4_Al      // material
 :place crystal             12 world r000 0 0 $z+-14.825
 :place cap2K               13 world r000 0 0 $z+0
 :place feedthrough2K       14 world r000 0 0 $z+0
-:place leg1                15 world r003 150 0 $z+50
-:place leg2                15 world r004 -150 0 $z+50
-:place leg3                15 world r002 0 150 $z+50
-:place leg4                15 world r001 0 -150 $z+50
+:place leg1                15 world r003 106 106 $z+50
+:place leg2                15 world r004 -106 106 $z+50
+:place leg3                15 world r002 106 -106 $z+50
+:place leg4                15 world r001 -106 -106 $z+50
 :place clamp               16 world r000 0 0 $z+0
 
 
