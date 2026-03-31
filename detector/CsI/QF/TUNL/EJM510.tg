@@ -1,0 +1,82 @@
+:MIXT_BY_NATOMS EJ309 0.964 2
+C 4.35 
+H 5.43
+
+:volu EJM510 POLYCONE
+0 360       // phi0, dphi in degrees
+12
+-12.825    0 26.95
+-10.325    0 26.95
+-10.325  24.45 26.95
+34.925   24.45 26.95
+34.925   24.45 32
+41.425   24.45 32
+41.425   24.45 38.1
+48.275   24.45 38.1
+48.275   24.45 31.75
+246.325  24.45 31.75
+246.325  0 31.75
+247.175  0 31.75
+G4_Al 
+
+:volu argon POLYCONE
+0 360       // phi0, dphi in degrees
+2          // number of z planes
+-10.325 0 24.45
+41.425  0 24.45
+G4_Ar     // material
+:color argon 1 1 0
+
+:volu scintillator1 POLYCONE
+0 300       // phi0, dphi in degrees
+2          // number of z planes
+-10.325 0 24.45
+41.425  0 24.45
+EJ309      // material
+:color scintillator1 0.8 0.4 0.2
+
+:volu scintillator2  POLYHEDRA
+0 60        // phi0 dphi in degrees
+1 2            // numSide numZPlanes  
+-10.325 0 21.1
+41.425  0 21.1
+EJ309        // material
+:color scintillator2  0.8 0.4 0.2
+
+:p z 100
+:rotm r000 0 0 0
+:rotm r111 0 0 60
+:rotm r222 0 0 120
+
+:rotm ry46.1 90 -46.1 0
+:rotm ry38.8 90 -38.8 0
+:rotm ry33.5 90 -33.5 0
+:rotm ry26.5 90 -26.5 0
+:rotm ry18.8 90 -18.8 0
+:rotm ry11.5 90 -11.5 0
+
+:rotm ry-11.8 90 11.8 0
+:rotm ry-18.2 90 18.2 0
+:rotm ry-26 90 26 0
+:rotm ry-32.3 90 32.3 0
+:rotm ry-39.7 90  39.7 0
+:rotm ry-45.2 90  45.2 0
+
+
+:place scintillator1       1 argon  r111 0 0 0
+:place scintillator2       1 argon  r222 0 0 0
+:place argon               1 EJM510 r000 0 0 0
+
+:place EJM510              1 world  ry46.1 452.506 435.456 $z+0
+//:place EJM510            2 world  ry38.8 382.228 475.396 $z+0
+:place EJM510              3 world  ry33.5 361.519 546.195 $z+0
+:place EJM510              4 world  ry26.5 283.782 569.178 $z+0
+:place EJM510              5 world  ry18.8 209.795 616.269 $z+0
+:place EJM510              6 world  ry11.5 127.19 625.192 $z+0
+:place EJM510              7 world  ry-11.8 -130.05 622.56 $z+0
+:place EJM510              8 world  ry-18.2 -203.018 617.482 $z+0
+:place EJM510              9 world  ry-26 -281.873 577.925 $z+0
+:place EJM510              10 world  ry-32.3 -351.069 555.337 $z+0
+//:place EJM510            11 world  ry-39.7 -389.01 468.564 $z+0
+:place EJM510              12 world  ry-45.2 -442.772 439.692 $z+0
+
