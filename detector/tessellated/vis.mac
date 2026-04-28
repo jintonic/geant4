@@ -1,0 +1,14 @@
+/control/verbose
+/process/em/verbose 2
+/process/had/verbose 2
+
+/geometry/source detector.tg
+/run/initialize
+
+/geometry/test/run
+
+/vis/open
+/vis/drawVolume
+/vis/viewer/refresh
+
+/vis/scene/add/axes

@@ -1,0 +1,20 @@
+:volu world BOX 50*cm 50*cm 50*cm G4_Galactic
+:vis world OFF
+
+// Tessellated Pyramid: 4 Triangular Facets + 1 Quadrangular Facet
+:SOLID pyramid TESSELLATED 5
+  // facet1: TRI - Front-ish Slant
+  3 -10 -10 0   10 -10 0    0  0 10  0
+  // facet2: TRI - Right-ish Slant
+  3  10 -10 0   10  10 0    0  0 10  0
+  // facet3: TRI - Back-ish Slant
+  3  10  10 0  -10  10 0    0  0 10  0
+  // facet4: TRI - Left-ish Slant
+  3 -10  10 0  -10 -10 0    0  0 10  0
+  // facet5: QUAD - Base (Note the winding to ensure outward normal)
+  4 -10 -10 0  -10  10 0   10 10 0   10 -10 0  0
+
+:volu tess pyramid G4_Galactic
+:color tess 1 0 0
+:rotm r0 0 0 0
+:place tess 1 world r0 0 0 0
