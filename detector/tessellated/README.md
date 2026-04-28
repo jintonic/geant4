@@ -60,11 +60,7 @@ If the winding is incorrect (clockwise), the normal points inward, Geant4 may re
 
 #### 2. Planarity of Quads
 
-For 4-point (Quadrangular) facets, all points must lie on the same geometric plane.
-
-- Geant4 checks planarity using the scalar triple product: $\text{Volume} = | \vec{e}_1 \cdot (\vec{e}_2 \times \vec{e}_3) |$.
-- If the discrepancy is greater than the internal tolerance ($10^{-9}$ mm), the solid will throw a `GeomSolids1001` warning.
-- **Pro-Tip:** If your surface is even slightly warped, decompose the quad into two 3-point (Triangular) facets.
+For 4-point (Quadrangular) facets, all points must lie on the same geometric plane. Geant4 checks planarity by calculating the volume of the tetrahedron formed by the four points. If the volume is greater than the internal tolerance, the solid will throw a `GeomSolids1001` warning.
 
 ### Examples
 
