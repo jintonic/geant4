@@ -3,11 +3,12 @@
 
 # Detector Definition
 
-[![Material](https://img.shields.io/badge/Material-Definition-orange?style=flat)](material)
-[![CSG](https://img.shields.io/badge/CSG-Solids-blue?style=flat)](CSG)
-[![Parameterisation](https://img.shields.io/badge/Parameterized-Placement-magenta?style=flat)](parameterisation)
-[![Replica](https://img.shields.io/badge/Replicated-Placement-yellow?style=flat)](replica)
-[![Boolean](https://img.shields.io/badge/Boolean-Operation-green?style=flat)](boolean)
+[![Material](https://img.shields.io/badge/Material-orange?style=flat)](material)
+[![CSG](https://img.shields.io/badge/CSG-blue?style=flat)](CSG)
+[![Tessellated](https://img.shields.io/badge/Tessellated-purple?style=flat)](tessellated)
+[![Parameterisation](https://img.shields.io/badge/Parameterized-magenta?style=flat)](parameterisation)
+[![Replica](https://img.shields.io/badge/Replicated-yellow?style=flat)](replica)
+[![Boolean](https://img.shields.io/badge/Boolean-green?style=flat)](boolean)
 
 [Geant4][] provides 3 ways for its users to define their own detector models:
 
