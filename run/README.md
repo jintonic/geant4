@@ -22,9 +22,9 @@ It is the user's responsibility to provide a [detector](../detector) model for a
 
 Fortunately, Geant4 also allows end users to write their detector definition in [plain text](../detector).
 
-However, writing in a text file is not the most intuitive way to construct and debug 3D geometries. A graphic user interface (GUI) is better suited for this task. [Shine][] is such a UI on the web. One can use the mouse to select, place, rotate basic shapes on a canvas, and export the constructed detector model to a plain text file called `detector.tg`, which can be read by a Geant4 application that is configured to accept detector definition in plain text.
+However, writing in a text file is not the most intuitive way to construct and debug 3D geometries. A graphic user interface (GUI) is better suited for this task. [G4web][] is such a UI on the web. One can use the mouse to select, place, rotate basic shapes on a canvas, and export the constructed detector model to a plain text file called `detector.tg`, which can be read by a Geant4 application that is configured to accept detector definition in plain text.
 
-![Shine: a Web UI for Geant4](https://lh3.googleusercontent.com/d/1IYnxORUysfgw7ymhGuH_jlVCUpe2lsd-)
+<a href="http://physino.xyz/g4web"><img width="640px" src="https://lh3.googleusercontent.com/sitesv/AA5AbUAIOlbskcEh1Ncb3x8Jo2dQxXxm4ycQubN3fthp96mt8G4FALb949uttrNV1tD78IQL9v3Tz2gYmOAO6i7Hz9UkAuFOrmkepArxTqn5DYxYaZ9hwbb83ge8w4hgJlyFGcdQ4N1TmDJv_gV70esT9B9QOThI-crubPwJzCmO3HixZYHl7NM2PN3QNp8LPsSzib98-Ze1GKbrE-y89zIfrUOvK7Vx79OYRozS89c=w1280"/></a>
 
 [Geant4]: ..
 [cloud]: #geant4-on-the-cloud
@@ -33,4 +33,4 @@ However, writing in a text file is not the most intuitive way to construct and d
 [NRP]: https://nrp.ai
 [Kubernetes]: https://kubernetes.io
 [program detector definition and response in C++]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Detector/detector.html
-[Shine]: https://physino.xyz/shine
+[G4web]: https://physino.xyz/g4web
