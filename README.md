@@ -49,7 +49,7 @@ According to <https://geant4.org/docs/#user-guides>,
 
 The shocking fact is that there is **NO** official guide for end users! This is understandable, because Geant4 is provided as a **toolkit** (individual Lego pieces), way more flexible than a specific **application** (a finished Lego model). Nevertheless, this is bad news for absolute beginners who need an executable application instead of a comprehensive but complicated toolkit.
 
-Is it possible to provide a compiled Geant4 application that can be double clicked and run for different simulations on different OS? It is possible but quit hard, because
+Is it possible to provide a compiled Geant4 application that can be double clicked and run for different simulations on different OS? It is possible but quite hard, because
 
 - There is no way to include all existing, or to-be-constructed radiation detectors or shielding geometries into one program. Even end users must learn [how to model their own experimental setups](detector) if nobody else does that for them.
 - A [C++ program must be compiled](examples/cpp) on a specific OS to run on that system. A C++ program that is compiled on a Mac cannot be used on Windows or Linux.
@@ -70,7 +70,7 @@ Instead, you may start with getting familiar with Geant4 user interface ([UI](ru
 
 After playing around with some existing detector models, you may be keen to [create your own models](detector). Remember, this can be done **without** any C++. Geant4 allows you to [describe your model using simple text](detector). I have created a series of [![YouTube](https://img.shields.io/badge/You-Tube-red?style=flat)](https://www.youtube.com/playlist?list=PLw3G-vTgPrdBxXZo1UpOD_xVFSgM3hLn-) videos to demonstrate this method.
 
-In summary, the fastest way to start your own Geant4 simulation is to use an existing Geant4 [installation] and application to get familiar with Geant4 [UI](run), [macro][] commands, [visualization](vis), and [detector definition using simple text](detector). This way, you are actually learning how to **use** Geant4 instead of learning how to [install] [Geant4].
+In summary, the fastest way to start your own Geant4 simulation is to use an existing Geant4 [installation] and application to get familiar with Geant4 [UI](run), [macro][] commands, [visualization](vis), and [detector definition using simple text](detector). This way, you are actually learning how to **use** Geant4 instead of learning how to install [Geant4][].
 
 [installation]: platform
 [install]: platform
@@ -81,12 +81,10 @@ This guide was originally created as a GitHub [repository] to avoid duplicating 
 
 ## Footnote
 
-[Geant4]: https://geant4.org
+[Geant4]: https://geant4.web.cern.ch
 [GEARS]: https://github.com/jintonic/gears
 [MinGLE]: https://github.com/jintonic/mingle
 [repository]: https://github.com/jintonic/geant4
 [me]: https://physino.xyz
-[shine]: https://physino.xyz/shine
 [tutorials]: https://www.youtube.com/@physino
 [macro]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Control/commands.html
-[CAD]: https://en.wikipedia.org/wiki/Computer-aided_design
