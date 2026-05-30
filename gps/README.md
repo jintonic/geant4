@@ -9,10 +9,21 @@
 Geant4 provides 3 ways for a user to generate primary particles for a simulation:
 
 - [C++][]: the hardest to learn and use, hence covered intensively in Geant4 [User Guide for Application Developers][guide], and demonstrated in most Geant4 official [examples][].
-- [particle gun][]: the easiest to learn and use (no C++, just macro commands), yet limited in its functionality.
-- [general particle source][GPS]: as easy as [particle gun][], yet way more versatile. It's functionality is demonstrated nicely in the extended Geant4 example [exgps][].
+- [Particle gun][] macro commands: the easiest to learn and use (no C++ at all), yet limited in its functionality.
+- [GPS macro commands][] provided by [general particle source][GPS] (GPS): as easy as [particle gun][], yet way more versatile. Their usage is demonstrated nicely in `.mac` files in the extended Geant4 example [exgps][]. An [outdated webpage](http://hurel.hanyang.ac.kr/Geant4/Geant4_GPS/reat.space.qinetiq.com/gps/examples/examples.html) contains a subset of [exgps][]. It shows resulted distribution plots, which are very helpful to visualize effects of [GPS][] macro commands.
 
-An [outdated webpage](http://hurel.hanyang.ac.kr/Geant4/Geant4_GPS/reat.space.qinetiq.com/gps/examples/examples.html) contains most demonstrations in [exgps][]. In addition, it shows resulted distribution plots, which are very helpful to visualize effects of [GPS][] macro commands.
+[GEARS and MinGLE example G4 applications](../examples/) accept both [particle gun][] and [GPS macro commands][]. For example, one can save the following macro commands to a file named [run.mac](run.mac) and execute them using `mingle run.mac`.
+
+```sh
+# specify particle type
+/gps/particle gamma
+# specify particle energy
+/gps/energy 1 keV
+# specify particle source position
+/gps/position -6 0 0 cm
+# specify particle direction
+/gps/direction 1 0 0
+```
 
 ## Default Settings of GPS
 
@@ -42,4 +53,5 @@ G4WT3 >     1        0        0   -1e+03         1        0    1e+03     1e+03  
 [GPS]: http://geant4-userdoc.web.cern.ch/geant4-userdoc/UsersGuides/ForApplicationDeveloper/html/GettingStarted/generalParticleSource.html
 [primary particles]: http://geant4-userdoc.web.cern.ch/geant4-userdoc/UsersGuides/ForApplicationDeveloper/html/Fundamentals/eventGenerator.html
 [particle gun]: http://geant4-userdoc.web.cern.ch/geant4-userdoc/UsersGuides/ForApplicationDeveloper/html/Control/AllResources/Control/UIcommands/_gun_.html
+[GPS macro commands]: https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Control/AllResources/Control/UIcommands/_gps_.html
 [exgps]: https://github.com/Geant4/geant4/tree/master/examples/extended/eventgenerator/exgps/macros
