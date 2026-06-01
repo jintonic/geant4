@@ -7,9 +7,10 @@ FROM physino/root
 # debugpy: to avoid debugpy_stream undefined warning
 # ipympl: for interactive matplotlib plots
 RUN  dnf install -y --nodocs --setopt=install_weak_deps=False \
-  python3-jupyroot python3-matplotlib python3-jupytext python3-pip python3-pandas python3-scipy python3-jupyterlab-jupytext &&\
+  python3-jupyroot python3-matplotlib python3-jupytext python3-pip \
+  python3-tqdm python3-pandas python3-scipy python3-jupyterlab-jupytext &&\
   dnf clean all && rm -fr /var/cache/* &&\
-  pip install uproot debugpy iminuit ipympl --no-cache-dir
+  pip install uproot debugpy iminuit ipympl hist mplhep --no-cache-dir
 
 # avoid the 'extra_static_paths' conflict warning
 RUN sed -i '/extra_static_paths/d' /etc/jupyter/jupyter_notebook_config.py && \
