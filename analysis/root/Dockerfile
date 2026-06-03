@@ -4,7 +4,7 @@ FROM fedora
 # https://hub.docker.com/r/fedora/container-best-practices/dockerfile
 RUN dnf update -y && dnf clean all
 
-RUN dnf install -y socat git root root-gui-browserv7 root-gui-fitpanelv7 && \
+RUN dnf install -y socat git root root-gui-browserv7 root-gui-fitpanelv7 root-roofit root-roofit-more && \
   dnf clean all && rm -fr /var/cache/* root/*.log root/*.cfg
 
 # fine tune ROOT configurations
