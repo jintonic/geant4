@@ -4,5 +4,13 @@
   "files.associations": {
     "*.tg": "geant4-tg",
     "*.mac": "g4macro"
-  }
+  },
+  "cSpell.languageSettings": [
+    {
+      "languageId": "g4macro",
+      "ignoreRegExpList": [
+        "^\\/.*$"
+      ]
+    }
+  ]
 }
