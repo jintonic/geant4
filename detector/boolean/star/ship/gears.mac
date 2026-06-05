@@ -4,7 +4,7 @@
 
 /run/initialize
 
-# mimick fire with electrons
+# mimic fire with electrons
 /gps/particle e-
 /gps/energy 900 keV
 /gps/direction 0 0 1
