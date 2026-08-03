@@ -11,8 +11,11 @@
 # double check if radiactive decay is enabled
 /process/list Decay
 
+ # set it to a large number to allow long lived isotope to decay
+/process/had/rdm/thresholdForVeryLongDecayTime 1e60 year
+
 # split decay chain to multiple events based on time intervals between decays
-/grdm/setTimeWindow 1 s
+/process/had/rdm/setTimeWindow 1 s
 
 # Define Pb210
 /gps/particle ion

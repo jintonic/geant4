@@ -106,14 +106,30 @@ Idle> /process/list Decay
    Decay    RadioactiveDecay
 ```
 
-Detailed control of radioactive decay is provided by the /[grdm][]/ command, for example,
+Detailed control of radioactive decay is provided by the [/process/had/rdm][] command, for example,
 
 ```sh
-/grdm/deselectVolume chamber # disabled radioactive decay in volume "chamber"
-/grdm/nucleusLimits 1 80 # enabled radioactive decay only when z in [1, 80]
+/process/had/rdm/deselectVolume chamber # disabled radioactive decay in volume "chamber"
+/process/had/rdm/nucleusLimits 1 80 # enabled radioactive decay only when z in [1, 80]
+/process/had/rdm/thresholdForVeryLongDecayTime 1e60 year # set it to a large number for long lived isotope to decay
 ```
 
-[grdm]: http://geant4-userdoc.web.cern.ch/geant4-userdoc/UsersGuides/ForApplicationDeveloper/html/Control/AllResources/Control/UIcommands/_grdm_.html
+The last command is needed for Geant4 versions >=11.2, where its default value is set to 1 year. Any [isotope] whose [lifetime] is longer than 1 year will not decay without setting this to a very long time. This is documented in Geant4 [Physics List Guide].
+
+[/process/had/rdm]: https://github.com/Geant4/geant4/blob/master/source/processes/hadronic/models/radioactive_decay/src/G4RadioactiveDecayMessenger.cc
+[Physics List Guide]: https://geant4.web.cern.ch/documentation/dev/plg_html/PhysicsListGuide/hadronic/ui-commands.html
+
+#### Radioactive decay chain
+
+Some [isotope][]s in a radioactive [decay chain][] have long [lifetime][]s. They decay long after the first decay on top of the chain. However, [Geant4][] simulate the whole chain in one event. It is the user's task to split different decays in the chain to different events based on the times when they happen.
+
+[isotope]: https://en.wikipedia.org/wiki/Isotope
+[decay chain]: https://en.wikipedia.org/wiki/Decay_chain
+[lifetime]: https://en.wikipedia.org/wiki/Half-life
+
+[GEARS][] provides a macro command `/process/had/rdm/setTimeWindow` to split the chain based on a time window specified by the user. For detailed usage, please read <https://github.com/jintonic/gears/tree/master/tutorials/physics#split-decay-chain>.
+
+#### Radioactive decay from a surface
 
 Here is an example to create [Pb210][] on the surface of a cylindrical CsI detector:
 
