@@ -100,6 +100,7 @@ Now we can use, for example, `/process/inactivate nCapture` to disable neutron c
 Radioactive decay processes can be enabled before `run/initialize`:
 
 ```sh
+PHYS_LIST=QGSP_BERT gears
 PreInit> /physics_lists/factory/addRadioactiveDecay
 PreInit> /run/initialize
 Idle> /process/list Decay
@@ -145,7 +146,7 @@ Here is an example to create [Pb210][] on the surface of a cylindrical CsI detec
  /gps/pos/halfz 2.5 cm
 ```
 
-[Pb210]: https://storage.googleapis.com/groundai-web-prod/media%2Fusers%2Fuser_92756%2Fproject_309275%2Fimages%2F210Pbdecaychain.png
+[Pb210]: https://periodictable.com/Isotopes/082.210/Decay.jpg
 
 ### Optical processes
 
