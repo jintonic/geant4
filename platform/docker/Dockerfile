@@ -1,5 +1,5 @@
 # https://hub.docker.com/r/physino/geant4
-FROM physino/geant4:11.4.1
+FROM physino/geant4:11.4.3
 
 # install tmux, fresh, yazi, procps-ng
 #   chafa is used by yazi for image preview
