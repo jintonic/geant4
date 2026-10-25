@@ -7,10 +7,10 @@
 The easiest way to install Geant4 on Mac is to compile Geant4's source code using [CMake][] GUI, which can be installed using [Homebrew][]:
 
 ~~~sh
-brew install --cask cmake
+brew install --cask cmake-app
 ~~~
 
-Since version 11.3.0, Geant4 can be compiled with [Qt][] 6 instead of 5. [Qt][] installed through `brew install qt` is version 6. Because [CMake][] can find [Qt][] 6 installed through [Homebrew][] automatically, I recommand Mac users to turn on [GEANT4_USE_QT_QT6][opt], which is `off` by default for the moment.
+[Qt][] installed through `brew install qt` is version 6. Since version 11.4.0, Geant4 can be compiled with [Qt][] 6 by default instead of 5. Because [CMake][] can find [Qt][] 6 installed through [Homebrew][] automatically, no additional action is needed. However, for Geant4.11.3.x, I recommend Mac users to turn on [GEANT4_USE_QT_QT6][opt], which is `off` by default.
 
 If you encounter any compilation error related to `zlib` or `expat`, enable [GEANT4_USE_SYSTEM_EXPAT][opt], and [GEANT4_USE_SYSTEM_ZLIB][opt]. There is no need to install `expat` and `zlib` using [Homebrew][] because they are already included in [Xcode][], which is automatically installed when you install [Homebrew][].
 

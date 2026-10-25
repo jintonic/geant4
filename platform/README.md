@@ -38,6 +38,14 @@ We may need to maintain multiple versions of Geant4 in a computer. The following
 
 <iframe width="640" height="360" src="https://www.youtube.com/embed/Hbwx-9Fcfss?si=7SmK7ArpwYsfYukO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+The recommended folder structure can be easily established using the following command:
+
+```sh
+git clone --depth=1 https://github.com/jintonic/geant4
+```
+
+in your preferred folder.
+
 ## IDE for Geant4 Application Development
 
 Various [IDE](IDE)s (Integrated Development Environment) can be used to develop Geant4 applications (or just to experience example applications). Please following [this link](IDE) to learn more.
